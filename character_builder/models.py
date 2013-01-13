@@ -32,6 +32,13 @@ class Size(models.Model):
     def __unicode__(self):
         return self.name
 
+class Language(models.Model):
+    name = models.CharField(max_length = 50)
+    script  = models.CharField(max_length = 50)
+
+    def __unicode__(self):
+        return self.name
+
 class Vision(models.Model):
     name = models.CharField(max_length = 50)
 
@@ -75,6 +82,18 @@ class CharacterSkill(models.Model):
     def __unicode__(self):
         return "%s %s" % (self.skill.name, self.value)
 
+class PowerType(models.Model):
+    name = models.CharField(max_length = 50)
+
+    def __unicode__(self):
+        return self.name
+
+class PowerKeyword(models.Model):
+    name = models.CharField(max_length = 50)
+    
+    def __unicode__(self):
+        return self.name
+
 class Race(models.Model):
     name = models.CharField(max_length = 50)
     source = models.ForeignKey(Source)
@@ -83,6 +102,7 @@ class Race(models.Model):
     size = models.ForeignKey(Size)
     speed = models.IntegerField()
     vision = models.ForeignKey(Vision)
+    languages = models.ManyToManyField(Language)
     description = models.TextField()
 
     class Meta:
@@ -93,13 +113,33 @@ class Race(models.Model):
 
 class RaceAbilityMod(models.Model):
     race = models.ForeignKey(Race)
-    abilty = models.ForeignKey(Ability)
+    ability = models.ForeignKey(Ability)
     modifier = models.IntegerField()
+
+    def __unicode__(self):
+        if self.modifier < 0:
+            mod = "-"
+        elif self.modifier == 0:
+            mod = ""
+        else:
+            mod = "+"
+        
+        return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.ability.name)
 
 class RaceSkillMod(models.Model):
     race = models.ForeignKey(Race)
     skill = models.ForeignKey(Skill)
     modifier = models.IntegerField()
+
+    def __unicode__(self):
+        if self.modifier < 0:
+            mod = "-"
+        elif self.modifier == 0:
+            mod = ""
+        else:
+            mod = "+"
+        
+        return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.skill.name)
 
 class ClassType(models.Model):
     name = models.CharField(max_length = 100)
@@ -108,6 +148,24 @@ class ClassType(models.Model):
     
     class Meta:
         ordering = ['name']
+
+    def __unicode__(self):
+        return self.name
+
+class Power(models.Model):
+    name = models.CharField(max_length = 100)
+    level = models.IntegerField()
+    class_type = models.ForeignKey(ClassType, blank = True, null = True)
+    race = models.ForeignKey(Race, blank = True, null = True)
+    power_type = models.ForeignKey(PowerType)
+    flavor = models.TextField(blank = True)
+    keywords = models.TextField()
+    target = models.TextField(blank = True)
+    attack = models.TextField(blank = True)
+    hit = models.TextField(blank = True)
+    miss = models.TextField(blank = True)
+    effect = models.TextField(blank = True)
+    special = models.TextField(blank = True)
 
     def __unicode__(self):
         return self.name
@@ -123,6 +181,10 @@ class Character(models.Model):
 
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)
+
+class CharacterPower(models.Model):
+    character = models.ForeignKey(Character)
+    power = models.ForeignKey(Power)
 
 class Item(models.Model):
     name = models.CharField(max_length = 100)
