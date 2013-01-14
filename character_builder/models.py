@@ -199,6 +199,7 @@ class Alignment(models.Model):
 class Deity(models.Model):
     name = models.CharField(max_length=100)
     alignment = models.ForeignKey(Alignment)
+    description = models.TextField()
 
     def __unicode__(self):
         return self.name
