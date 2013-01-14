@@ -1,10 +1,12 @@
 body, html {
-	margin: 0;
-	padding: 0;
 	color: #000;
-	background-color: #d9d9d9 ;
+	background-color: #fff ;
 }
 
-#info {
+.class-info {
+	display: none;
+}
+
+.race-info {
 	display: none;
 }

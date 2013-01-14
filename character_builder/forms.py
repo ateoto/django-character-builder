@@ -1,5 +1,4 @@
-from django.forms import ModelForm
-
+from django.forms import ModelForm, ModelChoiceField, Select
 from character_builder.models import Character
 
 

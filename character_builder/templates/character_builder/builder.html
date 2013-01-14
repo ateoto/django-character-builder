@@ -3,11 +3,17 @@
 <script src="{{ STATIC_URL }}js/main.js"></script>
 {% endblock %}
 {% block content %}
-<div id="personal">
-	{{ character_form.as_ul }}
-</div>
-<div id="info">
-{% for race in races %}{{ race.html|safe }}{% endfor %}
-{% for classtype in classtypes %}{{ classtype.html|safe }}{% endfor %}
+<div id="builder" class="row">
+	<h3>Character Builder</h3>
+	<div id="personal" class="span4">
+		{% for field in character_form %}
+            {{ field.errors }}
+            {{ field.label_tag }}{{ field }}
+    	{% endfor %}
+	</div>
+	<div id="info" class="span8">
+		{% for race in races %}{{ race.html|safe }}{% endfor %}
+		{% for classtype in classtypes %}{{ classtype.html|safe }}{% endfor %}
+	</div>
 </div>
 {% endblock %}

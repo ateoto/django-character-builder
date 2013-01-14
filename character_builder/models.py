@@ -71,28 +71,6 @@ class Skill(models.Model):
         return self.name
 
 
-class CharacterAbility(models.Model):
-    character = models.ForeignKey('Character')
-    ability = models.ForeignKey(Ability)
-    value = models.IntegerField()
-
-    class Meta:
-        verbose_name_plural = "Character Abilities"
-
-    def __unicode__(self):
-        return "%s %s" % (self.ability.name, self.value)
-
-
-class CharacterSkill(models.Model):
-    character = models.ForeignKey('Character')
-    skill = models.ForeignKey(Skill)
-    is_trained = models.BooleanField(default=False)
-    value = models.IntegerField()
-
-    def __unicode__(self):
-        return "%s %s" % (self.skill.name, self.value)
-
-
 class PowerType(models.Model):
     name = models.CharField(max_length=50)
 
@@ -221,6 +199,28 @@ class Character(models.Model):
 
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)
+
+
+class CharacterAbility(models.Model):
+    character = models.ForeignKey('Character')
+    ability = models.ForeignKey(Ability)
+    value = models.IntegerField()
+
+    class Meta:
+        verbose_name_plural = "Character Abilities"
+
+    def __unicode__(self):
+        return "%s %s" % (self.ability.name, self.value)
+
+
+class CharacterSkill(models.Model):
+    character = models.ForeignKey('Character')
+    skill = models.ForeignKey(Skill)
+    is_trained = models.BooleanField(default=False)
+    value = models.IntegerField()
+
+    def __unicode__(self):
+        return "%s %s" % (self.skill.name, self.value)
 
 
 class CharacterPower(models.Model):
