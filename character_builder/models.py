@@ -1,53 +1,60 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Source(models.Model):
-    name = models.CharField(max_length = 50)
-    
+    name = models.CharField(max_length=50)
+
     class Meta:
         ordering = ['name']
 
     def __unicode__(self):
         return self.name
 
+
 class Campaign(models.Model):
-    name = models.CharField(max_length = 100)
-    dm = models.ForeignKey(User, related_name = "+")
-    players = models.ManyToManyField(User, related_name = "+")
+    name = models.CharField(max_length=100)
+    dm = models.ForeignKey(User, related_name="+")
+    players = models.ManyToManyField(User, related_name="+")
 
     def __unicode__(self):
         return self.name
+
 
 class Role(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.name
+
 
 class Size(models.Model):
-    name = models.CharField(max_length = 50)
-    space = models.CharField(max_length = 50)
-    reach = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
+    space = models.CharField(max_length=50)
+    reach = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.name
+
 
 class Language(models.Model):
-    name = models.CharField(max_length = 50)
-    script  = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
+    script = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.name
+
 
 class Vision(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.name
 
+
 class Ability(models.Model):
-    name = models.CharField(max_length = 50)
-    abbreviation = models.CharField(max_length = 4)
+    name = models.CharField(max_length=50)
+    abbreviation = models.CharField(max_length=4)
 
     class Meta:
         verbose_name_plural = "Abilities"
@@ -55,50 +62,56 @@ class Ability(models.Model):
     def __unicode__(self):
         return self.name
 
+
 class Skill(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
     ability = models.ForeignKey(Ability)
 
     def __unicode__(self):
         return self.name
 
+
 class CharacterAbility(models.Model):
     character = models.ForeignKey('Character')
     ability = models.ForeignKey(Ability)
     value = models.IntegerField()
-    
+
     class Meta:
         verbose_name_plural = "Character Abilities"
 
     def __unicode__(self):
         return "%s %s" % (self.ability.name, self.value)
 
+
 class CharacterSkill(models.Model):
     character = models.ForeignKey('Character')
     skill = models.ForeignKey(Skill)
-    is_trained = models.BooleanField(default = False)
+    is_trained = models.BooleanField(default=False)
     value = models.IntegerField()
 
     def __unicode__(self):
         return "%s %s" % (self.skill.name, self.value)
 
+
 class PowerType(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.name
+
 
 class PowerKeyword(models.Model):
-    name = models.CharField(max_length = 50)
-    
+    name = models.CharField(max_length=50)
+
     def __unicode__(self):
         return self.name
 
+
 class Race(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length=50)
     source = models.ForeignKey(Source)
-    average_height_text = models.CharField(max_length = 50)
-    average_weight_text = models.CharField(max_length = 50)
+    average_height_text = models.CharField(max_length=50)
+    average_weight_text = models.CharField(max_length=50)
     size = models.ForeignKey(Size)
     speed = models.IntegerField()
     vision = models.ForeignKey(Vision)
@@ -110,6 +123,7 @@ class Race(models.Model):
 
     def __unicode__(self):
         return self.name
+
 
 class RaceAbilityMod(models.Model):
     race = models.ForeignKey(Race)
@@ -123,8 +137,9 @@ class RaceAbilityMod(models.Model):
             mod = ""
         else:
             mod = "+"
-        
+
         return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.ability.name)
+
 
 class RaceSkillMod(models.Model):
     race = models.ForeignKey(Race)
@@ -138,41 +153,44 @@ class RaceSkillMod(models.Model):
             mod = ""
         else:
             mod = "+"
-        
+
         return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.skill.name)
 
+
 class ClassType(models.Model):
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     role = models.ForeignKey(Role)
     source = models.ForeignKey(Source)
-    
+
     class Meta:
         ordering = ['name']
 
     def __unicode__(self):
         return self.name
 
+
 class Power(models.Model):
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     level = models.IntegerField()
-    class_type = models.ForeignKey(ClassType, blank = True, null = True)
-    race = models.ForeignKey(Race, blank = True, null = True)
+    class_type = models.ForeignKey(ClassType, blank=True, null=True)
+    race = models.ForeignKey(Race, blank=True, null=True)
     power_type = models.ForeignKey(PowerType)
-    flavor = models.TextField(blank = True)
+    flavor = models.TextField(blank=True)
     keywords = models.TextField()
-    target = models.TextField(blank = True)
-    attack = models.TextField(blank = True)
-    hit = models.TextField(blank = True)
-    miss = models.TextField(blank = True)
-    effect = models.TextField(blank = True)
-    special = models.TextField(blank = True)
+    target = models.TextField(blank=True)
+    attack = models.TextField(blank=True)
+    hit = models.TextField(blank=True)
+    miss = models.TextField(blank=True)
+    effect = models.TextField(blank=True)
+    special = models.TextField(blank=True)
 
     def __unicode__(self):
         return self.name
 
+
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     class_type = models.ForeignKey(ClassType)
     race = models.ForeignKey(Race)
     level = models.IntegerField()
@@ -182,12 +200,14 @@ class Character(models.Model):
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)
 
+
 class CharacterPower(models.Model):
     character = models.ForeignKey(Character)
     power = models.ForeignKey(Power)
 
+
 class Item(models.Model):
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     source = models.ForeignKey(Source)
 
     def __unicode__(self):
