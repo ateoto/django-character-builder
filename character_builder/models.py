@@ -188,6 +188,22 @@ class Power(models.Model):
         return self.name
 
 
+class Alignment(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __unicode__(self):
+        return self.name
+
+
+class Deity(models.Model):
+    name = models.CharField(max_length=100)
+    alignment = models.ForeignKey(Alignment)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
     name = models.CharField(max_length=100)
@@ -196,6 +212,11 @@ class Character(models.Model):
     level = models.IntegerField()
     xp = models.IntegerField()
     hit_points = models.IntegerField()
+    age = models.IntegerField()
+    weight = models.CharField(max_length=20)
+    height = models.CharField(max_length=20)
+    alignment = models.ForeignKey(Alignment)
+    deity = models.ForeignKey(Deity)
 
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)

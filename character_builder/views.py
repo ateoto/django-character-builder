@@ -34,6 +34,10 @@ def index(request):
             context_instance=RequestContext(request))
 
 
+def build_one(request):
+    pass
+
+
 def step_one(request):
     if request.method == 'POST':
         form = CharacterFormStepOne(request.POST)

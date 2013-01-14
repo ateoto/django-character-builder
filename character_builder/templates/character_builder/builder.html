@@ -1,4 +1,16 @@
 {% extends "character_builder/base.html" %}
 {% block content %}
-<p>This is really just a test.</p>
+<div id="race">
+    {% for race in races %}
+        {{ race.html|safe }}
+    {% endfor %}
+</div>
+<div id="classtype">
+    {% for classtype in classtypes %}
+        {{ classtype.html|safe }}
+    {% endfor %}
+</div>
+<div id="personal">
+    <p>This is where you'll fill out Name, Alignment, Deity, height/weight, fluff.</p>
+</div>
 {% endblock %}
