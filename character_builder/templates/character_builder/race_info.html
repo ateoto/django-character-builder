@@ -1,3 +1,19 @@
-<div id="race-{{ race.id }}" class="race-info">
-	<img src="{{ STATIC_URL }}img/races/{{ race.name }}.png" />
+<div id="race-{{ race.id }}" class="race-info row">
+	<h5>{{ race.name }}</h5>
+	<div class="span2">
+		<img src="{{ STATIC_URL }}img/races/{{ race.name }}.png" />
+	</div>
+	<div class="span6">
+		<dl class="horizontal">
+			<dt>Average Height</dt>
+			<dd>{{ race.average_height_text }}</dd>
+			<dt>Average Weight</dt>
+			<dd>{{ race.average_weight_text }}</dd>
+			{# <dt>Size</dt> #}
+			{# <dd>{{ race.size.name }}</dd> #}
+			<dt>Speed</dt>
+			<dd>{{ race.speed }}</dd>
+		</dl>
+		{{ race.description }}
+	</div>
 </div>
