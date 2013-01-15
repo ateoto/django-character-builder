@@ -2,6 +2,25 @@ body, html {
 	color: #000;
 	background-color: #fff ;
 }
+#content-header {
+	text-align: center;
+}
+
+#builder-nav {
+	text-align: center;
+}
+
+#abilities {
+	display: none;
+}
+
+#skills {
+	display: none;
+}
+
+#powers {
+	display: none;
+}
 
 .class-info {
 	display: none;

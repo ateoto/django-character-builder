@@ -4,12 +4,33 @@
 {% endblock %}
 {% block content %}
 <div id="builder" class="row">
-	<h3>Character Builder</h3>
+	<div id="content-header" class="span12">
+		<h3>Character Builder</h3>
+	</div>
+	<div id="builder-nav" class="span12">
+		<div class="btn-toolbar">
+			<div class="btn-group">
+				<a class="btn btn-large" href="#">Personal</a>
+				<a class="btn btn-large" href="#">Abilities</a>
+				<a class="btn btn-large" href="#">Skills</a>
+				<a class="btn btn-large" href="#">Powers</a>
+			</div>
+		</div>
+	</div>
 	<div id="personal" class="span4">
 		{% for field in character_form %}
             {{ field.errors }}
             {{ field.label_tag }}{{ field }}
     	{% endfor %}
+	</div>
+	<div id="abilities" class="span4">
+		Abilities
+	</div>
+	<div id="skills" class="span4">
+		Skills
+	</div>
+	<div id="powers" class="span4">
+		Powers
 	</div>
 	<div id="info" class="span8">
 		{% for race in races %}{{ race.html|safe }}{% endfor %}
