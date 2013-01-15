@@ -135,10 +135,28 @@ class RaceSkillMod(models.Model):
         return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.skill.name)
 
 
+class WeaponType(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.name
+
+
+class ArmorType(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.name
+
+
 class ClassType(models.Model):
     name = models.CharField(max_length=100)
     role = models.ForeignKey(Role)
     source = models.ForeignKey(Source)
+    favored_abilities = models.ManyToManyField(Ability)
+    description = models.TextField()
+    weapon_proficiencies = models.ManyToManyField(WeaponType)
+    armor_proficiencies = models.ManyToManyField(ArmorType)
 
     class Meta:
         ordering = ['name']
