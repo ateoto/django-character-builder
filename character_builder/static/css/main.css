@@ -29,3 +29,11 @@ body, html {
 .race-info {
 	display: none;
 }
+
+#standard-array-abilities {
+	list-style-type: none;
+}
+
+.std-arr-ability {
+	padding-top: 5px ;
+}
