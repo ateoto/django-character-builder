@@ -5,7 +5,9 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     PowerType, Power, Language,
                                     RaceAbilityMod, RaceSkillMod,
                                     Alignment, Deity, WeaponGroup,
-                                    WeaponCategory, ArmorClass, ArmorType)
+                                    WeaponCategory, ArmorClass, ArmorType,
+                                    Currency, CurrencyExchange,
+                                    CharacterCurrency)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
@@ -32,3 +34,6 @@ admin.site.register(WeaponGroup)
 admin.site.register(WeaponCategory)
 admin.site.register(ArmorType)
 admin.site.register(ArmorClass)
+admin.site.register(Currency)
+admin.site.register(CurrencyExchange)
+admin.site.register(CharacterCurrency)

@@ -1,0 +1,1912 @@
+[
+    {
+        "pk": 1, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Player's Handbook"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Player's Handbook 2"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Player's Handbook 3"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Controller"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Defender"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Leader"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Striker"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "0", 
+            "name": "Tiny", 
+            "space": "1/2"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "1", 
+            "name": "Small", 
+            "space": "1"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "1", 
+            "name": "Medium", 
+            "space": "1"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "1 - 2", 
+            "name": "Large", 
+            "space": "2 x 2"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "2 - 3", 
+            "name": "Huge", 
+            "space": "3 x 3"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "3 - 4", 
+            "name": "Gargantuan", 
+            "space": "4 x 4 or larger"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Common", 
+            "script": "Common"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Deep Speech", 
+            "script": "Rellanic"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Draconic", 
+            "script": "Lokharic"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Dwarven", 
+            "script": "Davek"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Elven", 
+            "script": "Rellanic"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Giant", 
+            "script": "Davek"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Goblin", 
+            "script": "Common"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Primordial", 
+            "script": "Barazhad"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Supernal", 
+            "script": "Supernal"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Abyssal", 
+            "script": "Barazhad"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.vision", 
+        "fields": {
+            "name": "Normal"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.vision", 
+        "fields": {
+            "name": "Low-light"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.ability", 
+        "fields": {
+            "abbreviation": "Str", 
+            "help_text": "Measures your character's physical power. It\u2019s important for most characters who fight hand-to-hand. Clerics, fighters, paladins, rangers, and warlords have powers based on Strength.", 
+            "name": "Strength"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.ability", 
+        "fields": {
+            "abbreviation": "Con", 
+            "help_text": "Represents your character\u2019s health, stamina, and vital force. All characters benefit from a high Constitution score. Many warlock powers are based on constitution.", 
+            "name": "Constitution"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.ability", 
+        "fields": {
+            "abbreviation": "Dex", 
+            "help_text": "Measures hand-eye coordination, agility, reflexes, and balance. Many ranger and rogue powers are based on Dexterity.", 
+            "name": "Dexterity"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.ability", 
+        "fields": {
+            "abbreviation": "Int", 
+            "help_text": "Describes how well your character learns and reasons. Wizard powers are based on Intelligence.", 
+            "name": "Intelligence"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.ability", 
+        "fields": {
+            "abbreviation": "Wis", 
+            "help_text": "Measures your common sense, perception, self-discipline, and empathy. You use your Wisdom score to notice details, sense danger, and get a read on other people. Many cleric powers are based on Wisdom.", 
+            "name": "Wisdom"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.ability", 
+        "fields": {
+            "abbreviation": "Cha", 
+            "help_text": "Measures your force of personality, persuasiveness, and leadership. Many paladin and warlock powers are based on \r\nCharisma.", 
+            "name": "Charisma"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Acrobatics", 
+            "ability": 3
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Arcana", 
+            "ability": 4
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Athletics", 
+            "ability": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Bluff", 
+            "ability": 6
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Diplomacy", 
+            "ability": 6
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Dungeoneering", 
+            "ability": 5
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Endurance", 
+            "ability": 2
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Heal", 
+            "ability": 5
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "History", 
+            "ability": 4
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Insight", 
+            "ability": 5
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Intimidate", 
+            "ability": 6
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Nature", 
+            "ability": 5
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Perception", 
+            "ability": 5
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Religion", 
+            "ability": 4
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Stealth", 
+            "ability": 3
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Streetwise", 
+            "ability": 6
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.skill", 
+        "fields": {
+            "name": "Thievery", 
+            "ability": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "At-Will Attack"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "At-Will Utility"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Encounter Attack"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Encounter Utility"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Daily Attack"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Daily Utility"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Cantrip"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "At-Will Racial"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Encounter Racial"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Daily Racial"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Deva", 
+            "average_weight_text": "Meh", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 2, 
+            "average_height_text": "Meh", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Dragonborn", 
+            "average_weight_text": "220 - 320 lb", 
+            "description": "Born to fight, dragonborn are a race of wandering mercenaries, soldiers, and adventurers. Long ago, their empire contended for worldwide dominion, but now only a few rootless clans of these honorable warriors remain to pass on their legends of ancient glory.<br>\r\n<br>\r\nPlay a dragonborn if you want . . .<br>\r\n\u2726 to look like a dragon.<br>\r\n\u2726 to be the proud heir of an ancient, fallen empire.<br>\r\n\u2726 to breathe acid, cold, fire, lightning, or poison.<br>\r\n\u2726 to be a member of a race that favors the warlord, fighter, and paladin classes", 
+            "languages": [
+                1, 
+                3
+            ], 
+            "source": 1, 
+            "average_height_text": "6' 2\" - 6' 8\"", 
+            "speed": 6, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Dwarf", 
+            "average_weight_text": "160 - 220 lb", 
+            "description": "Carved from the bedrock of the universe, dwarves endured an age of servitude to giants before winning their freedom. Their mighty mountain fortress-cities testify to the power of their ancient empires. Even those who live in human cities are counted among the staunchest defenders against the darkness that threatens to engulf the world.<br>\r\n<br>\r\nPlay a dwarf if you want . . .<br>\r\n\u2726 to be tough, gruff, and strong as bedrock.<br>\r\n\u2726 to bring glory to your ancestors or serve as your god\u2019s right hand.<br>\r\n\u2726 to be able to take as much punishment as you dish out.<br>\r\n\u2726 to be a member of a race that favors the paladin, cleric, and fighter classes.", 
+            "languages": [
+                1, 
+                4
+            ], 
+            "source": 1, 
+            "average_height_text": "4' 3\" - 4' 9\"", 
+            "speed": 5, 
+            "vision": 2, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Eladrin", 
+            "average_weight_text": "130 - 180 lb", 
+            "description": "Creatures of magic with strong ties to nature, eladrin live in cities in the twilight realm of the Feywild. Their cities lie close enough to the world that they sometimes cross over, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.<br>\r\n<br>\r\nPlay an eladrin if you want . . .<br>\r\n\u2726 to be otherworldly and mysterious.<br>\r\n\u2726 to be graceful and intelligent.<br>\r\n\u2726 to teleport around the battlefield, cloaked in the magic of the Feywild.<br>\r\n\u2726 to be a member of a race that favors the wizard, rogue, and warlord classes.", 
+            "languages": [
+                1, 
+                5
+            ], 
+            "source": 1, 
+            "average_height_text": "5' 5\" - 6' 1\"", 
+            "speed": 6, 
+            "vision": 2, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Elf", 
+            "average_weight_text": "130 - 170 lb", 
+            "description": "Wild and free, elves guard their forested lands using stealth and deadly arrows from the trees. They build their homes in close harmony with the forest, so perfectly joined that travelers often fail to notice that they have entered an elven community until it is too late.<br>\r\n<br>\r\nPlay an elf if you want . . .<br>\r\n\u2726 to be quick, quiet, and wild.<br>\r\n\u2726 to lead your companions through the deep woods and pepper your enemies with arrows.<br>\r\n\u2726 to be a member of a race that favors the ranger, rogue, and cleric classes.", 
+            "languages": [
+                1, 
+                5
+            ], 
+            "source": 1, 
+            "average_height_text": "5' 4\" - 6' 0\"", 
+            "speed": 7, 
+            "vision": 2, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Githzerai", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 3, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Gnome", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 2, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 2
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Goliath", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 2, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Half-Elf", 
+            "average_weight_text": "130-190 lb", 
+            "description": "Descended from elves and humans, half-elves are a vital race in which the best features of elves and humans often appear.<br>\r\n<br>\r\nPlay a half-elf if you want . . .<br>\r\n\u2726 to be an outgoing, enthusiastic leader.<br>\r\n\u2726 to be a charismatic hero equally at home in two different cultures.<br>\r\n\u2726 to be a member of a race that favors the warlord, paladin, and warlock classes.", 
+            "languages": [
+                1, 
+                5
+            ], 
+            "source": 1, 
+            "average_height_text": "5' 5\" - 6' 2\"", 
+            "speed": 6, 
+            "vision": 2, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Half-Orc", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 2, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Halfling", 
+            "average_weight_text": "75-85 lb", 
+            "description": "Halflings are a small race known for their resourcefulness, quick wits, and steady nerves. They are a nomadic folk who roam waterways and marshlands. No people travel farther or see more of what happens in the world than halflings.<br>\r\n<br>\r\nPlay a halfling if you want . . .<br>\r\n\u2726 to be a plucky hero who is all too easy to underestimate.<br>\r\n\u2726 to be likable, warm, and friendly.<br>\r\n\u2726 to be a member of a race that favors the rogue, ranger, and warlock classes.", 
+            "languages": [
+                1
+            ], 
+            "source": 1, 
+            "average_height_text": "3' 10 - 4' 2\"", 
+            "speed": 6, 
+            "vision": 1, 
+            "size": 2
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Human", 
+            "average_weight_text": "135-220 lb", 
+            "description": "Of all the civilized races, humans are the most adaptable and diverse. Human settlements can be found almost anywhere, and human morals, customs, and interests vary greatly.<br>\r\n<br>\r\nPlay a human if you want . . .<br>\r\n\u2726 to be a decisive, resourceful hero with enough determination to face any challenge.<br>\r\n\u2726 to have the most versatility and flexibility of any race.<br>\r\n\u2726 to be able to excel at any class you choose.", 
+            "languages": [
+                1
+            ], 
+            "source": 1, 
+            "average_height_text": "5' 6\" - 6' 2\"", 
+            "speed": 6, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Minotaur", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 3, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 4
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Shardmind", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 3, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Shifter", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 2, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Tiefling", 
+            "average_weight_text": "140-230 lb", 
+            "description": "Heirs to an ancient, infernal bloodline, tieflings have no realms of their own but instead live within human kingdoms and cities. They are descended from human nobles who bargained with dark powers, and long ago their empire subjugated half the world. But the empire was cast down into ruin, and tieflings were left to make their own way in a world that often fears and resents them.<br>\r\n<br>\r\nPlay a tiefling if you want . . .<br>\r\n\u2726 to be a hero who has a dark side to overcome.<br>\r\n\u2726 to be good at tricking, intimidating, or persuading others to do your will.<br>\r\n\u2726 to be a member of a race that favors the warlock, warlord, and rogue classes.", 
+            "languages": [
+                1
+            ], 
+            "source": 1, 
+            "average_height_text": "5' 6\" - 6' 2\"", 
+            "speed": 6, 
+            "vision": 2, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.race", 
+        "fields": {
+            "name": "Wilden", 
+            "average_weight_text": "Non", 
+            "description": "Not a cat", 
+            "languages": [
+                1
+            ], 
+            "source": 3, 
+            "average_height_text": "Non", 
+            "speed": 0, 
+            "vision": 1, 
+            "size": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.raceabilitymod", 
+        "fields": {
+            "modifier": 2, 
+            "race": 4, 
+            "ability": 5
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.raceabilitymod", 
+        "fields": {
+            "modifier": 2, 
+            "race": 4, 
+            "ability": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.raceskillmod", 
+        "fields": {
+            "skill": 12, 
+            "race": 4, 
+            "modifier": 2
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.raceskillmod", 
+        "fields": {
+            "skill": 13, 
+            "race": 4, 
+            "modifier": 2
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Improvised Melee One-Handed"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Improvised Ranged One-Handed"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Simple Melee One-Handed"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Simple Ranged One-Handed"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Military Melee One-Handed"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Military Ranged One-Handed"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Superior Melee One-Handed"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Superior Ranged One-Handed"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Improvised Melee Two-Handed"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Improvised Ranged Two-Handed"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Simple Melee Two-Handed"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Simple Ranged Two-Handed"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Military Melee Two-Handed"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Military Ranged Two-Handed"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Superior Melee Two-Handed"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.weaponcategory", 
+        "fields": {
+            "name": "Superior Ranged Two-Handed"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Axe"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Bow"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Crossbow"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Flail"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Hammer"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Heavy Blade"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Light Blade"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Mace"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Pick"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Polearm"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Sling"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Spear"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Staff"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.weapongroup", 
+        "fields": {
+            "name": "Unarmed"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.armorclass", 
+        "fields": {
+            "name": "Light"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.armorclass", 
+        "fields": {
+            "name": "Heavy"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 1, 
+            "name": "Cloth"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 1, 
+            "name": "Leather"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 1, 
+            "name": "Hide"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 2, 
+            "name": "Chainmail"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 2, 
+            "name": "Scale"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 2, 
+            "name": "Plate"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Ardent", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 3, 
+            "role": 3, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Avenger", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Barbarian", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Bard", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 3, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Battlemind", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 3, 
+            "role": 2, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [
+                1, 
+                5, 
+                6
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2, 
+                3, 
+                4
+            ], 
+            "name": "Cleric", 
+            "weapon_proficiencies": [
+                3, 
+                4, 
+                11, 
+                12
+            ], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 3, 
+            "description": "Clerics are battle leaders who are invested with divine power. They blast foes with magical prayers, bolster and heal companions, and lead the way to victory with a mace in one hand and a holy symbol in the other. Clerics run the gamut from humble servants of the common folk to ruthless enforcers of evil gods."
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Druid", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 1, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Fighter", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 2, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Invoker", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 1, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Monk", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 3, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Paladin", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 2, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Psion", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 3, 
+            "role": 1, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Ranger", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Rogue", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Runepriest", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 3, 
+            "role": 3, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Seeker", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 3, 
+            "role": 1, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Shaman", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 3, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Sorcerer", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Warden", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 2, 
+            "role": 2, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Warlock", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 4, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Warlord", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 3, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.classtype", 
+        "fields": {
+            "favored_abilities": [], 
+            "armor_proficiencies": [], 
+            "name": "Wizard", 
+            "weapon_proficiencies": [], 
+            "role_flavor": "", 
+            "source": 1, 
+            "role": 1, 
+            "description": "Non"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.power", 
+        "fields": {
+            "hit": "", 
+            "class_type": null, 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
+            "attack": "", 
+            "race": 4, 
+            "target": "", 
+            "keywords": "Encounter, Free Action, Personal", 
+            "flavor": "With an instant of focus, you take careful aim at your foe and strike with the legendary accuracy of the elves.", 
+            "miss": "", 
+            "special": "", 
+            "name": "Elven Accuracy"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.power", 
+        "fields": {
+            "hit": "", 
+            "class_type": null, 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "Teleport up to 5 squares.", 
+            "attack": "", 
+            "race": 3, 
+            "target": "", 
+            "keywords": "Encounter; Teleportation; Move Action; Personal", 
+            "flavor": "With a step, you vanish from one place and appear in another.", 
+            "miss": "", 
+            "special": "", 
+            "name": "Fey Step"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.power", 
+        "fields": {
+            "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
+            "class_type": null, 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "", 
+            "attack": "Strength +2 vs. Reflex, Constitution +2 vs. Reflex, or Dexterity +2 vs. Reflex", 
+            "race": 1, 
+            "target": "All creatures in area", 
+            "keywords": "Encounter; Acid, Cold, Fire, Lightning, or Poison; Minor Action; Close blast 3", 
+            "flavor": "As you open your mouth with a roar, the deadly power of your draconic kin blasts forth to engulf your foes.", 
+            "miss": "", 
+            "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
+            "name": "Dragon Breath"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Good", 
+            "description": "Freedom and kindness."
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Lawful Good", 
+            "description": "Civilization and order."
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Evil", 
+            "description": "Tyranny and hatred."
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Chaotic Evil", 
+            "description": "Entropy and destruction."
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Unaligned", 
+            "description": "Having no alignment; not taking a stand."
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Avandra", 
+            "alignment": 1, 
+            "description": "The god of change, Avandra delights in freedom, trade, travel, adventure, and the frontier. Her temples are few in civilized lands, but her wayside shrines appear throughout the world. Halflings, merchants, and all types of adventurers are drawn to her worship, and many people raise a glass in her honor, viewing her as the god of luck. Her commandments are few:\r\n\r\n\u2726 Luck favors the bold. Take your fate into your own hands, and Avandra smiles upon you.\r\n\u2726 Strike back against those who would rob you of your freedom and urge others to fight for their own liberty.\r\n\u2726 Change is inevitable, but it takes the work of the faithful to ensure that change is for the better."
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Bahamut", 
+            "alignment": 2, 
+            "description": "Called the Platinum Dragon, Bahamut is the god of justice, protection, nobility, and honor. Lawful good paladins often revere him, and metallic dragons worship him as the first of their kind. Monarchs are crowned in his name. He commands his followers thus:\r\n\r\n\u2726 Uphold the highest ideals of honor and justice.\r\n\u2726 Be constantly vigilant against evil and oppose it on all fronts.\r\n\u2726 Protect the weak, liberate the oppressed, and defend just order."
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Corellon", 
+            "alignment": 5, 
+            "description": "The god of spring, beauty, and the arts, Corellon is the patron of arcane magic and the fey. He seeded the world with arcane magic and planted the most ancient forests. Artists and musicians worship him, as do those who view their spellcasting as an art, and his shrines can be found throughout the Feywild. He despises Lolth and her priestesses for leading the drow astray. He urges his followers thus:\r\n\r\n\u2726 Cultivate beauty in all that you do, whether you\u2019re casting a spell, composing a saga, strumming a lute, or practicing the arts of war.\r\n\u2726 Seek out lost magic items, forgotten rituals, and ancient works of art. Corellon might have inspired them in the world\u2019s first days.\r\n\u2726 Thwart the followers of Lolth at every opportunity\r\n"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Erathis", 
+            "alignment": 5, 
+            "description": "Erathis is the god of civilization. She is the muse of great invention, founder of cities, and author of laws. Rulers, judges, pioneers, and devoted citizens revere her, and her temples hold prominent places in most of the world\u2019s major cities. Her laws are many, but their purpose is straightforward:\r\n\r\n\u2726 Work with others to achieve your goals. Community and order are always stronger than the disjointed efforts of lone individuals.\r\n\u2726 Tame the wilderness to make it fit for habitation, and defend the light of civilization against the encroaching darkness.\r\n\u2726 Seek out new ideas, new inventions, new lands to inhabit, new wilderness to conquer. "
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Ioun", 
+            "alignment": 5, 
+            "description": "Ioun is the god of knowledge, skill, and prophecy. Sages, seers, and tacticians revere her, as do all who live by their knowledge and mental power. Corellon is the patron of arcane magic, but Ioun is the patron of its study. Libraries and wizard academies are built in her name. Her commands are also teachings:\r\n\r\n\u2726 Seek the perfection of your mind by bringing reason, perception, and emotion into balance with one another.\r\n\u2726 Accumulate, preserve, and distribute knowledge in all forms. Pursue education, build libraries, and seek out lost and ancient lore.\r\n\u2726 Be watchful at all times for the followers of Vecna, who seek to control knowledge and keep secrets. Oppose their schemes, unmask their secrets, and blind them with the light of truth and reason."
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Kord", 
+            "alignment": 5, 
+            "description": "Kord is the storm god and the lord of battle. He revels in strength, battlefield prowess, and thunder. Fighters and athletes revere him. He is a mercurial god, unbridled and wild, who summons storms over land and sea; those who hope for better weather appease him with prayers and spirited toasts. He gives few commands:\r\n\r\n\u2726 Be strong, but do not use your strength for wanton destruction.\r\n\u2726 Be brave and scorn cowardice in any form.\r\n\u2726 Prove your might in battle to win glory and renown."
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Melora", 
+            "alignment": 5, 
+            "description": "Melora is the god of the wilderness and the sea. She is both the wild beast and the peaceful forest, the raging whirlpool and the quiet desert. Rangers, hunters, and elves revere her, and sailors make offerings to her before beginning their voyages. Her strictures are these:\r\n\r\n\u2726 Protect the wild places of the world from destruction and overuse. Oppose the rampant spread of cities and empires.\r\n\u2726 Hunt aberrant monsters and other abominations of nature.\r\n\u2726 Do not fear or condemn the savagery of nature. Live in harmony with the wild."
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Moradin", 
+            "alignment": 2, 
+            "description": "Moradin is the god of creation and patron of artisans, especially miners and smiths. He carved the mountains from primordial earth and is the guardian and protector of the hearth and the family. Dwarves from all walks of life follow him. He demands these behaviors of his followers:\r\n\r\n\u2726 Meet adversity with stoicism and tenacity.\r\n\u2726 Demonstrate loyalty to your family, your clan, your leaders, and your people.\r\n\u2726 Strive to make a mark on the world, a lasting legacy. To make something that lasts is the highest good, whether you are a smith working at a forge or a ruler building a dynasty."
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Pelor", 
+            "alignment": 1, 
+            "description": "God of the sun and summer, Pelor is the keeper of time. He supports those in need and opposes all that is evil. As the lord of agriculture and the bountiful harvest, he is the deity most commonly worshiped by ordinary humans, and his priests are well received wherever they go. Paladins and rangers are found among his worshipers. He directs his followers thus:\r\n\r\n\u2726 Alleviate suffering wherever you find it.\r\n\u2726 Bring Pelor\u2019s light into places of darkness, showing kindness, mercy, and compassion.\r\n\u2726 Be watchful against evil."
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "The Raven Queen", 
+            "alignment": 5, 
+            "description": "The name of the god of death is long forgotten, but she is called the Raven Queen. She is the spinner of fate and the patron of winter. She marks the end of each mortal life, and mourners call upon her during funeral rites, in the hope that she will guard the departed from the curse of undeath. She expects her followers to abide by these commandments:\r\n\r\n\u2726 Hold no pity for those who suffer and die, for death is the natural end of life.\r\n\u2726 Bring down the proud who try to cast off the chains of fate. As the instrument of the Raven Queen, you must punish hubris where you find it.\r\n\u2726 Watch for the cults of Orcus and stamp them out whenever they arise. The Demon Prince of the Undead seeks to claim the Raven Queen\u2019s throne."
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Sehanine", 
+            "alignment": 5, 
+            "description": "God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:\r\n\r\n\u2726 Follow your goals and seek your own destiny.\r\n\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.\r\n\u2726 Seek new horizons and new experiences, and let nothing tie you dow"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "cp", 
+            "name": "Copper Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "sp", 
+            "name": "Silver Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "gp", 
+            "name": "Gold Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "pp", 
+            "name": "Platinum Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "ad", 
+            "name": "Astral Diamond", 
+            "weight": "0.032"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 2, 
+            "exchange_rate": "0.1"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 3, 
+            "exchange_rate": "0.01"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 4, 
+            "exchange_rate": "0.0001"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 5, 
+            "exchange_rate": "0.0000010"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 1, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 1, 
+            "exchange_rate": "10"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 2, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 3, 
+            "exchange_rate": "0.1"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 4, 
+            "exchange_rate": "0.001"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 5, 
+            "exchange_rate": "0.000010"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 1, 
+            "exchange_rate": "100"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 2, 
+            "exchange_rate": "10"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 3, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 4, 
+            "exchange_rate": "0.01"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 5, 
+            "exchange_rate": "0.0001"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 1, 
+            "exchange_rate": "10000"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 2, 
+            "exchange_rate": "1000"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 3, 
+            "exchange_rate": "100"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 4, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 5, 
+            "exchange_rate": "0.01"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 1, 
+            "exchange_rate": "1000000"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 2, 
+            "exchange_rate": "100000"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 3, 
+            "exchange_rate": "10000"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 4, 
+            "exchange_rate": "100"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 5, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": 1, 
+            "weight": "180", 
+            "level": 1, 
+            "age": 28, 
+            "height": "5' 10\"", 
+            "race": 4, 
+            "user": 1, 
+            "hit_points": 0, 
+            "xp": 0, 
+            "deity": 1, 
+            "alignment": 1, 
+            "name": "Vaygun"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.charactercurrency", 
+        "fields": {
+            "currency_type": 3, 
+            "amount": 98, 
+            "character": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.charactercurrency", 
+        "fields": {
+            "currency_type": 2, 
+            "amount": 10, 
+            "character": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.charactercurrency", 
+        "fields": {
+            "currency_type": 1, 
+            "amount": 100, 
+            "character": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.characterability", 
+        "fields": {
+            "character": 1, 
+            "ability": 2, 
+            "value": 10
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.characterability", 
+        "fields": {
+            "character": 1, 
+            "ability": 5, 
+            "value": 16
+        }
+    }
+]

@@ -1,5 +1,10 @@
 $(function() {
+	$('#info > *').hide();
+	$('.std-arr-ability').popover(options = {trigger: 'hover'}	);
 	$('#standard-array-abilities').sortable({
+		start: function(event, ui) {
+			$('.std-arr-ability').popover('hide');
+		},
 		update: function(event, ui) {
 			var order = $(this).sortable('toArray');
 			for (var i = 0; i < order.length; i++)
@@ -30,6 +35,8 @@ $(function() {
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();
 		$('#abilities').show();
+		$('#ability-info').show();
+
 	});
 	$('#btn-skills').click(function() {
 		$('#info > *').hide();
@@ -42,6 +49,8 @@ $(function() {
 		$('#powers').show();
 	});
 });
+
+var character = {};
 
 var standard_array = [16, 14, 13, 12, 11, 10];
 

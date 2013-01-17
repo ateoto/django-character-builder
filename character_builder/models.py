@@ -218,26 +218,53 @@ class Deity(models.Model):
         return self.name
 
 
+class Currency(models.Model):
+    name = models.CharField(max_length=25)
+    abbreviation = models.CharField(max_length=3)
+    weight = models.DecimalField(max_digits=6, decimal_places=3)
+
+    def __unicode__(self):
+        return self.name
+
+
+class CurrencyExchange(models.Model):
+    currency_from = models.ForeignKey(Currency, related_name="+")
+    currency_to = models.ForeignKey(Currency, related_name="+")
+    exchange_rate = models.DecimalField(max_digits=18, decimal_places=9)
+
+    def __unicode__(self):
+        return "%s to %s" % (self.currency_from.name, self.currency_to.name)
+
+
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
     name = models.CharField(max_length=100)
     class_type = models.ForeignKey(ClassType)
     race = models.ForeignKey(Race)
-    level = models.IntegerField()
-    xp = models.IntegerField()
-    hit_points = models.IntegerField()
-    age = models.IntegerField()
-    weight = models.CharField(max_length=20)
-    height = models.CharField(max_length=20)
-    alignment = models.ForeignKey(Alignment)
-    deity = models.ForeignKey(Deity)
+    level = models.IntegerField(default=1)
+    xp = models.IntegerField(default=0)
+    hit_points = models.IntegerField(blank=True, null=True)
+    age = models.IntegerField(blank=True, null=True)
+    weight = models.CharField(max_length=20, blank=True, null=True)
+    height = models.CharField(max_length=20, blank=True, null=True)
+    alignment = models.ForeignKey(Alignment, blank=True, null=True)
+    deity = models.ForeignKey(Deity, blank=True, null=True)
 
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)
 
 
+class CharacterCurrency(models.Model):
+    character = models.ForeignKey(Character, related_name="wealth")
+    currency_type = models.ForeignKey(Currency)
+    amount = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return "%s's coin purse." % (self.character.name)
+
+
 class CharacterAbility(models.Model):
-    character = models.ForeignKey('Character')
+    character = models.ForeignKey(Character)
     ability = models.ForeignKey(Ability)
     value = models.IntegerField()
 
