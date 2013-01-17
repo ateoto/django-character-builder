@@ -135,7 +135,21 @@ class RaceSkillMod(models.Model):
         return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.skill.name)
 
 
-class WeaponType(models.Model):
+class WeaponCategory(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.name
+
+
+class WeaponGroup(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.name
+
+
+class ArmorClass(models.Model):
     name = models.CharField(max_length=50)
 
     def __unicode__(self):
@@ -144,6 +158,7 @@ class WeaponType(models.Model):
 
 class ArmorType(models.Model):
     name = models.CharField(max_length=50)
+    armor_class = models.ForeignKey(ArmorClass)
 
     def __unicode__(self):
         return self.name
@@ -152,10 +167,11 @@ class ArmorType(models.Model):
 class ClassType(models.Model):
     name = models.CharField(max_length=100)
     role = models.ForeignKey(Role)
+    role_flavor = models.TextField()
     source = models.ForeignKey(Source)
     favored_abilities = models.ManyToManyField(Ability)
     description = models.TextField()
-    weapon_proficiencies = models.ManyToManyField(WeaponType)
+    weapon_proficiencies = models.ManyToManyField(WeaponCategory)
     armor_proficiencies = models.ManyToManyField(ArmorType)
 
     class Meta:

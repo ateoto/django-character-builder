@@ -4,7 +4,8 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     ClassType, Character, Size,
                                     PowerType, Power, Language,
                                     RaceAbilityMod, RaceSkillMod,
-                                    Alignment, Deity)
+                                    Alignment, Deity, WeaponGroup,
+                                    WeaponCategory, ArmorClass, ArmorType)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
@@ -27,3 +28,7 @@ admin.site.register(Power)
 admin.site.register(Language)
 admin.site.register(RaceAbilityMod)
 admin.site.register(RaceSkillMod)
+admin.site.register(WeaponGroup)
+admin.site.register(WeaponCategory)
+admin.site.register(ArmorType)
+admin.site.register(ArmorClass)

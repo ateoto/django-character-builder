@@ -1,3 +1,33 @@
-<div id="classtype-{{ classtype.id }}" class="class-info">
-	<p>{{ classtype.name }}</p>
+<div id="classtype-{{ classtype.id }}" class="class-info span8">
+	<div class="row">
+		<dl class="horizontal span4">
+			<dt>Class</dt>
+			<dd>{{ classtype.name }}</dd>
+			<dt>Role</dt>
+			<dd>{{ classtype.role.name }}. {{ classtype.role_flavor }}</dd>
+		</dl>
+		<dl class="horizontal span4">
+			<dt>Weapon Proficiencies</dt>
+			<dd>
+				{% for weapon_category in classtype.weapon_proficiencies.all %}
+					{% if not forloop.last %}
+						{{ weapon_category.name }}, 
+					{% else %}
+						and {{ weapon_category.name}}.
+					{% endif %}
+				{% endfor %}
+			</dd>
+			<dt>Armor Proficiencies</dt>
+			<dd>
+			{% for armor_class in classtype.armor_proficiencies.all %}
+				{% if not forloop.last %}
+					{{ armor_class.name }}, 
+				{% else %}
+					and {{ armor_class.name }}.
+				{% endif %}
+			{% endfor %}
+			</dd>
+		</dl>
+	</div>
+	{{ classtype.description|safe }}
 </div>
