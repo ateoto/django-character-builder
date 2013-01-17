@@ -30,10 +30,15 @@ body, html {
 	display: none;
 }
 
-#standard-array-abilities {
-	list-style-type: none;
+.std-arr-ability {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-top: 5px;
+	padding: 4px;
+	background-color:  #efefef;
 }
 
-.std-arr-ability {
-	padding-top: 5px ;
+.ability-text {
+	padding-left: 5px;
 }

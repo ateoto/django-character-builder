@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div id="builder-ux">
+    <div id="builder-ux" class="span4">
         <div id="personal" class="span4">
             {% for field in character_form %}
                 {{ field.errors }}
@@ -25,23 +25,27 @@
             {% endfor %}
         </div>
         <div id="abilities" class="span4">
-            <ul id="standard-array-abilities" class="row">
-                <li id="std-arr-str" class="span4 std-arr-ability"><span class="badge">16</span>Strength</li>
-                <li id="std-arr-con" class="span4 std-arr-ability"><span class="badge">14</span>Constitution</li>
-                <li id="std-arr-dex" class="span4 std-arr-ability"><span class="badge">13</span>Dexterity</li>
-                <li id="std-arr-int" class="span4 std-arr-ability"><span class="badge">12</span>Intelligence</li>
-                <li id="std-arr-wis" class="span4 std-arr-ability"><span class="badge">11</span>Wisdom</li>
-                <li id="std-arr-cha" class="span4 std-arr-ability"><span class="badge">10</span>Charisma</li>
+            <ul id="standard-array-abilities" class="row unstyled">
+                {% for ability in abilities %}
+                <li id="std-arr-{{ ability.abbreviation }}" class="span3 std-arr-ability" data-placement="left" data-content="{{ ability.help_text }}" title="{{ ability.name }}">
+                    <span class="badge badge-info">0</span>
+                    <span class="ability-text">{{ ability.name }}</span>
+                    <i class="icon-reorder pull-right"></i>
+                </li>
+                {% endfor %}
             </ul>
         </div>
         <div id="skills" class="span4">
-            Skills
+            Skills Coming Soon-ish.
         </div>
         <div id="powers" class="span4">
-            Powers
+            Powers Coming eventually.
         </div>
     </div>
     <div id="info" class="span8">
+        <div id="ability-info">
+            <p>Set your ability scores by reordering the list to the left. These values are based on the Standard Array, and reflect your scores before your racial bonuses are applied.</p>
+        </div>
         {% for race in races %}{{ race.html|safe }}{% endfor %}
         {% for classtype in classtypes %}{{ classtype.html|safe }}{% endfor %}
     </div>

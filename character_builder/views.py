@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
 from django.contrib.auth.decorators import login_required
 
-from character_builder.models import Character, Race, Source, ClassType
+from character_builder.models import Ability, Character, Race, Source, ClassType
 from character_builder.forms import CharacterFormUser
 
 
@@ -20,6 +20,7 @@ def index(request):
 
     races = Race.objects.filter(source=allowed_source)
     classtypes = ClassType.objects.filter(source=allowed_source)
+    abilities = Ability.objects.all()
 
     character_form = CharacterFormUser()
     character_form.fields['race'].queryset = races
@@ -39,6 +40,7 @@ def index(request):
 
     response_dict['races'] = races
     response_dict['classtypes'] = classtypes
+    response_dict['abilities'] = abilities
     response_dict['character_form'] = character_form
     return render_to_response('character_builder/builder.html',
             response_dict,

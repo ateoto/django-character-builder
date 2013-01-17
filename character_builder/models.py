@@ -55,6 +55,7 @@ class Vision(models.Model):
 class Ability(models.Model):
     name = models.CharField(max_length=50)
     abbreviation = models.CharField(max_length=4)
+    help_text = models.TextField()
 
     class Meta:
         verbose_name_plural = "Abilities"
