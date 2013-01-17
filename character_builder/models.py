@@ -264,7 +264,7 @@ class CharacterCurrency(models.Model):
 
 
 class CharacterAbility(models.Model):
-    character = models.ForeignKey(Character)
+    character = models.ForeignKey(Character, related_name="abilities")
     ability = models.ForeignKey(Ability)
     value = models.IntegerField()
 
@@ -276,7 +276,7 @@ class CharacterAbility(models.Model):
 
 
 class CharacterSkill(models.Model):
-    character = models.ForeignKey('Character')
+    character = models.ForeignKey(Character, related_name="skills")
     skill = models.ForeignKey(Skill)
     is_trained = models.BooleanField(default=False)
     value = models.IntegerField()
@@ -286,7 +286,7 @@ class CharacterSkill(models.Model):
 
 
 class CharacterPower(models.Model):
-    character = models.ForeignKey(Character)
+    character = models.ForeignKey(Character, related_name="powers")
     power = models.ForeignKey(Power)
 
 
