@@ -9,7 +9,7 @@ $(function() {
 			var order = $(this).sortable('toArray');
 			for (var i = 0; i < order.length; i++)
 			{
-				$('#' + order[i] + ' > .badge').text(standard_array[i]);
+				$('#' + order[i] + ' > .badge').text(CharacterBuilder.standard_array[i]);
 			}
 		}
 	});
@@ -49,11 +49,3 @@ $(function() {
 		$('#powers').show();
 	});
 });
-
-var character = {};
-
-var standard_array = [16, 14, 13, 12, 11, 10];
-
-function ability_modifer(ability_value) {
-	return Math.floor((Math.abs(ability_value) - 10) / 2)
-}
