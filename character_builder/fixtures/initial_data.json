@@ -1865,6 +1865,24 @@
         }
     }, 
     {
+        "pk": 2, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": null
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.charactercurrency", 
         "fields": {
