@@ -1,13 +1,13 @@
 from setuptools import setup
 
-version = __import__('ateoto_recipe').__version__
+version = __import__('character_builder').__version__
 
-setup(name = 'django-ateoto-recipe',
+setup(name = 'django-character-builder',
     version = version,
     author = 'Matthew McCants',
     author_email = 'mattmccants@gmail.com',
-    description = 'Recipe database for ateoto.com',
+    description = 'D&D Character Builder',
     license = 'BSD',
-    url = 'https://github.com/Ateoto/django-ateoto-recipe',
-    packages = ['ateoto_recipe'],
+    url = 'https://github.com/Ateoto/character-builder',
+    packages = ['character_builder'],
     install_requires = ['django>=1.4'])
