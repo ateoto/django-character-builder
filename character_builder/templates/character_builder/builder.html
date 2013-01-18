@@ -1,6 +1,7 @@
 {% extends "character_builder/base.html" %}
+{% load staticfiles %}
 {% block js %}
-<script src="{{ STATIC_URL }}js/main.js"></script>
+<script src="{% static "js/main.js" %}"></script>
 {% endblock %}
 {% block content %}
 <div id="builder" class="row">
@@ -27,7 +28,7 @@
         <div id="abilities" class="span4">
             <ul id="standard-array-abilities" class="row unstyled">
                 {% for ability in abilities %}
-                <li id="std-arr-{{ ability.abbreviation }}" class="span3 std-arr-ability" data-placement="left" data-content="{{ ability.help_text }}" title="{{ ability.name }}">
+                <li id="std-arr-{{ ability.abbreviation }}" class="span3 std-arr-ability" data-placement="right" data-content="{{ ability.help_text }}" title="{{ ability.name }}">
                     <span class="badge badge-info">0</span>
                     <span class="ability-text">{{ ability.name }}</span>
                     <i class="icon-reorder pull-right"></i>
