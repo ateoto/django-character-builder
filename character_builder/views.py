@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
@@ -45,3 +47,20 @@ def index(request):
     return render_to_response('character_builder/builder.html',
             response_dict,
             context_instance=RequestContext(request))
+
+
+def new(request):
+    """
+    This is the first step in creating a new character.
+    """
+    character = Character(user=request.user)
+    character.save()
+    response_dict = {}
+    response_dict['character'] = character
+    return render_to_response('character_builder/new.html',
+            response_dict,
+            context_instance=RequestContext(request))
+
+
+def save(request):
+    return HttpResponse(json.dumps({'response': 200}), content_type="application/json")

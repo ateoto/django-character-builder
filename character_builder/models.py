@@ -238,11 +238,11 @@ class CurrencyExchange(models.Model):
 
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
-    name = models.CharField(max_length=100)
-    class_type = models.ForeignKey(ClassType)
-    race = models.ForeignKey(Race)
-    level = models.IntegerField(default=1)
-    xp = models.IntegerField(default=0)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    class_type = models.ForeignKey(ClassType, blank=True, null=True)
+    race = models.ForeignKey(Race, blank=True, null=True)
+    level = models.IntegerField(default=1, blank=True)
+    xp = models.IntegerField(default=0, blank=True)
     hit_points = models.IntegerField(blank=True, null=True)
     age = models.IntegerField(blank=True, null=True)
     weight = models.CharField(max_length=20, blank=True, null=True)
