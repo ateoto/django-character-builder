@@ -6,6 +6,7 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     RaceAbilityMod, RaceSkillMod,
                                     Alignment, Deity, WeaponGroup,
                                     WeaponCategory, WeaponType,
+                                    WeaponProficiencyGroup,
                                     ArmorClass, ArmorType,
                                     Currency, CurrencyExchange,
                                     CharacterCurrency, Gender)
@@ -14,7 +15,7 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
 class ClassTypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'role', 'source')
     list_filter = ('source',)
-
+    fields = ()
 
 admin.site.register(Source)
 admin.site.register(Race)
@@ -42,3 +43,4 @@ admin.site.register(CurrencyExchange)
 admin.site.register(CharacterCurrency)
 admin.site.register(Gender)
 admin.site.register(WeaponType)
+admin.site.register(WeaponProficiencyGroup)
