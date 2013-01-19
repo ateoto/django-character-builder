@@ -157,6 +157,14 @@ class WeaponGroup(models.Model):
         return self.name
 
 
+class WeaponProficiencyGroup(models.Model):
+    name = models.CharField(max_length=50)
+    categories = models.ManyToManyField(WeaponCategory)
+
+    def __unicode__(self):
+        return self.name
+
+
 class WeaponType(models.Model):
     name = models.CharField(max_length=50)
     category = models.ForeignKey(WeaponCategory)
@@ -192,7 +200,7 @@ class ClassType(models.Model):
     source = models.ForeignKey(Source)
     favored_abilities = models.ManyToManyField(Ability)
     description = models.TextField()
-    weapon_proficiencies = models.ManyToManyField(WeaponCategory)
+    weapon_proficiencies = models.ManyToManyField(WeaponProficiencyGroup)
     armor_proficiencies = models.ManyToManyField(ArmorType)
 
     class Meta:
