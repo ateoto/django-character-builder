@@ -30,6 +30,12 @@ $(function() {
 		$('#classtype-' + class_type_id).show();
 	});
 
+	$('#id_deity').change(function() {
+		deity_id = $('#id_deity').val();
+		$('#info > *').hide();
+		$('#deity-' + deity_id).show();
+	});
+
 	$('#btn-personal').click(function() {
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();

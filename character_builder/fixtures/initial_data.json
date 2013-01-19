@@ -104,6 +104,27 @@
     }, 
     {
         "pk": 1, 
+        "model": "character_builder.gender", 
+        "fields": {
+            "name": "Unspecified"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.gender", 
+        "fields": {
+            "name": "Male"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.gender", 
+        "fields": {
+            "name": "Female"
+        }
+    }, 
+    {
+        "pk": 1, 
         "model": "character_builder.language", 
         "fields": {
             "name": "Common", 
@@ -1059,6 +1080,22 @@
         }
     }, 
     {
+        "pk": 7, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 1, 
+            "name": "Light Shield"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.armortype", 
+        "fields": {
+            "armor_class": 2, 
+            "name": "Heavy Shield"
+        }
+    }, 
+    {
         "pk": 16, 
         "model": "character_builder.classtype", 
         "fields": {
@@ -1853,6 +1890,7 @@
             "class_type": 1, 
             "weight": "180", 
             "level": 1, 
+            "gender": null, 
             "age": 28, 
             "height": "5' 10\"", 
             "race": 4, 
@@ -1865,21 +1903,22 @@
         }
     }, 
     {
-        "pk": 2, 
+        "pk": 3, 
         "model": "character_builder.character", 
         "fields": {
-            "class_type": null, 
-            "weight": null, 
+            "class_type": 8, 
+            "weight": "", 
             "level": 1, 
+            "gender": 3, 
             "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
+            "height": "", 
+            "race": 3, 
+            "user": 3, 
             "hit_points": null, 
             "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": null
+            "deity": 3, 
+            "alignment": 5, 
+            "name": "Meriele"
         }
     }, 
     {

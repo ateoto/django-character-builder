@@ -37,6 +37,13 @@ class Size(models.Model):
         return self.name
 
 
+class Gender(models.Model):
+    name = models.CharField(max_length=25)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Language(models.Model):
     name = models.CharField(max_length=50)
     script = models.CharField(max_length=50)
@@ -238,9 +245,10 @@ class CurrencyExchange(models.Model):
 
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
-    name = models.CharField(max_length=100, blank=True, null=True)
+    name = models.CharField(max_length=100, blank=True, null=True, default="unnamed")
     class_type = models.ForeignKey(ClassType, blank=True, null=True)
     race = models.ForeignKey(Race, blank=True, null=True)
+    gender = models.ForeignKey(Gender, blank=True, null=True)
     level = models.IntegerField(default=1, blank=True)
     xp = models.IntegerField(default=0, blank=True)
     hit_points = models.IntegerField(blank=True, null=True)

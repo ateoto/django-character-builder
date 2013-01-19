@@ -1,5 +1,14 @@
 <div id="deity-{{ deity.id }}" class="deity-info span8">
 	<div class="row">
-		<p>{{ deity.description|safe }}</p>
+		<dl class="horizontal">
+			<dt>Name</dt>
+			<dd>{{ deity.name }}</dd>
+			<dt>Alignment</dt>
+			<dd>{{ deity.alignment.name }}</dd>
+			<dt>Description</dt>
+			<dd>
+				{{ deity.description|safe }}
+			</dd>
+		</dl>
 	</div>
 </div>

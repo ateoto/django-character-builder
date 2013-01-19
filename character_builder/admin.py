@@ -7,7 +7,7 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     Alignment, Deity, WeaponGroup,
                                     WeaponCategory, ArmorClass, ArmorType,
                                     Currency, CurrencyExchange,
-                                    CharacterCurrency)
+                                    CharacterCurrency, Gender)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
@@ -37,3 +37,4 @@ admin.site.register(ArmorClass)
 admin.site.register(Currency)
 admin.site.register(CurrencyExchange)
 admin.site.register(CharacterCurrency)
+admin.site.register(Gender)

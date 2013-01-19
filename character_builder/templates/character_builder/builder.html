@@ -50,6 +50,7 @@
         </div>
         {% for race in races %}{{ race.html|safe }}{% endfor %}
         {% for classtype in classtypes %}{{ classtype.html|safe }}{% endfor %}
+        {% for deity in deities %}{{ deity.html|safe }}{% endfor %}
     </div>
 </div>
 {% endblock %}
