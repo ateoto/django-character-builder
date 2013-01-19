@@ -157,6 +157,19 @@ class WeaponGroup(models.Model):
         return self.name
 
 
+class WeaponType(models.Model):
+    name = models.CharField(max_length=50)
+    category = models.ForeignKey(WeaponCategory)
+    group = models.ForeignKey(WeaponGroup)
+    proficiency = models.CharField(max_length=10)
+    damage = models.CharField(max_length=10)
+    weapon_range = models.CharField(max_length=10)
+    properties = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+
 class ArmorClass(models.Model):
     name = models.CharField(max_length=50)
 

@@ -5,13 +5,16 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     PowerType, Power, Language,
                                     RaceAbilityMod, RaceSkillMod,
                                     Alignment, Deity, WeaponGroup,
-                                    WeaponCategory, ArmorClass, ArmorType,
+                                    WeaponCategory, WeaponType,
+                                    ArmorClass, ArmorType,
                                     Currency, CurrencyExchange,
                                     CharacterCurrency, Gender)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'role', 'source')
+    list_filter = ('source',)
+
 
 admin.site.register(Source)
 admin.site.register(Race)
@@ -38,3 +41,4 @@ admin.site.register(Currency)
 admin.site.register(CurrencyExchange)
 admin.site.register(CharacterCurrency)
 admin.site.register(Gender)
+admin.site.register(WeaponType)

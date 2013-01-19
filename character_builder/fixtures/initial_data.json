@@ -1019,6 +1019,71 @@
     }, 
     {
         "pk": 1, 
+        "model": "character_builder.weapontype", 
+        "fields": {
+            "category": 3, 
+            "group": 7, 
+            "name": "Dagger", 
+            "weapon_range": "5/10", 
+            "damage": "1d4", 
+            "proficiency": "+3", 
+            "properties": "Off-hand, light thrown"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.weapontype", 
+        "fields": {
+            "category": 5, 
+            "group": 7, 
+            "name": "Short sword", 
+            "weapon_range": "-", 
+            "damage": "1d6", 
+            "proficiency": "+3", 
+            "properties": "offhand"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.weapontype", 
+        "fields": {
+            "category": 4, 
+            "group": 11, 
+            "name": "Sling", 
+            "weapon_range": "10/20", 
+            "damage": "1d6", 
+            "proficiency": "+2", 
+            "properties": "Load free"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.weapontype", 
+        "fields": {
+            "category": 4, 
+            "group": 4, 
+            "name": "Hand crossbow", 
+            "weapon_range": "10/20", 
+            "damage": "1d6", 
+            "proficiency": "+2", 
+            "properties": "Load free"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.weapontype", 
+        "fields": {
+            "category": 8, 
+            "group": 7, 
+            "name": "Shuriken", 
+            "weapon_range": "6/12", 
+            "damage": "1d4", 
+            "proficiency": "+3", 
+            "properties": "Light thrown"
+        }
+    }, 
+    {
+        "pk": 1, 
         "model": "character_builder.armorclass", 
         "fields": {
             "name": "Light"
@@ -1295,14 +1360,23 @@
         "pk": 5, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                1, 
+                3, 
+                6
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2
+            ], 
             "name": "Rogue", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                1
+            ], 
+            "role_flavor": "\u201cYou look surprised to see me. If you\u2019d been paying attention, you might still be alive.\u201d", 
             "source": 1, 
             "role": 4, 
-            "description": "Non"
+            "description": "<p>Rogues are cunning and elusive adversaries. Rogues slip into and out of shadows on a whim, pass anywhere across the field of battle without fear of reprisal, and appear suddenly only to drive home a lethal blade.</p>\r\n<p>As a rogue, you might face others\u2019 preconceptions regarding your motivations, but your nature is your own to mold. You could be an agent fresh from the deposed king\u2019s shattered intelligence network, an accused criminal on the lam seeking to clear your name, a wiry performer whose goals transcend the theatrical stage, a kid trying to turn around your hardluck story, or a daredevil thrill-seeker who can\u2019t get enough of the adrenaline rush of conflict. Or perhaps you are merely in it for the gold, after all.</p>\r\n<p>With a blade up your sleeve and a concealing cloak across your shoulders, you stride forth, eyes alight with anticipation. What worldly wonders and rewards are yours for the taking?</p>"
         }
     }, 
     {
@@ -1379,42 +1453,79 @@
         "pk": 6, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                2, 
+                4, 
+                6
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2
+            ], 
             "name": "Warlock", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                3, 
+                4, 
+                11, 
+                12
+            ], 
+            "role_flavor": "\u201cThe darkness holds no terror for me, demon! I curse you now under the Sign of Ill Omen!\u201d", 
             "source": 1, 
             "role": 4, 
-            "description": "Non"
+            "description": "<p>Warlocks channel arcane might wrested from primeval entities. They commune with infernal intelligences and fey spirits, scour enemies with potent blasts of eldritch power, and bedevil foes with hexing curses. Armed with esoteric secrets and dangerous lore, warlocks are clever and resourceful foes.</p>\r\n<p>However you came to your arcane knowledge, you need not accept the poor reputation warlocks sometimes endure. You could be a libram-toting scholar captivated by ominous lore, a foot-loose wanderer searching for elusive ultimate truths, a devil-touched hunter using infernal spells to eliminate evil, or even a black-clad mercenary who uses sinister trappings to discourage prying strangers and unwanted attention. On the other hand, you could be a true diabolist using your gifts to tyrannize the weak\u2014some warlocks unfortunately are exactly that.</p>\r\n<p>The pacts are complete. The rites have concluded. The signs are drawn in blood, and the seals are broken. Your destiny beckons.</p>"
         }
     }, 
     {
         "pk": 7, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                1, 
+                4, 
+                6
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2, 
+                3, 
+                4, 
+                7
+            ], 
             "name": "Warlord", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                3, 
+                4, 
+                5, 
+                11, 
+                12, 
+                13
+            ], 
+            "role_flavor": "\u201cOnward to victory! They cannot stand before us!\u201d", 
             "source": 1, 
             "role": 3, 
-            "description": "Non"
+            "description": "<p>Warlords are accomplished and competent battle leaders. Warlords stand on the front line issuing commands and bolstering their allies while leading the battle with weapon in hand. Warlords know how to rally a team to win a fight.</p>\r\n<p>Your ability to lead others to victory is a direct result of your history. You could be a minor warchief looking to make a name for yourself, a pious knightcommander on leave from your militant order, a youthful noble eager to apply years of training to life outside the castle walls, a calculating mercenary captain, or a courageous marshal of the borderlands who fights to protect the frontier. Regardless of your background, you are a skillful warrior with an uncanny gift for leadership.</p>\r\n<p>The weight of your armor is not a hindrance; it is a familiar comfort. The worn weapon grip molds to your hand as if it were a natural extension of your arm. It\u2019s time to fight and to lead.</p>"
         }
     }, 
     {
         "pk": 8, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                3, 
+                4, 
+                5
+            ], 
+            "armor_proficiencies": [
+                1
+            ], 
             "name": "Wizard", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                3
+            ], 
+            "role_flavor": "\u201cI am the fire that burns, the choking fog, the storm that rains devastation on our foes.\u201d", 
             "source": 1, 
             "role": 1, 
-            "description": "Non"
+            "description": "<p>Wizards are scions of arcane magic. Wizards tap the true power that permeates the cosmos, research esoteric rituals that can alter time and space, and hurl balls of fire that incinerate massed foes. Wizards wield spells the way warriors brandish swords.</p>\r\n<p>Magic lured you into its grasp, and now you seek to master it in turn. You could be a bespectacled sage searching for dusty tomes in forgotten sepulchers, a scarred war mage plying foes with fireballs and foul language in equal measure, a disgruntled apprentice who absconded with your master\u2019s spellbooks, an eladrin upholding the magical tradition of your race, or even a power-hungry student of magic who might do anything to learn a new spell.</p>\r\n<p>A cloak of spells enfolds you, ancient rituals bolster your senses, and runed implements of your craft hang from your belt. Effervescing arcane lore pulses through your consciousness, a constant pressure  craving release. When will you know enough magic to storm the ramparts of reality itself?</p>"
         }
     }, 
     {
