@@ -8,6 +8,6 @@ setup(name = 'django-character-builder',
     author_email = 'mattmccants@gmail.com',
     description = 'D&D Character Builder',
     license = 'BSD',
-    url = 'https://github.com/Ateoto/character-builder',
+    url = 'https://github.com/Ateoto/django-character-builder',
     packages = ['character_builder'],
     install_requires = ['django>=1.4'])
