@@ -14,5 +14,5 @@ class CharacterFormUser(ModelForm):
 
     class Meta:
         model = Character
-        fields = ('name', 'race', 'class_type', 'alignment', 'deity',
+        fields = ('name', 'race', 'gender', 'class_type', 'alignment', 'deity',
                     'height', 'weight', 'age')

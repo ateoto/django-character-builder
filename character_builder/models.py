@@ -266,18 +266,18 @@ class CurrencyExchange(models.Model):
 
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
-    name = models.CharField(max_length=100, blank=True, null=True, default="unnamed")
-    class_type = models.ForeignKey(ClassType, blank=True, null=True)
-    race = models.ForeignKey(Race, blank=True, null=True)
-    gender = models.ForeignKey(Gender, blank=True, null=True)
+    name = models.CharField(max_length=100)
+    class_type = models.ForeignKey(ClassType)
+    race = models.ForeignKey(Race)
+    gender = models.ForeignKey(Gender)
     level = models.IntegerField(default=1, blank=True)
     xp = models.IntegerField(default=0, blank=True)
     hit_points = models.IntegerField(blank=True, null=True)
     age = models.IntegerField(blank=True, null=True)
     weight = models.CharField(max_length=20, blank=True, null=True)
     height = models.CharField(max_length=20, blank=True, null=True)
-    alignment = models.ForeignKey(Alignment, blank=True, null=True)
-    deity = models.ForeignKey(Deity, blank=True, null=True)
+    alignment = models.ForeignKey(Alignment)
+    deity = models.ForeignKey(Deity)
 
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)

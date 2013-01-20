@@ -1,4 +1,6 @@
 $(function() {
+	my_character = CharacterBuilder.character;
+
 	$('#info > *').hide();
 
 	$('.std-arr-ability').popover(options = {trigger: 'hover'}	);
@@ -37,12 +39,17 @@ $(function() {
 	});
 
 	$('#btn-abilities').click(function() {
-		$('#info > *').hide();
-		$('#builder-ux > *').hide();
-		update_abilities();
-		$('#abilities').show();
-		$('#ability-info').show();
+		update_personal();
+		if (!my_character.submitted) {
+			save_personal();
 
+		} else {
+			$('#info > *').hide();
+			$('#builder-ux > *').hide();
+			update_abilities();
+			$('#abilities').show();
+			$('#ability-info').show();
+		}
 	});
 
 	$('#btn-skills').click(function() {
@@ -55,20 +62,42 @@ $(function() {
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();
 		$('#powers').show();
-	});
+	}); 
 });
+
+function update_personal() {
+	var new_personal = $('#personal-form').serializeArray();
+	$.each(new_personal, function(index, value){
+		if (value.value !== '') {
+			my_character[value.name] = value.value;
+		}
+	});
+}	
 
 function update_abilities() {
 	var order = $('#standard-array-abilities').sortable('toArray');
-	for (var i = 0; i < order.length; i++)
-	{
+	console.log(order);
+	for (var i = 0; i < order.length; i++) {
 		$('#' + order[i] + ' > .badge').text(CharacterBuilder.standard_array[i]);
 	}
 }
 
-function test_me() {
+function save_personal() {
+	$('#personal-form .control-group').removeClass('error');
 	$.post($('#personal-form').attr('action'), $('#personal-form').serialize(),
   		function(data){
-    		console.log(data); 
+  			if (data.valid) {
+    			my_character.character_id = data.character_id; 
+    			my_character.submitted = true;
+    		} else {
+    			console.log('There were errors.');
+    			$.each(data.errors, function(i, value) {
+    				$('#div_id_' + i).addClass('error');
+    			});
+    		}
   	}, "json");
+}
+
+function save_abilities() {
+
 }

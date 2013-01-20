@@ -1,7 +1,7 @@
 import json
 
 from django.shortcuts import render_to_response, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template import loader, RequestContext
 from django.contrib.auth.decorators import login_required
 
@@ -78,10 +78,15 @@ def save(request):
             c.age = character_form.cleaned_data['age']
             c.save()
 
+            response_dict['valid'] = True
             response_dict['character_id'] = c.id
-            return HttpResponse(json.dumps(response_dict), content_type="application/json")
         else:
-            return HttpResponse(json.dumps({'response_text': 'Bad Form'}), content_type="application/json")
+            response_dict['valid'] = False
+            response_dict['errors'] = character_form.errors
+
+        return HttpResponse(json.dumps(response_dict), content_type="application/json")
+    else:
+        raise Http404
 
 
 def sheet(request, character_id, character_name):
