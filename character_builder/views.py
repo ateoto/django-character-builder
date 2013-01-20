@@ -89,6 +89,14 @@ def save(request):
         raise Http404
 
 
+@login_required
+def save_abilities(request):
+    response_dict = {}
+    response_dict['valid'] = False
+    response_dict['errors'] = request.POST
+    return HttpResponse(json.dumps(response_dict), content_type="application/json")
+
+
 def sheet(request, character_id, character_name):
     c = get_object_or_404(Character, id=character_id, name=character_name)
     return HttpResponse(c.name)
