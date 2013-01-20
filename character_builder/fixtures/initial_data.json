@@ -500,7 +500,7 @@
         "fields": {
             "name": "Dragonborn", 
             "average_weight_text": "220 - 320 lb", 
-            "description": "Born to fight, dragonborn are a race of wandering mercenaries, soldiers, and adventurers. Long ago, their empire contended for worldwide dominion, but now only a few rootless clans of these honorable warriors remain to pass on their legends of ancient glory.<br>\r\n<br>\r\nPlay a dragonborn if you want . . .<br>\r\n\u2726 to look like a dragon.<br>\r\n\u2726 to be the proud heir of an ancient, fallen empire.<br>\r\n\u2726 to breathe acid, cold, fire, lightning, or poison.<br>\r\n\u2726 to be a member of a race that favors the warlord, fighter, and paladin classes", 
+            "description": "<p>Born to fight, dragonborn are a race of wandering mercenaries, soldiers, and adventurers. Long ago, their empire contended for worldwide dominion, but now only a few rootless clans of these honorable warriors remain to pass on their legends of ancient glory.</p><p>Play a dragonborn if you want . . .</p><p>\u2726 to look like a dragon.</p><p>\u2726 to be the proud heir of an ancient, fallen empire.</p><p>\u2726 to breathe acid, cold, fire, lightning, or poison.</p><p>\u2726 to be a member of a race that favors the warlord, fighter, and paladin classes", 
             "languages": [
                 1, 
                 3
@@ -518,7 +518,7 @@
         "fields": {
             "name": "Dwarf", 
             "average_weight_text": "160 - 220 lb", 
-            "description": "Carved from the bedrock of the universe, dwarves endured an age of servitude to giants before winning their freedom. Their mighty mountain fortress-cities testify to the power of their ancient empires. Even those who live in human cities are counted among the staunchest defenders against the darkness that threatens to engulf the world.<br>\r\n<br>\r\nPlay a dwarf if you want . . .<br>\r\n\u2726 to be tough, gruff, and strong as bedrock.<br>\r\n\u2726 to bring glory to your ancestors or serve as your god\u2019s right hand.<br>\r\n\u2726 to be able to take as much punishment as you dish out.<br>\r\n\u2726 to be a member of a race that favors the paladin, cleric, and fighter classes.", 
+            "description": "<p>Carved from the bedrock of the universe, dwarves endured an age of servitude to giants before winning their freedom. Their mighty mountain fortress-cities testify to the power of their ancient empires. Even those who live in human cities are counted among the staunchest defenders against the darkness that threatens to engulf the world.\r\n\r\nPlay a dwarf if you want . . .</p><p>\u2726 to be tough, gruff, and strong as bedrock.</p><p>\u2726 to bring glory to your ancestors or serve as your god\u2019s right hand.</p><p>\u2726 to be able to take as much punishment as you dish out.</p><p>\u2726 to be a member of a race that favors the paladin, cleric, and fighter classes.", 
             "languages": [
                 1, 
                 4
@@ -536,7 +536,7 @@
         "fields": {
             "name": "Eladrin", 
             "average_weight_text": "130 - 180 lb", 
-            "description": "Creatures of magic with strong ties to nature, eladrin live in cities in the twilight realm of the Feywild. Their cities lie close enough to the world that they sometimes cross over, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.<br>\r\n<br>\r\nPlay an eladrin if you want . . .<br>\r\n\u2726 to be otherworldly and mysterious.<br>\r\n\u2726 to be graceful and intelligent.<br>\r\n\u2726 to teleport around the battlefield, cloaked in the magic of the Feywild.<br>\r\n\u2726 to be a member of a race that favors the wizard, rogue, and warlord classes.", 
+            "description": "<p>Creatures of magic with strong ties to nature, eladrin live in cities in the twilight realm of the Feywild. Their cities lie close enough to the world that they sometimes cross over, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.\r\n\r\nPlay an eladrin if you want . . .</p><p>\u2726 to be otherworldly and mysterious.</p><p>\u2726 to be graceful and intelligent.</p><p>\u2726 to teleport around the battlefield, cloaked in the magic of the Feywild.</p><p>\u2726 to be a member of a race that favors the wizard, rogue, and warlord classes.", 
             "languages": [
                 1, 
                 5
@@ -554,7 +554,7 @@
         "fields": {
             "name": "Elf", 
             "average_weight_text": "130 - 170 lb", 
-            "description": "Wild and free, elves guard their forested lands using stealth and deadly arrows from the trees. They build their homes in close harmony with the forest, so perfectly joined that travelers often fail to notice that they have entered an elven community until it is too late.<br>\r\n<br>\r\nPlay an elf if you want . . .<br>\r\n\u2726 to be quick, quiet, and wild.<br>\r\n\u2726 to lead your companions through the deep woods and pepper your enemies with arrows.<br>\r\n\u2726 to be a member of a race that favors the ranger, rogue, and cleric classes.", 
+            "description": "<p>Wild and free, elves guard their forested lands using stealth and deadly arrows from the trees. They build their homes in close harmony with the forest, so perfectly joined that travelers often fail to notice that they have entered an elven community until it is too late.\r\n\r\nPlay an elf if you want . . .</p><p>\u2726 to be quick, quiet, and wild.</p><p>\u2726 to lead your companions through the deep woods and pepper your enemies with arrows.</p><p>\u2726 to be a member of a race that favors the ranger, rogue, and cleric classes.", 
             "languages": [
                 1, 
                 5
@@ -623,7 +623,7 @@
         "fields": {
             "name": "Half-Elf", 
             "average_weight_text": "130-190 lb", 
-            "description": "Descended from elves and humans, half-elves are a vital race in which the best features of elves and humans often appear.<br>\r\n<br>\r\nPlay a half-elf if you want . . .<br>\r\n\u2726 to be an outgoing, enthusiastic leader.<br>\r\n\u2726 to be a charismatic hero equally at home in two different cultures.<br>\r\n\u2726 to be a member of a race that favors the warlord, paladin, and warlock classes.", 
+            "description": "<p>Descended from elves and humans, half-elves are a vital race in which the best features of elves and humans often appear.\r\n\r\nPlay a half-elf if you want . . .</p><p>\u2726 to be an outgoing, enthusiastic leader.</p><p>\u2726 to be a charismatic hero equally at home in two different cultures.</p><p>\u2726 to be a member of a race that favors the warlord, paladin, and warlock classes.", 
             "languages": [
                 1, 
                 5
@@ -658,7 +658,7 @@
         "fields": {
             "name": "Halfling", 
             "average_weight_text": "75-85 lb", 
-            "description": "Halflings are a small race known for their resourcefulness, quick wits, and steady nerves. They are a nomadic folk who roam waterways and marshlands. No people travel farther or see more of what happens in the world than halflings.<br>\r\n<br>\r\nPlay a halfling if you want . . .<br>\r\n\u2726 to be a plucky hero who is all too easy to underestimate.<br>\r\n\u2726 to be likable, warm, and friendly.<br>\r\n\u2726 to be a member of a race that favors the rogue, ranger, and warlock classes.", 
+            "description": "<p>Halflings are a small race known for their resourcefulness, quick wits, and steady nerves. They are a nomadic folk who roam waterways and marshlands. No people travel farther or see more of what happens in the world than halflings.\r\n\r\nPlay a halfling if you want . . .</p><p>\u2726 to be a plucky hero who is all too easy to underestimate.</p><p>\u2726 to be likable, warm, and friendly.</p><p>\u2726 to be a member of a race that favors the rogue, ranger, and warlock classes.", 
             "languages": [
                 1
             ], 
@@ -675,7 +675,7 @@
         "fields": {
             "name": "Human", 
             "average_weight_text": "135-220 lb", 
-            "description": "Of all the civilized races, humans are the most adaptable and diverse. Human settlements can be found almost anywhere, and human morals, customs, and interests vary greatly.<br>\r\n<br>\r\nPlay a human if you want . . .<br>\r\n\u2726 to be a decisive, resourceful hero with enough determination to face any challenge.<br>\r\n\u2726 to have the most versatility and flexibility of any race.<br>\r\n\u2726 to be able to excel at any class you choose.", 
+            "description": "<p>Of all the civilized races, humans are the most adaptable and diverse. Human settlements can be found almost anywhere, and human morals, customs, and interests vary greatly.\r\n\r\nPlay a human if you want . . .</p><p>\u2726 to be a decisive, resourceful hero with enough determination to face any challenge.</p><p>\u2726 to have the most versatility and flexibility of any race.</p><p>\u2726 to be able to excel at any class you choose.", 
             "languages": [
                 1
             ], 
@@ -743,7 +743,7 @@
         "fields": {
             "name": "Tiefling", 
             "average_weight_text": "140-230 lb", 
-            "description": "Heirs to an ancient, infernal bloodline, tieflings have no realms of their own but instead live within human kingdoms and cities. They are descended from human nobles who bargained with dark powers, and long ago their empire subjugated half the world. But the empire was cast down into ruin, and tieflings were left to make their own way in a world that often fears and resents them.<br>\r\n<br>\r\nPlay a tiefling if you want . . .<br>\r\n\u2726 to be a hero who has a dark side to overcome.<br>\r\n\u2726 to be good at tricking, intimidating, or persuading others to do your will.<br>\r\n\u2726 to be a member of a race that favors the warlock, warlord, and rogue classes.", 
+            "description": "<p>Heirs to an ancient, infernal bloodline, tieflings have no realms of their own but instead live within human kingdoms and cities. They are descended from human nobles who bargained with dark powers, and long ago their empire subjugated half the world. But the empire was cast down into ruin, and tieflings were left to make their own way in a world that often fears and resents them.\r\n\r\nPlay a tiefling if you want . . .</p><p>\u2726 to be a hero who has a dark side to overcome.</p><p>\u2726 to be good at tricking, intimidating, or persuading others to do your will.</p><p>\u2726 to be a member of a race that favors the warlock, warlord, and rogue classes.", 
             "languages": [
                 1
             ], 
@@ -1736,7 +1736,7 @@
         "fields": {
             "name": "Avandra", 
             "alignment": 1, 
-            "description": "The god of change, Avandra delights in freedom, trade, travel, adventure, and the frontier. Her temples are few in civilized lands, but her wayside shrines appear throughout the world. Halflings, merchants, and all types of adventurers are drawn to her worship, and many people raise a glass in her honor, viewing her as the god of luck. Her commandments are few:\r\n\r\n\u2726 Luck favors the bold. Take your fate into your own hands, and Avandra smiles upon you.\r\n\u2726 Strike back against those who would rob you of your freedom and urge others to fight for their own liberty.\r\n\u2726 Change is inevitable, but it takes the work of the faithful to ensure that change is for the better."
+            "description": "<p>The god of change, Avandra delights in freedom, trade, travel, adventure, and the frontier. Her temples are few in civilized lands, but her wayside shrines appear throughout the world. Halflings, merchants, and all types of adventurers are drawn to her worship, and many people raise a glass in her honor, viewing her as the god of luck. Her commandments are few:</p><p>\u2726 Luck favors the bold. Take your fate into your own hands, and Avandra smiles upon you.</p><p>\u2726 Strike back against those who would rob you of your freedom and urge others to fight for their own liberty.</p><p>\u2726 Change is inevitable, but it takes the work of the faithful to ensure that change is for the better."
         }
     }, 
     {
@@ -1745,7 +1745,7 @@
         "fields": {
             "name": "Bahamut", 
             "alignment": 2, 
-            "description": "Called the Platinum Dragon, Bahamut is the god of justice, protection, nobility, and honor. Lawful good paladins often revere him, and metallic dragons worship him as the first of their kind. Monarchs are crowned in his name. He commands his followers thus:\r\n\r\n\u2726 Uphold the highest ideals of honor and justice.\r\n\u2726 Be constantly vigilant against evil and oppose it on all fronts.\r\n\u2726 Protect the weak, liberate the oppressed, and defend just order."
+            "description": "<p>Called the Platinum Dragon, Bahamut is the god of justice, protection, nobility, and honor. Lawful good paladins often revere him, and metallic dragons worship him as the first of their kind. Monarchs are crowned in his name. He commands his followers thus:</p><p>\u2726 Uphold the highest ideals of honor and justice.</p><p>\u2726 Be constantly vigilant against evil and oppose it on all fronts.</p><p>\u2726 Protect the weak, liberate the oppressed, and defend just order."
         }
     }, 
     {
@@ -1754,7 +1754,7 @@
         "fields": {
             "name": "Corellon", 
             "alignment": 5, 
-            "description": "The god of spring, beauty, and the arts, Corellon is the patron of arcane magic and the fey. He seeded the world with arcane magic and planted the most ancient forests. Artists and musicians worship him, as do those who view their spellcasting as an art, and his shrines can be found throughout the Feywild. He despises Lolth and her priestesses for leading the drow astray. He urges his followers thus:\r\n\r\n\u2726 Cultivate beauty in all that you do, whether you\u2019re casting a spell, composing a saga, strumming a lute, or practicing the arts of war.\r\n\u2726 Seek out lost magic items, forgotten rituals, and ancient works of art. Corellon might have inspired them in the world\u2019s first days.\r\n\u2726 Thwart the followers of Lolth at every opportunity\r\n"
+            "description": "<p>The god of spring, beauty, and the arts, Corellon is the patron of arcane magic and the fey. He seeded the world with arcane magic and planted the most ancient forests. Artists and musicians worship him, as do those who view their spellcasting as an art, and his shrines can be found throughout the Feywild. He despises Lolth and her priestesses for leading the drow astray. He urges his followers thus:</p><p>\u2726 Cultivate beauty in all that you do, whether you\u2019re casting a spell, composing a saga, strumming a lute, or practicing the arts of war.</p><p>\u2726 Seek out lost magic items, forgotten rituals, and ancient works of art. Corellon might have inspired them in the world\u2019s first days.</p><p>\u2726 Thwart the followers of Lolth at every opportunity\r\n"
         }
     }, 
     {
@@ -1763,7 +1763,7 @@
         "fields": {
             "name": "Erathis", 
             "alignment": 5, 
-            "description": "Erathis is the god of civilization. She is the muse of great invention, founder of cities, and author of laws. Rulers, judges, pioneers, and devoted citizens revere her, and her temples hold prominent places in most of the world\u2019s major cities. Her laws are many, but their purpose is straightforward:\r\n\r\n\u2726 Work with others to achieve your goals. Community and order are always stronger than the disjointed efforts of lone individuals.\r\n\u2726 Tame the wilderness to make it fit for habitation, and defend the light of civilization against the encroaching darkness.\r\n\u2726 Seek out new ideas, new inventions, new lands to inhabit, new wilderness to conquer. "
+            "description": "<p>Erathis is the god of civilization. She is the muse of great invention, founder of cities, and author of laws. Rulers, judges, pioneers, and devoted citizens revere her, and her temples hold prominent places in most of the world\u2019s major cities. Her laws are many, but their purpose is straightforward:</p><p>\u2726 Work with others to achieve your goals. Community and order are always stronger than the disjointed efforts of lone individuals.</p><p>\u2726 Tame the wilderness to make it fit for habitation, and defend the light of civilization against the encroaching darkness.</p><p>\u2726 Seek out new ideas, new inventions, new lands to inhabit, new wilderness to conquer. "
         }
     }, 
     {
@@ -1772,7 +1772,7 @@
         "fields": {
             "name": "Ioun", 
             "alignment": 5, 
-            "description": "Ioun is the god of knowledge, skill, and prophecy. Sages, seers, and tacticians revere her, as do all who live by their knowledge and mental power. Corellon is the patron of arcane magic, but Ioun is the patron of its study. Libraries and wizard academies are built in her name. Her commands are also teachings:\r\n\r\n\u2726 Seek the perfection of your mind by bringing reason, perception, and emotion into balance with one another.\r\n\u2726 Accumulate, preserve, and distribute knowledge in all forms. Pursue education, build libraries, and seek out lost and ancient lore.\r\n\u2726 Be watchful at all times for the followers of Vecna, who seek to control knowledge and keep secrets. Oppose their schemes, unmask their secrets, and blind them with the light of truth and reason."
+            "description": "<p>Ioun is the god of knowledge, skill, and prophecy. Sages, seers, and tacticians revere her, as do all who live by their knowledge and mental power. Corellon is the patron of arcane magic, but Ioun is the patron of its study. Libraries and wizard academies are built in her name. Her commands are also teachings:</p><p>\u2726 Seek the perfection of your mind by bringing reason, perception, and emotion into balance with one another.</p><p>\u2726 Accumulate, preserve, and distribute knowledge in all forms. Pursue education, build libraries, and seek out lost and ancient lore.</p><p>\u2726 Be watchful at all times for the followers of Vecna, who seek to control knowledge and keep secrets. Oppose their schemes, unmask their secrets, and blind them with the light of truth and reason."
         }
     }, 
     {
@@ -1781,7 +1781,7 @@
         "fields": {
             "name": "Kord", 
             "alignment": 5, 
-            "description": "Kord is the storm god and the lord of battle. He revels in strength, battlefield prowess, and thunder. Fighters and athletes revere him. He is a mercurial god, unbridled and wild, who summons storms over land and sea; those who hope for better weather appease him with prayers and spirited toasts. He gives few commands:\r\n\r\n\u2726 Be strong, but do not use your strength for wanton destruction.\r\n\u2726 Be brave and scorn cowardice in any form.\r\n\u2726 Prove your might in battle to win glory and renown."
+            "description": "<p>Kord is the storm god and the lord of battle. He revels in strength, battlefield prowess, and thunder. Fighters and athletes revere him. He is a mercurial god, unbridled and wild, who summons storms over land and sea; those who hope for better weather appease him with prayers and spirited toasts. He gives few commands:</p><p>\u2726 Be strong, but do not use your strength for wanton destruction.</p><p>\u2726 Be brave and scorn cowardice in any form.</p><p>\u2726 Prove your might in battle to win glory and renown."
         }
     }, 
     {
@@ -1790,7 +1790,7 @@
         "fields": {
             "name": "Melora", 
             "alignment": 5, 
-            "description": "Melora is the god of the wilderness and the sea. She is both the wild beast and the peaceful forest, the raging whirlpool and the quiet desert. Rangers, hunters, and elves revere her, and sailors make offerings to her before beginning their voyages. Her strictures are these:\r\n\r\n\u2726 Protect the wild places of the world from destruction and overuse. Oppose the rampant spread of cities and empires.\r\n\u2726 Hunt aberrant monsters and other abominations of nature.\r\n\u2726 Do not fear or condemn the savagery of nature. Live in harmony with the wild."
+            "description": "<p>Melora is the god of the wilderness and the sea. She is both the wild beast and the peaceful forest, the raging whirlpool and the quiet desert. Rangers, hunters, and elves revere her, and sailors make offerings to her before beginning their voyages. Her strictures are these:</p><p>\u2726 Protect the wild places of the world from destruction and overuse. Oppose the rampant spread of cities and empires.</p><p>\u2726 Hunt aberrant monsters and other abominations of nature.</p><p>\u2726 Do not fear or condemn the savagery of nature. Live in harmony with the wild."
         }
     }, 
     {
@@ -1799,7 +1799,7 @@
         "fields": {
             "name": "Moradin", 
             "alignment": 2, 
-            "description": "Moradin is the god of creation and patron of artisans, especially miners and smiths. He carved the mountains from primordial earth and is the guardian and protector of the hearth and the family. Dwarves from all walks of life follow him. He demands these behaviors of his followers:\r\n\r\n\u2726 Meet adversity with stoicism and tenacity.\r\n\u2726 Demonstrate loyalty to your family, your clan, your leaders, and your people.\r\n\u2726 Strive to make a mark on the world, a lasting legacy. To make something that lasts is the highest good, whether you are a smith working at a forge or a ruler building a dynasty."
+            "description": "<p>Moradin is the god of creation and patron of artisans, especially miners and smiths. He carved the mountains from primordial earth and is the guardian and protector of the hearth and the family. Dwarves from all walks of life follow him. He demands these behaviors of his followers:</p><p>\u2726 Meet adversity with stoicism and tenacity.</p><p>\u2726 Demonstrate loyalty to your family, your clan, your leaders, and your people.</p><p>\u2726 Strive to make a mark on the world, a lasting legacy. To make something that lasts is the highest good, whether you are a smith working at a forge or a ruler building a dynasty."
         }
     }, 
     {
@@ -1808,7 +1808,7 @@
         "fields": {
             "name": "Pelor", 
             "alignment": 1, 
-            "description": "God of the sun and summer, Pelor is the keeper of time. He supports those in need and opposes all that is evil. As the lord of agriculture and the bountiful harvest, he is the deity most commonly worshiped by ordinary humans, and his priests are well received wherever they go. Paladins and rangers are found among his worshipers. He directs his followers thus:\r\n\r\n\u2726 Alleviate suffering wherever you find it.\r\n\u2726 Bring Pelor\u2019s light into places of darkness, showing kindness, mercy, and compassion.\r\n\u2726 Be watchful against evil."
+            "description": "<p>God of the sun and summer, Pelor is the keeper of time. He supports those in need and opposes all that is evil. As the lord of agriculture and the bountiful harvest, he is the deity most commonly worshiped by ordinary humans, and his priests are well received wherever they go. Paladins and rangers are found among his worshipers. He directs his followers thus:</p><p>\u2726 Alleviate suffering wherever you find it.<p></p><p>\u2726 Bring Pelor\u2019s light into places of darkness, showing kindness, mercy, and compassion.<p></p><p>\u2726 Be watchful against evil."
         }
     }, 
     {
@@ -1817,7 +1817,7 @@
         "fields": {
             "name": "The Raven Queen", 
             "alignment": 5, 
-            "description": "The name of the god of death is long forgotten, but she is called the Raven Queen. She is the spinner of fate and the patron of winter. She marks the end of each mortal life, and mourners call upon her during funeral rites, in the hope that she will guard the departed from the curse of undeath. She expects her followers to abide by these commandments:\r\n\r\n\u2726 Hold no pity for those who suffer and die, for death is the natural end of life.\r\n\u2726 Bring down the proud who try to cast off the chains of fate. As the instrument of the Raven Queen, you must punish hubris where you find it.\r\n\u2726 Watch for the cults of Orcus and stamp them out whenever they arise. The Demon Prince of the Undead seeks to claim the Raven Queen\u2019s throne."
+            "description": "<p>The name of the god of death is long forgotten, but she is called the Raven Queen. She is the spinner of fate and the patron of winter. She marks the end of each mortal life, and mourners call upon her during funeral rites, in the hope that she will guard the departed from the curse of undeath. She expects her followers to abide by these commandments:</p><p>\u2726 Hold no pity for those who suffer and die, for death is the natural end of life.</p><p>\u2726 Bring down the proud who try to cast off the chains of fate. As the instrument of the Raven Queen, you must punish hubris where you find it.</p><p>\u2726 Watch for the cults of Orcus and stamp them out whenever they arise. The Demon Prince of the Undead seeks to claim the Raven Queen\u2019s throne.</p>"
         }
     }, 
     {
@@ -1826,7 +1826,7 @@
         "fields": {
             "name": "Sehanine", 
             "alignment": 5, 
-            "description": "<p>God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:<p>\r\n\r\n\u2726 Follow your goals and seek your own destiny.\r\n\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.\r\n\u2726 Seek new horizons and new experiences, and let nothing tie you dow"
+            "description": "<p>God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:</p>\r\n<p>\u2726 Follow your goals and seek your own destiny.</p>\r\n<p>\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.</p>\r\n<p>\u2726 Seek new horizons and new experiences, and let nothing tie you down.</p>"
         }
     }, 
     {
@@ -2135,177 +2135,6 @@
             "deity": 3, 
             "alignment": 5, 
             "name": "Meriele"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "character_builder.character", 
-        "fields": {
-            "class_type": null, 
-            "weight": null, 
-            "level": 1, 
-            "gender": null, 
-            "age": null, 
-            "height": null, 
-            "race": null, 
-            "user": 1, 
-            "hit_points": null, 
-            "xp": 0, 
-            "deity": null, 
-            "alignment": null, 
-            "name": "unnamed"
         }
     }, 
     {
