@@ -101,13 +101,20 @@ function update_personal() {
 
 function update_abilities() {
 	var order = $('#standard-array-abilities').sortable('toArray');
-	var abilities = {}
-	console.log(order);
 	for (var i = 0; i < order.length; i++) {
-		abilities[$('#' + order[i] + ' .ability-id').text()] = CharacterBuilder.standard_array[i];
+		var ability_name = $('#' + order[i] + ' .ability-text').text().toLowerCase();
+		var ability_value = CharacterBuilder.standard_array[i];
+		my_character[ability_name] = ability_value;
 		$('#' + order[i] + ' > .badge').text(CharacterBuilder.standard_array[i]);
 	}
 	my_character.abilities = abilities;
+	$('#id_character').val(my_character.character_id);
+ 	$('#id_strength').val(my_character.strength);
+ 	$('#id_constitution').val(my_character.constitution);
+ 	$('#id_dexterity').val(my_character.dexterity);
+ 	$('#id_intelligence').val(my_character.intelligence);
+ 	$('#id_wisdom').val(my_character.wisdom);
+ 	$('#id_charisma').val(my_character.charisma);
 	save_abilities();
 }
 
@@ -128,7 +135,7 @@ function save_personal() {
 }
 
 function save_abilities() {
-	$.post('/DnD/builder/save/abilities/', my_character.abilities,
+	$.post($('#ability-form').attr('action'), $('#ability-form').serialize(),
 		function(data) {
 			if (data.valid) {
 				console.log("Yay!");

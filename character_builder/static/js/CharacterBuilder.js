@@ -10,6 +10,7 @@ var CharacterBuilder = {
 		height: null,
 		weight: null,
 		age: null,
+		abilities: [],
 	},
 	standard_array : [16, 14, 13, 12, 11, 10],
 };

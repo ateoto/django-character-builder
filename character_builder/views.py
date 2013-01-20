@@ -6,8 +6,9 @@ from django.template import loader, RequestContext
 from django.contrib.auth.decorators import login_required
 
 from character_builder.models import (Ability, Character, Race,
-                                    Source, ClassType, Deity)
-from character_builder.forms import CharacterFormUser
+                                    Source, ClassType, Deity,
+                                    CharacterAbility)
+from character_builder.forms import CharacterFormUser, CharacterAbilityForm
 
 
 @login_required
@@ -32,6 +33,8 @@ def index(request):
     character_form.fields['race'].queryset = races
     character_form.fields['class_type'].queryset = classtypes
 
+    character_ability_form = CharacterAbilityForm()
+
     response_dict = {}
 
     t = loader.get_template('character_builder/race_info.html')
@@ -54,6 +57,7 @@ def index(request):
     response_dict['abilities'] = abilities
     response_dict['deities'] = deities
     response_dict['character_form'] = character_form
+    response_dict['character_ability_form'] = character_ability_form
 
     return render_to_response('character_builder/builder.html',
             response_dict,
@@ -61,7 +65,7 @@ def index(request):
 
 
 @login_required
-def save(request):
+def save_personal(request):
     if request.method == "POST":
         response_dict = {}
         character_form = CharacterFormUser(request.POST)
@@ -91,10 +95,24 @@ def save(request):
 
 @login_required
 def save_abilities(request):
-    response_dict = {}
-    response_dict['valid'] = False
-    response_dict['errors'] = request.POST
-    return HttpResponse(json.dumps(response_dict), content_type="application/json")
+    if request.method == "POST":
+        response_dict = {}
+        character_ability_form = CharacterAbilityForm(request.POST)
+        if character_ability_form.is_valid():
+            response_dict['valid'] = True
+            for ability in Ability.objects.all():
+                ca = CharacterAbility()
+                ca.character = Character.objects.get(id=character_ability_form.cleaned_data['character'])
+                ca.ability = ability
+                ca.value = character_ability_form.cleaned_data[ability.name.lower()]
+                ca.save()
+        else:
+            response_dict['valid'] = False
+            response_dict['errors'] = character_ability_form.errors
+
+        return HttpResponse(json.dumps(response_dict), content_type="application/json")
+    else:
+        raise Http404
 
 
 def sheet(request, character_id, character_name):
