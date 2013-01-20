@@ -1,8 +1,8 @@
 import json
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse
-from django.template import Context, loader, RequestContext
+from django.template import loader, RequestContext
 from django.contrib.auth.decorators import login_required
 
 from character_builder.models import (Ability, Character, Race,
@@ -18,6 +18,7 @@ def user_home(request):
             context_instance=RequestContext(request))
 
 
+@login_required
 def index(request):
     allowed_source = Source.objects.get(name="Player's Handbook")
 
@@ -59,18 +60,30 @@ def index(request):
             context_instance=RequestContext(request))
 
 
-def new(request):
-    """
-    This is the first step in creating a new character.
-    """
-    character = Character(user=request.user)
-    character.save()
-    response_dict = {}
-    response_dict['character'] = character
-    return render_to_response('character_builder/new.html',
-            response_dict,
-            context_instance=RequestContext(request))
-
-
+@login_required
 def save(request):
-    return HttpResponse(json.dumps({'response': 200}), content_type="application/json")
+    if request.method == "POST":
+        response_dict = {}
+        character_form = CharacterFormUser(request.POST)
+        if character_form.is_valid():
+            c = Character()
+            c.name = character_form.cleaned_data['name']
+            c.user = request.user
+            c.race = character_form.cleaned_data['race']
+            c.class_type = character_form.cleaned_data['class_type']
+            c.alignment = character_form.cleaned_data['alignment']
+            c.deity = character_form.cleaned_data['deity']
+            c.height = character_form.cleaned_data['height']
+            c.weight = character_form.cleaned_data['weight']
+            c.age = character_form.cleaned_data['age']
+            c.save()
+
+            response_dict['character_id'] = c.id
+            return HttpResponse(json.dumps(response_dict), content_type="application/json")
+        else:
+            return HttpResponse(json.dumps({'response_text': 'Bad Form'}), content_type="application/json")
+
+
+def sheet(request, character_id, character_name):
+    c = get_object_or_404(Character, id=character_id, name=character_name)
+    return HttpResponse(c.name)

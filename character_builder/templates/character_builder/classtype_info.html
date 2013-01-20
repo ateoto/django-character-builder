@@ -4,7 +4,7 @@
 			<dt>Class</dt>
 			<dd>{{ classtype.name }}</dd>
 			<dt>Role</dt>
-			<dd>{{ classtype.role.name }}.</dd>
+			<dd>{{ classtype.role.name }}</dd>
 		</dl>
 		<dl class="horizontal span4">
 			<dt>Weapon Proficiencies</dt>
@@ -13,7 +13,11 @@
 					{% if not forloop.last %}
 						{{ weapon_category.name }}, 
 					{% else %}
+						{% if forloop.first %}
+						{{ weapon_category.name }}
+						{% else %}
 						and {{ weapon_category.name}}.
+						{% endif %}
 					{% endif %}
 				{% endfor %}
 			</dd>

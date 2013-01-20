@@ -7,13 +7,7 @@ $(function() {
 		start: function(event, ui) {
 			$('.std-arr-ability').popover('hide');
 		},
-		update: function(event, ui) {
-			var order = $(this).sortable('toArray');
-			for (var i = 0; i < order.length; i++)
-			{
-				$('#' + order[i] + ' > .badge').text(CharacterBuilder.standard_array[i]);
-			}
-		}
+		update: update_abilities,
 	});
 
 	$('#standard-array-abilities').disableSelection();
@@ -45,6 +39,7 @@ $(function() {
 	$('#btn-abilities').click(function() {
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();
+		update_abilities();
 		$('#abilities').show();
 		$('#ability-info').show();
 
@@ -62,3 +57,18 @@ $(function() {
 		$('#powers').show();
 	});
 });
+
+function update_abilities() {
+	var order = $('#standard-array-abilities').sortable('toArray');
+	for (var i = 0; i < order.length; i++)
+	{
+		$('#' + order[i] + ' > .badge').text(CharacterBuilder.standard_array[i]);
+	}
+}
+
+function test_me() {
+	$.post($('#personal-form').attr('action'), $('#personal-form').serialize(),
+  		function(data){
+    		console.log(data); 
+  	}, "json");
+}

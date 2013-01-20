@@ -1019,6 +1019,76 @@
     }, 
     {
         "pk": 1, 
+        "model": "character_builder.weaponproficiencygroup", 
+        "fields": {
+            "name": "Simple", 
+            "categories": [
+                3, 
+                4, 
+                11, 
+                12
+            ]
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.weaponproficiencygroup", 
+        "fields": {
+            "name": "Simple Melee", 
+            "categories": [
+                3, 
+                11
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.weaponproficiencygroup", 
+        "fields": {
+            "name": "Simple Ranged", 
+            "categories": [
+                4, 
+                12
+            ]
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.weaponproficiencygroup", 
+        "fields": {
+            "name": "Military", 
+            "categories": [
+                5, 
+                6, 
+                13, 
+                14
+            ]
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.weaponproficiencygroup", 
+        "fields": {
+            "name": "Military Melee", 
+            "categories": [
+                5, 
+                13
+            ]
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.weaponproficiencygroup", 
+        "fields": {
+            "name": "Military Ranged", 
+            "categories": [
+                6, 
+                14
+            ]
+        }
+    }, 
+    {
+        "pk": 1, 
         "model": "character_builder.weapontype", 
         "fields": {
             "category": 3, 
@@ -1248,9 +1318,7 @@
             "name": "Cleric", 
             "weapon_proficiencies": [
                 3, 
-                4, 
-                11, 
-                12
+                4
             ], 
             "role_flavor": "", 
             "source": 1, 
@@ -1276,14 +1344,30 @@
         "pk": 2, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                1, 
+                2, 
+                3, 
+                5
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                7, 
+                8
+            ], 
             "name": "Fighter", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                1, 
+                4
+            ], 
+            "role_flavor": "\u201cYou\u2019ll have to deal with me first, dragon!\u201d", 
             "source": 1, 
             "role": 2, 
-            "description": "Non"
+            "description": "<p>Fighters are determined combat adepts trained to protect the other members of their adventuring groups. Fighters define the front line by bashing and slicing foes into submission while reflecting enemy attacks through the use of heavy armor. Fighters draw weapons for gold, for glory, for duty, and for the mere joy of unrestrained martial exercise.</p>\r\n<p>Regardless of your level of skill and the specific weapons you eventually master, your motivations determine who you defend and who you slay. You could be a noble champion who pledges your blade to gallant causes, a calculating mercenary who cares more for the clink of gold than praise, a homeless prince on the run from assassins, or a blood-loving thug looking for the next good fight.</p>\r\n<p>Your future is yours. When you unsheathe your weapon, what battle cry flies from your lips?</p>"
         }
     }, 
     {
@@ -1318,14 +1402,30 @@
         "pk": 3, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                1, 
+                5, 
+                6
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8
+            ], 
             "name": "Paladin", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                1, 
+                5
+            ], 
+            "role_flavor": "\u201cI am the righteous shield of Moradin and a sword in his mighty hand! I fear no evil!\u201d", 
             "source": 1, 
             "role": 2, 
-            "description": "Non"
+            "description": "<p>Paladins are indomitable warriors who\u2019ve pledged their prowess to something greater than themselves. Paladins smite enemies with divine authority, bolster the courage of nearby companions, and radiate as if a beacon of inextinguishable hope. Paladins are transfigured on the field of battle, exemplars of divine ethos in action.</p>\r\n<p>To you is given the responsibility to unflinchingly stand before an enemy\u2019s charge, smiting them with your sword while protecting your allies with your sacrifice. Where others waver and wonder, your motivation is pure and simple, and your devotion is your strength. Where others scheme and steal, you take the high road, refusing to allow the illusions of temptation to dissuade you from your obligations.</p>\r\n<p>Take up your blessed sword and sanctified shield, brave warrior, and charge forward to hallowed glory!</p>"
         }
     }, 
     {
@@ -1346,14 +1446,25 @@
         "pk": 4, 
         "model": "character_builder.classtype", 
         "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
+            "favored_abilities": [
+                1, 
+                3, 
+                5
+            ], 
+            "armor_proficiencies": [
+                1, 
+                2, 
+                3
+            ], 
             "name": "Ranger", 
-            "weapon_proficiencies": [], 
-            "role_flavor": "", 
+            "weapon_proficiencies": [
+                1, 
+                4
+            ], 
+            "role_flavor": "\u201cI\u2019ll get the one in the back. That\u2019s one hobgoblin who\u2019ll regret ever lifting a bow.\u201d", 
             "source": 1, 
             "role": 4, 
-            "description": "Non"
+            "description": "<p>Rangers are watchful warriors who roam past the horizon to safeguard a region, a principle, or a way of life. Masters of bow and blade, rangers excel at hit-andrun assaults and can quickly and silently eliminate foes. Rangers lay superb ambushes and excel at avoiding danger.</p>\r\n<p>As a ranger, you possess almost supernaturally keen senses and a deep appreciation for untamed wilderness. With your knowledge of the natural world, you are able to track enemies through nearly any landscape, using the smallest clue to set your course, even sometimes the calls and songs of beasts and birds. Your severe demeanor promises a deadly conclusion to any enemy you hunt.</p>\r\n<p>When you catch sight of your quarry, will the transgressor perish by swift bow shots from a distance, or by the twofold blades that glint and glitter in each of your battle-scarred hands?</p>"
         }
     }, 
     {
@@ -1465,9 +1576,7 @@
             "name": "Warlock", 
             "weapon_proficiencies": [
                 3, 
-                4, 
-                11, 
-                12
+                4
             ], 
             "role_flavor": "\u201cThe darkness holds no terror for me, demon! I curse you now under the Sign of Ill Omen!\u201d", 
             "source": 1, 
@@ -1493,12 +1602,8 @@
             ], 
             "name": "Warlord", 
             "weapon_proficiencies": [
-                3, 
-                4, 
-                5, 
-                11, 
-                12, 
-                13
+                1, 
+                5
             ], 
             "role_flavor": "\u201cOnward to victory! They cannot stand before us!\u201d", 
             "source": 1, 
@@ -1721,7 +1826,7 @@
         "fields": {
             "name": "Sehanine", 
             "alignment": 5, 
-            "description": "God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:\r\n\r\n\u2726 Follow your goals and seek your own destiny.\r\n\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.\r\n\u2726 Seek new horizons and new experiences, and let nothing tie you dow"
+            "description": "<p>God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:<p>\r\n\r\n\u2726 Follow your goals and seek your own destiny.\r\n\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.\r\n\u2726 Seek new horizons and new experiences, and let nothing tie you dow"
         }
     }, 
     {
@@ -2030,6 +2135,177 @@
             "deity": 3, 
             "alignment": 5, 
             "name": "Meriele"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.character", 
+        "fields": {
+            "class_type": null, 
+            "weight": null, 
+            "level": 1, 
+            "gender": null, 
+            "age": null, 
+            "height": null, 
+            "race": null, 
+            "user": 1, 
+            "hit_points": null, 
+            "xp": 0, 
+            "deity": null, 
+            "alignment": null, 
+            "name": "unnamed"
         }
     }, 
     {
