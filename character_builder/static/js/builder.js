@@ -154,9 +154,7 @@ function save_abilities() {
 	if (my_character.submitted) {
 		$.post($('#ability-form').attr('action'), $('#ability-form').serialize(),
 			function(data) {
-				if (data.valid) {
-					console.log("Yay!");
-				} else {
+				if (!data.valid) {
 					console.log(data.errors);
 				}
 		}, "json");

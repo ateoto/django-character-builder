@@ -120,4 +120,8 @@ def save_abilities(request):
 
 def sheet(request, character_id, character_name):
     c = get_object_or_404(Character, id=character_id, name=character_name)
-    return HttpResponse(c.name)
+    response_dict = {}
+    response_dict['character'] = c
+    return render_to_response('character_builder/character_sheet.html',
+        response_dict,
+        context_instance=RequestContext(request))

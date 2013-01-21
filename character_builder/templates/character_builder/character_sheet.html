@@ -1,0 +1,13 @@
+{% extends "character_builder/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block js %}
+<script src="{% static "js/CharacterBuilder.js" %}"></script>
+{% endblock %}
+{% block content %}
+<div id="character-sheet" class="row">
+    <div class="page-header">
+        <h1>{{ character.name }} <small>Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}</small></h1>
+    </div>   
+</div>
+{% endblock %}
