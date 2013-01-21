@@ -34,7 +34,10 @@ $(function() {
 		start: function(event, ui) {
 			$('.std-arr-ability').popover('hide');
 		},
-		update: update_abilities,
+		update: function(event, ui) {
+			update_abilities();
+			save_abilities();	
+		},
 	});
 
 	$('#standard-array-abilities').disableSelection();
@@ -58,6 +61,10 @@ $(function() {
 	});
 
 	$('#btn-personal').click(function() {
+		update_personal();
+		save_personal();
+		update_abilities();
+		save_abilities();
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();
 		$('#personal').show();
@@ -65,25 +72,30 @@ $(function() {
 
 	$('#btn-abilities').click(function() {
 		update_personal();
-		if (!my_character.submitted) {
-			save_personal();
-
-		} else {
-			$('#info > *').hide();
-			$('#builder-ux > *').hide();
-			update_abilities();
-			$('#abilities').show();
-			$('#ability-info').show();
-		}
+		save_personal();
+		update_abilities();
+		save_abilities();
+		$('#info > *').hide();
+		$('#builder-ux > *').hide();
+		$('#abilities').show();
+		$('#ability-info').show();
 	});
 
 	$('#btn-skills').click(function() {
+		update_personal();
+		save_personal();
+		update_abilities();
+		save_abilities();
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();
 		$('#skills').show();
 	});
 
 	$('#btn-powers').click(function() {
+		update_personal();
+		save_personal();
+		update_abilities();
+		save_abilities();
 		$('#info > *').hide();
 		$('#builder-ux > *').hide();
 		$('#powers').show();
@@ -115,32 +127,38 @@ function update_abilities() {
  	$('#id_intelligence').val(my_character.intelligence);
  	$('#id_wisdom').val(my_character.wisdom);
  	$('#id_charisma').val(my_character.charisma);
-	save_abilities();
 }
 
 function save_personal() {
 	$('#personal-form .control-group').removeClass('error');
-	$.post($('#personal-form').attr('action'), $('#personal-form').serialize(),
-  		function(data){
-  			if (data.valid) {
-    			my_character.character_id = data.character_id; 
-    			my_character.submitted = true;
-    		} else {
-    			console.log('There were errors.');
-    			$.each(data.errors, function(i, value) {
-    				$('#div_id_' + i).addClass('error');
-    			});
-    		}
-  	}, "json");
+	if (!my_character.submitted) {
+		$.post($('#personal-form').attr('action'), $('#personal-form').serialize(),
+	  		function(data){
+	  			if (data.valid) {
+	    			my_character.character_id = data.character_id; 
+	    			my_character.submitted = true;
+	    		} else {
+	    			console.log('There were errors.');
+	    			$.each(data.errors, function(i, value) {
+	    				$('#div_id_' + i).addClass('error');
+	    			});
+	    			$('#info > *').hide();
+					$('#builder-ux > *').hide();
+					$('#personal').show();
+	    		}
+	  	}, "json");
+	}
 }
 
 function save_abilities() {
-	$.post($('#ability-form').attr('action'), $('#ability-form').serialize(),
-		function(data) {
-			if (data.valid) {
-				console.log("Yay!");
-			} else {
-				console.log(data.errors);
-			}
-	}, "json");
+	if (my_character.submitted) {
+		$.post($('#ability-form').attr('action'), $('#ability-form').serialize(),
+			function(data) {
+				if (data.valid) {
+					console.log("Yay!");
+				} else {
+					console.log(data.errors);
+				}
+		}, "json");
+	}
 }

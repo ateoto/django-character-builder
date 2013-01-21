@@ -97,18 +97,21 @@ def save_personal(request):
 def save_abilities(request):
     if request.method == "POST":
         response_dict = {}
-        character_ability_form = CharacterAbilityForm(request.POST)
-        if character_ability_form.is_valid():
+        form = CharacterAbilityForm(request.POST)
+        if form.is_valid():
             response_dict['valid'] = True
+            character = Character.objects.get(id=form.cleaned_data['character'])
+            response_dict['character'] = character.name
             for ability in Ability.objects.all():
-                ca = CharacterAbility()
-                ca.character = Character.objects.get(id=character_ability_form.cleaned_data['character'])
-                ca.ability = ability
-                ca.value = character_ability_form.cleaned_data[ability.name.lower()]
+                value = form.cleaned_data[ability.name.lower()]
+                ca, created = CharacterAbility.objects.get_or_create(character=character,
+                                                                    ability=ability,
+                                                                    defaults={'value': value})
                 ca.save()
+                response_dict[ability.name.lower()] = form.cleaned_data[ability.name.lower()]
         else:
             response_dict['valid'] = False
-            response_dict['errors'] = character_ability_form.errors
+            response_dict['errors'] = form.errors
 
         return HttpResponse(json.dumps(response_dict), content_type="application/json")
     else:
