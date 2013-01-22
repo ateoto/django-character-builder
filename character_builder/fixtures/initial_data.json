@@ -2106,7 +2106,7 @@
             "class_type": 1, 
             "weight": "180", 
             "level": 1, 
-            "gender": null, 
+            "gender": 2, 
             "age": 28, 
             "height": "5' 10\"", 
             "race": 4, 

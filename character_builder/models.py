@@ -325,3 +325,12 @@ class Item(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Party(models.Model):
+    name = models.CharField(max_length=100)
+    characters = models.ManyToManyField(Character, related_name="party")
+    formed = models.DateField()
+
+    def __unicode__(self):
+        return self.name

@@ -33,3 +33,13 @@ class CharacterAbilityForm(forms.Form):
         self.helper = FormHelper(self)
         self.helper.form_id = "ability-form"
         self.helper.form_action = "character-builder-save-abilities"
+
+
+class CharacterGetterForm(forms.Form):
+    character = forms.IntegerField(widget=forms.HiddenInput())
+
+    def __init__(self, *args, **kwargs):
+        super(CharacterGetterForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_id = "character-getter"
+        self.helper.form_action = "character-builder-character-json"

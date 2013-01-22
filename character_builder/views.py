@@ -8,7 +8,8 @@ from django.contrib.auth.decorators import login_required
 from character_builder.models import (Ability, Character, Race,
                                     Source, ClassType, Deity,
                                     CharacterAbility)
-from character_builder.forms import CharacterFormUser, CharacterAbilityForm
+from character_builder.forms import (CharacterFormUser, CharacterAbilityForm,
+                                    CharacterGetterForm)
 
 
 @login_required
@@ -74,6 +75,7 @@ def save_personal(request):
             c.name = character_form.cleaned_data['name']
             c.user = request.user
             c.race = character_form.cleaned_data['race']
+            c.gender = character_form.cleaned_data['gender']
             c.class_type = character_form.cleaned_data['class_type']
             c.alignment = character_form.cleaned_data['alignment']
             c.deity = character_form.cleaned_data['deity']
@@ -107,6 +109,7 @@ def save_abilities(request):
                 ca, created = CharacterAbility.objects.get_or_create(character=character,
                                                                     ability=ability,
                                                                     defaults={'value': value})
+                ca.value = value
                 ca.save()
                 response_dict[ability.name.lower()] = form.cleaned_data[ability.name.lower()]
         else:
@@ -122,6 +125,31 @@ def sheet(request, character_id, character_name):
     c = get_object_or_404(Character, id=character_id, name=character_name)
     response_dict = {}
     response_dict['character'] = c
+    response_dict['character_getter_form'] = CharacterGetterForm({'character': c.id})
     return render_to_response('character_builder/character_sheet.html',
         response_dict,
         context_instance=RequestContext(request))
+
+
+def character_json(request):
+    if request.method == "POST":
+        response_dict = {}
+        getter_form = CharacterGetterForm(request.POST)
+        if getter_form.is_valid():
+            character = Character.objects.get(id=getter_form.cleaned_data['character'])
+            response_dict['character'] = {
+                'character_id': character.id,
+                'name': character.name,
+                'level': character.level,
+                'xp': character.xp,
+                'hp': character.hit_points,
+                'race_id': character.race.id,
+                'race_name': character.race.name,
+                'class_type_id': character.class_type.id,
+                'class_type_name': character.class_type.name}
+        else:
+            response_dict['errors'] = getter_form.errors
+
+        return HttpResponse(json.dumps(response_dict), content_type="application/json")
+    else:
+        raise Http404

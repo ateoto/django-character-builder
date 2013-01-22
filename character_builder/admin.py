@@ -9,13 +9,18 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     WeaponProficiencyGroup,
                                     ArmorClass, ArmorType,
                                     Currency, CurrencyExchange,
-                                    CharacterCurrency, Gender)
+                                    CharacterCurrency, Gender, Party)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'role', 'source')
     list_filter = ('source',)
     fields = ()
+
+
+class CharacterAbilityAdmin(admin.ModelAdmin):
+    list_display = ('character', 'ability', 'value')
+
 
 admin.site.register(Source)
 admin.site.register(Race)
@@ -24,7 +29,7 @@ admin.site.register(Size)
 admin.site.register(Skill)
 admin.site.register(Ability)
 admin.site.register(CharacterSkill)
-admin.site.register(CharacterAbility)
+admin.site.register(CharacterAbility, CharacterAbilityAdmin)
 admin.site.register(ClassType, ClassTypeAdmin)
 admin.site.register(Alignment)
 admin.site.register(Deity)
@@ -44,3 +49,4 @@ admin.site.register(CharacterCurrency)
 admin.site.register(Gender)
 admin.site.register(WeaponType)
 admin.site.register(WeaponProficiencyGroup)
+admin.site.register(Party)
