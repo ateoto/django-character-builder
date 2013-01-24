@@ -9,6 +9,7 @@ class CharacterFormUser(ModelForm):
     def __init__(self, *args, **kwargs):
         super(CharacterFormUser, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
+        self.helper.form_tag = False
         self.helper.form_id = "personal-form"
         self.helper.form_action = "character-builder-save-personal"
         #self.helper.form_class = 'form-horizontal'
@@ -20,7 +21,6 @@ class CharacterFormUser(ModelForm):
 
 
 class CharacterAbilityForm(forms.Form):
-    character = forms.IntegerField(widget=forms.HiddenInput())
     strength = forms.IntegerField(widget=forms.HiddenInput())
     constitution = forms.IntegerField(widget=forms.HiddenInput())
     dexterity = forms.IntegerField(widget=forms.HiddenInput())
@@ -31,8 +31,9 @@ class CharacterAbilityForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(CharacterAbilityForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
+        self.helper.form_tag = False
         self.helper.form_id = "ability-form"
-        self.helper.form_action = "character-builder-save-abilities"
+        self.helper.form_action = "character-builder-abilities"
 
 
 class CharacterGetterForm(forms.Form):

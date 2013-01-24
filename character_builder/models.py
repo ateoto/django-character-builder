@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from json_field import JSONField
 
 
 class Source(models.Model):
@@ -210,6 +211,23 @@ class ClassType(models.Model):
         return self.name
 
 
+class Defense(models.Model):
+    name = models.CharField(max_length=20)
+    abbreviation = models.CharField(max_length=10)
+
+    def __unicode__(self):
+        return self.name
+
+
+class ClassTypeDefMod(models.Model):
+    class_type = models.ForeignKey(ClassType)
+    defense = models.ForeignKey(Defense)
+    bonus = models.IntegerField()
+
+    def __unicode__(self):
+        return "%s: %s to %s" % (self.class_type.name, self.bonus, self.defense.name)
+
+
 class Power(models.Model):
     name = models.CharField(max_length=100)
     level = models.IntegerField()
@@ -290,6 +308,15 @@ class CharacterCurrency(models.Model):
 
     def __unicode__(self):
         return "%s's coin purse." % (self.character.name)
+
+
+class CharacterBaseDefense(models.Model):
+    character = models.ForeignKey(Character, related_name="defenses")
+    defense = models.ForeignKey(Defense)
+    value = models.IntegerField()
+
+    def __unicode__(self):
+        return "%s %s" % (self.defense.name, self.value)
 
 
 class CharacterAbility(models.Model):

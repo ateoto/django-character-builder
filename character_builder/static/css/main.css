@@ -2,16 +2,22 @@ body, html {
 	color: #000;
 	background-color: #fff ;
 }
+
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
 #content-header {
 	text-align: center;
 }
 
 #builder-nav {
 	text-align: center;
-}
-
-#abilities {
-	display: none;
 }
 
 #skills {

@@ -102,6 +102,13 @@ $(function() {
 	}); 
 });
 
+function get_class_bonuses(class_type_id) {
+
+}
+function get_racial_bonuses(race_id) {
+
+}
+
 function update_personal() {
 	var new_personal = $('#personal-form').serializeArray();
 	$.each(new_personal, function(index, value){

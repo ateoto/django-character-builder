@@ -1,7 +1,8 @@
 import json
 
 from django.shortcuts import render_to_response, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.template import loader, RequestContext
 from django.contrib.auth.decorators import login_required
 
@@ -14,14 +15,36 @@ from character_builder.forms import (CharacterFormUser, CharacterAbilityForm,
 
 @login_required
 def user_home(request):
-    characters = Character.objects.filter(user=request.user)
+    response_dict = {}
+    response_dict['user'] = request.user
+    response_dict['characters'] = Character.objects.filter(user=request.user)
     return render_to_response('character_builder/home.html',
-            {'characters': characters},
+            response_dict,
             context_instance=RequestContext(request))
 
 
 @login_required
-def index(request):
+def personal(request):
+    if request.method == "POST":
+        character_form = CharacterFormUser(request.POST)
+        if character_form.is_valid():
+            c = Character()
+            c.name = character_form.cleaned_data['name']
+            c.user = request.user
+            c.race = character_form.cleaned_data['race']
+            c.gender = character_form.cleaned_data['gender']
+            c.class_type = character_form.cleaned_data['class_type']
+            c.alignment = character_form.cleaned_data['alignment']
+            c.deity = character_form.cleaned_data['deity']
+            c.height = character_form.cleaned_data['height']
+            c.weight = character_form.cleaned_data['weight']
+            c.age = character_form.cleaned_data['age']
+            c.save()
+
+            return HttpResponseRedirect(reverse('character-builder-abilities', kwargs={'character_id': c.id}))
+    else:
+        character_form = CharacterFormUser()
+
     allowed_source = Source.objects.get(name="Player's Handbook")
 
     races = Race.objects.filter(source=allowed_source)
@@ -30,11 +53,8 @@ def index(request):
 
     abilities = Ability.objects.all()
 
-    character_form = CharacterFormUser()
     character_form.fields['race'].queryset = races
     character_form.fields['class_type'].queryset = classtypes
-
-    character_ability_form = CharacterAbilityForm()
 
     response_dict = {}
 
@@ -53,72 +73,63 @@ def index(request):
         c = RequestContext(request, {'deity': deity})
         deity.html = t.render(c)
 
+    response_dict['user'] = request.user
     response_dict['races'] = races
     response_dict['classtypes'] = classtypes
     response_dict['abilities'] = abilities
     response_dict['deities'] = deities
     response_dict['character_form'] = character_form
-    response_dict['character_ability_form'] = character_ability_form
 
-    return render_to_response('character_builder/builder.html',
+    return render_to_response('character_builder/personal.html',
             response_dict,
             context_instance=RequestContext(request))
 
 
 @login_required
-def save_personal(request):
-    if request.method == "POST":
-        response_dict = {}
-        character_form = CharacterFormUser(request.POST)
-        if character_form.is_valid():
-            c = Character()
-            c.name = character_form.cleaned_data['name']
-            c.user = request.user
-            c.race = character_form.cleaned_data['race']
-            c.gender = character_form.cleaned_data['gender']
-            c.class_type = character_form.cleaned_data['class_type']
-            c.alignment = character_form.cleaned_data['alignment']
-            c.deity = character_form.cleaned_data['deity']
-            c.height = character_form.cleaned_data['height']
-            c.weight = character_form.cleaned_data['weight']
-            c.age = character_form.cleaned_data['age']
-            c.save()
+def abilities(request, character_id):
+    character = Character.objects.get(id=character_id)
 
-            response_dict['valid'] = True
-            response_dict['character_id'] = c.id
-        else:
-            response_dict['valid'] = False
-            response_dict['errors'] = character_form.errors
-
-        return HttpResponse(json.dumps(response_dict), content_type="application/json")
-    else:
-        raise Http404
-
-
-@login_required
-def save_abilities(request):
-    if request.method == "POST":
-        response_dict = {}
-        form = CharacterAbilityForm(request.POST)
-        if form.is_valid():
-            response_dict['valid'] = True
-            character = Character.objects.get(id=form.cleaned_data['character'])
-            response_dict['character'] = character.name
+    if request.method == 'POST':
+        abilities_form = CharacterAbilityForm(request.POST)
+        if abilities_form.is_valid():
             for ability in Ability.objects.all():
-                value = form.cleaned_data[ability.name.lower()]
+                value = abilities_form.cleaned_data[ability.name.lower()]
                 ca, created = CharacterAbility.objects.get_or_create(character=character,
                                                                     ability=ability,
                                                                     defaults={'value': value})
                 ca.value = value
                 ca.save()
-                response_dict[ability.name.lower()] = form.cleaned_data[ability.name.lower()]
-        else:
-            response_dict['valid'] = False
-            response_dict['errors'] = form.errors
-
-        return HttpResponse(json.dumps(response_dict), content_type="application/json")
     else:
-        raise Http404
+        abilities_form = CharacterAbilityForm()
+
+    response_dict = {}
+    response_dict['abilities_form'] = abilities_form
+    response_dict['abilities'] = Ability.objects.all()
+    response_dict['character'] = character
+
+    return render_to_response('character_builder/abilities.html',
+            response_dict,
+            context_instance=RequestContext(request))
+
+
+@login_required
+def skills(request, character_id):
+    pass
+
+
+@login_required
+def feats(request, character_id):
+    pass
+
+
+@login_required
+def powers(request, character_id):
+    pass
+
+
+@login_required
+def gear(request, character_id):
+    pass
 
 
 def sheet(request, character_id, character_name):
@@ -126,7 +137,7 @@ def sheet(request, character_id, character_name):
     response_dict = {}
     response_dict['character'] = c
     response_dict['character_getter_form'] = CharacterGetterForm({'character': c.id})
-    return render_to_response('character_builder/character_sheet.html',
+    return render_to_response('character_builder/sheet.html',
         response_dict,
         context_instance=RequestContext(request))
 

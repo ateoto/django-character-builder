@@ -1,6 +1,10 @@
 {% extends "character_builder/base.html" %}
 {% block content %}
-{% for character in characters %}
-{{ character.name }} Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}
-{% endfor %}
+<div class="container-fluid">
+	{% for character in characters %}
+	<a href="{% url character-builder-sheet character.id character.name %}">
+	{{ character.name }} Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}
+	</a><br>
+	{% endfor %}
+</div>
 {% endblock %}

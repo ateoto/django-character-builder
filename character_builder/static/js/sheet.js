@@ -43,8 +43,6 @@ function update_ability_scores(character_data) {
 		var value = parseInt($('.ability-value', this).text(), 10);
 		var modifier = CharacterBuilder.ability_modifer(value);
 		$('.ability-mod', this).text(CharacterBuilder.pretty_mod(modifier));
-
-		// This is how we should actually work:
 		$('.ability-mod-level', this).text(CharacterBuilder.pretty_mod(modifier + CharacterBuilder.half_level(character_data.level)));
 	});
 }

@@ -1,0 +1,66 @@
+{% extends "character_builder/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block js %}
+<script src="{% static "js/CharacterBuilder.js" %}"></script>
+<script src="{% static "js/sheet.js" %}"></script>
+{% endblock %}
+{% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="span2">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Categories</li>
+                            <li class="active"><a href="#">Personal</a></li>
+                            <li><a href="#">Abilities</a></li>
+                            <li><a href="#">Feats</a></li>
+                            <li><a href="#">Skills</a></li>
+                            <li><a href="#">Powers</a></li>
+                            <li><a href="#">Equipment</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="builder-content" class="span10">
+                    <div class="row">
+                        <div class="span10 page-header">
+                          <h1>{{ character.name }} <small>Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}</small></h1>
+                        </div>
+                        <div class="span10">
+                            <div id="ability-scores" class="span10">
+                                <h4>Abilities</h4>
+                                <table class="table table-hover table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Score</th>
+                                            <th>Ability</th>
+                                            <th>Modifier</th>
+                                            <th>Modifier + 1/2 Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for ability in character.abilities.all %}
+                                        <tr id="ability-score-{{ability.ability.name}}" class="ability-score">
+                                            <td class="ability-value">{{ ability.value }}</td>
+                                            <td class="ability-name">{{ ability.ability.name }}</td>
+                                            <td class="ability-mod">tbd</td>
+                                            <td class="ability-mod-level">tbd</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div> 
+                        </div>
+                    </div>
+                    {% crispy character_getter_form %}
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>
+                    <i class="icon-user"></i><a href="http://www.ateoto.com">Matt McCants</a> 
+                    <i class="icon-github"></i><a href="https://github.com/Ateoto/django-character-builder">Source</a>
+                </p>
+            </footer>
+        </div>
+{% endblock %}

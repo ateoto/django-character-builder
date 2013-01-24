@@ -1,0 +1,22 @@
+{% extends "character_builder/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block js %}
+<script src="{% static "js/CharacterBuilder.js" %}"></script>
+<script src="{% static "js/builder.js" %}"></script>
+{% endblock %}
+{% block content %}
+<div id="abilities" class="span4">
+    <ul id="standard-array-abilities" class="row unstyled">
+        {% for ability in abilities %}
+        <li id="std-arr-{{ ability.abbreviation }}" class="span3 std-arr-ability" data-placement="right" data-content="{{ ability.help_text }}" title="{{ ability.name }}">
+            <span class="badge badge-info">0</span>
+            <span class="ability-text">{{ ability.name }}</span>
+            <span class="ability-id">{{ ability.id }}</span>
+            <i class="icon-reorder pull-right"></i>
+        </li>
+        {% endfor %}
+    </ul>
+    {% crispy abilities_form %}
+</div>
+{% endblock %}
