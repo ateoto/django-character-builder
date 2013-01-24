@@ -113,7 +113,7 @@ class Race(models.Model):
 
 
 class RaceAbilityMod(models.Model):
-    race = models.ForeignKey(Race)
+    race = models.ForeignKey(Race, related_name="ability_mods")
     ability = models.ForeignKey(Ability)
     modifier = models.IntegerField()
 
@@ -126,6 +126,16 @@ class RaceAbilityMod(models.Model):
             mod = "+"
 
         return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.ability.name)
+
+    def pretty(self):
+        if self.modifier < 0:
+            mod = "-"
+        elif self.modifier == 0:
+            mod = ""
+        else:
+            mod = "+"
+
+        return "%s%s %s" % (mod, self.modifier, self.ability.name)
 
 
 class RaceSkillMod(models.Model):

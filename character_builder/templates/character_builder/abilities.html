@@ -6,17 +6,57 @@
 <script src="{% static "js/builder.js" %}"></script>
 {% endblock %}
 {% block content %}
-<div id="abilities" class="span4">
-    <ul id="standard-array-abilities" class="row unstyled">
-        {% for ability in abilities %}
-        <li id="std-arr-{{ ability.abbreviation }}" class="span3 std-arr-ability" data-placement="right" data-content="{{ ability.help_text }}" title="{{ ability.name }}">
-            <span class="badge badge-info">0</span>
-            <span class="ability-text">{{ ability.name }}</span>
-            <span class="ability-id">{{ ability.id }}</span>
-            <i class="icon-reorder pull-right"></i>
-        </li>
-        {% endfor %}
-    </ul>
-    {% crispy abilities_form %}
+<div class="container">
+    <div class="row">
+        <div class="page-header span12">
+            <h3>Abilities</h3>
+        </div>
+    </div>
+    <div id="builder" class="row">
+        <div id="builder-ux" class="span4">
+            <div id="abilities" class="span4">
+                <ul id="standard-array-abilities" class="row unstyled">
+                    {% for ability in abilities %}
+                    <li id="std-arr-{{ ability.abbreviation }}" class="span3 std-arr-ability" data-placement="right" data-content="{{ ability.help_text }}" title="{{ ability.name }}">
+                        <span class="badge badge-info">0</span>
+                        <span class="ability-text">{{ ability.name }}</span>
+                        <span class="ability-id">{{ ability.id }}</span>
+                        <i class="icon-reorder pull-right"></i>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul id="racial-ability-bonus" class="unstyled">
+                    {% if character.race.name != "Human" %}
+                    {% for bonus in character.race.ability_mods.all %}
+                        <li id="racial-ability-bonus-{{ bonus.ability.abbreviation }}" class="racial-ability-bonus">
+                            <span class="ability-text">{{ bonus.ability.name }}</span>
+                            <span class="ability-modifier">{{ bonus.modifier }}</span>
+                        </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                <form id="ability-form" action="{% url character-builder-abilities character.id %}" method="post">
+                    {% crispy abilities_form %}
+                    <input type="submit" name="next" value="Next" class="btn btn-primary" id="submit-id-save">
+                </form>
+            </div>
+        </div>
+        <div id="info" class="span8">
+            <p>
+                As a {{ character.class_type.name }}, you favor 
+                {% for ability in character.class_type.favored_abilities.all %}
+                    {{ ability.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+                 above other abilities.
+            </p>
+            <p>
+                You also gain bonuses to these abilities based on your race:<br>
+                {% for bonus in character.race.ability_mods.all %}
+                {{ bonus.pretty }}<br>
+                {% endfor %}
+                These have automatically applied and are shown at left.
+            </p>
+        </div>
+    </div>
 </div>
 {% endblock %}

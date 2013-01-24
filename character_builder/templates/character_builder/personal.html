@@ -7,6 +7,11 @@
 {% endblock %}
 {% block content %}
 <div class="container">
+    <div class="row">
+        <div class="page-header span12">
+          <h3>Personal Details</h3>
+        </div>
+    </div>
     <div id="builder" class="row">
         <div id="builder-ux" class="span4">
             <div id="personal" class="span4">
@@ -15,7 +20,6 @@
                 <input type="submit" name="next" value="Next" class="btn btn-primary" id="submit-id-save">
                 </form>
             </div>
-            <input id="character-id" type="hidden" value="{{ character.id }}" />
         </div>
         <div id="info" class="span8">
             {% for race in races %}{{ race.html|safe }}{% endfor %}

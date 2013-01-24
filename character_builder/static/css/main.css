@@ -12,22 +12,6 @@ body {
 	padding: 9px 0;
 }
 
-#content-header {
-	text-align: center;
-}
-
-#builder-nav {
-	text-align: center;
-}
-
-#skills {
-	display: none;
-}
-
-#powers {
-	display: none;
-}
-
 .class-info {
 	display: none;
 }
@@ -53,6 +37,6 @@ body {
 	display: none;
 }
 
-#ability-form {
+#racial-ability-bonus {
 	display: none;
 }

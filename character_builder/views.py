@@ -1,3 +1,5 @@
+import logging
+log = logging.getLogger(__name__)
 import json
 
 from django.shortcuts import render_to_response, get_object_or_404
@@ -99,6 +101,9 @@ def abilities(request, character_id):
                                                                     defaults={'value': value})
                 ca.value = value
                 ca.save()
+
+            return HttpResponseRedirect(reverse('character-builder-skills', kwargs={'character_id': character.id}))
+
     else:
         abilities_form = CharacterAbilityForm()
 

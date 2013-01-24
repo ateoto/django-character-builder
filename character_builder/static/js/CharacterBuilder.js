@@ -11,9 +11,21 @@ var CharacterBuilder = {
 		weight: null,
 		age: null,
 		abilities: [],
+		racial_ability_bonues: [],
 	},
 	standard_array : [16, 14, 13, 12, 11, 10],
 };
+
+CharacterBuilder.get_character = function() {
+	var character_data;
+	$.post($('#character-getter').attr('action'), $('#character-getter').serialize(),
+		function(data){
+			character_data = data.character;
+	}, "json");
+	console.log(this.character_id);
+	console.log(character_data.character_id);
+	return character_data;
+}
 
 CharacterBuilder.half_level = function(level) {
 	return Math.floor(level / 2);
