@@ -238,11 +238,14 @@ class ClassTypeDefMod(models.Model):
         return "%s: %s to %s" % (self.class_type.name, self.bonus, self.defense.name)
 
 
+class Feat(models.Model):
+    pass
+
+
 class Power(models.Model):
     name = models.CharField(max_length=100)
     level = models.IntegerField()
     class_type = models.ForeignKey(ClassType, blank=True, null=True)
-    race = models.ForeignKey(Race, blank=True, null=True)
     power_type = models.ForeignKey(PowerType)
     flavor = models.TextField(blank=True)
     keywords = models.TextField()
@@ -252,6 +255,13 @@ class Power(models.Model):
     miss = models.TextField(blank=True)
     effect = models.TextField(blank=True)
     special = models.TextField(blank=True)
+
+    def __unicode__(self):
+        return self.name
+
+
+class RacialPower(Power):
+    race = models.ForeignKey(Race)
 
     def __unicode__(self):
         return self.name

@@ -25,7 +25,7 @@
                     </li>
                     {% endfor %}
                 </ul>
-                <ul id="racial-ability-bonus" class="unstyled">
+                <ul id="racial-ability-bonus-list" class="unstyled">
                     {% if character.race.name != "Human" %}
                     {% for bonus in character.race.ability_mods.all %}
                         <li id="racial-ability-bonus-{{ bonus.ability.abbreviation }}" class="racial-ability-bonus">
@@ -49,6 +49,7 @@
                 {% endfor %}
                  above other abilities.
             </p>
+            {% if character.race.name != "Human" %}
             <p>
                 You also gain bonuses to these abilities based on your race:<br>
                 {% for bonus in character.race.ability_mods.all %}
@@ -56,6 +57,23 @@
                 {% endfor %}
                 These have automatically applied and are shown at left.
             </p>
+            {% else %}
+            <p>As a {{ character.race.name }}, you get a +2 bonus to any ability you choose. Select from the buttons below.</p>
+            <div class="btn-group">
+                {% for ability in abilities %}
+                <button id="human-bonus-{{ ability.abbreviation}}" class="human-bonus btn">
+                    {{ ability.name}}
+                    <span class="human-bonus-dom">
+                        <li id="racial-ability-bonus-{{ ability.abbreviation }}" class="racial-ability-bonus">
+                            <span class="ability-text">{{ ability.name }}</span>
+                            <span class="ability-modifier">2</span>
+                        </li>
+                    </span>
+
+                </button>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

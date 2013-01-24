@@ -37,6 +37,10 @@ body {
 	display: none;
 }
 
-#racial-ability-bonus {
+#racial-ability-bonus-list {
+	display: none;
+}
+
+.human-bonus-dom {
 	display: none;
 }

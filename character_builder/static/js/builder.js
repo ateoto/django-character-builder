@@ -60,6 +60,19 @@ $(function() {
 		$('#deity-' + deity_id).show();
 	});
 
+	$('.human-bonus').click(function() {
+		var bonus_ability_name = $(this).text().toLowerCase();	
+		var bonus_element = $('.human-bonus-dom', this).html();
+		$('#racial-ability-bonus-list').empty();
+		$('#racial-ability-bonus-list').append(bonus_element);
+
+		$('.human-bonus').removeClass('active');
+		$(this).addClass('active');
+
+		update_abilities();
+	});
+
+
 
 	$('#id_race').change();
 });
@@ -73,7 +86,7 @@ function get_racial_bonuses(race_id) {
 
 function update_abilities() {
 	var bonuses = [];
-	$('.racial-ability-bonus').each(function(index) {
+	$('#racial-ability-bonus-list .racial-ability-bonus').each(function(index) {
 		var bonus_ability_name = $('.ability-text', this).text().toLowerCase();
 		var bonus_ability_modifier = parseInt($('.ability-modifier', this).text(), 10);
 		bonuses.push({ 
@@ -81,7 +94,6 @@ function update_abilities() {
 			'modifier': bonus_ability_modifier
 		});
 	});
-	console.log(bonuses);
 
 	var order = $('#standard-array-abilities').sortable('toArray');
 	for (var i = 0, len = order.length; i < len; i++) {
@@ -89,7 +101,6 @@ function update_abilities() {
 		var ability_value = CharacterBuilder.standard_array[i];
 		for (j = 0, blen = bonuses.length; j < blen; j++) {
 			if (ability_name === bonuses[j].name) {
-				console.log('Match');
 				ability_value += bonuses[j].modifier;
 			}
 		}
