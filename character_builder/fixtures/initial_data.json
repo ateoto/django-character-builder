@@ -478,23 +478,6 @@
         }
     }, 
     {
-        "pk": 8, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Deva", 
-            "average_weight_text": "Meh", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 2, 
-            "average_height_text": "Meh", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 3
-        }
-    }, 
-    {
         "pk": 1, 
         "model": "character_builder.race", 
         "fields": {
@@ -567,57 +550,6 @@
         }
     }, 
     {
-        "pk": 13, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Githzerai", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 3, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 3
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Gnome", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 2, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 2
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Goliath", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 2, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 3
-        }
-    }, 
-    {
         "pk": 5, 
         "model": "character_builder.race", 
         "fields": {
@@ -632,23 +564,6 @@
             "average_height_text": "5' 5\" - 6' 2\"", 
             "speed": 6, 
             "vision": 2, 
-            "size": 3
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Half-Orc", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 2, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
             "size": 3
         }
     }, 
@@ -687,57 +602,6 @@
         }
     }, 
     {
-        "pk": 14, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Minotaur", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 3, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 4
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Shardmind", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 3, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 3
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Shifter", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 2, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
-            "size": 3
-        }
-    }, 
-    {
         "pk": 7, 
         "model": "character_builder.race", 
         "fields": {
@@ -751,23 +615,6 @@
             "average_height_text": "5' 6\" - 6' 2\"", 
             "speed": 6, 
             "vision": 2, 
-            "size": 3
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "character_builder.race", 
-        "fields": {
-            "name": "Wilden", 
-            "average_weight_text": "Non", 
-            "description": "Not a cat", 
-            "languages": [
-                1
-            ], 
-            "source": 3, 
-            "average_height_text": "Non", 
-            "speed": 0, 
-            "vision": 1, 
             "size": 3
         }
     }, 
@@ -1447,86 +1294,6 @@
         }
     }, 
     {
-        "pk": 16, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Ardent", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 3, 
-            "role": 3, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Avenger", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 4, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Barbarian", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 4, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Bard", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 3, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Battlemind", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 3, 
-            "role": 2, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
         "pk": 1, 
         "model": "character_builder.classtype", 
         "fields": {
@@ -1554,22 +1321,6 @@
                 14
             ], 
             "description": "Clerics are battle leaders who are invested with divine power. They blast foes with magical prayers, bolster and heal companions, and lead the way to victory with a mace in one hand and a holy symbol in the other. Clerics run the gamut from humble servants of the common folk to ruthless enforcers of evil gods."
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Druid", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 1, 
-            "trained_skills": [], 
-            "description": "Non"
         }
     }, 
     {
@@ -1605,38 +1356,6 @@
         }
     }, 
     {
-        "pk": 13, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Invoker", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 1, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 18, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Monk", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 3, 
-            "role": 4, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
         "pk": 3, 
         "model": "character_builder.classtype", 
         "fields": {
@@ -1668,22 +1387,6 @@
                 14
             ], 
             "description": "<p>Paladins are indomitable warriors who\u2019ve pledged their prowess to something greater than themselves. Paladins smite enemies with divine authority, bolster the courage of nearby companions, and radiate as if a beacon of inextinguishable hope. Paladins are transfigured on the field of battle, exemplars of divine ethos in action.</p>\r\n<p>To you is given the responsibility to unflinchingly stand before an enemy\u2019s charge, smiting them with your sword while protecting your allies with your sacrifice. Where others waver and wonder, your motivation is pure and simple, and your devotion is your strength. Where others scheme and steal, you take the high road, refusing to allow the illusions of temptation to dissuade you from your obligations.</p>\r\n<p>Take up your blessed sword and sanctified shield, brave warrior, and charge forward to hallowed glory!</p>"
-        }
-    }, 
-    {
-        "pk": 19, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Psion", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 3, 
-            "role": 1, 
-            "trained_skills": [], 
-            "description": "Non"
         }
     }, 
     {
@@ -1739,86 +1442,6 @@
                 17
             ], 
             "description": "<p>Rogues are cunning and elusive adversaries. Rogues slip into and out of shadows on a whim, pass anywhere across the field of battle without fear of reprisal, and appear suddenly only to drive home a lethal blade.</p>\r\n<p>As a rogue, you might face others\u2019 preconceptions regarding your motivations, but your nature is your own to mold. You could be an agent fresh from the deposed king\u2019s shattered intelligence network, an accused criminal on the lam seeking to clear your name, a wiry performer whose goals transcend the theatrical stage, a kid trying to turn around your hardluck story, or a daredevil thrill-seeker who can\u2019t get enough of the adrenaline rush of conflict. Or perhaps you are merely in it for the gold, after all.</p>\r\n<p>With a blade up your sleeve and a concealing cloak across your shoulders, you stride forth, eyes alight with anticipation. What worldly wonders and rewards are yours for the taking?</p>"
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Runepriest", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 3, 
-            "role": 3, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 21, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Seeker", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 3, 
-            "role": 1, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Shaman", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 3, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Sorcerer", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 4, 
-            "trained_skills": [], 
-            "description": "Non"
-        }
-    }, 
-    {
-        "pk": 22, 
-        "model": "character_builder.classtype", 
-        "fields": {
-            "favored_abilities": [], 
-            "armor_proficiencies": [], 
-            "name": "Warden", 
-            "weapon_proficiencies": [], 
-            "skill_choices": 3, 
-            "role_flavor": "", 
-            "source": 2, 
-            "role": 2, 
-            "trained_skills": [], 
-            "description": "Non"
         }
     }, 
     {
