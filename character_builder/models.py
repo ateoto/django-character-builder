@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 
+from json_field import JSONField
+
 
 class Source(models.Model):
     name = models.CharField(max_length=50)
@@ -248,33 +250,12 @@ class ClassSkill(models.Model):
         return "%s %s" % (self.class_type.name, self.skill.name)
 
 
-class Feat(models.Model):
-    pass
-
-
-class Power(models.Model):
-    name = models.CharField(max_length=100)
-    level = models.IntegerField()
-    class_type = models.ForeignKey(ClassType, blank=True, null=True)
-    power_type = models.ForeignKey(PowerType)
-    flavor = models.TextField(blank=True)
-    keywords = models.TextField()
-    target = models.TextField(blank=True)
-    attack = models.TextField(blank=True)
-    hit = models.TextField(blank=True)
-    miss = models.TextField(blank=True)
-    effect = models.TextField(blank=True)
-    special = models.TextField(blank=True)
+class AbilityPrerequisite(models.Model):
+    ability = models.ForeignKey(Ability)
+    value = models.IntegerField()
 
     def __unicode__(self):
-        return self.name
-
-
-class RacialPower(Power):
-    race = models.ForeignKey(Race)
-
-    def __unicode__(self):
-        return self.name
+        return "%s %s" % (self.ability.name, self.value)
 
 
 class Alignment(models.Model):
@@ -289,6 +270,57 @@ class Deity(models.Model):
     name = models.CharField(max_length=100)
     alignment = models.ForeignKey(Alignment)
     description = models.TextField()
+
+    def __unicode__(self):
+        return self.name
+
+
+class ClassFeature(models.Model):
+    name = models.CharField(max_length=100)
+    benefit = models.TextField()
+    requires_choice = models.BooleanField(default=False)
+    choices_json = JSONField(blank=True)
+    class_type = models.ForeignKey(ClassType)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Power(models.Model):
+    name = models.CharField(max_length=100)
+    level = models.IntegerField()
+    class_type = models.ForeignKey(ClassType, blank=True, null=True)
+    power_type = models.ForeignKey(PowerType)
+    flavor = models.TextField(blank=True, null=True)
+    keywords = models.TextField(blank=True, null=True)
+    target = models.TextField(blank=True, null=True)
+    attack = models.TextField(blank=True, null=True)
+    hit = models.TextField(blank=True, null=True)
+    miss = models.TextField(blank=True, null=True)
+    effect = models.TextField(blank=True, null=True)
+    special = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+
+class RacialPower(Power):
+    race = models.ForeignKey(Race)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Feat(models.Model):
+    name = models.CharField(max_length=100)
+    req_ability = models.ManyToManyField(AbilityPrerequisite, blank=True, null=True)
+    req_race = models.ForeignKey(Race, blank=True, null=True)
+    req_class_type = models.ForeignKey(ClassType, blank=True, null=True)
+    req_class_feat = models.ForeignKey(ClassFeature, blank=True, null=True)
+    req_deity = models.ForeignKey(Deity, blank=True, null=True)
+    req_armor = models.ForeignKey(ArmorClass, blank=True, null=True)
+    benefit = models.TextField()
+    power_benefit = models.ForeignKey(Power, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
