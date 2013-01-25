@@ -24,20 +24,14 @@
             choices_left += 1;
         }
 
+        choices_left = total_choices - $('.skill-checkbox:checked').length;
         $('#choices-left').text(choices_left);
 
         $('.skill-checkbox').change(function() {
-            /*
-                Rangers get Dungeoneering or Nature for free. They have to have one or the other, 
-                if they have both it only costs one skill point
-
-            */
             var str_value = $(this).val();
             var that = $(this);
             var value = parseInt(str_value, 10);
-            // This is becase inArray does not return a boolean.
-            // Instead it returns the index of the value, or -1 
-            // if it's not in the array
+
             if (-1 != $.inArray(value, trained_skills))
             {
                 $(this).prop("checked", true);
@@ -46,8 +40,11 @@
                     $(this).prop("checked", false);
                 }
             }
+
             choices_left = total_choices - $('.skill-checkbox:checked').length;
+
             if (class_type === "Ranger") {
+                console.log('Ranger');
                 var dungeoneering = $('#skill-Dungeoneering').prop('checked');
                 var nature = $('#skill-Nature').prop('checked');
                 if (dungeoneering || nature)
@@ -58,7 +55,6 @@
                     choices_left += 1;
                 }
             }
-            $('#choices-left').text(choices_left);
 
             if (race === "Eladrin")
             {
@@ -68,6 +64,8 @@
                     }
                 });
             }
+
+            $('#choices-left').text(choices_left);
         });
     });
 </script>
