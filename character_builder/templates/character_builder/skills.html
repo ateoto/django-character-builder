@@ -1,0 +1,120 @@
+{% extends "character_builder/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block js %}
+<script src="{% static "js/CharacterBuilder.js" %}"></script>
+<script src="{% static "js/builder.js" %}"></script>
+<script>
+    $(function () {
+        var auto_trained = {{ character.class_type.trained_skills.all.count }};
+        var character_choices = {{ character.class_type.skill_choices }};
+        var total_choices = auto_trained + character_choices;
+        var choices_left = total_choices;
+        var race = "{{ character.race.name }}";
+        var class_type = "{{ character.class_type.name }}";
+
+        var trained_skills = [];
+        {% for class_skill in character.class_type.class_skills.all %}
+        {% if class_skill.skill in character.class_type.trained_skills.all %}
+        trained_skills.push({{ class_skill.skill.id }});
+        {% endif %}
+        {% endfor %}
+
+        if (race === "Humans") {
+            choices_left += 1;
+        }
+
+        $('#choices-left').text(choices_left);
+
+        $('.skill-checkbox').change(function() {
+            /*
+                Rangers get Dungeoneering or Nature for free. They have to have one or the other, 
+                if they have both it only costs one skill point
+
+            */
+            var str_value = $(this).val();
+            var that = $(this);
+            var value = parseInt(str_value, 10);
+            // This is becase inArray does not return a boolean.
+            // Instead it returns the index of the value, or -1 
+            // if it's not in the array
+            if (-1 != $.inArray(value, trained_skills))
+            {
+                $(this).prop("checked", true);
+            } else {
+                if (choices_left <= 0) {
+                    $(this).prop("checked", false);
+                }
+            }
+            choices_left = total_choices - $('.skill-checkbox:checked').length;
+            if (class_type === "Ranger") {
+                var dungeoneering = $('#skill-Dungeoneering').prop('checked');
+                var nature = $('#skill-Nature').prop('checked');
+                if (dungeoneering || nature)
+                {
+                    choices_left += 1;
+                }
+                if (choices_left === 0 && (!dungeoneering && !nature)) {
+                    choices_left += 1;
+                }
+            }
+            $('#choices-left').text(choices_left);
+
+            if (race === "Eladrin")
+            {
+                $('#id_eladrin_bonus option').each(function(){
+                    if ($(this).val() === str_value) {
+                        $(this).prop('disabled', that.prop("checked"));
+                    }
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="page-header span12">
+            <h3>Skills</h3>
+        </div>
+    </div>
+    <div id="builder" class="row">
+        <div id="builder-ux" class="span4">
+            <div id="skills" class="span4">
+                <form id="skills" action="{% url character-builder-skills character.id %}" method="post">
+                    {% csrf_token %}
+                    {% for class_skill in character.class_type.class_skills.all %}
+                    <label class="checkbox">
+                      <input id="skill-{{ class_skill.skill.name }}" class="skill-checkbox" type="checkbox" name="skills" value="{{ class_skill.skill.id }}" {% if class_skill.skill in character.class_type.trained_skills.all %}checked{% endif %}>
+                      {{ class_skill.skill.name }}
+                    </label>
+                    {% endfor %}
+                    {% if character.race.name == "Eladrin" %}
+                    <div id="skill-bonus">
+                        <div id="div_id_eladrin_bonus" class="control-group">
+                            <label for="id_eladrin_bonus" class="control-label requiredField">Eladrin bonus skill</label>
+                            <div class="controls">
+                                <select id="id_eladrin_bonus" class="select" name="eladrin_bonus">
+                                    <option value="" selected="selected">---------</option>
+                                    {% for skill in skills %}
+                                    <option value="{{ skill.id }}" {% if skill in character.class_type.trained_skills.all %}disabled{% endif %}>{{ skill.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <input type="submit" name="next" value="Next" class="btn btn-primary" id="submit-id-save">
+                </form>
+            </div>
+        </div>
+        <div id="info" class="span8">
+            <p>Choices Remaining:<span id="choices-left"></span></p>
+            {% if character.class_type.name == "Ranger" %}
+            <p>As a Ranger, you can choose either Dungeoneering or Nature for free.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

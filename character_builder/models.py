@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from json_field import JSONField
+from django.template.defaultfilters import slugify
 
 
 class Source(models.Model):
@@ -139,7 +139,7 @@ class RaceAbilityMod(models.Model):
 
 
 class RaceSkillMod(models.Model):
-    race = models.ForeignKey(Race)
+    race = models.ForeignKey(Race, related_name='skill_mods')
     skill = models.ForeignKey(Skill)
     modifier = models.IntegerField()
 
@@ -213,6 +213,8 @@ class ClassType(models.Model):
     description = models.TextField()
     weapon_proficiencies = models.ManyToManyField(WeaponProficiencyGroup)
     armor_proficiencies = models.ManyToManyField(ArmorType)
+    trained_skills = models.ManyToManyField(Skill, blank=True, null=True)
+    skill_choices = models.IntegerField(default=3)
 
     class Meta:
         ordering = ['name']
@@ -236,6 +238,14 @@ class ClassTypeDefMod(models.Model):
 
     def __unicode__(self):
         return "%s: %s to %s" % (self.class_type.name, self.bonus, self.defense.name)
+
+
+class ClassSkill(models.Model):
+    class_type = models.ForeignKey(ClassType, related_name="class_skills")
+    skill = models.ForeignKey(Skill)
+
+    def __unicode__(self):
+        return "%s %s" % (self.class_type.name, self.skill.name)
 
 
 class Feat(models.Model):
@@ -305,6 +315,7 @@ class CurrencyExchange(models.Model):
 class Character(models.Model):
     user = models.ForeignKey(User, related_name="+")
     name = models.CharField(max_length=100)
+    slug_name = models.SlugField()
     class_type = models.ForeignKey(ClassType)
     race = models.ForeignKey(Race)
     gender = models.ForeignKey(Gender)
@@ -319,6 +330,18 @@ class Character(models.Model):
 
     def __unicode__(self):
         return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug_name = slugify(self.name)
+
+        super(Character, self).save(*args, **kwargs)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('character-builder-sheet', (), {
+            'character_id': self.id,
+            'character_slug': self.slug_name})
 
 
 class CharacterCurrency(models.Model):

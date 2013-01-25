@@ -1,6 +1,7 @@
 import logging
 log = logging.getLogger(__name__)
 import json
+import math
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
@@ -10,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 from character_builder.models import (Ability, Character, Race,
                                     Source, ClassType, Deity,
-                                    CharacterAbility)
+                                    CharacterAbility, Skill, CharacterSkill)
 from character_builder.forms import (CharacterFormUser, CharacterAbilityForm,
                                     CharacterGetterForm)
 
@@ -119,12 +120,55 @@ def abilities(request, character_id):
 
 @login_required
 def skills(request, character_id):
-    pass
+    character = Character.objects.get(id=character_id)
+    if request.method == 'POST':
+        trained_skills_ids = request.POST.getlist('skills')
+        trained_skills = []
+
+        if character.race == Race.objects.get(name="Eladrin"):
+            trained_skills.append(Skill.object.get(id=request.POST.get('eladrin_bonus')))
+
+        for skill_id in trained_skills_ids:
+            trained_skills.append(Skill.objects.get(id=skill_id))
+
+        for skill in Skill.objects.all():
+            if skill in trained_skills:
+                trained = True
+                trained_mod = 5
+            else:
+                log.debug("%s is not trained" % (skill.name))
+                trained = False
+                trained_mod = 0
+
+            # Do we get a Race bonus?
+            race_modifier = 0
+
+            race_skill_mod_qs = character.race.skill_mods.filter(skill=skill)
+            if race_skill_mod_qs.exists():
+                race_skill_mod = race_skill_mod_qs.get()
+                race_modifier = race_skill_mod.modifier
+
+            cs = CharacterSkill(character=character, skill=skill, is_trained=trained)
+            ca = character.abilities.get(ability=skill.ability)
+            modifier = int(math.floor((math.fabs(ca.value) - 10) / 2))
+            cs.value = modifier + trained_mod + race_modifier + int(math.floor(character.level / 2))
+            log.debug("%s : %s" % (skill.name, cs.value))
+            #cs.save()
+
+        return HttpResponseRedirect(reverse('character-builder-feats', kwargs={'character_id': character.id}))
+
+    response_dict = {}
+    response_dict['character'] = character
+    response_dict['skills'] = Skill.objects.all()
+
+    return render_to_response('character_builder/skills.html',
+            response_dict,
+            context_instance=RequestContext(request))
 
 
 @login_required
 def feats(request, character_id):
-    pass
+    return HttpResponse('Word')
 
 
 @login_required
@@ -137,8 +181,8 @@ def gear(request, character_id):
     pass
 
 
-def sheet(request, character_id, character_name):
-    c = get_object_or_404(Character, id=character_id, name=character_name)
+def sheet(request, character_id, character_slug):
+    c = get_object_or_404(Character, id=character_id, slug_name=character_slug)
     response_dict = {}
     response_dict['character'] = c
     response_dict['character_getter_form'] = CharacterGetterForm({'character': c.id})

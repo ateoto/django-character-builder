@@ -21,13 +21,13 @@
                         </ul>
                     </div>
                 </div>
-                <div id="builder-content" class="span10">
+                <div id="builder-content" class="span9 offset1">
                     <div class="row">
-                        <div class="span10 page-header">
+                        <div class="span9 page-header">
                           <h1>{{ character.name }} <small>Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}</small></h1>
                         </div>
-                        <div class="span10">
-                            <div id="ability-scores" class="span10">
+                        <div class="span9">
+                            <div id="ability-scores" class="span9">
                                 <h4>Abilities</h4>
                                 <table class="table table-hover table-bordered table-condensed">
                                     <thead>
@@ -55,12 +55,5 @@
                     {% crispy character_getter_form %}
                 </div>
             </div>
-            <hr>
-            <footer>
-                <p>
-                    <i class="icon-user"></i><a href="http://www.ateoto.com">Matt McCants</a> 
-                    <i class="icon-github"></i><a href="https://github.com/Ateoto/django-character-builder">Source</a>
-                </p>
-            </footer>
         </div>
 {% endblock %}

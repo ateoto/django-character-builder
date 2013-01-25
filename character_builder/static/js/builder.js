@@ -1,5 +1,4 @@
 $(function() {
-
 	$.ajaxSetup({ 
 	     beforeSend: function(xhr, settings) {
 	         function getCookie(name) {

@@ -51,12 +51,14 @@
             </p>
             {% if character.race.name != "Human" %}
             <p>
-                You also gain bonuses to these abilities based on your race:<br>
+                You also gain bonuses to these abilities based on your race:
+            </p>
+            <p>
                 {% for bonus in character.race.ability_mods.all %}
                 {{ bonus.pretty }}<br>
                 {% endfor %}
-                These have automatically applied and are shown at left.
             </p>
+            <p>These have automatically applied and are shown at left.</p>
             {% else %}
             <p>As a {{ character.race.name }}, you get a +2 bonus to any ability you choose. Select from the buttons below.</p>
             <div class="btn-group">
