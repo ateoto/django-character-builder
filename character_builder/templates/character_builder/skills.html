@@ -13,7 +13,9 @@
         var race = "{{ character.race.name }}";
         var class_type = "{{ character.class_type.name }}";
 
+        var choices = [];
         var trained_skills = [];
+
         {% for class_skill in character.class_type.class_skills.all %}
         {% if class_skill.skill in character.class_type.trained_skills.all %}
         trained_skills.push({{ class_skill.skill.id }});
@@ -37,23 +39,24 @@
                 $(this).prop("checked", true);
             } else {
                 if (choices_left <= 0) {
-                    $(this).prop("checked", false);
+                    if (class_type === "Ranger") {
+                        var free_skills = $('#skill-Dungeoneering').prop('checked') && $('#skill-Nature').prop('checked');
+                        if (free_skills === false) {
+                            if (($(this).attr('id') !== 'skill-Dungeoneering') && ($(this).attr('id') !== 'skill-Nature')) {
+                                $(this).prop("checked", false);
+                            }
+                        } else {
+                            $(this).prop("checked", false);
+                        }
+                    } else {
+                        $(this).prop("checked", false);
+                    }
                 }
             }
 
             choices_left = total_choices - $('.skill-checkbox:checked').length;
-
-            if (class_type === "Ranger") {
-                console.log('Ranger');
-                var dungeoneering = $('#skill-Dungeoneering').prop('checked');
-                var nature = $('#skill-Nature').prop('checked');
-                if (dungeoneering || nature)
-                {
-                    choices_left += 1;
-                }
-                if (choices_left === 0 && (!dungeoneering && !nature)) {
-                    choices_left += 1;
-                }
+            if (choices_left < 0) {
+                choices_left = 0;
             }
 
             if (race === "Eladrin")
