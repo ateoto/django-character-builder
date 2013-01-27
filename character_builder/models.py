@@ -281,9 +281,24 @@ class ClassFeature(models.Model):
     requires_choice = models.BooleanField(default=False)
     choices_json = JSONField(blank=True)
     class_type = models.ForeignKey(ClassType)
+    has_passive_effects = models.BooleanField(default=False)
+    passive_effects = JSONField(default='{}', blank=True)
 
     def __unicode__(self):
-        return self.name
+        return "%s: %s" % (self.class_type.name, self.name)
+
+
+class RaceFeature(models.Model):
+    name = models.CharField(max_length=100)
+    benefit = models.TextField()
+    requires_choice = models.BooleanField(default=False)
+    choices_json = JSONField(blank=True)
+    race = models.ForeignKey(Race)
+    has_passive_effects = models.BooleanField(default=False)
+    passive_effects = JSONField(default='{}', blank=True)
+
+    def __unicode__(self):
+        return "%s: %s" % (self.race.name, self.name)
 
 
 class Power(models.Model):
@@ -394,6 +409,24 @@ class CharacterBaseDefense(models.Model):
         return "%s %s" % (self.defense.name, self.value)
 
 
+class CharacterRaceFeature(models.Model):
+    character = models.ForeignKey(Character, related_name="race_features")
+    race_feature = models.ForeignKey(RaceFeature)
+    benefit = models.TextField()
+
+    def __unicode__(self):
+        return "%s : %s" % (self.character.name, self.race_feature.name)
+
+
+class CharacterClassFeature(models.Model):
+    character = models.ForeignKey(Character, related_name="class_features")
+    class_feature = models.ForeignKey(ClassFeature)
+    benefit = models.TextField()
+
+    def __unicode__(self):
+        return "%s : %s" % (self.character.name, self.class_feature.name)
+
+
 class CharacterAbility(models.Model):
     character = models.ForeignKey(Character, related_name="abilities")
     ability = models.ForeignKey(Ability)
@@ -413,7 +446,7 @@ class CharacterSkill(models.Model):
     value = models.IntegerField()
 
     def __unicode__(self):
-        return "%s %s" % (self.skill.name, self.value)
+        return "%s: %s %s" % (self.character.name, self.skill.name, self.value)
 
 
 class CharacterPower(models.Model):

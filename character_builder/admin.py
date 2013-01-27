@@ -12,7 +12,9 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     CharacterCurrency, Gender, Party,
                                     Defense, ClassTypeDefMod,
                                     CharacterBaseDefense, ClassSkill,
-                                    ClassFeature, Feat, AbilityPrerequisite)
+                                    ClassFeature, Feat, AbilityPrerequisite,
+                                    CharacterRaceFeature, CharacterClassFeature,
+                                    RaceFeature)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
@@ -60,3 +62,6 @@ admin.site.register(ClassSkill)
 admin.site.register(ClassFeature)
 admin.site.register(Feat)
 admin.site.register(AbilityPrerequisite)
+admin.site.register(CharacterRaceFeature)
+admin.site.register(CharacterClassFeature)
+admin.site.register(RaceFeature)

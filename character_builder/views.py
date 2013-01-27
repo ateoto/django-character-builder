@@ -126,7 +126,7 @@ def skills(request, character_id):
         trained_skills = []
 
         if character.race == Race.objects.get(name="Eladrin"):
-            trained_skills.append(Skill.object.get(id=request.POST.get('eladrin_bonus')))
+            trained_skills.append(Skill.objects.get(id=request.POST.get('eladrin_bonus')))
 
         for skill_id in trained_skills_ids:
             trained_skills.append(Skill.objects.get(id=skill_id))
@@ -153,15 +153,29 @@ def skills(request, character_id):
             modifier = int(math.floor((math.fabs(ca.value) - 10) / 2))
             cs.value = modifier + trained_mod + race_modifier + int(math.floor(character.level / 2))
             log.debug("%s : %s" % (skill.name, cs.value))
-            #cs.save()
+            cs.save()
 
-        return HttpResponseRedirect(reverse('character-builder-feats', kwargs={'character_id': character.id}))
+        return HttpResponseRedirect(reverse('character-builder-features', kwargs={'character_id': character.id}))
 
     response_dict = {}
     response_dict['character'] = character
     response_dict['skills'] = Skill.objects.all()
 
     return render_to_response('character_builder/skills.html',
+            response_dict,
+            context_instance=RequestContext(request))
+
+
+@login_required
+def features(request, character_id):
+    response_dict = {}
+    character = Character.objects.get(id=character_id)
+
+    if request.method == "POST":
+        pass
+
+    response_dict['character'] = character
+    return render_to_response('character_builder/features.html',
             response_dict,
             context_instance=RequestContext(request))
 
