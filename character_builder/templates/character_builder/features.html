@@ -13,12 +13,17 @@
 <div class="container">
     <div class="row">
         <div class="page-header span12">
-            <h3>Skills</h3>
+            <h3>Features</h3>
         </div>
     </div>
     <div id="builder" class="row">
         <div id="builder-ux" class="span4">
-            <div id="abilities" class="span4">
+            <div id="features" class="span4">
+            {% for feature in class_features %}
+                {% if feature.requires_choice %}
+                    {{ feature.name }}
+                {% endif %}
+            {% endfor %}
             </div>
         </div>
         <div id="info" class="span8">
