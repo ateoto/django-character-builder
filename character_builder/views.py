@@ -11,7 +11,8 @@ from django.contrib.auth.decorators import login_required
 
 from character_builder.models import (Ability, Character, Race,
                                     Source, ClassType, Deity,
-                                    CharacterAbility, Skill, CharacterSkill)
+                                    CharacterAbility, Skill, CharacterSkill,
+                                    ClassFeature, RaceFeature)
 from character_builder.forms import (CharacterFormUser, CharacterAbilityForm,
                                     CharacterGetterForm)
 
@@ -172,9 +173,16 @@ def features(request, character_id):
     character = Character.objects.get(id=character_id)
 
     if request.method == "POST":
-        pass
+        return HttpResponse('Critical Miss.')
 
     response_dict['character'] = character
+
+    class_features = ClassFeature.objects.filter(class_type=character.class_type)
+    race_features = RaceFeature.objects.filter(race=character.race)
+
+    response_dict['class_features'] = class_features
+    response_dict['race_features'] = race_features
+
     return render_to_response('character_builder/features.html',
             response_dict,
             context_instance=RequestContext(request))
