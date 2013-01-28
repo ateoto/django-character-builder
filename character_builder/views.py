@@ -180,8 +180,10 @@ def features(request, character_id):
     class_features = ClassFeature.objects.filter(class_type=character.class_type)
     race_features = RaceFeature.objects.filter(race=character.race)
 
-    response_dict['class_features'] = class_features
-    response_dict['race_features'] = race_features
+    response_dict['class_features'] = class_features.filter(requires_choice=False)
+    response_dict['race_features'] = race_features.filter(requires_choice=False)
+    response_dict['class_features_choice'] = class_features.filter(requires_choice=True)
+    response_dict['race_features_choice'] = class_features.filter(requires_choice=True)
 
     return render_to_response('character_builder/features.html',
             response_dict,

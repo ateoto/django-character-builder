@@ -19,7 +19,8 @@
     <div id="builder" class="row">
         <div id="builder-ux" class="span4">
             <div id="features" class="span4">
-            {% for feature in class_features %}
+
+            {% for feature in class_features_choice %}
                 {% if feature.requires_choice %}
                     {{ feature.name }}
                 {% endif %}
