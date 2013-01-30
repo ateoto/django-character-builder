@@ -25,6 +25,11 @@
                     {{ feature.name }}
                 {% endif %}
             {% endfor %}
+            {% for feature in race_features_choice %}
+                {% if feature.requires_choice %}
+                    {{ feature.name }}
+                {% endif %}
+            {% endfor %}
             </div>
         </div>
         <div id="info" class="span8">
