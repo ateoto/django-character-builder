@@ -1216,6 +1216,19 @@
         }
     }, 
     {
+        "pk": 6, 
+        "model": "character_builder.weapontype", 
+        "fields": {
+            "category": 5, 
+            "group": 6, 
+            "name": "Longsword", 
+            "weapon_range": "-", 
+            "damage": "1d8", 
+            "proficiency": "+3", 
+            "properties": "Versatile"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.armorclass", 
         "fields": {
@@ -1600,6 +1613,78 @@
             "bonus": 1, 
             "defense": 4, 
             "class_type": 3
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 1, 
+            "defense": 2, 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 1, 
+            "defense": 3, 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 2, 
+            "defense": 3, 
+            "class_type": 5
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 1, 
+            "defense": 3, 
+            "class_type": 6
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 1, 
+            "defense": 4, 
+            "class_type": 6
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 1, 
+            "defense": 2, 
+            "class_type": 7
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 1, 
+            "defense": 4, 
+            "class_type": 7
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.classtypedefmod", 
+        "fields": {
+            "bonus": 2, 
+            "defense": 4, 
+            "class_type": 8
         }
     }, 
     {
@@ -2060,56 +2145,10 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.power", 
+        "model": "character_builder.abilityprerequisite", 
         "fields": {
-            "hit": "", 
-            "class_type": null, 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
-            "attack": "", 
-            "target": "", 
-            "keywords": "Encounter, Free Action, Personal", 
-            "flavor": "With an instant of focus, you take careful aim at your foe and strike with the legendary accuracy of the elves.", 
-            "miss": "", 
-            "special": "", 
-            "name": "Elven Accuracy"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.power", 
-        "fields": {
-            "hit": "", 
-            "class_type": null, 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "Teleport up to 5 squares.", 
-            "attack": "", 
-            "target": "", 
-            "keywords": "Encounter; Teleportation; Move Action; Personal", 
-            "flavor": "With a step, you vanish from one place and appear in another.", 
-            "miss": "", 
-            "special": "", 
-            "name": "Fey Step"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.power", 
-        "fields": {
-            "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
-            "class_type": null, 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "", 
-            "attack": "Strength +2 vs. Reflex, Constitution +2 vs. Reflex, or Dexterity +2 vs. Reflex", 
-            "target": "All creatures in area", 
-            "keywords": "Encounter; Acid, Cold, Fire, Lightning, or Poison; Minor Action; Close blast 3", 
-            "flavor": "As you open your mouth with a roar, the deadly power of your draconic kin blasts forth to engulf your foes.", 
-            "miss": "", 
-            "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
-            "name": "Dragon Breath"
+            "ability": 3, 
+            "value": 15
         }
     }, 
     {
@@ -2150,6 +2189,246 @@
         "fields": {
             "name": "Unaligned", 
             "description": "Having no alignment; not taking a stand."
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 0, 
+            "number": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 1000, 
+            "number": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 2250, 
+            "number": 3
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 3750, 
+            "number": 4
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 5500, 
+            "number": 5
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 7500, 
+            "number": 6
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 10000, 
+            "number": 7
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 13000, 
+            "number": 8
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 16500, 
+            "number": 9
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 20500, 
+            "number": 10
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 26000, 
+            "number": 11
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 32000, 
+            "number": 12
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 39000, 
+            "number": 13
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 47000, 
+            "number": 14
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 57000, 
+            "number": 15
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 69000, 
+            "number": 16
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 83000, 
+            "number": 17
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 99000, 
+            "number": 18
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 119000, 
+            "number": 19
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 143000, 
+            "number": 20
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 175000, 
+            "number": 21
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 210000, 
+            "number": 22
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 255000, 
+            "number": 23
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 310000, 
+            "number": 24
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 375000, 
+            "number": 25
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 450000, 
+            "number": 26
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 550000, 
+            "number": 27
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 675000, 
+            "number": 28
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 825000, 
+            "number": 29
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 1000000, 
+            "number": 30
         }
     }, 
     {
@@ -2249,6 +2528,391 @@
             "name": "Sehanine", 
             "alignment": 5, 
             "description": "<p>God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:</p>\r\n<p>\u2726 Follow your goals and seek your own destiny.</p>\r\n<p>\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.</p>\r\n<p>\u2726 Seek new horizons and new experiences, and let nothing tie you down.</p>"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Hunter\u2019s Quarry", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "<p>Once per turn as a minor action, you can designate the enemy nearest to you as your quarry.</p>\r\n<p>Once per round, you deal extra damage to your quarry. The extra damage is based on your level. If you can make multiple attacks in a round, you decide which attack to apply the extra damage to after all the attacks are rolled.</p>\r\n<p>The hunter\u2019s quarry effect remains active until the end of the encounter, until the quarry is defeated, or until you designate a different target as your quarry. </p>\r\n<p>You can designate one enemy as your quarry at a time.</p>\r\n<table>\r\n  <thead>\r\n    <tr>\r\n      <th>Level</th>\r\n      <th>Hunter's Quarry Extra Damage</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>1-10th</td>\r\n      <td>+1d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>11-20th</td>\r\n      <td>+2d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>21-30th</td>\r\n      <td>+3d6</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n", 
+            "has_passive_effects": false, 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Fake Wizard Shit", 
+            "choices_json": "[\"One\", \"two\", \"three\"]", 
+            "passive_effects": "{}", 
+            "requires_choice": true, 
+            "benefit": "Doesn't do a damn thing.", 
+            "has_passive_effects": false, 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Eladrin Education", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You gain training in one additional skill.", 
+            "race": 3, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Eladrin Weapon Proficiency", 
+            "choices_json": null, 
+            "passive_effects": "{\"Weapon Proficiency\": [\"Longsword\"]}", 
+            "requires_choice": false, 
+            "benefit": "You gain proficiency with the longsword.", 
+            "race": 3, 
+            "has_passive_effects": true
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Eladrin Will", 
+            "choices_json": null, 
+            "passive_effects": "{\"Defense\": [{\"Willpower\": 1}]}", 
+            "requires_choice": false, 
+            "benefit": "You gain a +1 racial bonus to your Will defense. In addition, you gain a +5 racial bonus to saving throws against charm effects.", 
+            "race": 3, 
+            "has_passive_effects": true
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Fey Origin", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "Your ancestors were native to the Feywild, so you are considered a fey creature for the purpose of effects that relate to creature origin.", 
+            "race": 3, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Trance", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "Rather than sleep, eladrin enter a meditative state known as trance. You need to spend 4 hours in this state to gain the same benefits other races gain from taking a 6-hour extended rest. While in a trance, you are fully aware of your surroundings and notice approaching enemies and other events as normal.", 
+            "race": 3, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Fey Step", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You can use Fey Step as an encounter power.", 
+            "race": 3, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Cast-Iron Stomach", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "+5 racial bonus to saving throws against poison.", 
+            "race": 2, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dwarven Resilience", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You can use your second wind as a minor action instead of a standard action.", 
+            "race": 2, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dwarven Weapon Proficiency", 
+            "choices_json": null, 
+            "passive_effects": "{\"Weapon Proficiency\": [\"Warhammer\", \"Throwing hammer\"]}", 
+            "requires_choice": false, 
+            "benefit": "You gain proficiency with the throwing hammer and the warhammer.", 
+            "race": 2, 
+            "has_passive_effects": true
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Encumbered Speed", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You move at your normal speed even when it would normally be reduced by armor or a heavy load. Other effects that limit speed (such as difficult terrain or magical effects) affect you normally.", 
+            "race": 2, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Stand Your Ground", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "When an effect forces you to move\u2014through a pull, a push, or a slide\u2014you can move 1 square less than the effect specifies. This means an effect that normally pulls, pushes, or slides a target 1 square does not force you to move unless you want to.\r\nIn addition, when an attack would knock you prone, you can immediately make a saving throw to avoid falling prone.", 
+            "race": 2, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dilettante", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "At 1st level, you choose an at-will power from a class different from yours. You can use that power as an encounter power.", 
+            "race": 5, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dual Heritage", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You can take feats that have either elf or human as a prerequisite (as well as those specifically for half-elves), as long as you meet any other requirements.", 
+            "race": 5, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Group Diplomacy", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You grant allies within 10 squares of you a +1 racial bonus to Diplomacy checks.", 
+            "race": 5, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bold", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You gain a +5 racial bonus to saving throws against fear.", 
+            "race": 6, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Nimble Reaction", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You gain a +2 racial bonus to AC against opportunity attacks.", 
+            "race": 6, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Second Chance", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You can use second chance as an encounter power.", 
+            "race": 6, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bonus At-Will Power", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You know one extra at-will power from your class.", 
+            "race": 17, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bonus Feat", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You gain a bonus feat at 1st level. You must meet the feat's prerequisites.", 
+            "race": 17, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bonus Skill", 
+            "choices_json": null, 
+            "passive_effects": "{}", 
+            "requires_choice": false, 
+            "benefit": "You gain training in one additional skill from your class skill list.", 
+            "race": 17, 
+            "has_passive_effects": false
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Human Defense Bonuses", 
+            "choices_json": null, 
+            "passive_effects": "{\"Defense\": [{\"Fortitude\": 1}, {\"Reflex\": 1}, {\"Willpower\": 1}]}", 
+            "requires_choice": false, 
+            "benefit": "+1 to Fortitude, Reflex, and Will defenses.", 
+            "race": 17, 
+            "has_passive_effects": true
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.power", 
+        "fields": {
+            "hit": "", 
+            "class_type": null, 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
+            "attack": "", 
+            "target": "", 
+            "keywords": "Encounter, Free Action, Personal", 
+            "flavor": "With an instant of focus, you take careful aim at your foe and strike with the legendary accuracy of the elves.", 
+            "miss": "", 
+            "special": "", 
+            "name": "Elven Accuracy"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.power", 
+        "fields": {
+            "hit": "", 
+            "class_type": null, 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "Teleport up to 5 squares.", 
+            "attack": "", 
+            "target": "", 
+            "keywords": "Encounter; Teleportation; Move Action; Personal", 
+            "flavor": "With a step, you vanish from one place and appear in another.", 
+            "miss": "", 
+            "special": "", 
+            "name": "Fey Step"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.power", 
+        "fields": {
+            "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
+            "class_type": null, 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "", 
+            "attack": "Strength +2 vs. Reflex, Constitution +2 vs. Reflex, or Dexterity +2 vs. Reflex", 
+            "target": "All creatures in area", 
+            "keywords": "Encounter; Acid, Cold, Fire, Lightning, or Poison; Minor Action; Close blast 3", 
+            "flavor": "As you open your mouth with a roar, the deadly power of your draconic kin blasts forth to engulf your foes.", 
+            "miss": "", 
+            "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
+            "name": "Dragon Breath"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.feat", 
+        "fields": {
+            "power_benefit": null, 
+            "req_ability": [], 
+            "name": "Action Surge", 
+            "req_class_feat": null, 
+            "req_deity": null, 
+            "req_race": 17, 
+            "benefit": "You gain a +3 bonus to attack rolls you make during any action you gained by spending an action point.", 
+            "req_armor": null, 
+            "req_class_type": null
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.feat", 
+        "fields": {
+            "power_benefit": null, 
+            "req_ability": [
+                1
+            ], 
+            "name": "Agile Hunter", 
+            "req_class_feat": 1, 
+            "req_deity": null, 
+            "req_race": null, 
+            "benefit": "When you score a critical hit with a melee attack against the target of your Hunter\u2019s Quarry, you can shift as a free action, and the enemy takes a \u20132 penalty on attack rolls against you until the end of your next turn.", 
+            "req_armor": null, 
+            "req_class_type": 4
         }
     }, 
     {
@@ -2527,12 +3191,11 @@
         "fields": {
             "class_type": 1, 
             "weight": "180", 
-            "level": 1, 
             "gender": 2, 
             "age": 28, 
             "height": "5' 10\"", 
             "race": 4, 
-            "slug_name": "", 
+            "slug_name": "vaygun", 
             "user": 1, 
             "hit_points": 0, 
             "xp": 0, 
@@ -2547,12 +3210,11 @@
         "fields": {
             "class_type": 8, 
             "weight": "", 
-            "level": 1, 
             "gender": 3, 
             "age": null, 
             "height": "", 
             "race": 3, 
-            "slug_name": "", 
+            "slug_name": "meriele", 
             "user": 3, 
             "hit_points": null, 
             "xp": 0, 
@@ -2567,7 +3229,6 @@
         "fields": {
             "class_type": 1, 
             "weight": "86", 
-            "level": 1, 
             "gender": 3, 
             "age": 32, 
             "height": "4' 3\"", 
@@ -2587,7 +3248,6 @@
         "fields": {
             "class_type": 4, 
             "weight": "", 
-            "level": 1, 
             "gender": 2, 
             "age": 27, 
             "height": "", 
@@ -2607,7 +3267,6 @@
         "fields": {
             "class_type": 2, 
             "weight": "250", 
-            "level": 1, 
             "gender": 2, 
             "age": 28, 
             "height": "4' 9\"", 
@@ -2627,7 +3286,6 @@
         "fields": {
             "class_type": 3, 
             "weight": "180", 
-            "level": 1, 
             "gender": 3, 
             "age": 20, 
             "height": "5' 6\"", 
