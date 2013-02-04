@@ -13,11 +13,12 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">Categories</li>
                             <li class="active"><a href="#">Personal</a></li>
-                            <li><a href="#">Abilities</a></li>
-                            <li><a href="#">Feats</a></li>
-                            <li><a href="#">Skills</a></li>
-                            <li><a href="#">Powers</a></li>
-                            <li><a href="#">Equipment</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#abilities">Abilities</a></li>
+                            <li><a href="#feats">Feats</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#powers">Powers</a></li>
+                            <li><a href="#equipment">Equipment</a></li>
                         </ul>
                     </div>
                 </div>
@@ -26,31 +27,35 @@
                         <div class="span9 page-header">
                           <h1>{{ character.name }} <small>Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}</small></h1>
                         </div>
-                        <div class="span9">
-                            <div id="ability-scores" class="span9">
-                                <h4>Abilities</h4>
-                                <table class="table table-hover table-bordered table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th>Score</th>
-                                            <th>Ability</th>
-                                            <th>Modifier</th>
-                                            <th>Modifier + 1/2 Level</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for ability in character.abilities.all %}
-                                        <tr id="ability-score-{{ability.ability.name}}" class="ability-score">
-                                            <td class="ability-value">{{ ability.value }}</td>
-                                            <td class="ability-name">{{ ability.ability.name }}</td>
-                                            <td class="ability-mod">tbd</td>
-                                            <td class="ability-mod-level">tbd</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div> 
+                        <div id="personal" class="span9">
+                            <h4>Personal</h4>
                         </div>
+                        <div id="features" class="span9">
+                            <h4>Features</h4>
+                        </div>
+                        <div id="abilities" class="span9">
+                            <h4>Abilities</h4>
+                            <table class="table table-hover table-bordered table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Ability</th>
+                                        <th>Modifier</th>
+                                        <th>Modifier + 1/2 Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for ability in character.abilities.all %}
+                                    <tr id="ability-score-{{ability.ability.name}}" class="ability-score">
+                                        <td class="ability-value">{{ ability.value }}</td>
+                                        <td class="ability-name">{{ ability.ability.name }}</td>
+                                        <td class="ability-mod">tbd</td>
+                                        <td class="ability-mod-level">tbd</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div> 
                     </div>
                     {% crispy character_getter_form %}
                 </div>
