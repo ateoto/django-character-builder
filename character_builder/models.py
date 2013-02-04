@@ -374,7 +374,6 @@ class Character(models.Model):
     class_type = models.ForeignKey(ClassType)
     race = models.ForeignKey(Race)
     gender = models.ForeignKey(Gender)
-    level = models.IntegerField(default=1, blank=True)
     xp = models.IntegerField(default=0, blank=True)
     hit_points = models.IntegerField(blank=True, null=True)
     age = models.IntegerField(blank=True, null=True)
@@ -384,7 +383,9 @@ class Character(models.Model):
     deity = models.ForeignKey(Deity)
 
     def __unicode__(self):
-        return "%s Level %i %s %s" % (self.name, self.level, self.race.name, self.class_type.name)
+        level = Level.objects.order_by('-xp_required').filter(xp_required__lte=self.xp)[:1].get()
+
+        return "%s Level %i %s %s" % (self.name, level.number, self.race.name, self.class_type.name)
 
     def save(self, *args, **kwargs):
         if not self.id:
