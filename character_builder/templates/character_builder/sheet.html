@@ -29,6 +29,10 @@
                         </div>
                         <div id="personal" class="span9">
                             <h4>Personal</h4>
+                                                            {{ character.xp }} / {{ next_level.xp_required }} XP
+                            <div class="progress progress-striped active">
+                                <div class="bar" style="width: {% widthratio character.xp next_level.xp_required 100 %}%;"></div>
+                            </div>
                         </div>
                         <div id="features" class="span9">
                             <h4>Features</h4>

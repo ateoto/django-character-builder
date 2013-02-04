@@ -266,6 +266,14 @@ class Alignment(models.Model):
         return self.name
 
 
+class Level(models.Model):
+    number = models.IntegerField()
+    xp_required = models.IntegerField()
+
+    def __unicode__(self):
+        return "%s: %s xp required" % (self.number, self.xp_required)
+
+
 class Deity(models.Model):
     name = models.CharField(max_length=100)
     alignment = models.ForeignKey(Alignment)

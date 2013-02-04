@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 from character_builder.models import (Ability, Character, Race,
                                     Source, ClassType, Deity,
                                     CharacterAbility, Skill, CharacterSkill,
-                                    ClassFeature, RaceFeature)
+                                    ClassFeature, RaceFeature, Level)
 from character_builder.forms import (CharacterFormUser, CharacterAbilityForm,
                                     CharacterGetterForm)
 
@@ -209,7 +209,16 @@ def sheet(request, character_id, character_slug):
     c = get_object_or_404(Character, id=character_id, slug_name=character_slug)
     response_dict = {}
     response_dict['character'] = c
+    level = Level.objects.order_by('-xp_required').filter(xp_required__lte=c.xp)[:1].get()
+    try:
+        next_level = Level.objects.get(number=level.number + 1)
+    except:
+        next_level = None
+
     response_dict['character_getter_form'] = CharacterGetterForm({'character': c.id})
+    response_dict['level'] = level
+    response_dict['next_level'] = next_level
+
     return render_to_response('character_builder/sheet.html',
         response_dict,
         context_instance=RequestContext(request))
@@ -221,11 +230,18 @@ def character_json(request):
         getter_form = CharacterGetterForm(request.POST)
         if getter_form.is_valid():
             character = Character.objects.get(id=getter_form.cleaned_data['character'])
+            level = Level.objects.order_by('-xp_required').filter(xp_required__lte=character.xp)[:1].get()
+            try:
+                next_level_xp_required = Level.objects.get(number=level.number + 1).xp_required
+            except:
+                next_level_xp_required = 0
+
             response_dict['character'] = {
                 'character_id': character.id,
                 'name': character.name,
-                'level': character.level,
+                'level': level.number,
                 'xp': character.xp,
+                'next_level_xp_required': next_level_xp_required,
                 'hp': character.hit_points,
                 'race_id': character.race.id,
                 'race_name': character.race.name,
