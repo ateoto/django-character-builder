@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url, include
-#from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView
 from tastypie.api import Api
 from character_builder.api import ClassTypeResource, CharacterResource
 
@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^$', 'character_builder.views.user_home', name='character-builder-user-home'),
     url(r'^charactersheet/(?P<character_id>\d+)/(?P<character_slug>\w+)/$', 'character_builder.views.sheet', name='character-builder-sheet'),
     url(r'^characterjson/$', 'character_builder.views.character_json', name='character-builder-character-json'),
+    url(r'^sheettest/', TemplateView.as_view(template_name='character_builder/sheet_test.html')),
 
     url(r'^builder/$', 'character_builder.views.personal', name='character-builder-index'),
     url(r'^builder/personal/$', 'character_builder.views.personal', name='character-builder-personal'),
