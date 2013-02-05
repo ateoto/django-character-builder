@@ -1,12 +1,6 @@
 from django.conf.urls import patterns, url, include
 #from django.views.generic.base import TemplateView
-from tastypie.api import Api
-from character_builder.api import ClassTypeResource, CharacterResource
-
-api = Api(api_name='v1')
-
-api.register(ClassTypeResource())
-api.register(CharacterResource())
+from character_builder.api import v1
 
 urlpatterns = patterns('',
     #url(r'^$', TemplateView.as_view(template_name = 'character_builder/builder.html')),
@@ -22,5 +16,6 @@ urlpatterns = patterns('',
     url(r'^builder/feats/(?P<character_id>\d+)/$', 'character_builder.views.feats', name='character-builder-feats'),
     url(r'^builder/powers/(?P<character_id>\d+)/$', 'character_builder.views.powers', name='character-builder-powers'),
     url(r'^builder/gear/(?P<character_id>\d+)/$', 'character_builder.views.gear', name='character-builder-gear'),
-    url(r'^api/', include(api.urls)),
+
+    url(r'^api/', include(v1.urls)),
 )
