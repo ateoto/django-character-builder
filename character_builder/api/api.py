@@ -1,6 +1,6 @@
 from tastypie.api import Api
-from resources import (ClassTypeResource, RaceResource, GenderResource,
-						AlignmentResource, DeityResource, CharacterResource)
+from resources import (ClassTypeResource, RaceResource,
+                        AlignmentResource, DeityResource, CharacterResource)
 
 
 v1 = Api(api_name='v1')
