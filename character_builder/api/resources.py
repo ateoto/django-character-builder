@@ -1,16 +1,26 @@
 from tastypie.resources import ModelResource, ALL_WITH_RELATIONS
 from tastypie import fields
 from character_builder.models import (ClassType, Character, Race,
-                                        Gender, Alignment, Deity)
+                                        Gender, Alignment, Deity, Source)
+
+
+class SourceResource(ModelResource):
+    class Meta:
+        queryset = Source.objects.all()
+        resource_name = 'source'
 
 
 class ClassTypeResource(ModelResource):
+    source = fields.ForeignKey(SourceResource, 'source', full=True)
+
     class Meta:
         queryset = ClassType.objects.all()
         resource_name = 'class_type'
 
 
 class RaceResource(ModelResource):
+    source = fields.ForeignKey(SourceResource, 'source', full=True)
+    
     class Meta:
         queryset = Race.objects.all()
         resource_name = 'race'
