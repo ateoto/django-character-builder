@@ -219,6 +219,8 @@ class ClassType(models.Model):
     armor_proficiencies = models.ManyToManyField(ArmorType)
     trained_skills = models.ManyToManyField(Skill, blank=True, null=True)
     skill_choices = models.IntegerField(default=3)
+    base_hit_points = models.IntegerField(default=0)
+    hit_points_per_level = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['name']
@@ -377,12 +379,18 @@ class Character(models.Model):
     race = models.ForeignKey(Race)
     gender = models.ForeignKey(Gender)
     xp = models.IntegerField(default=0, blank=True)
-    hit_points = models.IntegerField(blank=True, null=True)
+    max_hit_points = models.IntegerField(default=0, blank=True, null=True)
+    hit_points = models.IntegerField(default=0, blank=True)
     age = models.IntegerField(blank=True, null=True)
     weight = models.CharField(max_length=20, blank=True, null=True)
     height = models.CharField(max_length=20, blank=True, null=True)
     alignment = models.ForeignKey(Alignment)
     deity = models.ForeignKey(Deity)
+
+    def init_hit_points(self):
+        self.max_hit_points = self.class_type.base_hit_points + self.abilities.get(ability__name='Constitution').value
+        self.hit_points = self.max_hit_points
+        self.save()
 
     def current_level(self):
         return Level.objects.order_by('-xp_required').filter(xp_required__lte=self.xp)[:1].get()
