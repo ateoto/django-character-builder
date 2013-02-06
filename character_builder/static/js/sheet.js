@@ -24,7 +24,7 @@ $(function() {
 	         }
 	     } 
 	});
-	var my_character = get_character(character_id);
+	update_character(character_id);
 	setInterval(update_character, 10000, character_id);
 });
 
@@ -38,17 +38,6 @@ function test_tasty(cid) {
 	}, "json");
 }
 
-
-function get_character(character_id) {
-	var character_data;
-	$.get('/DnD/api/v1/character/' + character_id + '/','',
-		function(data){
-			character_data = data
-			update_ability_scores(character_data);
-	}, "json");
-	return character_data;
-}
-
 function update_character(character_id) {
 	$.get('/DnD/api/v1/character/' + character_id + '/', '',
 		function(data) {
@@ -56,7 +45,6 @@ function update_character(character_id) {
 			update_xp(data);
 		}, "json");
 }
-
 
 function update_ability_scores(character_data) {
 	_.each(character_data.abilities, function(element) {
