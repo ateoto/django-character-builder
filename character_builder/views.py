@@ -209,15 +209,8 @@ def sheet(request, character_id, character_slug):
     c = get_object_or_404(Character, id=character_id, slug_name=character_slug)
     response_dict = {}
     response_dict['character'] = c
-    level = Level.objects.order_by('-xp_required').filter(xp_required__lte=c.xp)[:1].get()
-    try:
-        next_level = Level.objects.get(number=level.number + 1)
-    except:
-        next_level = None
 
     response_dict['character_getter_form'] = CharacterGetterForm({'character': c.id})
-    response_dict['level'] = level
-    response_dict['next_level'] = next_level
 
     return render_to_response('character_builder/sheet.html',
         response_dict,

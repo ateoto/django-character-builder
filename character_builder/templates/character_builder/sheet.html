@@ -2,8 +2,13 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 {% block js %}
-<script src="{% static "js/CharacterBuilder.js" %}"></script>
-<script src="{% static "js/sheet.js" %}"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+
+        <script>
+            var character_id = {{ character.id }};
+        </script>
+        <script src="{% static "js/CharacterBuilder.js" %}"></script>
+        <script src="{% static "js/sheet.js" %}"></script>
 {% endblock %}
 {% block content %}
         <div class="container">
@@ -25,13 +30,13 @@
                 <div id="builder-content" class="span9 offset1">
                     <div class="row">
                         <div class="span9 page-header">
-                          <h1>{{ character.name }} <small>Level {{ character.level }} {{ character.race.name }} {{ character.class_type.name }}</small></h1>
+                          <h1>{{ character.name }} <small>Level <span id="level-text">{{ character.current_level.number }}</span> {{ character.race.name }} {{ character.class_type.name }}</small></h1>
                         </div>
                         <div id="personal" class="span9">
                             <h4>Personal</h4>
-                                                            {{ character.xp }} / {{ next_level.xp_required }} XP
+                            <span id="xp-text">{{ character.xp }}</span> / <span id="next-level-xp-text">{{ character.next_level.xp_required }}</span> XP
                             <div class="progress progress-striped active">
-                                <div class="bar" style="width: {% widthratio character.xp next_level.xp_required 100 %}%;"></div>
+                                <div id="xp-bar" class="bar" style="width: {% widthratio character.xp character.next_level.xp_required 100 %}%;"></div>
                             </div>
                         </div>
                         <div id="features" class="span9">

@@ -4,6 +4,8 @@ from django.template.defaultfilters import slugify
 
 from json_field import JSONField
 
+import math
+
 
 class Source(models.Model):
     name = models.CharField(max_length=50)
@@ -382,10 +384,17 @@ class Character(models.Model):
     alignment = models.ForeignKey(Alignment)
     deity = models.ForeignKey(Deity)
 
-    def __unicode__(self):
-        level = Level.objects.order_by('-xp_required').filter(xp_required__lte=self.xp)[:1].get()
+    def current_level(self):
+        return Level.objects.order_by('-xp_required').filter(xp_required__lte=self.xp)[:1].get()
 
-        return "%s Level %i %s %s" % (self.name, level.number, self.race.name, self.class_type.name)
+    def next_level(self):
+        try:
+            return Level.objects.get(number=self.current_level().number + 1)
+        except:
+            return self.current_level
+
+    def __unicode__(self):
+        return "%s Level %i %s %s" % (self.name, self.current_level().number, self.race.name, self.class_type.name)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -443,6 +452,12 @@ class CharacterAbility(models.Model):
 
     class Meta:
         verbose_name_plural = "Character Abilities"
+
+    def modifier(self):
+        return int(math.floor((math.fabs(self.value) - 10) / 2))
+
+    def modifier_half_level(self):
+        return self.modifier() + int(math.floor(self.character.current_level().number / 2))
 
     def __unicode__(self):
         return "%s %s" % (self.ability.name, self.value)
