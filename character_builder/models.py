@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.core.exceptions import ObjectDoesNotExist
 
 from json_field import JSONField
+from model_utils.managers import InheritanceManager
 
 import math
 
@@ -292,12 +294,21 @@ class ClassFeature(models.Model):
     benefit = models.TextField()
     requires_choice = models.BooleanField(default=False)
     choices_json = JSONField(blank=True)
-    class_type = models.ForeignKey(ClassType)
+    class_type = models.ManyToManyField(ClassType)
     has_passive_effects = models.BooleanField(default=False)
     passive_effects = JSONField(default='{}', blank=True)
 
     def __unicode__(self):
-        return "%s: %s" % (self.class_type.name, self.name)
+        class_types = ''
+        cts = self.class_type.all()
+        if cts.count() > 1:
+            for ct in cts:
+                class_types += ct.name + ' / '
+            class_types = class_types[:-3]
+        else:
+            class_types = cts[:1].get().name
+
+        return "%s: %s" % (class_types, self.name)
 
 
 class RaceFeature(models.Model):
@@ -316,7 +327,6 @@ class RaceFeature(models.Model):
 class Power(models.Model):
     name = models.CharField(max_length=100)
     level = models.IntegerField()
-    class_type = models.ForeignKey(ClassType, blank=True, null=True)
     power_type = models.ForeignKey(PowerType)
     flavor = models.TextField(blank=True, null=True)
     keywords = models.TextField(blank=True, null=True)
@@ -331,6 +341,10 @@ class Power(models.Model):
         return self.name
 
 
+class ClassPower(Power):
+    class_type = models.ForeignKey(ClassType)
+
+
 class RacialPower(Power):
     race = models.ForeignKey(Race)
 
@@ -338,19 +352,92 @@ class RacialPower(Power):
         return self.name
 
 
+# Feats
 class Feat(models.Model):
-    name = models.CharField(max_length=100)
-    req_ability = models.ManyToManyField(AbilityPrerequisite, blank=True, null=True)
-    req_race = models.ForeignKey(Race, blank=True, null=True)
-    req_class_type = models.ForeignKey(ClassType, blank=True, null=True)
-    req_class_feat = models.ForeignKey(ClassFeature, blank=True, null=True)
-    req_deity = models.ForeignKey(Deity, blank=True, null=True)
-    req_armor = models.ForeignKey(ArmorClass, blank=True, null=True)
+    name = models.CharField(max_length=50)
     benefit = models.TextField()
-    power_benefit = models.ForeignKey(Power, blank=True, null=True)
+    has_passive_effects = models.BooleanField(default=False)
+    passive_effects = JSONField(default='{}', blank=True)
+
+    def character_eligible(self, character):
+        eligible = True
+        for prereq in FeatPrereq.objects.filter(feat=self).select_subclasses():
+            eligible = eligible and prereq.character_eligible(character)
+
+        return eligible
 
     def __unicode__(self):
         return self.name
+
+
+class FeatPrereq(models.Model):
+    feat = models.ForeignKey(Feat, related_name='prereqs')
+    objects = InheritanceManager()
+
+
+class FeatRacePrereq(FeatPrereq):
+    race = models.ForeignKey(Race)
+
+    def character_eligible(self, character):
+        return self.race == character.race
+
+    def __unicode__(self):
+        return '%s requires %s' % (self.feat.name, self.race.name)
+
+
+class FeatClassTypePrereq(FeatPrereq):
+    class_type = models.ForeignKey(ClassType)
+
+    def character_eligible(self, character):
+        return self.class_type == character.class_type
+
+    def __unicode__(self):
+        return '%s requires %s' % (self.feat.name, self.class_type.name)
+
+
+class FeatClassFeaturePrereq(FeatPrereq):
+    classfeature = models.ForeignKey(ClassFeature)
+
+    def character_eligible(self, character):
+        return self.classfeature in character.class_features.all()
+
+
+class FeatAbilityPrereq(FeatPrereq):
+    ability = models.ForeignKey(Ability)
+    value = models.IntegerField()
+
+    def character_eligible(self, character):
+        ca = CharacterAbility.objects.get(ability=self.ability, character=character)
+        return ca.value >= self.value
+
+
+class FeatSkillPrereq(FeatPrereq):
+    skill = models.ForeignKey(Skill)
+
+    def character_eligible(self, character):
+        return self.skill in CharacterSkill.objects.filter(character=character, is_trained=True)
+
+
+class FeatFeatPrereq(FeatPrereq):
+    pre_feat = models.ForeignKey(Feat)
+
+    def character_eligible(self, character):
+        try:
+            CharacterFeat.objects.get(feat=self.pre_feat, character=character)
+            return True
+        except ObjectDoesNotExist:
+            return False
+
+
+class FeatDeityPrereq(FeatPrereq):
+    deity = models.ForeignKey(Deity)
+
+    def character_eligible(self, character):
+        return self.character.deity == self.deity
+
+
+class FeatPower(Power):
+    feat = models.ForeignKey(Feat)
 
 
 class Currency(models.Model):
@@ -479,6 +566,14 @@ class CharacterSkill(models.Model):
 
     def __unicode__(self):
         return "%s: %s %s" % (self.character.name, self.skill.name, self.value)
+
+
+class CharacterFeat(models.Model):
+    character = models.ForeignKey(Character, related_name="feats")
+    feat = models.ForeignKey(Feat)
+
+    def __unicode__(self):
+        return "%s: %s" % (self.character.name, self.feat.name)
 
 
 class CharacterPower(models.Model):

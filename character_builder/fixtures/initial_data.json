@@ -2540,7 +2540,9 @@
             "requires_choice": false, 
             "benefit": "<p>Once per turn as a minor action, you can designate the enemy nearest to you as your quarry.</p>\r\n<p>Once per round, you deal extra damage to your quarry. The extra damage is based on your level. If you can make multiple attacks in a round, you decide which attack to apply the extra damage to after all the attacks are rolled.</p>\r\n<p>The hunter\u2019s quarry effect remains active until the end of the encounter, until the quarry is defeated, or until you designate a different target as your quarry. </p>\r\n<p>You can designate one enemy as your quarry at a time.</p>\r\n<table>\r\n  <thead>\r\n    <tr>\r\n      <th>Level</th>\r\n      <th>Hunter's Quarry Extra Damage</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>1-10th</td>\r\n      <td>+1d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>11-20th</td>\r\n      <td>+2d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>21-30th</td>\r\n      <td>+3d6</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n", 
             "has_passive_effects": false, 
-            "class_type": 4
+            "class_type": [
+                4
+            ]
         }
     }, 
     {
@@ -2553,7 +2555,9 @@
             "requires_choice": true, 
             "benefit": "Doesn't do a damn thing.", 
             "has_passive_effects": false, 
-            "class_type": 8
+            "class_type": [
+                8
+            ]
         }
     }, 
     {
@@ -2834,7 +2838,6 @@
         "model": "character_builder.power", 
         "fields": {
             "hit": "", 
-            "class_type": null, 
             "level": 0, 
             "power_type": 9, 
             "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
@@ -2852,7 +2855,6 @@
         "model": "character_builder.power", 
         "fields": {
             "hit": "", 
-            "class_type": null, 
             "level": 0, 
             "power_type": 9, 
             "effect": "Teleport up to 5 squares.", 
@@ -2870,7 +2872,6 @@
         "model": "character_builder.power", 
         "fields": {
             "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
-            "class_type": null, 
             "level": 0, 
             "power_type": 9, 
             "effect": "", 
@@ -2881,38 +2882,6 @@
             "miss": "", 
             "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
             "name": "Dragon Breath"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.feat", 
-        "fields": {
-            "power_benefit": null, 
-            "req_ability": [], 
-            "name": "Action Surge", 
-            "req_class_feat": null, 
-            "req_deity": null, 
-            "req_race": 17, 
-            "benefit": "You gain a +3 bonus to attack rolls you make during any action you gained by spending an action point.", 
-            "req_armor": null, 
-            "req_class_type": null
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.feat", 
-        "fields": {
-            "power_benefit": null, 
-            "req_ability": [
-                1
-            ], 
-            "name": "Agile Hunter", 
-            "req_class_feat": 1, 
-            "req_deity": null, 
-            "req_race": null, 
-            "benefit": "When you score a critical hit with a melee attack against the target of your Hunter\u2019s Quarry, you can shift as a free action, and the enemy takes a \u20132 penalty on attack rolls against you until the end of your next turn.", 
-            "req_armor": null, 
-            "req_class_type": 4
         }
     }, 
     {

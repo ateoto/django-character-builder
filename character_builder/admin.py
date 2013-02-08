@@ -2,7 +2,7 @@ from django.contrib import admin
 from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     CharacterSkill, CharacterAbility,
                                     ClassType, Character, Size,
-                                    PowerType, Power, Language,
+                                    PowerType, Language,
                                     RaceAbilityMod, RaceSkillMod,
                                     Alignment, Deity, WeaponGroup,
                                     WeaponCategory, WeaponType,
@@ -12,9 +12,13 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     CharacterCurrency, Gender, Party,
                                     Defense, ClassTypeDefMod,
                                     CharacterBaseDefense, ClassSkill,
-                                    ClassFeature, Feat, AbilityPrerequisite,
+                                    ClassFeature, AbilityPrerequisite,
                                     CharacterRaceFeature, CharacterClassFeature,
                                     RaceFeature)
+from character_builder.models import (FeatRacePrereq, FeatClassTypePrereq,
+                                        FeatClassFeaturePrereq, FeatAbilityPrereq,
+                                        FeatSkillPrereq, FeatDeityPrereq, Feat)
+from character_builder.models import (ClassPower, RacialPower, FeatPower)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
@@ -40,7 +44,6 @@ admin.site.register(Alignment)
 admin.site.register(Deity)
 admin.site.register(Character)
 admin.site.register(PowerType)
-admin.site.register(Power)
 admin.site.register(Language)
 admin.site.register(RaceAbilityMod)
 admin.site.register(RaceSkillMod)
@@ -60,8 +63,17 @@ admin.site.register(ClassTypeDefMod)
 admin.site.register(CharacterBaseDefense)
 admin.site.register(ClassSkill)
 admin.site.register(ClassFeature)
-admin.site.register(Feat)
 admin.site.register(AbilityPrerequisite)
 admin.site.register(CharacterRaceFeature)
 admin.site.register(CharacterClassFeature)
 admin.site.register(RaceFeature)
+admin.site.register(FeatRacePrereq)
+admin.site.register(FeatClassTypePrereq)
+admin.site.register(FeatClassFeaturePrereq)
+admin.site.register(FeatAbilityPrereq)
+admin.site.register(FeatSkillPrereq)
+admin.site.register(FeatDeityPrereq)
+admin.site.register(Feat)
+admin.site.register(ClassPower)
+admin.site.register(RacialPower)
+admin.site.register(FeatPower)
