@@ -415,29 +415,21 @@ class FeatSkillPrereq(FeatPrereq):
     skill = models.ForeignKey(Skill)
 
     def character_eligible(self, character):
-        return self.skill in CharacterSkill.objects.filter(character=character, is_trained=True)
+        return CharacterSkill.objects.filter(skill=self.skill, character=character, is_trained=True).exists()
 
 
 class FeatSkillOrSkillPrereq(FeatPrereq):
     allowed_skills = models.ManyToManyField(Skill)
 
-    def character_eligile(self, character):
-        eligible = True
-        for cs in CharacterSkill.objects.filter(character=character, is_trained=True):
-            eligible = eligible or cs.skill in self.allowed_skills.all()
-
-        return eligible
+    def character_eligible(self, character):
+        return CharacterSkill.objects.filter(skill__in=self.allowed_skills.all(), character=character, is_trained=True).exists()
 
 
 class FeatFeatPrereq(FeatPrereq):
     pre_feat = models.ForeignKey(Feat)
 
     def character_eligible(self, character):
-        try:
-            CharacterFeat.objects.get(feat=self.pre_feat, character=character)
-            return True
-        except ObjectDoesNotExist:
-            return False
+        CharacterFeat.objects.get(feat=self.pre_feat, character=character).exists()
 
 
 class FeatDeityPrereq(FeatPrereq):
