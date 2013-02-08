@@ -18,7 +18,7 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
 from character_builder.models import (FeatRacePrereq, FeatClassTypePrereq,
                                         FeatClassFeaturePrereq, FeatAbilityPrereq,
                                         FeatSkillPrereq, FeatDeityPrereq, FeatSkillOrSkillPrereq,
-                                        Feat)
+                                        FeatArmorTypePrereq, FeatArmorOrArmorPrereq, Feat)
 from character_builder.models import (ClassPower, RacialPower, FeatPower)
 
 
@@ -75,6 +75,8 @@ admin.site.register(FeatAbilityPrereq)
 admin.site.register(FeatSkillPrereq)
 admin.site.register(FeatDeityPrereq)
 admin.site.register(FeatSkillOrSkillPrereq)
+admin.site.register(FeatArmorTypePrereq)
+admin.site.register(FeatArmorOrArmorPrereq)
 admin.site.register(Feat)
 admin.site.register(ClassPower)
 admin.site.register(RacialPower)

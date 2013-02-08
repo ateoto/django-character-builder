@@ -353,18 +353,30 @@ class RacialPower(Power):
 
 
 # Feats
+class FeatManager(models.Manager):
+    def eligible_for_character(self, character):
+        qs = super(FeatManager, self).get_query_set()
+        for feat in qs:
+            if not feat.character_eligible(character):
+                qs = qs.exclude(id=feat.id)
+
+        return qs
+
+
 class Feat(models.Model):
     name = models.CharField(max_length=50)
     benefit = models.TextField()
+    special = models.TextField(blank=True)
     has_passive_effects = models.BooleanField(default=False)
     passive_effects = JSONField(default='{}', blank=True)
+    objects = FeatManager()
 
     def character_eligible(self, character):
-        eligible = True
+        eligible = []
         for prereq in FeatPrereq.objects.filter(feat=self).select_subclasses():
-            eligible = eligible and prereq.character_eligible(character)
+            eligible.append(prereq.character_eligible(character))
 
-        return eligible
+        return all(eligible)
 
     def __unicode__(self):
         return self.name
@@ -399,7 +411,10 @@ class FeatClassFeaturePrereq(FeatPrereq):
     classfeature = models.ForeignKey(ClassFeature)
 
     def character_eligible(self, character):
-        return self.classfeature in character.class_features.all()
+            return character.class_features.filter(class_feature=self.classfeature).exists()
+
+    def __unicode__(self):
+        return '%s requires %s' % (self.feat.name, self.classfeature.name)
 
 
 class FeatAbilityPrereq(FeatPrereq):
@@ -409,6 +424,9 @@ class FeatAbilityPrereq(FeatPrereq):
     def character_eligible(self, character):
         ca = CharacterAbility.objects.get(ability=self.ability, character=character)
         return ca.value >= self.value
+
+    def __unicode__(self):
+        return '%s requires %s %i' % (self.feat.name, self.ability.name, self.value)
 
 
 class FeatSkillPrereq(FeatPrereq):
@@ -436,7 +454,24 @@ class FeatDeityPrereq(FeatPrereq):
     deity = models.ForeignKey(Deity)
 
     def character_eligible(self, character):
-        return self.character.deity == self.deity
+        return character.deity == self.deity
+
+    def __unicode__(self):
+        return '%s requires %s worship' % (self.feat.name, self.deity.name)
+
+
+class FeatArmorTypePrereq(FeatPrereq):
+    armor = models.ForeignKey(ArmorType)
+
+    def character_eligible(self, character):
+        return CharacterArmorType.objects.filter(character=character, armor_type=self.armor).exists()
+
+
+class FeatArmorOrArmorPrereq(FeatPrereq):
+    allowed_armors = models.ManyToManyField(ArmorType)
+
+    def character_eligible(self, character):
+        return CharacterArmorType.objects.filter(armor_type__in=self.allowed_armors.all(), character=character).exists()
 
 
 class FeatPower(Power):
@@ -559,6 +594,11 @@ class CharacterAbility(models.Model):
 
     def __unicode__(self):
         return "%s %s" % (self.ability.name, self.value)
+
+
+class CharacterArmorType(models.Model):
+    character = models.ForeignKey(Character, related_name="armor_types")
+    armor_type = models.ForeignKey(ArmorType)
 
 
 class CharacterSkill(models.Model):
