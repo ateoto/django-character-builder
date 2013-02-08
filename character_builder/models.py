@@ -418,6 +418,17 @@ class FeatSkillPrereq(FeatPrereq):
         return self.skill in CharacterSkill.objects.filter(character=character, is_trained=True)
 
 
+class FeatSkillOrSkillPrereq(FeatPrereq):
+    allowed_skills = models.ManyToManyField(Skill)
+
+    def character_eligile(self, character):
+        eligible = True
+        for cs in CharacterSkill.objects.filter(character=character, is_trained=True):
+            eligible = eligible or cs.skill in self.allowed_skills.all()
+
+        return eligible
+
+
 class FeatFeatPrereq(FeatPrereq):
     pre_feat = models.ForeignKey(Feat)
 
