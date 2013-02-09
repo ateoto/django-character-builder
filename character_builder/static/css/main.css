@@ -60,3 +60,11 @@ option:disabled {
 #skill-bonus {
 	padding-top: 15px;
 }
+
+.feat {
+	margin-top: 10px;
+}
+
+.feat-name, feat-benefit {
+	display: block;
+}

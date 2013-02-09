@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 from character_builder.models import (Ability, Character, Race,
                                     Source, ClassType, Deity,
                                     CharacterAbility, Skill, CharacterSkill,
-                                    ClassFeature, RaceFeature, Level)
+                                    ClassFeature, RaceFeature, Level, Feat)
 from character_builder.forms import (CharacterFormUser, CharacterAbilityForm,
                                     CharacterGetterForm)
 
@@ -192,7 +192,14 @@ def features(request, character_id):
 
 @login_required
 def feats(request, character_id):
-    return HttpResponse('Word')
+    response_dict = {}
+    character = Character.objects.get(id=character_id)
+    response_dict['character'] = character
+    response_dict['feats'] = Feat.objects.get_eligible(character)
+
+    return render_to_response('character_builder/feats.html',
+            response_dict,
+            context_instance=RequestContext(request))
 
 
 @login_required

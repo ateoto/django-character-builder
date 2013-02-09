@@ -354,7 +354,7 @@ class RacialPower(Power):
 
 # Feats
 class FeatManager(models.Manager):
-    def eligible_for_character(self, character):
+    def get_eligible(self, character):
         qs = super(FeatManager, self).get_query_set()
         for feat in qs:
             if not feat.character_eligible(character):
@@ -369,6 +369,9 @@ class Feat(models.Model):
     special = models.TextField(blank=True)
     has_passive_effects = models.BooleanField(default=False)
     passive_effects = JSONField(default='{}', blank=True)
+    can_retake = models.BooleanField(default=False)
+    requires_choice = models.BooleanField(default=False)
+    choices_json = JSONField(blank=True)
     objects = FeatManager()
 
     def character_eligible(self, character):
@@ -614,6 +617,8 @@ class CharacterSkill(models.Model):
 class CharacterFeat(models.Model):
     character = models.ForeignKey(Character, related_name="feats")
     feat = models.ForeignKey(Feat)
+    required_choice = models.BooleanField(default=False)
+    choice_result = models.TextField(blank=True)
 
     def __unicode__(self):
         return "%s: %s" % (self.character.name, self.feat.name)

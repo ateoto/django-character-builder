@@ -1,0 +1,30 @@
+{% extends "character_builder/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block js %}
+<script src="{% static "js/CharacterBuilder.js" %}"></script>
+<script src="{% static "js/builder.js" %}"></script>
+<script>
+    $(function () {
+    });
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="page-header span12">
+            <h3>Feats</h3>
+        </div>
+    </div>
+    <div id="builder" class="row">
+        <div id="feats" class="span12">
+            {% for feat in feats %}
+            <div id="feat-{{ feat.id }}" class="feat">
+                <span class="feat-name">{{ feat.name }}</span>
+                <span class="feat-benefit">{{ feat.benefit }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
