@@ -9,10 +9,10 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     WeaponProficiencyGroup,
                                     ArmorClass, ArmorType,
                                     Currency, CurrencyExchange,
-                                    CharacterCurrency, Gender, Party,
+                                    CharacterCurrency, Gender,
                                     Defense, ClassTypeDefMod,
                                     CharacterBaseDefense, ClassSkill,
-                                    ClassFeature, AbilityPrerequisite,
+                                    ClassFeature,
                                     CharacterRaceFeature, CharacterClassFeature,
                                     RaceFeature, ClassFeatureChoice)
 from character_builder.models import (FeatRacePrereq, FeatClassTypePrereq,
@@ -58,14 +58,12 @@ admin.site.register(CharacterCurrency)
 admin.site.register(Gender)
 admin.site.register(WeaponType)
 admin.site.register(WeaponProficiencyGroup)
-admin.site.register(Party)
 admin.site.register(Defense)
 admin.site.register(ClassTypeDefMod)
 admin.site.register(CharacterBaseDefense)
 admin.site.register(ClassSkill)
 admin.site.register(ClassFeature)
 admin.site.register(ClassFeatureChoice)
-admin.site.register(AbilityPrerequisite)
 admin.site.register(CharacterRaceFeature)
 admin.site.register(CharacterClassFeature)
 admin.site.register(RaceFeature)
