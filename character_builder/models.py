@@ -86,6 +86,14 @@ class Skill(models.Model):
         return self.name
 
 
+class Defense(models.Model):
+    name = models.CharField(max_length=20)
+    abbreviation = models.CharField(max_length=10)
+
+    def __unicode__(self):
+        return self.name
+
+
 class PowerType(models.Model):
     name = models.CharField(max_length=50)
 
@@ -98,6 +106,64 @@ class PowerKeyword(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Modifier(models.Model):
+    objects = InheritanceManager()
+
+
+class AbilityMod(Modifier):
+    ability = models.ForeignKey(Ability)
+    value = models.IntegerField()
+
+    def apply_mod(self, character):
+        raise NotImplemented
+
+    def pretty(self):
+        if self.value < 0:
+            mod = "-"
+        elif self.value == 0:
+            mod = ""
+        else:
+            mod = "+"
+
+        return "%s%s %s" % (mod, self.value, self.ability.name)
+
+
+class SkillMod(Modifier):
+    skill = models.ForeignKey(Skill)
+    value = models.IntegerField()
+
+    def apply_mod(self, character):
+        raise NotImplemented
+
+    def pretty(self):
+        if self.value < 0:
+            mod = "-"
+        elif self.value == 0:
+            mod = ""
+        else:
+            mod = "+"
+
+        return "%s%s %s" % (mod, self.value, self.skill.name)
+
+
+class DefenseMod(Modifier):
+    defense = models.ForeignKey(Defense)
+    value = models.IntegerField()
+
+    def apply_mod(self, character):
+        raise NotImplemented
+
+    def pretty(self):
+        if self.value < 0:
+            mod = "-"
+        elif self.value == 0:
+            mod = ""
+        else:
+            mod = "+"
+
+        return "%s%s %s" % (mod, self.value, self.defense.name)
 
 
 class Race(models.Model):
@@ -231,14 +297,6 @@ class ClassType(models.Model):
         return self.name
 
 
-class Defense(models.Model):
-    name = models.CharField(max_length=20)
-    abbreviation = models.CharField(max_length=10)
-
-    def __unicode__(self):
-        return self.name
-
-
 class ClassTypeDefMod(models.Model):
     class_type = models.ForeignKey(ClassType)
     defense = models.ForeignKey(Defense)
@@ -289,14 +347,20 @@ class Deity(models.Model):
         return self.name
 
 
+class ClassFeatureChoice(models.Model):
+    name = models.CharField(max_length=100)
+    benefit = models.TextField()
+
+    def __unicode__(self):
+        return self.name
+
+
 class ClassFeature(models.Model):
     name = models.CharField(max_length=100)
     benefit = models.TextField()
     requires_choice = models.BooleanField(default=False)
-    choices_json = JSONField(blank=True)
+    choices = models.ManyToManyField(ClassFeatureChoice, blank=True)
     class_type = models.ManyToManyField(ClassType)
-    has_passive_effects = models.BooleanField(default=False)
-    passive_effects = JSONField(default='{}', blank=True)
 
     def __unicode__(self):
         class_types = ''
@@ -311,14 +375,22 @@ class ClassFeature(models.Model):
         return "%s: %s" % (class_types, self.name)
 
 
+class RaceFeatureChoice(models.Model):
+    name = models.CharField(max_length=100)
+    benefit = models.TextField()
+
+    def __unicode__(self):
+        return self.name
+
+
 class RaceFeature(models.Model):
     name = models.CharField(max_length=100)
     benefit = models.TextField()
     requires_choice = models.BooleanField(default=False)
-    choices_json = JSONField(blank=True)
+    choices = models.ManyToManyField(RaceFeatureChoice, blank=True)
     race = models.ForeignKey(Race)
     has_passive_effects = models.BooleanField(default=False)
-    passive_effects = JSONField(default='{}', blank=True)
+    passive_effects = models.ManyToManyField(Modifier, blank=True)
 
     def __unicode__(self):
         return "%s: %s" % (self.race.name, self.name)
@@ -352,7 +424,6 @@ class RacialPower(Power):
         return self.name
 
 
-# Feats
 class FeatManager(models.Manager):
     def get_eligible(self, character):
         qs = super(FeatManager, self).get_query_set()
@@ -575,7 +646,7 @@ class CharacterRaceFeature(models.Model):
 class CharacterClassFeature(models.Model):
     character = models.ForeignKey(Character, related_name="class_features")
     class_feature = models.ForeignKey(ClassFeature)
-    benefit = models.TextField()
+    choice = models.ForeignKey(ClassFeatureChoice, null=True, blank=True)
 
     def __unicode__(self):
         return "%s : %s" % (self.character.name, self.class_feature.name)

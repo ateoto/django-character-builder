@@ -2551,11 +2551,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Hunter\u2019s Quarry", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "<p>Once per turn as a minor action, you can designate the enemy nearest to you as your quarry.</p>\r\n<p>Once per round, you deal extra damage to your quarry. The extra damage is based on your level. If you can make multiple attacks in a round, you decide which attack to apply the extra damage to after all the attacks are rolled.</p>\r\n<p>The hunter\u2019s quarry effect remains active until the end of the encounter, until the quarry is defeated, or until you designate a different target as your quarry. </p>\r\n<p>You can designate one enemy as your quarry at a time.</p>\r\n<table>\r\n  <thead>\r\n    <tr>\r\n      <th>Level</th>\r\n      <th>Hunter's Quarry Extra Damage</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>1-10th</td>\r\n      <td>+1d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>11-20th</td>\r\n      <td>+2d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>21-30th</td>\r\n      <td>+3d6</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n", 
-            "has_passive_effects": false, 
             "class_type": [
                 4
             ]
@@ -2566,11 +2563,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Arcane Implement Mastery", 
-            "choices_json": "[{\"Orb of Imposition\": \"Once per encounter as a free action, you can use your orb to gain one of the following two effects. You can designate one creature you have cast a wizard spell upon that has an effect that lasts until the subject succeeds on a saving throw. That creature takes a penalty to its saving throws against that effect equal to your Wisdom modifier. Alternatively, you can choose to extend the duration of an effect created by a wizard at-will spell (such as cloud of daggers or ray of frost) that would otherwise end at the end of your current turn. The effect instead ends at the end of your next turn. You must wield an orb to use this ability. Control wizards select this form of mastery because it helps extend the duration of their control effects.\"}, {\"Staff of Defense\": \"A staff of defense grants you a +1 bonus to AC. In addition, once per encounter as an immediate interrupt, you gain a bonus to defense against one attack equal to your Constitution modifier. You can declare the bonus after the Dungeon Master has already told you the damage total. You must wield your staff to benefit from these features. This form of mastery is useful for all wizards, particularly if you dabble in both control and damage-dealing spells.\"}, {\"Wand of Accuracy\": \"Once per encounter as a free action, you gain a bonus to a single attack roll equal to your Dexterity modifier. You must wield your wand to benefit from this feature. This form of mastery is good for war wizards because it helps increase their accuracy with damaging powers.\"}]", 
-            "passive_effects": "{}", 
             "requires_choice": true, 
             "benefit": "You specialize in the use of one kind of implement to gain additional abilities when you wield it. Choose one of the following forms of implement mastery.", 
-            "has_passive_effects": false, 
             "class_type": [
                 8
             ]
@@ -2581,11 +2575,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Channel Divinity", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Once per encounter you can invoke divine power, filling yourself with the might of your patron deity. Regardless of how many different uses for Channel Divinity you know, you can use only one such ability per encounter.", 
-            "has_passive_effects": false, 
             "class_type": [
                 1, 
                 3
@@ -2597,11 +2588,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Cantrips", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Cantrips are  minor spells you gain at 1st level. You can use them as at-will powers.", 
-            "has_passive_effects": false, 
             "class_type": [
                 8
             ]
@@ -2612,11 +2600,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Ritual Casting", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain the Ritual Caster feat (page 200) as a bonus feat, allowing you to use magical rituals (see Chapter 10).", 
-            "has_passive_effects": false, 
             "class_type": [
                 8
             ]
@@ -2627,11 +2612,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Spellbook", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You possess a spellbook, a book full of mystic lore  in which you store  your rituals and your daily and utility spells.\r\nRituals: Your book contains three 1st-level rituals of your choice that you have mastered.At 5th level, and again at 11th, 15th, 21st, and 25th level, you master two more rituals of your choice and add them to your spellbook. Any ritual you add must be your level or lower.\r\nDaily and Utility Spells: Your spellbook also holds your daily and utility spells. You begin knowing two daily spells, one of which you can use on any given day. Each time you gain a level that lets you select a daily spell or a utility spell, choose two different daily spells or utility spells of that level to add to your book. After an extended rest, you can prepare a number of daily and utility spells according to what you can cast per day for your level. You can\u2019t prepare the same spell twice.If you replace a spell because of gaining a level or through retraining, the previous spell vanishes from your spellbook and is replaced by the new spell.", 
-            "has_passive_effects": false, 
             "class_type": [
                 8
             ]
@@ -2642,11 +2624,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Sneak Attack", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Once per round, when you have combat advantage against an enemy and are using a weapon from the light blade, the crossbow, or the sling weapon group, an attack you make against that enemy deals extra damage if the attack hits. You decide whether to apply the extra damage after making the damage roll. As you advance in level, your extra damage increases.\r\n\r\n1st-10th: +2d6\r\n11th-20th: +3d6\r\n21-30th: +5d6", 
-            "has_passive_effects": false, 
             "class_type": [
                 5
             ]
@@ -2657,11 +2636,8 @@
         "model": "character_builder.classfeature", 
         "fields": {
             "name": "Combat Challenge", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Every time you attack an enemy, whether the attack hits or misses, you can choose to mark that target. That mark lasts until the end of your next turn. While a target is marked, it takes a -2 penalty to attack rolls for any attack that doesn't include you as a target. A creature can be subject to only one mark at a time. A new mark supersedes a mark that was already in place. In addition, whenever a marked enemy that is adjacent to you shifts or makes an attack that does not include you, you can make a melee basic attack against that enemy as an immediate interrupt.", 
-            "has_passive_effects": false, 
             "class_type": [
                 2
             ]
@@ -2672,8 +2648,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Eladrin Education", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain training in one additional skill.", 
             "race": 3, 
@@ -2684,9 +2658,7 @@
         "pk": 2, 
         "model": "character_builder.racefeature", 
         "fields": {
-            "name": "Eladrin Weapon Proficiency", 
-            "choices_json": null, 
-            "passive_effects": "{\"Weapon Proficiency\": [\"Longsword\"]}", 
+            "name": "Eladrin Weapon Proficiency",  
             "requires_choice": false, 
             "benefit": "You gain proficiency with the longsword.", 
             "race": 3, 
@@ -2698,8 +2670,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Eladrin Will", 
-            "choices_json": null, 
-            "passive_effects": "{\"Defense\": [{\"Willpower\": 1}]}", 
             "requires_choice": false, 
             "benefit": "You gain a +1 racial bonus to your Will defense. In addition, you gain a +5 racial bonus to saving throws against charm effects.", 
             "race": 3, 
@@ -2711,8 +2681,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Fey Origin", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Your ancestors were native to the Feywild, so you are considered a fey creature for the purpose of effects that relate to creature origin.", 
             "race": 3, 
@@ -2724,8 +2692,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Trance", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Rather than sleep, eladrin enter a meditative state known as trance. You need to spend 4 hours in this state to gain the same benefits other races gain from taking a 6-hour extended rest. While in a trance, you are fully aware of your surroundings and notice approaching enemies and other events as normal.", 
             "race": 3, 
@@ -2737,8 +2703,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Fey Step", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can use Fey Step as an encounter power.", 
             "race": 3, 
@@ -2750,8 +2714,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Cast-Iron Stomach", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "+5 racial bonus to saving throws against poison.", 
             "race": 2, 
@@ -2763,8 +2725,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Dwarven Resilience", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can use your second wind as a minor action instead of a standard action.", 
             "race": 2, 
@@ -2776,8 +2736,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Dwarven Weapon Proficiency", 
-            "choices_json": null, 
-            "passive_effects": "{\"Weapon Proficiency\": [\"Warhammer\", \"Throwing hammer\"]}", 
             "requires_choice": false, 
             "benefit": "You gain proficiency with the throwing hammer and the warhammer.", 
             "race": 2, 
@@ -2789,8 +2747,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Encumbered Speed", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You move at your normal speed even when it would normally be reduced by armor or a heavy load. Other effects that limit speed (such as difficult terrain or magical effects) affect you normally.", 
             "race": 2, 
@@ -2802,8 +2758,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Stand Your Ground", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "When an effect forces you to move\u2014through a pull, a push, or a slide\u2014you can move 1 square less than the effect specifies. This means an effect that normally pulls, pushes, or slides a target 1 square does not force you to move unless you want to.\r\nIn addition, when an attack would knock you prone, you can immediately make a saving throw to avoid falling prone.", 
             "race": 2, 
@@ -2815,8 +2769,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Dilettante", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "At 1st level, you choose an at-will power from a class different from yours. You can use that power as an encounter power.", 
             "race": 5, 
@@ -2828,8 +2780,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Dual Heritage", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can take feats that have either elf or human as a prerequisite (as well as those specifically for half-elves), as long as you meet any other requirements.", 
             "race": 5, 
@@ -2841,8 +2791,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Group Diplomacy", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You grant allies within 10 squares of you a +1 racial bonus to Diplomacy checks.", 
             "race": 5, 
@@ -2854,8 +2802,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Bold", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +5 racial bonus to saving throws against fear.", 
             "race": 6, 
@@ -2867,8 +2813,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Nimble Reaction", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +2 racial bonus to AC against opportunity attacks.", 
             "race": 6, 
@@ -2880,8 +2824,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Second Chance", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can use second chance as an encounter power.", 
             "race": 6, 
@@ -2893,8 +2835,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Bonus At-Will Power", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You know one extra at-will power from your class.", 
             "race": 17, 
@@ -2905,9 +2845,7 @@
         "pk": 19, 
         "model": "character_builder.racefeature", 
         "fields": {
-            "name": "Bonus Feat", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
+            "name": "Bonus Feat",  
             "requires_choice": false, 
             "benefit": "You gain a bonus feat at 1st level. You must meet the feat's prerequisites.", 
             "race": 17, 
@@ -2919,8 +2857,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Bonus Skill", 
-            "choices_json": null, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain training in one additional skill from your class skill list.", 
             "race": 17, 
@@ -2932,8 +2868,6 @@
         "model": "character_builder.racefeature", 
         "fields": {
             "name": "Human Defense Bonuses", 
-            "choices_json": null, 
-            "passive_effects": "{\"Defense\": [{\"Fortitude\": 1}, {\"Reflex\": 1}, {\"Willpower\": 1}]}", 
             "requires_choice": false, 
             "benefit": "+1 to Fortitude, Reflex, and Will defenses.", 
             "race": 17, 

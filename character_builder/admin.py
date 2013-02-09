@@ -14,7 +14,7 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     CharacterBaseDefense, ClassSkill,
                                     ClassFeature, AbilityPrerequisite,
                                     CharacterRaceFeature, CharacterClassFeature,
-                                    RaceFeature)
+                                    RaceFeature, ClassFeatureChoice)
 from character_builder.models import (FeatRacePrereq, FeatClassTypePrereq,
                                         FeatClassFeaturePrereq, FeatAbilityPrereq,
                                         FeatSkillPrereq, FeatDeityPrereq, FeatSkillOrSkillPrereq,
@@ -64,6 +64,7 @@ admin.site.register(ClassTypeDefMod)
 admin.site.register(CharacterBaseDefense)
 admin.site.register(ClassSkill)
 admin.site.register(ClassFeature)
+admin.site.register(ClassFeatureChoice)
 admin.site.register(AbilityPrerequisite)
 admin.site.register(CharacterRaceFeature)
 admin.site.register(CharacterClassFeature)
