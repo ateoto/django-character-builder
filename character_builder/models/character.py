@@ -187,7 +187,12 @@ class CharacterSkill(models.Model):
         else:
             training_mod = 0
 
-        return self.value + training_mod + int(math.floor(self.character.current_level().number / 2))
+        ability_mod = CharacterAbility.objects.get(
+                            character=self.character,
+                            ability=self.skill.ability).modifier_half_level()
+
+        return sum([self.value, training_mod,
+                    ability_mod, int(math.floor(self.character.current_level().number / 2))])
 
 
 class CharacterFeat(models.Model):

@@ -135,11 +135,8 @@ def skills(request, character_id):
         for skill in Skill.objects.all():
             if skill in trained_skills:
                 trained = True
-                trained_mod = 5
             else:
-                log.debug("%s is not trained" % (skill.name))
                 trained = False
-                trained_mod = 0
 
             # Do we get a Race bonus?
             race_modifier = 0
@@ -150,10 +147,7 @@ def skills(request, character_id):
                 race_modifier = race_skill_mod.modifier
 
             cs = CharacterSkill(character=character, skill=skill, is_trained=trained)
-            ca = character.abilities.get(ability=skill.ability)
-            modifier = int(math.floor((math.fabs(ca.value) - 10) / 2))
-            cs.value = modifier + trained_mod + race_modifier + int(math.floor(character.level / 2))
-            log.debug("%s : %s" % (skill.name, cs.value))
+            cs.value = race_modifier
             cs.save()
 
         return HttpResponseRedirect(reverse('character-builder-features', kwargs={'character_id': character.id}))

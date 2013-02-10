@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="span2">
-                    <div class="well sidebar-nav">
+                    <div class="well sidebar-nav affix">
                         <ul class="nav nav-list">
                             <li class="nav-header">Categories</li>
                             <li class="active"><a href="#stats">Stats</a></li>
@@ -144,7 +144,7 @@
                                     <tr id="skill-score-{{ skill.skill.name }}" class="skill-score">
                                         <td class="skill-name">{{ skill.skill.name }} ({{ skill.skill.ability.abbreviation }})</td>
                                         <td class="skill-trained">{% if skill.is_trained %}Yes{% endif %}</td>
-                                        <td class="skill-check">{{ skill.value }}</td>
+                                        <td class="skill-check">{{ skill.modifier_half_level }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
