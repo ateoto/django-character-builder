@@ -1,224 +1,6 @@
 [
     {
         "pk": 1, 
-        "model": "character_builder.source", 
-        "fields": {
-            "name": "Player's Handbook"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.source", 
-        "fields": {
-            "name": "Player's Handbook 2"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.source", 
-        "fields": {
-            "name": "Player's Handbook 3"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.role", 
-        "fields": {
-            "name": "Controller"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.role", 
-        "fields": {
-            "name": "Defender"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.role", 
-        "fields": {
-            "name": "Leader"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.role", 
-        "fields": {
-            "name": "Striker"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.size", 
-        "fields": {
-            "reach": "0", 
-            "name": "Tiny", 
-            "space": "1/2"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.size", 
-        "fields": {
-            "reach": "1", 
-            "name": "Small", 
-            "space": "1"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.size", 
-        "fields": {
-            "reach": "1", 
-            "name": "Medium", 
-            "space": "1"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.size", 
-        "fields": {
-            "reach": "1 - 2", 
-            "name": "Large", 
-            "space": "2 x 2"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.size", 
-        "fields": {
-            "reach": "2 - 3", 
-            "name": "Huge", 
-            "space": "3 x 3"
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.size", 
-        "fields": {
-            "reach": "3 - 4", 
-            "name": "Gargantuan", 
-            "space": "4 x 4 or larger"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.gender", 
-        "fields": {
-            "name": "Unspecified"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.gender", 
-        "fields": {
-            "name": "Male"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.gender", 
-        "fields": {
-            "name": "Female"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Common", 
-            "script": "Common"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Deep Speech", 
-            "script": "Rellanic"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Draconic", 
-            "script": "Lokharic"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Dwarven", 
-            "script": "Davek"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Elven", 
-            "script": "Rellanic"
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Giant", 
-            "script": "Davek"
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Goblin", 
-            "script": "Common"
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Primordial", 
-            "script": "Barazhad"
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Supernal", 
-            "script": "Supernal"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.language", 
-        "fields": {
-            "name": "Abyssal", 
-            "script": "Barazhad"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.vision", 
-        "fields": {
-            "name": "Normal"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.vision", 
-        "fields": {
-            "name": "Low-light"
-        }
-    }, 
-    {
-        "pk": 1, 
         "model": "character_builder.ability", 
         "fields": {
             "abbreviation": "Str", 
@@ -409,78 +191,813 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.defense", 
         "fields": {
-            "name": "At-Will Attack"
+            "abbreviation": "AC", 
+            "abilities": [
+                3, 
+                5
+            ], 
+            "name": "Armor Class"
         }
     }, 
     {
         "pk": 2, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.defense", 
         "fields": {
-            "name": "At-Will Utility"
+            "abbreviation": "Fort", 
+            "abilities": [
+                1, 
+                2
+            ], 
+            "name": "Fortitude"
         }
     }, 
     {
         "pk": 3, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.defense", 
         "fields": {
-            "name": "Encounter Attack"
+            "abbreviation": "Ref", 
+            "abilities": [
+                3, 
+                4
+            ], 
+            "name": "Reflex"
         }
     }, 
     {
         "pk": 4, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.defense", 
         "fields": {
-            "name": "Encounter Utility"
+            "abbreviation": "Will", 
+            "abilities": [
+                5, 
+                6
+            ], 
+            "name": "Willpower"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.abilitymod", 
+        "fields": {
+            "ability": 5, 
+            "value": 2
         }
     }, 
     {
         "pk": 5, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.abilitymod", 
         "fields": {
-            "name": "Daily Attack"
+            "ability": 4, 
+            "value": 2
         }
     }, 
     {
         "pk": 6, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.abilitymod", 
         "fields": {
-            "name": "Daily Utility"
+            "ability": 3, 
+            "value": 2
         }
     }, 
     {
         "pk": 7, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.abilitymod", 
         "fields": {
-            "name": "Cantrip"
+            "ability": 2, 
+            "value": 2
         }
     }, 
     {
         "pk": 8, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.abilitymod", 
         "fields": {
-            "name": "At-Will Racial"
+            "ability": 6, 
+            "value": 2
         }
     }, 
     {
         "pk": 9, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.abilitymod", 
         "fields": {
-            "name": "Encounter Racial"
+            "ability": 1, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 3, 
+            "value": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 4, 
+            "value": 1
         }
     }, 
     {
         "pk": 10, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.defensemod", 
         "fields": {
-            "name": "Daily Racial"
+            "defense": 4, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 2, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 2, 
+            "value": 1
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 3, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Controller"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Defender"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Leader"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.role", 
+        "fields": {
+            "name": "Striker"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Good", 
+            "description": "Freedom and kindness."
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Lawful Good", 
+            "description": "Civilization and order."
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Evil", 
+            "description": "Tyranny and hatred."
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Chaotic Evil", 
+            "description": "Entropy and destruction."
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.alignment", 
+        "fields": {
+            "name": "Unaligned", 
+            "description": "Having no alignment; not taking a stand."
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 0, 
+            "number": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 1000, 
+            "number": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 2250, 
+            "number": 3
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 3750, 
+            "number": 4
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 5500, 
+            "number": 5
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 7500, 
+            "number": 6
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 10000, 
+            "number": 7
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 13000, 
+            "number": 8
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 16500, 
+            "number": 9
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 20500, 
+            "number": 10
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 26000, 
+            "number": 11
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 32000, 
+            "number": 12
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 39000, 
+            "number": 13
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 47000, 
+            "number": 14
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 57000, 
+            "number": 15
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 69000, 
+            "number": 16
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 83000, 
+            "number": 17
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 99000, 
+            "number": 18
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 119000, 
+            "number": 19
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 143000, 
+            "number": 20
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 175000, 
+            "number": 21
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 210000, 
+            "number": 22
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 255000, 
+            "number": 23
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 310000, 
+            "number": 24
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 375000, 
+            "number": 25
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 450000, 
+            "number": 26
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 550000, 
+            "number": 27
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 675000, 
+            "number": 28
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 825000, 
+            "number": 29
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "character_builder.level", 
+        "fields": {
+            "xp_required": 1000000, 
+            "number": 30
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Avandra", 
+            "alignment": 1, 
+            "description": "<p>The god of change, Avandra delights in freedom, trade, travel, adventure, and the frontier. Her temples are few in civilized lands, but her wayside shrines appear throughout the world. Halflings, merchants, and all types of adventurers are drawn to her worship, and many people raise a glass in her honor, viewing her as the god of luck. Her commandments are few:</p><p>\u2726 Luck favors the bold. Take your fate into your own hands, and Avandra smiles upon you.</p><p>\u2726 Strike back against those who would rob you of your freedom and urge others to fight for their own liberty.</p><p>\u2726 Change is inevitable, but it takes the work of the faithful to ensure that change is for the better."
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Bahamut", 
+            "alignment": 2, 
+            "description": "<p>Called the Platinum Dragon, Bahamut is the god of justice, protection, nobility, and honor. Lawful good paladins often revere him, and metallic dragons worship him as the first of their kind. Monarchs are crowned in his name. He commands his followers thus:</p><p>\u2726 Uphold the highest ideals of honor and justice.</p><p>\u2726 Be constantly vigilant against evil and oppose it on all fronts.</p><p>\u2726 Protect the weak, liberate the oppressed, and defend just order."
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Corellon", 
+            "alignment": 5, 
+            "description": "<p>The god of spring, beauty, and the arts, Corellon is the patron of arcane magic and the fey. He seeded the world with arcane magic and planted the most ancient forests. Artists and musicians worship him, as do those who view their spellcasting as an art, and his shrines can be found throughout the Feywild. He despises Lolth and her priestesses for leading the drow astray. He urges his followers thus:</p><p>\u2726 Cultivate beauty in all that you do, whether you\u2019re casting a spell, composing a saga, strumming a lute, or practicing the arts of war.</p><p>\u2726 Seek out lost magic items, forgotten rituals, and ancient works of art. Corellon might have inspired them in the world\u2019s first days.</p><p>\u2726 Thwart the followers of Lolth at every opportunity\r\n"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Erathis", 
+            "alignment": 5, 
+            "description": "<p>Erathis is the god of civilization. She is the muse of great invention, founder of cities, and author of laws. Rulers, judges, pioneers, and devoted citizens revere her, and her temples hold prominent places in most of the world\u2019s major cities. Her laws are many, but their purpose is straightforward:</p><p>\u2726 Work with others to achieve your goals. Community and order are always stronger than the disjointed efforts of lone individuals.</p><p>\u2726 Tame the wilderness to make it fit for habitation, and defend the light of civilization against the encroaching darkness.</p><p>\u2726 Seek out new ideas, new inventions, new lands to inhabit, new wilderness to conquer. "
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Ioun", 
+            "alignment": 5, 
+            "description": "<p>Ioun is the god of knowledge, skill, and prophecy. Sages, seers, and tacticians revere her, as do all who live by their knowledge and mental power. Corellon is the patron of arcane magic, but Ioun is the patron of its study. Libraries and wizard academies are built in her name. Her commands are also teachings:</p><p>\u2726 Seek the perfection of your mind by bringing reason, perception, and emotion into balance with one another.</p><p>\u2726 Accumulate, preserve, and distribute knowledge in all forms. Pursue education, build libraries, and seek out lost and ancient lore.</p><p>\u2726 Be watchful at all times for the followers of Vecna, who seek to control knowledge and keep secrets. Oppose their schemes, unmask their secrets, and blind them with the light of truth and reason."
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Kord", 
+            "alignment": 5, 
+            "description": "<p>Kord is the storm god and the lord of battle. He revels in strength, battlefield prowess, and thunder. Fighters and athletes revere him. He is a mercurial god, unbridled and wild, who summons storms over land and sea; those who hope for better weather appease him with prayers and spirited toasts. He gives few commands:</p><p>\u2726 Be strong, but do not use your strength for wanton destruction.</p><p>\u2726 Be brave and scorn cowardice in any form.</p><p>\u2726 Prove your might in battle to win glory and renown."
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Melora", 
+            "alignment": 5, 
+            "description": "<p>Melora is the god of the wilderness and the sea. She is both the wild beast and the peaceful forest, the raging whirlpool and the quiet desert. Rangers, hunters, and elves revere her, and sailors make offerings to her before beginning their voyages. Her strictures are these:</p><p>\u2726 Protect the wild places of the world from destruction and overuse. Oppose the rampant spread of cities and empires.</p><p>\u2726 Hunt aberrant monsters and other abominations of nature.</p><p>\u2726 Do not fear or condemn the savagery of nature. Live in harmony with the wild."
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Moradin", 
+            "alignment": 2, 
+            "description": "<p>Moradin is the god of creation and patron of artisans, especially miners and smiths. He carved the mountains from primordial earth and is the guardian and protector of the hearth and the family. Dwarves from all walks of life follow him. He demands these behaviors of his followers:</p><p>\u2726 Meet adversity with stoicism and tenacity.</p><p>\u2726 Demonstrate loyalty to your family, your clan, your leaders, and your people.</p><p>\u2726 Strive to make a mark on the world, a lasting legacy. To make something that lasts is the highest good, whether you are a smith working at a forge or a ruler building a dynasty."
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Pelor", 
+            "alignment": 1, 
+            "description": "<p>God of the sun and summer, Pelor is the keeper of time. He supports those in need and opposes all that is evil. As the lord of agriculture and the bountiful harvest, he is the deity most commonly worshiped by ordinary humans, and his priests are well received wherever they go. Paladins and rangers are found among his worshipers. He directs his followers thus:</p><p>\u2726 Alleviate suffering wherever you find it.<p></p><p>\u2726 Bring Pelor\u2019s light into places of darkness, showing kindness, mercy, and compassion.<p></p><p>\u2726 Be watchful against evil."
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "The Raven Queen", 
+            "alignment": 5, 
+            "description": "<p>The name of the god of death is long forgotten, but she is called the Raven Queen. She is the spinner of fate and the patron of winter. She marks the end of each mortal life, and mourners call upon her during funeral rites, in the hope that she will guard the departed from the curse of undeath. She expects her followers to abide by these commandments:</p><p>\u2726 Hold no pity for those who suffer and die, for death is the natural end of life.</p><p>\u2726 Bring down the proud who try to cast off the chains of fate. As the instrument of the Raven Queen, you must punish hubris where you find it.</p><p>\u2726 Watch for the cults of Orcus and stamp them out whenever they arise. The Demon Prince of the Undead seeks to claim the Raven Queen\u2019s throne.</p>"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.deity", 
+        "fields": {
+            "name": "Sehanine", 
+            "alignment": 5, 
+            "description": "<p>God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:</p>\r\n<p>\u2726 Follow your goals and seek your own destiny.</p>\r\n<p>\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.</p>\r\n<p>\u2726 Seek new horizons and new experiences, and let nothing tie you down.</p>"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Player's Handbook"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Player's Handbook 2"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Player's Handbook 3"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "0", 
+            "name": "Tiny", 
+            "space": "1/2"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "1", 
+            "name": "Small", 
+            "space": "1"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "1", 
+            "name": "Medium", 
+            "space": "1"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "1 - 2", 
+            "name": "Large", 
+            "space": "2 x 2"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "2 - 3", 
+            "name": "Huge", 
+            "space": "3 x 3"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.size", 
+        "fields": {
+            "reach": "3 - 4", 
+            "name": "Gargantuan", 
+            "space": "4 x 4 or larger"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.gender", 
+        "fields": {
+            "name": "Unspecified"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.gender", 
+        "fields": {
+            "name": "Male"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.gender", 
+        "fields": {
+            "name": "Female"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Common", 
+            "script": "Common"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Deep Speech", 
+            "script": "Rellanic"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Draconic", 
+            "script": "Lokharic"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Dwarven", 
+            "script": "Davek"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Elven", 
+            "script": "Rellanic"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Giant", 
+            "script": "Davek"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Goblin", 
+            "script": "Common"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Primordial", 
+            "script": "Barazhad"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Supernal", 
+            "script": "Supernal"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.language", 
+        "fields": {
+            "name": "Abyssal", 
+            "script": "Barazhad"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.vision", 
+        "fields": {
+            "name": "Normal"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.vision", 
+        "fields": {
+            "name": "Low-light"
         }
     }, 
     {
         "pk": 1, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                8, 
+                9
+            ], 
             "name": "Dragonborn", 
             "average_weight_text": "220 - 320 lb", 
             "description": "<p>Born to fight, dragonborn are a race of wandering mercenaries, soldiers, and adventurers. Long ago, their empire contended for worldwide dominion, but now only a few rootless clans of these honorable warriors remain to pass on their legends of ancient glory.</p><p>Play a dragonborn if you want . . .</p><p>\u2726 to look like a dragon.</p><p>\u2726 to be the proud heir of an ancient, fallen empire.</p><p>\u2726 to breathe acid, cold, fire, lightning, or poison.</p><p>\u2726 to be a member of a race that favors the warlord, fighter, and paladin classes", 
@@ -499,6 +1016,10 @@
         "pk": 2, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                4, 
+                7
+            ], 
             "name": "Dwarf", 
             "average_weight_text": "160 - 220 lb", 
             "description": "<p>Carved from the bedrock of the universe, dwarves endured an age of servitude to giants before winning their freedom. Their mighty mountain fortress-cities testify to the power of their ancient empires. Even those who live in human cities are counted among the staunchest defenders against the darkness that threatens to engulf the world.\r\n\r\nPlay a dwarf if you want . . .</p><p>\u2726 to be tough, gruff, and strong as bedrock.</p><p>\u2726 to bring glory to your ancestors or serve as your god\u2019s right hand.</p><p>\u2726 to be able to take as much punishment as you dish out.</p><p>\u2726 to be a member of a race that favors the paladin, cleric, and fighter classes.", 
@@ -517,6 +1038,10 @@
         "pk": 3, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                5, 
+                6
+            ], 
             "name": "Eladrin", 
             "average_weight_text": "130 - 180 lb", 
             "description": "<p>Creatures of magic with strong ties to nature, eladrin live in cities in the twilight realm of the Feywild. Their cities lie close enough to the world that they sometimes cross over, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.\r\n\r\nPlay an eladrin if you want . . .</p><p>\u2726 to be otherworldly and mysterious.</p><p>\u2726 to be graceful and intelligent.</p><p>\u2726 to teleport around the battlefield, cloaked in the magic of the Feywild.</p><p>\u2726 to be a member of a race that favors the wizard, rogue, and warlord classes.", 
@@ -535,6 +1060,10 @@
         "pk": 4, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                4, 
+                6
+            ], 
             "name": "Elf", 
             "average_weight_text": "130 - 170 lb", 
             "description": "<p>Wild and free, elves guard their forested lands using stealth and deadly arrows from the trees. They build their homes in close harmony with the forest, so perfectly joined that travelers often fail to notice that they have entered an elven community until it is too late.\r\n\r\nPlay an elf if you want . . .</p><p>\u2726 to be quick, quiet, and wild.</p><p>\u2726 to lead your companions through the deep woods and pepper your enemies with arrows.</p><p>\u2726 to be a member of a race that favors the ranger, rogue, and cleric classes.", 
@@ -553,6 +1082,10 @@
         "pk": 5, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                7, 
+                8
+            ], 
             "name": "Half-Elf", 
             "average_weight_text": "130-190 lb", 
             "description": "<p>Descended from elves and humans, half-elves are a vital race in which the best features of elves and humans often appear.\r\n\r\nPlay a half-elf if you want . . .</p><p>\u2726 to be an outgoing, enthusiastic leader.</p><p>\u2726 to be a charismatic hero equally at home in two different cultures.</p><p>\u2726 to be a member of a race that favors the warlord, paladin, and warlock classes.", 
@@ -571,6 +1104,10 @@
         "pk": 6, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                6, 
+                8
+            ], 
             "name": "Halfling", 
             "average_weight_text": "75-85 lb", 
             "description": "<p>Halflings are a small race known for their resourcefulness, quick wits, and steady nerves. They are a nomadic folk who roam waterways and marshlands. No people travel farther or see more of what happens in the world than halflings.\r\n\r\nPlay a halfling if you want . . .</p><p>\u2726 to be a plucky hero who is all too easy to underestimate.</p><p>\u2726 to be likable, warm, and friendly.</p><p>\u2726 to be a member of a race that favors the rogue, ranger, and warlock classes.", 
@@ -588,6 +1125,7 @@
         "pk": 17, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [], 
             "name": "Human", 
             "average_weight_text": "135-220 lb", 
             "description": "<p>Of all the civilized races, humans are the most adaptable and diverse. Human settlements can be found almost anywhere, and human morals, customs, and interests vary greatly.\r\n\r\nPlay a human if you want . . .</p><p>\u2726 to be a decisive, resourceful hero with enough determination to face any challenge.</p><p>\u2726 to have the most versatility and flexibility of any race.</p><p>\u2726 to be able to excel at any class you choose.", 
@@ -605,6 +1143,10 @@
         "pk": 7, 
         "model": "character_builder.race", 
         "fields": {
+            "modifiers": [
+                5, 
+                8
+            ], 
             "name": "Tiefling", 
             "average_weight_text": "140-230 lb", 
             "description": "<p>Heirs to an ancient, infernal bloodline, tieflings have no realms of their own but instead live within human kingdoms and cities. They are descended from human nobles who bargained with dark powers, and long ago their empire subjugated half the world. But the empire was cast down into ruin, and tieflings were left to make their own way in a world that often fears and resents them.\r\n\r\nPlay a tiefling if you want . . .</p><p>\u2726 to be a hero who has a dark side to overcome.</p><p>\u2726 to be good at tricking, intimidating, or persuading others to do your will.</p><p>\u2726 to be a member of a race that favors the warlock, warlord, and rogue classes.", 
@@ -616,6 +1158,282 @@
             "speed": 6, 
             "vision": 2, 
             "size": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Eladrin Education", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain training in one additional skill.", 
+            "race": 3, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Eladrin Weapon Proficiency", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain proficiency with the longsword.", 
+            "race": 3, 
+            "has_passive_effects": true, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Eladrin Will", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain a +1 racial bonus to your Will defense. In addition, you gain a +5 racial bonus to saving throws against charm effects.", 
+            "race": 3, 
+            "has_passive_effects": true, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Fey Origin", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "Your ancestors were native to the Feywild, so you are considered a fey creature for the purpose of effects that relate to creature origin.", 
+            "race": 3, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Trance", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "Rather than sleep, eladrin enter a meditative state known as trance. You need to spend 4 hours in this state to gain the same benefits other races gain from taking a 6-hour extended rest. While in a trance, you are fully aware of your surroundings and notice approaching enemies and other events as normal.", 
+            "race": 3, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Fey Step", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You can use Fey Step as an encounter power.", 
+            "race": 3, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Cast-Iron Stomach", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "+5 racial bonus to saving throws against poison.", 
+            "race": 2, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dwarven Resilience", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You can use your second wind as a minor action instead of a standard action.", 
+            "race": 2, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dwarven Weapon Proficiency", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain proficiency with the throwing hammer and the warhammer.", 
+            "race": 2, 
+            "has_passive_effects": true, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Encumbered Speed", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You move at your normal speed even when it would normally be reduced by armor or a heavy load. Other effects that limit speed (such as difficult terrain or magical effects) affect you normally.", 
+            "race": 2, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Stand Your Ground", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "When an effect forces you to move\u2014through a pull, a push, or a slide\u2014you can move 1 square less than the effect specifies. This means an effect that normally pulls, pushes, or slides a target 1 square does not force you to move unless you want to.\r\nIn addition, when an attack would knock you prone, you can immediately make a saving throw to avoid falling prone.", 
+            "race": 2, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dilettante", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "At 1st level, you choose an at-will power from a class different from yours. You can use that power as an encounter power.", 
+            "race": 5, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Dual Heritage", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You can take feats that have either elf or human as a prerequisite (as well as those specifically for half-elves), as long as you meet any other requirements.", 
+            "race": 5, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Group Diplomacy", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You grant allies within 10 squares of you a +1 racial bonus to Diplomacy checks.", 
+            "race": 5, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bold", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain a +5 racial bonus to saving throws against fear.", 
+            "race": 6, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Nimble Reaction", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain a +2 racial bonus to AC against opportunity attacks.", 
+            "race": 6, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Second Chance", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You can use second chance as an encounter power.", 
+            "race": 6, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bonus At-Will Power", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You know one extra at-will power from your class.", 
+            "race": 17, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bonus Feat", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain a bonus feat at 1st level. You must meet the feat's prerequisites.", 
+            "race": 17, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Bonus Skill", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "You gain training in one additional skill from your class skill list.", 
+            "race": 17, 
+            "has_passive_effects": false, 
+            "passive_effects": []
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.racefeature", 
+        "fields": {
+            "name": "Human Defense Bonuses", 
+            "choices": [], 
+            "requires_choice": false, 
+            "benefit": "+1 to Fortitude, Reflex, and Will defenses.", 
+            "race": 17, 
+            "has_passive_effects": true, 
+            "passive_effects": [
+                2, 
+                3
+            ]
         }
     }, 
     {
@@ -1308,12 +2126,285 @@
     }, 
     {
         "pk": 1, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "cp", 
+            "name": "Copper Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "sp", 
+            "name": "Silver Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "gp", 
+            "name": "Gold Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "pp", 
+            "name": "Platinum Piece", 
+            "weight": "0.32"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.currency", 
+        "fields": {
+            "abbreviation": "ad", 
+            "name": "Astral Diamond", 
+            "weight": "0.032"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 2, 
+            "exchange_rate": "0.1"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 3, 
+            "exchange_rate": "0.01"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 4, 
+            "exchange_rate": "0.0001"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 5, 
+            "exchange_rate": "0.0000010"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 1, 
+            "currency_to": 1, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 1, 
+            "exchange_rate": "10"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 2, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 3, 
+            "exchange_rate": "0.1"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 4, 
+            "exchange_rate": "0.001"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 2, 
+            "currency_to": 5, 
+            "exchange_rate": "0.000010"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 1, 
+            "exchange_rate": "100"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 2, 
+            "exchange_rate": "10"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 3, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 4, 
+            "exchange_rate": "0.01"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 3, 
+            "currency_to": 5, 
+            "exchange_rate": "0.0001"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 1, 
+            "exchange_rate": "10000"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 2, 
+            "exchange_rate": "1000"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 3, 
+            "exchange_rate": "100"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 4, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 4, 
+            "currency_to": 5, 
+            "exchange_rate": "0.01"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 1, 
+            "exchange_rate": "1000000"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 2, 
+            "exchange_rate": "100000"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 3, 
+            "exchange_rate": "10000"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 4, 
+            "exchange_rate": "100"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.currencyexchange", 
+        "fields": {
+            "currency_from": 5, 
+            "currency_to": 5, 
+            "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 1, 
         "model": "character_builder.classtype", 
         "fields": {
             "favored_abilities": [
                 1, 
                 5, 
                 6
+            ], 
+            "modifiers": [
+                10
             ], 
             "armor_proficiencies": [
                 1, 
@@ -1348,6 +2439,9 @@
                 3, 
                 5
             ], 
+            "modifiers": [
+                11
+            ], 
             "armor_proficiencies": [
                 1, 
                 2, 
@@ -1380,6 +2474,11 @@
                 1, 
                 5, 
                 6
+            ], 
+            "modifiers": [
+                2, 
+                3, 
+                12
             ], 
             "armor_proficiencies": [
                 1, 
@@ -1417,6 +2516,10 @@
                 3, 
                 5
             ], 
+            "modifiers": [
+                2, 
+                12
+            ], 
             "armor_proficiencies": [
                 1, 
                 2, 
@@ -1445,6 +2548,9 @@
                 1, 
                 3, 
                 6
+            ], 
+            "modifiers": [
+                13
             ], 
             "armor_proficiencies": [
                 1, 
@@ -1476,6 +2582,10 @@
                 4, 
                 6
             ], 
+            "modifiers": [
+                2, 
+                3
+            ], 
             "armor_proficiencies": [
                 1, 
                 2
@@ -1503,6 +2613,10 @@
                 1, 
                 4, 
                 6
+            ], 
+            "modifiers": [
+                3, 
+                12
             ], 
             "armor_proficiencies": [
                 1, 
@@ -1535,6 +2649,9 @@
                 4, 
                 5
             ], 
+            "modifiers": [
+                10
+            ], 
             "armor_proficiencies": [
                 1
             ], 
@@ -1556,34 +2673,157 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.defense", 
+        "model": "character_builder.classfeaturechoice", 
         "fields": {
-            "abbreviation": "AC", 
-            "name": "Armor Class"
+            "benefit": "Once per encounter as a free action, you can use your orb to gain one of the following two effects. You can designate one creature you have cast a wizard spell upon that has an effect that lasts until the subject succeeds on a saving throw. That creature takes a penalty to its saving throws against that effect equal to your Wisdom modifier. Alternatively, you can choose to extend the duration of an effect created by a wizard at-will spell (such as cloud of daggers or ray of frost) that would otherwise end at the end of your current turn. The effect instead ends at the end of your next turn. You must wield an orb to use this ability. Control wizards select this form of mastery because it helps extend the duration of their control effects.", 
+            "name": "Orb of Imposition"
         }
     }, 
     {
         "pk": 2, 
-        "model": "character_builder.defense", 
+        "model": "character_builder.classfeaturechoice", 
         "fields": {
-            "abbreviation": "Fort", 
-            "name": "Fortitude"
+            "benefit": "A staff of defense grants you a +1 bonus to AC. In addition, once per encounter as an immediate interrupt, you gain a bonus to defense against one attack equal to your Constitution modifier. You can declare the bonus after the Dungeon Master has already told you the damage total. You must wield your staff to benefit from these features. This form of mastery is useful for all wizards, particularly if you dabble in both control and damage-dealing spells.", 
+            "name": "Staff of Defense"
         }
     }, 
     {
         "pk": 3, 
-        "model": "character_builder.defense", 
+        "model": "character_builder.classfeaturechoice", 
         "fields": {
-            "abbreviation": "Ref", 
-            "name": "Reflex"
+            "benefit": "Once per encounter as a free action, you gain a bonus to a single attack roll equal to your Dexterity modifier. You must wield your wand to benefit from this feature. This form of mastery is good for war wizards because it helps increase their accuracy with damaging powers.", 
+            "name": "Wand of Accuracy"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Hunter\u2019s Quarry", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "<p>Once per turn as a minor action, you can designate the enemy nearest to you as your quarry.</p>\r\n<p>Once per round, you deal extra damage to your quarry. The extra damage is based on your level. If you can make multiple attacks in a round, you decide which attack to apply the extra damage to after all the attacks are rolled.</p>\r\n<p>The hunter\u2019s quarry effect remains active until the end of the encounter, until the quarry is defeated, or until you designate a different target as your quarry. </p>\r\n<p>You can designate one enemy as your quarry at a time.</p>\r\n<table>\r\n  <thead>\r\n    <tr>\r\n      <th>Level</th>\r\n      <th>Hunter's Quarry Extra Damage</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>1-10th</td>\r\n      <td>+1d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>11-20th</td>\r\n      <td>+2d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>21-30th</td>\r\n      <td>+3d6</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n", 
+            "choices": [], 
+            "class_type": [
+                4
+            ]
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Arcane Implement Mastery", 
+            "passive_effects": [], 
+            "requires_choice": true, 
+            "benefit": "You specialize in the use of one kind of implement to gain additional abilities when you wield it. Choose one of the following forms of implement mastery.", 
+            "choices": [
+                1, 
+                2, 
+                3
+            ], 
+            "class_type": [
+                8
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Channel Divinity", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "Once per encounter you can invoke divine power, filling yourself with the might of your patron deity. Regardless of how many different uses for Channel Divinity you know, you can use only one such ability per encounter.", 
+            "choices": [], 
+            "class_type": [
+                1, 
+                3
+            ]
         }
     }, 
     {
         "pk": 4, 
-        "model": "character_builder.defense", 
+        "model": "character_builder.classfeature", 
         "fields": {
-            "abbreviation": "Will", 
-            "name": "Willpower"
+            "name": "Cantrips", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "Cantrips are  minor spells you gain at 1st level. You can use them as at-will powers.", 
+            "choices": [], 
+            "class_type": [
+                8
+            ]
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Ritual Casting", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "You gain the Ritual Caster feat (page 200) as a bonus feat, allowing you to use magical rituals (see Chapter 10).", 
+            "choices": [], 
+            "class_type": [
+                8
+            ]
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Spellbook", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "You possess a spellbook, a book full of mystic lore  in which you store  your rituals and your daily and utility spells.\r\nRituals: Your book contains three 1st-level rituals of your choice that you have mastered.At 5th level, and again at 11th, 15th, 21st, and 25th level, you master two more rituals of your choice and add them to your spellbook. Any ritual you add must be your level or lower.\r\nDaily and Utility Spells: Your spellbook also holds your daily and utility spells. You begin knowing two daily spells, one of which you can use on any given day. Each time you gain a level that lets you select a daily spell or a utility spell, choose two different daily spells or utility spells of that level to add to your book. After an extended rest, you can prepare a number of daily and utility spells according to what you can cast per day for your level. You can\u2019t prepare the same spell twice.If you replace a spell because of gaining a level or through retraining, the previous spell vanishes from your spellbook and is replaced by the new spell.", 
+            "choices": [], 
+            "class_type": [
+                8
+            ]
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Sneak Attack", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "Once per round, when you have combat advantage against an enemy and are using a weapon from the light blade, the crossbow, or the sling weapon group, an attack you make against that enemy deals extra damage if the attack hits. You decide whether to apply the extra damage after making the damage roll. As you advance in level, your extra damage increases.\r\n\r\n1st-10th: +2d6\r\n11th-20th: +3d6\r\n21-30th: +5d6", 
+            "choices": [], 
+            "class_type": [
+                5
+            ]
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Combat Challenge", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "Every time you attack an enemy, whether the attack hits or misses, you can choose to mark that target. That mark lasts until the end of your next turn. While a target is marked, it takes a -2 penalty to attack rolls for any attack that doesn't include you as a target. A creature can be subject to only one mark at a time. A new mark supersedes a mark that was already in place. In addition, whenever a marked enemy that is adjacent to you shifts or makes an attack that does not include you, you can make a melee basic attack against that enemy as an immediate interrupt.", 
+            "choices": [], 
+            "class_type": [
+                2
+            ]
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.classfeature", 
+        "fields": {
+            "name": "Healer's Lore", 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "Your study of healing allows you to make the most of your healing prayers. When you grant healing with one of your cleric powers that has the healing keyword, add your Wisdom modifier to the hit points the recipient regains.", 
+            "choices": [], 
+            "class_type": [
+                1
+            ]
         }
     }, 
     {
@@ -2161,771 +3401,15 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.alignment", 
-        "fields": {
-            "name": "Good", 
-            "description": "Freedom and kindness."
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.alignment", 
-        "fields": {
-            "name": "Lawful Good", 
-            "description": "Civilization and order."
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.alignment", 
-        "fields": {
-            "name": "Evil", 
-            "description": "Tyranny and hatred."
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.alignment", 
-        "fields": {
-            "name": "Chaotic Evil", 
-            "description": "Entropy and destruction."
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.alignment", 
-        "fields": {
-            "name": "Unaligned", 
-            "description": "Having no alignment; not taking a stand."
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 0, 
-            "number": 1
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 1000, 
-            "number": 2
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 2250, 
-            "number": 3
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 3750, 
-            "number": 4
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 5500, 
-            "number": 5
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 7500, 
-            "number": 6
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 10000, 
-            "number": 7
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 13000, 
-            "number": 8
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 16500, 
-            "number": 9
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 20500, 
-            "number": 10
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 26000, 
-            "number": 11
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 32000, 
-            "number": 12
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 39000, 
-            "number": 13
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 47000, 
-            "number": 14
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 57000, 
-            "number": 15
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 69000, 
-            "number": 16
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 83000, 
-            "number": 17
-        }
-    }, 
-    {
-        "pk": 18, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 99000, 
-            "number": 18
-        }
-    }, 
-    {
-        "pk": 19, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 119000, 
-            "number": 19
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 143000, 
-            "number": 20
-        }
-    }, 
-    {
-        "pk": 21, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 175000, 
-            "number": 21
-        }
-    }, 
-    {
-        "pk": 22, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 210000, 
-            "number": 22
-        }
-    }, 
-    {
-        "pk": 23, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 255000, 
-            "number": 23
-        }
-    }, 
-    {
-        "pk": 24, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 310000, 
-            "number": 24
-        }
-    }, 
-    {
-        "pk": 25, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 375000, 
-            "number": 25
-        }
-    }, 
-    {
-        "pk": 26, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 450000, 
-            "number": 26
-        }
-    }, 
-    {
-        "pk": 27, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 550000, 
-            "number": 27
-        }
-    }, 
-    {
-        "pk": 28, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 675000, 
-            "number": 28
-        }
-    }, 
-    {
-        "pk": 29, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 825000, 
-            "number": 29
-        }
-    }, 
-    {
-        "pk": 30, 
-        "model": "character_builder.level", 
-        "fields": {
-            "xp_required": 1000000, 
-            "number": 30
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Avandra", 
-            "alignment": 1, 
-            "description": "<p>The god of change, Avandra delights in freedom, trade, travel, adventure, and the frontier. Her temples are few in civilized lands, but her wayside shrines appear throughout the world. Halflings, merchants, and all types of adventurers are drawn to her worship, and many people raise a glass in her honor, viewing her as the god of luck. Her commandments are few:</p><p>\u2726 Luck favors the bold. Take your fate into your own hands, and Avandra smiles upon you.</p><p>\u2726 Strike back against those who would rob you of your freedom and urge others to fight for their own liberty.</p><p>\u2726 Change is inevitable, but it takes the work of the faithful to ensure that change is for the better."
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Bahamut", 
-            "alignment": 2, 
-            "description": "<p>Called the Platinum Dragon, Bahamut is the god of justice, protection, nobility, and honor. Lawful good paladins often revere him, and metallic dragons worship him as the first of their kind. Monarchs are crowned in his name. He commands his followers thus:</p><p>\u2726 Uphold the highest ideals of honor and justice.</p><p>\u2726 Be constantly vigilant against evil and oppose it on all fronts.</p><p>\u2726 Protect the weak, liberate the oppressed, and defend just order."
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Corellon", 
-            "alignment": 5, 
-            "description": "<p>The god of spring, beauty, and the arts, Corellon is the patron of arcane magic and the fey. He seeded the world with arcane magic and planted the most ancient forests. Artists and musicians worship him, as do those who view their spellcasting as an art, and his shrines can be found throughout the Feywild. He despises Lolth and her priestesses for leading the drow astray. He urges his followers thus:</p><p>\u2726 Cultivate beauty in all that you do, whether you\u2019re casting a spell, composing a saga, strumming a lute, or practicing the arts of war.</p><p>\u2726 Seek out lost magic items, forgotten rituals, and ancient works of art. Corellon might have inspired them in the world\u2019s first days.</p><p>\u2726 Thwart the followers of Lolth at every opportunity\r\n"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Erathis", 
-            "alignment": 5, 
-            "description": "<p>Erathis is the god of civilization. She is the muse of great invention, founder of cities, and author of laws. Rulers, judges, pioneers, and devoted citizens revere her, and her temples hold prominent places in most of the world\u2019s major cities. Her laws are many, but their purpose is straightforward:</p><p>\u2726 Work with others to achieve your goals. Community and order are always stronger than the disjointed efforts of lone individuals.</p><p>\u2726 Tame the wilderness to make it fit for habitation, and defend the light of civilization against the encroaching darkness.</p><p>\u2726 Seek out new ideas, new inventions, new lands to inhabit, new wilderness to conquer. "
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Ioun", 
-            "alignment": 5, 
-            "description": "<p>Ioun is the god of knowledge, skill, and prophecy. Sages, seers, and tacticians revere her, as do all who live by their knowledge and mental power. Corellon is the patron of arcane magic, but Ioun is the patron of its study. Libraries and wizard academies are built in her name. Her commands are also teachings:</p><p>\u2726 Seek the perfection of your mind by bringing reason, perception, and emotion into balance with one another.</p><p>\u2726 Accumulate, preserve, and distribute knowledge in all forms. Pursue education, build libraries, and seek out lost and ancient lore.</p><p>\u2726 Be watchful at all times for the followers of Vecna, who seek to control knowledge and keep secrets. Oppose their schemes, unmask their secrets, and blind them with the light of truth and reason."
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Kord", 
-            "alignment": 5, 
-            "description": "<p>Kord is the storm god and the lord of battle. He revels in strength, battlefield prowess, and thunder. Fighters and athletes revere him. He is a mercurial god, unbridled and wild, who summons storms over land and sea; those who hope for better weather appease him with prayers and spirited toasts. He gives few commands:</p><p>\u2726 Be strong, but do not use your strength for wanton destruction.</p><p>\u2726 Be brave and scorn cowardice in any form.</p><p>\u2726 Prove your might in battle to win glory and renown."
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Melora", 
-            "alignment": 5, 
-            "description": "<p>Melora is the god of the wilderness and the sea. She is both the wild beast and the peaceful forest, the raging whirlpool and the quiet desert. Rangers, hunters, and elves revere her, and sailors make offerings to her before beginning their voyages. Her strictures are these:</p><p>\u2726 Protect the wild places of the world from destruction and overuse. Oppose the rampant spread of cities and empires.</p><p>\u2726 Hunt aberrant monsters and other abominations of nature.</p><p>\u2726 Do not fear or condemn the savagery of nature. Live in harmony with the wild."
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Moradin", 
-            "alignment": 2, 
-            "description": "<p>Moradin is the god of creation and patron of artisans, especially miners and smiths. He carved the mountains from primordial earth and is the guardian and protector of the hearth and the family. Dwarves from all walks of life follow him. He demands these behaviors of his followers:</p><p>\u2726 Meet adversity with stoicism and tenacity.</p><p>\u2726 Demonstrate loyalty to your family, your clan, your leaders, and your people.</p><p>\u2726 Strive to make a mark on the world, a lasting legacy. To make something that lasts is the highest good, whether you are a smith working at a forge or a ruler building a dynasty."
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Pelor", 
-            "alignment": 1, 
-            "description": "<p>God of the sun and summer, Pelor is the keeper of time. He supports those in need and opposes all that is evil. As the lord of agriculture and the bountiful harvest, he is the deity most commonly worshiped by ordinary humans, and his priests are well received wherever they go. Paladins and rangers are found among his worshipers. He directs his followers thus:</p><p>\u2726 Alleviate suffering wherever you find it.<p></p><p>\u2726 Bring Pelor\u2019s light into places of darkness, showing kindness, mercy, and compassion.<p></p><p>\u2726 Be watchful against evil."
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "The Raven Queen", 
-            "alignment": 5, 
-            "description": "<p>The name of the god of death is long forgotten, but she is called the Raven Queen. She is the spinner of fate and the patron of winter. She marks the end of each mortal life, and mourners call upon her during funeral rites, in the hope that she will guard the departed from the curse of undeath. She expects her followers to abide by these commandments:</p><p>\u2726 Hold no pity for those who suffer and die, for death is the natural end of life.</p><p>\u2726 Bring down the proud who try to cast off the chains of fate. As the instrument of the Raven Queen, you must punish hubris where you find it.</p><p>\u2726 Watch for the cults of Orcus and stamp them out whenever they arise. The Demon Prince of the Undead seeks to claim the Raven Queen\u2019s throne.</p>"
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "character_builder.deity", 
-        "fields": {
-            "name": "Sehanine", 
-            "alignment": 5, 
-            "description": "<p>God of the moon and autumn, Sehanine is the patron of trickery and illusions. She has close ties to Corellon and Melora and is a favorite deity among elves and halflings. She is also the god of love, who sends shadows to cloak lovers\u2019 trysts. Scouts and thieves ask for her blessing on their work. Her teachings are simple:</p>\r\n<p>\u2726 Follow your goals and seek your own destiny.</p>\r\n<p>\u2726 Keep to the shadows, avoiding the blazing light of zealous good and the utter darkness of evil.</p>\r\n<p>\u2726 Seek new horizons and new experiences, and let nothing tie you down.</p>"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Hunter\u2019s Quarry", 
-            "requires_choice": false, 
-            "benefit": "<p>Once per turn as a minor action, you can designate the enemy nearest to you as your quarry.</p>\r\n<p>Once per round, you deal extra damage to your quarry. The extra damage is based on your level. If you can make multiple attacks in a round, you decide which attack to apply the extra damage to after all the attacks are rolled.</p>\r\n<p>The hunter\u2019s quarry effect remains active until the end of the encounter, until the quarry is defeated, or until you designate a different target as your quarry. </p>\r\n<p>You can designate one enemy as your quarry at a time.</p>\r\n<table>\r\n  <thead>\r\n    <tr>\r\n      <th>Level</th>\r\n      <th>Hunter's Quarry Extra Damage</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>1-10th</td>\r\n      <td>+1d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>11-20th</td>\r\n      <td>+2d6</td>\r\n    </tr>\r\n    <tr>\r\n      <td>21-30th</td>\r\n      <td>+3d6</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n", 
-            "class_type": [
-                4
-            ]
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Arcane Implement Mastery", 
-            "requires_choice": true, 
-            "benefit": "You specialize in the use of one kind of implement to gain additional abilities when you wield it. Choose one of the following forms of implement mastery.", 
-            "class_type": [
-                8
-            ]
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Channel Divinity", 
-            "requires_choice": false, 
-            "benefit": "Once per encounter you can invoke divine power, filling yourself with the might of your patron deity. Regardless of how many different uses for Channel Divinity you know, you can use only one such ability per encounter.", 
-            "class_type": [
-                1, 
-                3
-            ]
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Cantrips", 
-            "requires_choice": false, 
-            "benefit": "Cantrips are  minor spells you gain at 1st level. You can use them as at-will powers.", 
-            "class_type": [
-                8
-            ]
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Ritual Casting", 
-            "requires_choice": false, 
-            "benefit": "You gain the Ritual Caster feat (page 200) as a bonus feat, allowing you to use magical rituals (see Chapter 10).", 
-            "class_type": [
-                8
-            ]
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Spellbook", 
-            "requires_choice": false, 
-            "benefit": "You possess a spellbook, a book full of mystic lore  in which you store  your rituals and your daily and utility spells.\r\nRituals: Your book contains three 1st-level rituals of your choice that you have mastered.At 5th level, and again at 11th, 15th, 21st, and 25th level, you master two more rituals of your choice and add them to your spellbook. Any ritual you add must be your level or lower.\r\nDaily and Utility Spells: Your spellbook also holds your daily and utility spells. You begin knowing two daily spells, one of which you can use on any given day. Each time you gain a level that lets you select a daily spell or a utility spell, choose two different daily spells or utility spells of that level to add to your book. After an extended rest, you can prepare a number of daily and utility spells according to what you can cast per day for your level. You can\u2019t prepare the same spell twice.If you replace a spell because of gaining a level or through retraining, the previous spell vanishes from your spellbook and is replaced by the new spell.", 
-            "class_type": [
-                8
-            ]
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Sneak Attack", 
-            "requires_choice": false, 
-            "benefit": "Once per round, when you have combat advantage against an enemy and are using a weapon from the light blade, the crossbow, or the sling weapon group, an attack you make against that enemy deals extra damage if the attack hits. You decide whether to apply the extra damage after making the damage roll. As you advance in level, your extra damage increases.\r\n\r\n1st-10th: +2d6\r\n11th-20th: +3d6\r\n21-30th: +5d6", 
-            "class_type": [
-                5
-            ]
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "character_builder.classfeature", 
-        "fields": {
-            "name": "Combat Challenge", 
-            "requires_choice": false, 
-            "benefit": "Every time you attack an enemy, whether the attack hits or misses, you can choose to mark that target. That mark lasts until the end of your next turn. While a target is marked, it takes a -2 penalty to attack rolls for any attack that doesn't include you as a target. A creature can be subject to only one mark at a time. A new mark supersedes a mark that was already in place. In addition, whenever a marked enemy that is adjacent to you shifts or makes an attack that does not include you, you can make a melee basic attack against that enemy as an immediate interrupt.", 
-            "class_type": [
-                2
-            ]
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Eladrin Education", 
-            "requires_choice": false, 
-            "benefit": "You gain training in one additional skill.", 
-            "race": 3, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Eladrin Weapon Proficiency",  
-            "requires_choice": false, 
-            "benefit": "You gain proficiency with the longsword.", 
-            "race": 3, 
-            "has_passive_effects": true
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Eladrin Will", 
-            "requires_choice": false, 
-            "benefit": "You gain a +1 racial bonus to your Will defense. In addition, you gain a +5 racial bonus to saving throws against charm effects.", 
-            "race": 3, 
-            "has_passive_effects": true
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Fey Origin", 
-            "requires_choice": false, 
-            "benefit": "Your ancestors were native to the Feywild, so you are considered a fey creature for the purpose of effects that relate to creature origin.", 
-            "race": 3, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Trance", 
-            "requires_choice": false, 
-            "benefit": "Rather than sleep, eladrin enter a meditative state known as trance. You need to spend 4 hours in this state to gain the same benefits other races gain from taking a 6-hour extended rest. While in a trance, you are fully aware of your surroundings and notice approaching enemies and other events as normal.", 
-            "race": 3, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Fey Step", 
-            "requires_choice": false, 
-            "benefit": "You can use Fey Step as an encounter power.", 
-            "race": 3, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 7, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Cast-Iron Stomach", 
-            "requires_choice": false, 
-            "benefit": "+5 racial bonus to saving throws against poison.", 
-            "race": 2, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 8, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Dwarven Resilience", 
-            "requires_choice": false, 
-            "benefit": "You can use your second wind as a minor action instead of a standard action.", 
-            "race": 2, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 9, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Dwarven Weapon Proficiency", 
-            "requires_choice": false, 
-            "benefit": "You gain proficiency with the throwing hammer and the warhammer.", 
-            "race": 2, 
-            "has_passive_effects": true
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Encumbered Speed", 
-            "requires_choice": false, 
-            "benefit": "You move at your normal speed even when it would normally be reduced by armor or a heavy load. Other effects that limit speed (such as difficult terrain or magical effects) affect you normally.", 
-            "race": 2, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Stand Your Ground", 
-            "requires_choice": false, 
-            "benefit": "When an effect forces you to move\u2014through a pull, a push, or a slide\u2014you can move 1 square less than the effect specifies. This means an effect that normally pulls, pushes, or slides a target 1 square does not force you to move unless you want to.\r\nIn addition, when an attack would knock you prone, you can immediately make a saving throw to avoid falling prone.", 
-            "race": 2, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Dilettante", 
-            "requires_choice": false, 
-            "benefit": "At 1st level, you choose an at-will power from a class different from yours. You can use that power as an encounter power.", 
-            "race": 5, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 13, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Dual Heritage", 
-            "requires_choice": false, 
-            "benefit": "You can take feats that have either elf or human as a prerequisite (as well as those specifically for half-elves), as long as you meet any other requirements.", 
-            "race": 5, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Group Diplomacy", 
-            "requires_choice": false, 
-            "benefit": "You grant allies within 10 squares of you a +1 racial bonus to Diplomacy checks.", 
-            "race": 5, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Bold", 
-            "requires_choice": false, 
-            "benefit": "You gain a +5 racial bonus to saving throws against fear.", 
-            "race": 6, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Nimble Reaction", 
-            "requires_choice": false, 
-            "benefit": "You gain a +2 racial bonus to AC against opportunity attacks.", 
-            "race": 6, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Second Chance", 
-            "requires_choice": false, 
-            "benefit": "You can use second chance as an encounter power.", 
-            "race": 6, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 18, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Bonus At-Will Power", 
-            "requires_choice": false, 
-            "benefit": "You know one extra at-will power from your class.", 
-            "race": 17, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 19, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Bonus Feat",  
-            "requires_choice": false, 
-            "benefit": "You gain a bonus feat at 1st level. You must meet the feat's prerequisites.", 
-            "race": 17, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Bonus Skill", 
-            "requires_choice": false, 
-            "benefit": "You gain training in one additional skill from your class skill list.", 
-            "race": 17, 
-            "has_passive_effects": false
-        }
-    }, 
-    {
-        "pk": 21, 
-        "model": "character_builder.racefeature", 
-        "fields": {
-            "name": "Human Defense Bonuses", 
-            "requires_choice": false, 
-            "benefit": "+1 to Fortitude, Reflex, and Will defenses.", 
-            "race": 17, 
-            "has_passive_effects": true
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.power", 
-        "fields": {
-            "hit": "", 
-            "target": "", 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
-            "attack": "", 
-            "keywords": "Encounter, Free Action, Personal", 
-            "flavor": "With an instant of focus, you take careful aim at your foe and strike with the legendary accuracy of the elves.", 
-            "miss": "", 
-            "special": "", 
-            "name": "Elven Accuracy"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.power", 
-        "fields": {
-            "hit": "", 
-            "target": "", 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "Teleport up to 5 squares.", 
-            "attack": "", 
-            "keywords": "Encounter; Teleportation; Move Action; Personal", 
-            "flavor": "With a step, you vanish from one place and appear in another.", 
-            "miss": "", 
-            "special": "", 
-            "name": "Fey Step"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.power", 
-        "fields": {
-            "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
-            "target": "All creatures in area", 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "", 
-            "attack": "Strength +2 vs. Reflex, Constitution +2 vs. Reflex, or Dexterity +2 vs. Reflex", 
-            "keywords": "Encounter; Acid, Cold, Fire, Lightning, or Poison; Minor Action; Close blast 3", 
-            "flavor": "As you open your mouth with a roar, the deadly power of your draconic kin blasts forth to engulf your foes.", 
-            "miss": "", 
-            "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
-            "name": "Dragon Breath"
-        }
-    }, 
-    {
-        "pk": 1, 
         "model": "character_builder.feat", 
         "fields": {
             "name": "Action Surge [Human]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +3 bonus to attack rolls you make during any action you gained by spending an action point.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -2935,9 +3419,11 @@
         "fields": {
             "name": "Agile Hunter [Ranger]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "When you score a critical hit with a melee attack against the target of your Hunter's Quarry, you can shift as a free action, and the enemy takes a -2 penalty on attack rolls against you until the end of your next turn.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -2947,9 +3433,11 @@
         "fields": {
             "name": "Alertness", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You don't grant enemies combat advantage during surprise rounds. You also gain a +2 feat bonus to Perception checks.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -2959,9 +3447,11 @@
         "fields": {
             "name": "Armor of Bahamut [Divinity]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You can invoke the power of your deity to use armor of Bahamut.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -2971,9 +3461,11 @@
         "fields": {
             "name": "Ritual Caster", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You can master and perform rituals of your level or lower. See Chapter 10 for information on acquiring, mastering, and performing rituals. Even though some rituals use the Heal skill or the Nature skill, the Arcana skill or the Religion skill is required to understand how to perform rituals.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -2983,9 +3475,11 @@
         "fields": {
             "name": "Armor Proficiency (Chainmail)", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain training with chainmail.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -2995,9 +3489,11 @@
         "fields": {
             "name": "Armor Proficiency (Hide)", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain training with hide armor.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3007,9 +3503,11 @@
         "fields": {
             "name": "Armor Proficiency (Leather)", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain training in leather armor.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3019,9 +3517,11 @@
         "fields": {
             "name": "Armor Proficiency (Plate)", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain training with plate armor.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3031,9 +3531,11 @@
         "fields": {
             "name": "Armor Proficiency (Scale)", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain training with scale armor.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3043,9 +3545,11 @@
         "fields": {
             "name": "Astral Fire", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +1 feat bonus to damage rolls when you use a power that has the fire or radiant keyword.\r\nAt 11th level, this bonus increases to +2. At 21st level, it increases to +3.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3055,9 +3559,11 @@
         "fields": {
             "name": "Avandra's Rescue [Dvinity]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You can invoke the power of your deity to use Avandra's Rescue.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3067,9 +3573,11 @@
         "fields": {
             "name": "Backstabber [Rogue]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "The extra damage dice from your Sneak Attack class feature increase from d6s to d8s.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3079,9 +3587,11 @@
         "fields": {
             "name": "Blade Opportunist", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +2 bonus to opportunity attack rolls with a heavy blade or a light blade.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3091,9 +3601,11 @@
         "fields": {
             "name": "Burning Blizzard", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +1 feat bonus to damage rolls when you use a power that has the acid or cold keyword. At 11th level, this bonus increases to +2. At 21st level, it increases to +3.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3102,10 +3614,12 @@
         "model": "character_builder.feat", 
         "fields": {
             "name": "Combat Reflexes", 
-            "can_retake": false,  
+            "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +1 bonus to opportunity attack rolls.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3114,10 +3628,12 @@
         "model": "character_builder.feat", 
         "fields": {
             "name": "Corellon's Grace [Divinity]", 
-            "can_retake": false,  
+            "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You can invoke the power of your deity to use Corellon's grace.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3127,9 +3643,11 @@
         "fields": {
             "name": "Dark Fury", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +1 feat bonus to damage rolls when you use a power that has the necrotic or psychic keyword. At 11th level, this bonus increases to +2. At 21st level, it increases to +3.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3139,9 +3657,11 @@
         "fields": {
             "name": "Defense Mobility", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +2 bonus to AC against opportunity attacks.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3151,9 +3671,11 @@
         "fields": {
             "name": "Distracting Shield [Fighter]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "If you hit a foe with an attack granted by your Combat Challenge class feature, the target takes a -2 penalty to attack rolls until the start of your next turn.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": "You must have a shield equipped to benefit from this feat."
         }
     }, 
@@ -3163,9 +3685,11 @@
         "fields": {
             "name": "Dodge Giants [Dwarf]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain a +1 bonus to AC and Reflex defense against the attacks of Larger or larger foes.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3175,9 +3699,11 @@
         "fields": {
             "name": "Durable", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "Increase the number of healing surges by two.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3187,9 +3713,11 @@
         "fields": {
             "name": "Dwarven Weapon Training [Dwarf]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain proficiency and a +2 feat bonus to damage rolls with axes and hammers.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3199,9 +3727,11 @@
         "fields": {
             "name": "Eladrin Soldier [Eladrin]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "You gain proficiency with all spears and a +2 feat bonus to damage rolls with longswords and all spears.", 
             "has_passive_effects": true, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3211,9 +3741,11 @@
         "fields": {
             "name": "Expanded Spellbook [Wizard]", 
             "can_retake": false, 
+            "passive_effects": [], 
             "requires_choice": false, 
             "benefit": "Choose one daily wizard spell of every level you know. Add this spell to your spellbook. Each time you gain a new level of daily wizard attack spells, you learn on extra spell of that level (in other words, add three spells to your spellbook instead of only two). This feat doesn't change the number of daily attack spells you can prepare each day.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": ""
         }
     }, 
@@ -3223,9 +3755,11 @@
         "fields": {
             "name": "Weapon Proficiency", 
             "can_retake": true, 
+            "passive_effects": [], 
             "requires_choice": true, 
             "benefit": "You gain proficiency in a single weapon of your choice.", 
             "has_passive_effects": false, 
+            "choices": [], 
             "special": "You can take this feat more than once. Each time you select this feat, choose another weapon."
         }
     }, 
@@ -3845,272 +4379,123 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.currency", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "abbreviation": "cp", 
-            "name": "Copper Piece", 
-            "weight": "0.32"
+            "name": "At-Will Attack"
         }
     }, 
     {
         "pk": 2, 
-        "model": "character_builder.currency", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "abbreviation": "sp", 
-            "name": "Silver Piece", 
-            "weight": "0.32"
+            "name": "At-Will Utility"
         }
     }, 
     {
         "pk": 3, 
-        "model": "character_builder.currency", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "abbreviation": "gp", 
-            "name": "Gold Piece", 
-            "weight": "0.32"
+            "name": "Encounter Attack"
         }
     }, 
     {
         "pk": 4, 
-        "model": "character_builder.currency", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "abbreviation": "pp", 
-            "name": "Platinum Piece", 
-            "weight": "0.32"
+            "name": "Encounter Utility"
         }
     }, 
     {
         "pk": 5, 
-        "model": "character_builder.currency", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "abbreviation": "ad", 
-            "name": "Astral Diamond", 
-            "weight": "0.032"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 1, 
-            "currency_to": 2, 
-            "exchange_rate": "0.1"
-        }
-    }, 
-    {
-        "pk": 2, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 1, 
-            "currency_to": 3, 
-            "exchange_rate": "0.01"
-        }
-    }, 
-    {
-        "pk": 3, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 1, 
-            "currency_to": 4, 
-            "exchange_rate": "0.0001"
-        }
-    }, 
-    {
-        "pk": 4, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 1, 
-            "currency_to": 5, 
-            "exchange_rate": "0.0000010"
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 1, 
-            "currency_to": 1, 
-            "exchange_rate": "1"
+            "name": "Daily Attack"
         }
     }, 
     {
         "pk": 6, 
-        "model": "character_builder.currencyexchange", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "currency_from": 2, 
-            "currency_to": 1, 
-            "exchange_rate": "10"
+            "name": "Daily Utility"
         }
     }, 
     {
         "pk": 7, 
-        "model": "character_builder.currencyexchange", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "currency_from": 2, 
-            "currency_to": 2, 
-            "exchange_rate": "1"
+            "name": "Cantrip"
         }
     }, 
     {
         "pk": 8, 
-        "model": "character_builder.currencyexchange", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "currency_from": 2, 
-            "currency_to": 3, 
-            "exchange_rate": "0.1"
+            "name": "At-Will Racial"
         }
     }, 
     {
         "pk": 9, 
-        "model": "character_builder.currencyexchange", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "currency_from": 2, 
-            "currency_to": 4, 
-            "exchange_rate": "0.001"
+            "name": "Encounter Racial"
         }
     }, 
     {
         "pk": 10, 
-        "model": "character_builder.currencyexchange", 
+        "model": "character_builder.powertype", 
         "fields": {
-            "currency_from": 2, 
-            "currency_to": 5, 
-            "exchange_rate": "0.000010"
+            "name": "Daily Racial"
         }
     }, 
     {
-        "pk": 11, 
-        "model": "character_builder.currencyexchange", 
+        "pk": 1, 
+        "model": "character_builder.power", 
         "fields": {
-            "currency_from": 3, 
-            "currency_to": 1, 
-            "exchange_rate": "100"
+            "hit": "", 
+            "target": "", 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
+            "attack": "", 
+            "keywords": "Encounter, Free Action, Personal", 
+            "flavor": "With an instant of focus, you take careful aim at your foe and strike with the legendary accuracy of the elves.", 
+            "miss": "", 
+            "special": "", 
+            "name": "Elven Accuracy"
         }
     }, 
     {
-        "pk": 12, 
-        "model": "character_builder.currencyexchange", 
+        "pk": 2, 
+        "model": "character_builder.power", 
         "fields": {
-            "currency_from": 3, 
-            "currency_to": 2, 
-            "exchange_rate": "10"
+            "hit": "", 
+            "target": "", 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "Teleport up to 5 squares.", 
+            "attack": "", 
+            "keywords": "Encounter; Teleportation; Move Action; Personal", 
+            "flavor": "With a step, you vanish from one place and appear in another.", 
+            "miss": "", 
+            "special": "", 
+            "name": "Fey Step"
         }
     }, 
     {
-        "pk": 13, 
-        "model": "character_builder.currencyexchange", 
+        "pk": 3, 
+        "model": "character_builder.power", 
         "fields": {
-            "currency_from": 3, 
-            "currency_to": 3, 
-            "exchange_rate": "1"
-        }
-    }, 
-    {
-        "pk": 14, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 3, 
-            "currency_to": 4, 
-            "exchange_rate": "0.01"
-        }
-    }, 
-    {
-        "pk": 15, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 3, 
-            "currency_to": 5, 
-            "exchange_rate": "0.0001"
-        }
-    }, 
-    {
-        "pk": 16, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 4, 
-            "currency_to": 1, 
-            "exchange_rate": "10000"
-        }
-    }, 
-    {
-        "pk": 17, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 4, 
-            "currency_to": 2, 
-            "exchange_rate": "1000"
-        }
-    }, 
-    {
-        "pk": 18, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 4, 
-            "currency_to": 3, 
-            "exchange_rate": "100"
-        }
-    }, 
-    {
-        "pk": 19, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 4, 
-            "currency_to": 4, 
-            "exchange_rate": "1"
-        }
-    }, 
-    {
-        "pk": 20, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 4, 
-            "currency_to": 5, 
-            "exchange_rate": "0.01"
-        }
-    }, 
-    {
-        "pk": 21, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 5, 
-            "currency_to": 1, 
-            "exchange_rate": "1000000"
-        }
-    }, 
-    {
-        "pk": 22, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 5, 
-            "currency_to": 2, 
-            "exchange_rate": "100000"
-        }
-    }, 
-    {
-        "pk": 23, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 5, 
-            "currency_to": 3, 
-            "exchange_rate": "10000"
-        }
-    }, 
-    {
-        "pk": 24, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 5, 
-            "currency_to": 4, 
-            "exchange_rate": "100"
-        }
-    }, 
-    {
-        "pk": 25, 
-        "model": "character_builder.currencyexchange", 
-        "fields": {
-            "currency_from": 5, 
-            "currency_to": 5, 
-            "exchange_rate": "1"
+            "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
+            "target": "All creatures in area", 
+            "level": 0, 
+            "power_type": 9, 
+            "effect": "", 
+            "attack": "Strength +2 vs. Reflex, Constitution +2 vs. Reflex, or Dexterity +2 vs. Reflex", 
+            "keywords": "Encounter; Acid, Cold, Fire, Lightning, or Poison; Minor Action; Close blast 3", 
+            "flavor": "As you open your mouth with a roar, the deadly power of your draconic kin blasts forth to engulf your foes.", 
+            "miss": "", 
+            "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
+            "name": "Dragon Breath"
         }
     }, 
     {
@@ -4258,6 +4643,15 @@
             "currency_type": 1, 
             "amount": 100, 
             "character": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.characterclassfeature", 
+        "fields": {
+            "class_feature": 2, 
+            "character": 3, 
+            "choice": 3
         }
     }, 
     {
