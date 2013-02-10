@@ -2,8 +2,8 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 {% block js %}
-<script src="{% static "js/CharacterBuilder.js" %}"></script>
-<script src="{% static "js/builder.js" %}"></script>
+<script src="{% static "character_builder/js/CharacterBuilder.js" %}"></script>
+<script src="{% static "character_builder/js/builder.js" %}"></script>
 <script>
     $(function () {
         var auto_trained = {{ character.class_type.trained_skills.all.count }};
