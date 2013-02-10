@@ -33,16 +33,19 @@
                         <div class="span9 page-header">
                           <h1>{{ character.name }} <small>Level <span id="level-text">{{ character.current_level.number }}</span> {{ character.race.name }} {{ character.class_type.name }}</small></h1>
                         </div>
+                    </div>
+                    <div class="row">
                         <div id="stats" class="span9">
-                            <h4>Stats</h4>
                             <div class="row">
                                 <div class="span4">
+                                    <h4>Health</h4>
                                     <span id="hit-points-label">HP:</span><span id="hit-points">{{ character.hit_points}}</span>
                                     <div id="health-bar-parent" class="progress progress-success">
                                         <div id="health-bar" class="bar"></div>
                                     </div>
                                 </div>
                                 <div class="span4 offset1">
+                                    <h4>Experience</h4>
                                     <span id="xp-text">{{ character.xp }}</span> / <span id="next-level-xp-text">{{ character.next_level.xp_required }}</span> XP
                                     <div class="progress progress-striped active">
                                         <div id="xp-bar" class="bar"></div>
@@ -50,6 +53,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div id="defenses" class="span9">
                             <h4>Defenses</h4>
                             <table class="table table-hover table-bordered table-condensed">
@@ -105,7 +110,9 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="abilities" class="span9">
+                    </div>
+                    <div class="row">
+                        <div id="abilities" class="span4">
                             <h4>Abilities</h4>
                             <table class="table table-hover table-bordered table-condensed">
                                 <thead>
@@ -126,10 +133,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="features" class="span9">
-                            <h4>Features</h4>
-                        </div>
-                        <div id="skills" class="span9">
+                        <div id="skills" class="span4 offset1">
                             <h4>Skills</h4>
                             <table class="table table-hover table-bordered table-condensed">
                                 <thead>
@@ -151,8 +155,8 @@
                             </table>
                         </div>
                     </div>
-                    {% crispy character_getter_form %}
                 </div>
+                {% crispy character_getter_form %}
             </div>
         </div>
 {% endblock %}
