@@ -212,8 +212,8 @@ def gear(request, character_id):
     pass
 
 
-def sheet(request, character_id, character_slug):
-    c = get_object_or_404(Character, id=character_id, slug_name=character_slug)
+def sheet(request, character_slug):
+    c = get_object_or_404(Character, slug_name=character_slug)
     response_dict = {}
     response_dict['character'] = c
     response_dict['defenses'] = c.get_defenses()
