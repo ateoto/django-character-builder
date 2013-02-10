@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource, ALL_WITH_RELATIONS
-from tastypie.authentication import SessionAuthentication
+from tastypie.authentication import DigestAuthentication
 from tastypie.authorization import DjangoAuthorization
 from tastypie import fields
 from character_builder.models import (ClassType, Character, Race,
@@ -80,7 +80,7 @@ class CharacterResource(ModelResource):
         queryset = Character.objects.all()
         resource_name = 'character'
 
-        authentication = SessionAuthentication()
+        authentication = DigestAuthentication()
         authorization = DjangoAuthorization()
 
     def dehydrate(self, bundle):
