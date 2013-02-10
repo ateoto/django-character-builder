@@ -44,7 +44,6 @@ class Character(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('character-builder-sheet', (), {
-            'character_id': self.id,
             'character_slug': self.slug_name})
 
     def calc_hit_points(self):

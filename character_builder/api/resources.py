@@ -1,4 +1,6 @@
 from tastypie.resources import ModelResource, ALL_WITH_RELATIONS
+from tastypie.authentication import SessionAuthentication
+from tastypie.authorization import DjangoAuthorization
 from tastypie import fields
 from character_builder.models import (ClassType, Character, Race,
                                         Gender, Alignment, Deity, Source,
@@ -77,6 +79,9 @@ class CharacterResource(ModelResource):
     class Meta:
         queryset = Character.objects.all()
         resource_name = 'character'
+
+        authentication = SessionAuthentication()
+        authorization = DjangoAuthorization()
 
     def dehydrate(self, bundle):
         bundle.data['level'] = bundle.obj.current_level().number
