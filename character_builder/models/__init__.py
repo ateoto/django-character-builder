@@ -1,7 +1,7 @@
 from .attributes import (Ability, Skill, Defense, Modifier,
                         AbilityMod, SkillMod, DefenseMod,)
 from .character import (Character, CharacterCurrency,
-                        CharacterBaseDefense, CharacterRaceFeature,
+                        CharacterRaceFeature,
                         CharacterClassFeature, CharacterAbility,
                         CharacterArmorType, CharacterSkill,
                         CharacterFeat, CharacterPower)

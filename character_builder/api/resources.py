@@ -83,5 +83,7 @@ class CharacterResource(ModelResource):
         bundle.data['level_xp_needed'] = bundle.obj.current_level().xp_required
         bundle.data['next_level'] = bundle.obj.next_level().number
         bundle.data['next_level_xp_needed'] = bundle.obj.next_level().xp_required
+        bundle.obj.calc_hit_points()
+        bundle.data['defenses'] = bundle.obj.get_defenses()
 
         return bundle

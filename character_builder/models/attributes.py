@@ -30,6 +30,7 @@ class Skill(models.Model):
 class Defense(models.Model):
     name = models.CharField(max_length=20)
     abbreviation = models.CharField(max_length=10)
+    abilities = models.ManyToManyField(Ability)
 
     class Meta:
         app_label = 'character_builder'
@@ -44,6 +45,9 @@ class Modifier(models.Model):
     class Meta:
         app_label = 'character_builder'
 
+    def __unicode__(self):
+        return Modifier.objects.get_subclass(id=self.id).__unicode__()
+
 
 class AbilityMod(Modifier):
     ability = models.ForeignKey(Ability)
@@ -52,6 +56,8 @@ class AbilityMod(Modifier):
     class Meta:
         app_label = 'character_builder'
 
+    def __unicode__(self):
+        return self.pretty()
 
     def apply_mod(self, character):
         raise NotImplemented
@@ -74,6 +80,9 @@ class SkillMod(Modifier):
     class Meta:
         app_label = 'character_builder'
 
+    def __unicode__(self):
+        return self.pretty()
+
     def apply_mod(self, character):
         raise NotImplemented
 
@@ -94,6 +103,9 @@ class DefenseMod(Modifier):
 
     class Meta:
         app_label = 'character_builder'
+
+    def __unicode__(self):
+        return self.pretty()
 
     def apply_mod(self, character):
         raise NotImplemented

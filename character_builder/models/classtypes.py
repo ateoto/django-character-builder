@@ -1,7 +1,7 @@
 from django.db import models
 
 from .characteristics import (Source, Role)
-from .attributes import (Ability, Skill, Defense)
+from .attributes import (Ability, Skill, Defense, Modifier)
 from .items import (WeaponProficiencyGroup, ArmorType)
 
 
@@ -12,6 +12,7 @@ class ClassType(models.Model):
     source = models.ForeignKey(Source)
     favored_abilities = models.ManyToManyField(Ability)
     description = models.TextField()
+    modifiers = models.ManyToManyField(Modifier, blank=True)
     weapon_proficiencies = models.ManyToManyField(WeaponProficiencyGroup)
     armor_proficiencies = models.ManyToManyField(ArmorType)
     trained_skills = models.ManyToManyField(Skill, blank=True, null=True)
@@ -44,6 +45,7 @@ class ClassFeature(models.Model):
     requires_choice = models.BooleanField(default=False)
     choices = models.ManyToManyField(ClassFeatureChoice, blank=True)
     class_type = models.ManyToManyField(ClassType)
+    passive_effects = models.ManyToManyField(Modifier, blank=True)
 
     class Meta:
         app_label = 'character_builder'

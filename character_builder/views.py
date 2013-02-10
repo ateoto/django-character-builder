@@ -114,7 +114,7 @@ def abilities(request, character_id):
     response_dict['abilities'] = Ability.objects.all()
     response_dict['character'] = character
 
-    return render_to_response('character_builder/abilities.html',
+    return render_to_response('character_builder/ability_test.html',
             response_dict,
             context_instance=RequestContext(request))
 

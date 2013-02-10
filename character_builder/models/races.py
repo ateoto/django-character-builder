@@ -14,6 +14,7 @@ class Race(models.Model):
     vision = models.ForeignKey(Vision)
     languages = models.ManyToManyField(Language)
     description = models.TextField()
+    modifiers = models.ManyToManyField(Modifier, blank=True)
 
     class Meta:
         app_label = 'character_builder'
@@ -21,7 +22,6 @@ class Race(models.Model):
 
     def __unicode__(self):
         return self.name
-
 
 class RaceFeatureChoice(models.Model):
     name = models.CharField(max_length=100)
@@ -51,6 +51,9 @@ class RaceFeature(models.Model):
 
 
 class RaceAbilityMod(models.Model):
+    """
+    Deprecated
+    """
     race = models.ForeignKey(Race, related_name="ability_mods")
     ability = models.ForeignKey(Ability)
     modifier = models.IntegerField()
@@ -80,6 +83,9 @@ class RaceAbilityMod(models.Model):
 
 
 class RaceSkillMod(models.Model):
+    """
+    Deprecated
+    """
     race = models.ForeignKey(Race, related_name='skill_mods')
     skill = models.ForeignKey(Skill)
     modifier = models.IntegerField()

@@ -2161,14 +2161,6 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.abilityprerequisite", 
-        "fields": {
-            "ability": 3, 
-            "value": 15
-        }
-    }, 
-    {
-        "pk": 1, 
         "model": "character_builder.alignment", 
         "fields": {
             "name": "Good", 
@@ -2929,10 +2921,8 @@
         "pk": 1, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Action Surge [Human]", 
             "can_retake": false, 
-            "passive_effects": "\"{}\"", 
             "requires_choice": false, 
             "benefit": "You gain a +3 bonus to attack rolls you make during any action you gained by spending an action point.", 
             "has_passive_effects": false, 
@@ -2943,10 +2933,8 @@
         "pk": 2, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Agile Hunter [Ranger]", 
             "can_retake": false, 
-            "passive_effects": "\"{}\"", 
             "requires_choice": false, 
             "benefit": "When you score a critical hit with a melee attack against the target of your Hunter's Quarry, you can shift as a free action, and the enemy takes a -2 penalty on attack rolls against you until the end of your next turn.", 
             "has_passive_effects": false, 
@@ -2957,10 +2945,8 @@
         "pk": 3, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Alertness", 
             "can_retake": false, 
-            "passive_effects": "{\"skills\": {\"Perception\": 2}}", 
             "requires_choice": false, 
             "benefit": "You don't grant enemies combat advantage during surprise rounds. You also gain a +2 feat bonus to Perception checks.", 
             "has_passive_effects": true, 
@@ -2971,10 +2957,8 @@
         "pk": 4, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Armor of Bahamut [Divinity]", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can invoke the power of your deity to use armor of Bahamut.", 
             "has_passive_effects": false, 
@@ -2985,10 +2969,8 @@
         "pk": 5, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Ritual Caster", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can master and perform rituals of your level or lower. See Chapter 10 for information on acquiring, mastering, and performing rituals. Even though some rituals use the Heal skill or the Nature skill, the Arcana skill or the Religion skill is required to understand how to perform rituals.", 
             "has_passive_effects": false, 
@@ -2999,10 +2981,8 @@
         "pk": 6, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Armor Proficiency (Chainmail)", 
             "can_retake": false, 
-            "passive_effects": "{\"Armor Proficiency\": [\"Chainmail\"]}", 
             "requires_choice": false, 
             "benefit": "You gain training with chainmail.", 
             "has_passive_effects": true, 
@@ -3013,10 +2993,8 @@
         "pk": 7, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Armor Proficiency (Hide)", 
             "can_retake": false, 
-            "passive_effects": "{\"Armor Proficiency\": [\"Hide\"]}", 
             "requires_choice": false, 
             "benefit": "You gain training with hide armor.", 
             "has_passive_effects": true, 
@@ -3027,10 +3005,8 @@
         "pk": 8, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Armor Proficiency (Leather)", 
             "can_retake": false, 
-            "passive_effects": "{\"Armor Proficiency\": [\"Leather\"]}", 
             "requires_choice": false, 
             "benefit": "You gain training in leather armor.", 
             "has_passive_effects": true, 
@@ -3041,10 +3017,8 @@
         "pk": 9, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Armor Proficiency (Plate)", 
             "can_retake": false, 
-            "passive_effects": "{\"Armor Proficiency\": [\"Plate\"]}", 
             "requires_choice": false, 
             "benefit": "You gain training with plate armor.", 
             "has_passive_effects": true, 
@@ -3055,10 +3029,8 @@
         "pk": 10, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Armor Proficiency (Scale)", 
             "can_retake": false, 
-            "passive_effects": "{\"Armor Proficiency\": [\"Scale\"]}", 
             "requires_choice": false, 
             "benefit": "You gain training with scale armor.", 
             "has_passive_effects": true, 
@@ -3069,10 +3041,8 @@
         "pk": 11, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Astral Fire", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +1 feat bonus to damage rolls when you use a power that has the fire or radiant keyword.\r\nAt 11th level, this bonus increases to +2. At 21st level, it increases to +3.", 
             "has_passive_effects": false, 
@@ -3083,10 +3053,8 @@
         "pk": 12, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Avandra's Rescue [Dvinity]", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You can invoke the power of your deity to use Avandra's Rescue.", 
             "has_passive_effects": false, 
@@ -3097,10 +3065,8 @@
         "pk": 13, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Backstabber [Rogue]", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "The extra damage dice from your Sneak Attack class feature increase from d6s to d8s.", 
             "has_passive_effects": false, 
@@ -3111,10 +3077,8 @@
         "pk": 14, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Blade Opportunist", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +2 bonus to opportunity attack rolls with a heavy blade or a light blade.", 
             "has_passive_effects": false, 
@@ -3125,10 +3089,8 @@
         "pk": 15, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Burning Blizzard", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +1 feat bonus to damage rolls when you use a power that has the acid or cold keyword. At 11th level, this bonus increases to +2. At 21st level, it increases to +3.", 
             "has_passive_effects": false, 
@@ -3139,10 +3101,8 @@
         "pk": 16, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Combat Reflexes", 
-            "can_retake": false, 
-            "passive_effects": "{\"Opportunity Attack Roll Modifier\": 1}", 
+            "can_retake": false,  
             "requires_choice": false, 
             "benefit": "You gain a +1 bonus to opportunity attack rolls.", 
             "has_passive_effects": true, 
@@ -3153,10 +3113,8 @@
         "pk": 17, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Corellon's Grace [Divinity]", 
-            "can_retake": false, 
-            "passive_effects": "{\"Power\": [\"Channel Divinity: Corellon's Grace\"]}", 
+            "can_retake": false,  
             "requires_choice": false, 
             "benefit": "You can invoke the power of your deity to use Corellon's grace.", 
             "has_passive_effects": true, 
@@ -3167,10 +3125,8 @@
         "pk": 18, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Dark Fury", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +1 feat bonus to damage rolls when you use a power that has the necrotic or psychic keyword. At 11th level, this bonus increases to +2. At 21st level, it increases to +3.", 
             "has_passive_effects": false, 
@@ -3181,10 +3137,8 @@
         "pk": 19, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Defense Mobility", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +2 bonus to AC against opportunity attacks.", 
             "has_passive_effects": false, 
@@ -3195,10 +3149,8 @@
         "pk": 20, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Distracting Shield [Fighter]", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "If you hit a foe with an attack granted by your Combat Challenge class feature, the target takes a -2 penalty to attack rolls until the start of your next turn.", 
             "has_passive_effects": false, 
@@ -3209,10 +3161,8 @@
         "pk": 21, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Dodge Giants [Dwarf]", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "You gain a +1 bonus to AC and Reflex defense against the attacks of Larger or larger foes.", 
             "has_passive_effects": false, 
@@ -3223,10 +3173,8 @@
         "pk": 22, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Durable", 
             "can_retake": false, 
-            "passive_effects": "{\"healing_surges\": 2}", 
             "requires_choice": false, 
             "benefit": "Increase the number of healing surges by two.", 
             "has_passive_effects": true, 
@@ -3237,10 +3185,8 @@
         "pk": 23, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Dwarven Weapon Training [Dwarf]", 
             "can_retake": false, 
-            "passive_effects": "{\"Weapon Proficiency\": [\"Axes\", \"Hammers\"]}", 
             "requires_choice": false, 
             "benefit": "You gain proficiency and a +2 feat bonus to damage rolls with axes and hammers.", 
             "has_passive_effects": true, 
@@ -3251,10 +3197,8 @@
         "pk": 24, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Eladrin Soldier [Eladrin]", 
             "can_retake": false, 
-            "passive_effects": "{\"Weapon Proficiency\": [\"Spears\"]}", 
             "requires_choice": false, 
             "benefit": "You gain proficiency with all spears and a +2 feat bonus to damage rolls with longswords and all spears.", 
             "has_passive_effects": true, 
@@ -3265,10 +3209,8 @@
         "pk": 25, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "\"null\"", 
             "name": "Expanded Spellbook [Wizard]", 
             "can_retake": false, 
-            "passive_effects": "{}", 
             "requires_choice": false, 
             "benefit": "Choose one daily wizard spell of every level you know. Add this spell to your spellbook. Each time you gain a new level of daily wizard attack spells, you learn on extra spell of that level (in other words, add three spells to your spellbook instead of only two). This feat doesn't change the number of daily attack spells you can prepare each day.", 
             "has_passive_effects": false, 
@@ -3279,10 +3221,8 @@
         "pk": 26, 
         "model": "character_builder.feat", 
         "fields": {
-            "choices_json": "{\"choice_model\": \"WeaponType\"}", 
             "name": "Weapon Proficiency", 
             "can_retake": true, 
-            "passive_effects": "{}", 
             "requires_choice": true, 
             "benefit": "You gain proficiency in a single weapon of your choice.", 
             "has_passive_effects": false, 
@@ -5286,21 +5226,6 @@
             "character": 6, 
             "is_trained": false, 
             "value": 3
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.party", 
-        "fields": {
-            "formed": "2013-01-20", 
-            "name": "Unnamed Group", 
-            "characters": [
-                3, 
-                6, 
-                7, 
-                8, 
-                9
-            ]
         }
     }
 ]

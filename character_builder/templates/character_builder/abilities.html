@@ -27,10 +27,10 @@
                 </ul>
                 <ul id="racial-ability-bonus-list" class="unstyled">
                     {% if character.race.name != "Human" %}
-                    {% for bonus in character.race.ability_mods.all %}
+                    {% for bonus in character.race.modifiers.all.select_subclasses %}
                         <li id="racial-ability-bonus-{{ bonus.ability.abbreviation }}" class="racial-ability-bonus">
                             <span class="ability-text">{{ bonus.ability.name }}</span>
-                            <span class="ability-modifier">{{ bonus.modifier }}</span>
+                            <span class="ability-modifier">{{ bonus.value }}</span>
                         </li>
                     {% endfor %}
                     {% endif %}

@@ -47,10 +47,43 @@ class Character(models.Model):
             'character_id': self.id,
             'character_slug': self.slug_name})
 
-    def init_hit_points(self):
+    def calc_hit_points(self):
         self.max_hit_points = self.class_type.base_hit_points + self.abilities.get(ability__name='Constitution').value
-        self.hit_points = self.max_hit_points
         self.save()
+
+    def get_defenses(self):
+        #get table of modifiers
+        response = {}
+
+        for defense in Defense.objects.all():
+            base = int(10 + (math.floor(self.current_level().number / 2)))
+            armor = False  # This needs to check the character's current equipped armor, which requires I work that out.
+            abil = max([abil.modifier_half_level() for abil in CharacterAbility.objects.filter(character=self, ability__in=defense.abilities.all())])
+
+            classtype = []
+            for class_mod in self.class_type.modifiers.all().select_subclasses():
+                if hasattr(class_mod, 'defense'):
+                    if class_mod.defense == defense:
+                        classtype.append(class_mod.value)
+            classtype = sum(classtype)
+
+            race = []
+            for race_mod in self.race.modifiers.all().select_subclasses():
+                if hasattr(race_mod, 'defense'):
+                    if race_mod.defense == defense:
+                        race.append(race_mod.value)
+            race = sum(race)
+
+            response[defense.name] = {
+                'base': base,
+                'armor': armor,
+                'abil': abil,
+                'classtype': classtype,
+                'race': race,
+                'total': sum([base, armor, abil, classtype, race])
+            }
+
+        return response
 
     def current_level(self):
         return Level.objects.order_by('-xp_required').filter(xp_required__lte=self.xp)[:1].get()
@@ -72,18 +105,6 @@ class CharacterCurrency(models.Model):
 
     def __unicode__(self):
         return "%s's coin purse." % (self.character.name)
-
-
-class CharacterBaseDefense(models.Model):
-    character = models.ForeignKey(Character, related_name="defenses")
-    defense = models.ForeignKey(Defense)
-    value = models.IntegerField()
-
-    class Meta:
-        app_label = 'character_builder'
-
-    def __unicode__(self):
-        return "%s %s" % (self.defense.name, self.value)
 
 
 class CharacterRaceFeature(models.Model):
