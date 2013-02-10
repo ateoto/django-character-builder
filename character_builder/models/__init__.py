@@ -32,7 +32,6 @@ __all__ = [
     'DefenseMod',
     'Character',
     'CharacterCurrency',
-    'CharacterBaseDefense',
     'CharacterRaceFeature',
     'CharacterClassFeature',
     'CharacterAbility',

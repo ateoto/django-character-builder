@@ -48,7 +48,13 @@ class Character(models.Model):
             'character_slug': self.slug_name})
 
     def calc_hit_points(self):
-        self.max_hit_points = self.class_type.base_hit_points + self.abilities.get(ability__name='Constitution').value
+        level = self.current_level().number
+        if level == 1:
+            level = 0
+
+        level_mod = self.class_type.hit_points_per_level * level
+
+        self.max_hit_points = level_mod + self.class_type.base_hit_points + self.abilities.get(ability__name='Constitution').value
         self.save()
 
     def get_defenses(self):
@@ -74,7 +80,7 @@ class Character(models.Model):
                         race.append(race_mod.value)
             race = sum(race)
 
-            response[defense.name] = {
+            response[defense.abbreviation.lower()] = {
                 'base': base,
                 'armor': armor,
                 'abil': abil,
@@ -93,6 +99,11 @@ class Character(models.Model):
             return Level.objects.get(number=self.current_level().number + 1)
         except:
             return self.current_level
+
+    def extended_rest(self):
+        self.calc_hit_points()
+        self.hit_points = self.max_hit_points
+        self.save()
 
 
 class CharacterCurrency(models.Model):
@@ -169,6 +180,14 @@ class CharacterSkill(models.Model):
 
     def __unicode__(self):
         return "%s: %s %s" % (self.character.name, self.skill.name, self.value)
+
+    def modifier_half_level(self):
+        if self.is_trained:
+            training_mod = 5
+        else:
+            training_mod = 0
+
+        return self.value + training_mod + int(math.floor(self.character.current_level().number / 2))
 
 
 class CharacterFeat(models.Model):

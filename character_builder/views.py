@@ -114,7 +114,7 @@ def abilities(request, character_id):
     response_dict['abilities'] = Ability.objects.all()
     response_dict['character'] = character
 
-    return render_to_response('character_builder/ability_test.html',
+    return render_to_response('character_builder/abilities.html',
             response_dict,
             context_instance=RequestContext(request))
 
@@ -216,7 +216,7 @@ def sheet(request, character_id, character_slug):
     c = get_object_or_404(Character, id=character_id, slug_name=character_slug)
     response_dict = {}
     response_dict['character'] = c
-
+    response_dict['defenses'] = c.get_defenses()
     response_dict['character_getter_form'] = CharacterGetterForm({'character': c.id})
 
     return render_to_response('character_builder/sheet.html',

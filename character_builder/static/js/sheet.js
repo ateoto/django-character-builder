@@ -43,12 +43,12 @@ function update_character(character_id) {
 		function(data) {
 			update_ability_scores(data);
 			update_xp(data);
+			update_hp(data);
 		}, "json");
 }
 
 function update_ability_scores(character_data) {
 	_.each(character_data.abilities, function(element) {
-		$('#ability-score-' + element.ability.name + ' .ability-mod').text(element.modifier);
 		$('#ability-score-' + element.ability.name + ' .ability-mod-level').text(element.modifier_half_level);
 	});
 }
@@ -57,9 +57,25 @@ function update_xp(character_data) {
 	$('#level-text').text(character_data.level);
 	$('#xp-text').text(character_data.xp);
 	$('#next-level-xp-text').text(character_data.next_level_xp_needed);
-	1000
-	2250
-	2250-1000
 	var xp_percentage = (character_data.xp - character_data.level_xp_needed) / (character_data.next_level_xp_needed - character_data.level_xp_needed) * 100;
 	$('#xp-bar').css("width", xp_percentage + "%");
+}
+
+function update_hp(character_data) {
+	var hp_percentage = ((character_data.hit_points / character_data.max_hit_points) * 100);
+	$('#hit-points').text(character_data.hit_points);
+
+	if (hp_percentage <= 30) {
+		console.log('Danger');
+		$('#health-bar-parent').removeClass("progress-success progress-warning").addClass("progress-danger");
+	}
+	else if (hp_percentage > 30 && hp_percentage <= 50) {
+		console.log('Warning');
+		$('#health-bar-parent').removeClass("progress-success progress-danger").addClass("progress-warning");
+	}
+	else {
+		console.log('Success');
+		$('#health-bar-parent').removeClass("progress-warning progress-danger").addClass("progress-success");
+	}
+	$('#health-bar').css("width", hp_percentage + "%");
 }
