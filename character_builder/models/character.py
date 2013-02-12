@@ -156,6 +156,19 @@ class CharacterAbility(models.Model):
     def modifier_half_level(self):
         return self.modifier() + int(math.floor(self.character.current_level().number / 2))
 
+    def check(self):
+        check = self.modifier_half_level()
+
+        if check < 0:
+            mod = "-"
+        elif check == 0:
+            mod = ""
+        else:
+            mod = "+"
+
+        return "%s%s" % (mod, check)
+
+
     def __unicode__(self):
         return "%s %s" % (self.ability.name, self.value)
 
