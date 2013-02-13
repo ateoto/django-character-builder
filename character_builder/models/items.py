@@ -1,6 +1,9 @@
 from django.db import models
 
 from .characteristics import (Source)
+from .attributes import Modifier, DefenseMod
+
+from model_utils.managers import InheritanceManager
 
 
 class WeaponCategory(models.Model):
@@ -95,9 +98,35 @@ class CurrencyExchange(models.Model):
         return "%s to %s" % (self.currency_from.name, self.currency_to.name)
 
 
+class Price(models.Model):
+    currency = models.ForeignKey(Currency)
+    value = models.IntegerField()
+
+    class Meta:
+        app_label = 'character_builder'
+
+    def __unicode__(self):
+        return "%s %s" % (self.value, self.currency.abbreviation)
+
+
 class Item(models.Model):
     name = models.CharField(max_length=100)
     source = models.ForeignKey(Source)
+    weight = models.IntegerField()
+    price = models.ForeignKey(Price)
+    objects = InheritanceManager()
+
+    class Meta:
+        app_label = 'character_builder'
+
+    def __unicode__(self):
+        return self.name
+
+
+class ArmorItem(Item):
+    armor_type = models.ForeignKey(ArmorType)
+    armor_modifier = models.ForeignKey(DefenseMod, related_name='+')
+    penalties = models.ManyToManyField(Modifier, blank=True)
 
     class Meta:
         app_label = 'character_builder'

@@ -8,7 +8,7 @@ from .feats import (Feat)
 from .powers import (Power)
 from .races import (Race, RaceFeature, RaceFeatureChoice)
 from .classtypes import (ClassType, ClassFeature, ClassFeatureChoice)
-from .items import (ArmorType, Currency)
+from .items import (ArmorClass, ArmorType, Currency, Item)
 
 import math
 
@@ -57,13 +57,28 @@ class Character(models.Model):
         self.save()
 
     def get_defenses(self):
-        #get table of modifiers
         response = {}
+
+        equipped_armor_class = None
+        equipped_armor_bonus = 0
+
+        for item in CharacterEquipment.objects.filter(character=self, is_equipped=True):
+            i = Item.objects.get_subclass(id=item.item.id)
+            if hasattr(i, 'armor_type'):
+                equipped_armor_class = i.armor_type.armor_class
+                equipped_armor_bonus = i.armor_modifier.value
 
         for defense in Defense.objects.all():
             base = int(10 + (math.floor(self.current_level().number / 2)))
-            armor = False  # This needs to check the character's current equipped armor, which requires I work that out.
-            abil = max([abil.modifier_half_level() for abil in CharacterAbility.objects.filter(character=self, ability__in=defense.abilities.all())])
+            if defense.abbreviation == 'AC':
+                armor = equipped_armor_bonus
+                if ((equipped_armor_class == ArmorClass.objects.get(name='Light')) or (equipped_armor_class is None)):
+                    abil = max([abil.modifier_half_level() for abil in CharacterAbility.objects.filter(character=self, ability__in=defense.abilities.all())])
+                else:
+                    abil = 0
+            else:
+                armor = 0
+                abil = max([abil.modifier_half_level() for abil in CharacterAbility.objects.filter(character=self, ability__in=defense.abilities.all())])
 
             classtype = []
             for class_mod in self.class_type.modifiers.all().select_subclasses():
@@ -168,7 +183,6 @@ class CharacterAbility(models.Model):
 
         return "%s%s" % (mod, check)
 
-
     def __unicode__(self):
         return "%s %s" % (self.ability.name, self.value)
 
@@ -205,6 +219,15 @@ class CharacterSkill(models.Model):
 
         return sum([self.value, training_mod,
                     ability_mod, int(math.floor(self.character.current_level().number / 2))])
+
+
+class CharacterEquipment(models.Model):
+    character = models.ForeignKey(Character, related_name='equipment')
+    item = models.ForeignKey(Item)
+    is_equipped = models.BooleanField()
+
+    class Meta:
+        app_label = 'character_builder'
 
 
 class CharacterFeat(models.Model):

@@ -298,6 +298,26 @@
         "fields": {}
     }, 
     {
+        "pk": 14, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
         "pk": 4, 
         "model": "character_builder.abilitymod", 
         "fields": {
@@ -391,6 +411,38 @@
         "fields": {
             "defense": 3, 
             "value": 2
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 1, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 1, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 1, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 1, 
+            "value": 7
         }
     }, 
     {
@@ -2392,6 +2444,63 @@
             "currency_from": 5, 
             "currency_to": 5, 
             "exchange_rate": "1"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.item", 
+        "fields": {
+            "source": 1, 
+            "price": 1, 
+            "name": "Cloth armor (basic clothing)", 
+            "weight": 0
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.item", 
+        "fields": {
+            "source": 1, 
+            "price": 1, 
+            "name": "Leather armor", 
+            "weight": 0
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.item", 
+        "fields": {
+            "source": 1, 
+            "price": 1, 
+            "name": "Scale armor", 
+            "weight": 0
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.armoritem", 
+        "fields": {
+            "armor_type": 1, 
+            "armor_modifier": 14, 
+            "penalties": []
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.armoritem", 
+        "fields": {
+            "armor_type": 2, 
+            "armor_modifier": 16, 
+            "penalties": []
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.armoritem", 
+        "fields": {
+            "armor_type": 5, 
+            "armor_modifier": 17, 
+            "penalties": []
         }
     }, 
     {
@@ -4551,7 +4660,7 @@
             "race": 6, 
             "slug_name": "maekju", 
             "user": 1, 
-            "hit_points": 24, 
+            "hit_points": 20, 
             "xp": 0, 
             "deity": 5, 
             "alignment": 5, 
@@ -4571,7 +4680,7 @@
             "race": 17, 
             "slug_name": "zed", 
             "user": 1, 
-            "hit_points": 24, 
+            "hit_points": 15, 
             "xp": 0, 
             "deity": 10, 
             "alignment": 5, 
@@ -4591,7 +4700,7 @@
             "race": 2, 
             "slug_name": "gerlof", 
             "user": 1, 
-            "hit_points": 33, 
+            "hit_points": 25, 
             "xp": 0, 
             "deity": 8, 
             "alignment": 1, 
@@ -4940,6 +5049,42 @@
             "character": 9, 
             "ability": 6, 
             "value": 18
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "character_builder.characterability", 
+        "fields": {
+            "character": 1, 
+            "ability": 1, 
+            "value": 13
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "character_builder.characterability", 
+        "fields": {
+            "character": 1, 
+            "ability": 3, 
+            "value": 12
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "character_builder.characterability", 
+        "fields": {
+            "character": 1, 
+            "ability": 4, 
+            "value": 11
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "character_builder.characterability", 
+        "fields": {
+            "character": 1, 
+            "ability": 6, 
+            "value": 14
         }
     }, 
     {
@@ -5790,6 +5935,221 @@
             "character": 7, 
             "is_trained": false, 
             "value": 0
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 1, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 2, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 3, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 4, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 5, 
+            "character": 1, 
+            "is_trained": true, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 6, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 7, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 93, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 8, 
+            "character": 1, 
+            "is_trained": true, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 94, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 9, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 95, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 10, 
+            "character": 1, 
+            "is_trained": true, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 96, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 11, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 97, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 12, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 98, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 13, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 2
+        }
+    }, 
+    {
+        "pk": 99, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 14, 
+            "character": 1, 
+            "is_trained": true, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 15, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 101, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 16, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 102, 
+        "model": "character_builder.characterskill", 
+        "fields": {
+            "skill": 17, 
+            "character": 1, 
+            "is_trained": false, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.characterequipment", 
+        "fields": {
+            "item": 1, 
+            "is_equipped": true, 
+            "character": 3
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.characterequipment", 
+        "fields": {
+            "item": 1, 
+            "is_equipped": true, 
+            "character": 6
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.characterequipment", 
+        "fields": {
+            "item": 2, 
+            "is_equipped": true, 
+            "character": 7
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.characterequipment", 
+        "fields": {
+            "item": 3, 
+            "is_equipped": true, 
+            "character": 8
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.characterequipment", 
+        "fields": {
+            "item": 3, 
+            "is_equipped": true, 
+            "character": 9
         }
     }
 ]

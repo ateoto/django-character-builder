@@ -119,3 +119,26 @@ class DefenseMod(Modifier):
             mod = "+"
 
         return "%s%s %s" % (mod, self.value, self.defense.name)
+
+
+class SpeedMod(Modifier):
+    value = models.IntegerField()
+
+    class Meta:
+        app_label = 'character_builder'
+
+    def __unicode__(self):
+        return self.pretty()
+
+    def apply_mod(self, character):
+        raise NotImplemented
+
+    def pretty(self):
+        if self.value < 0:
+            mod = "-"
+        elif self.value == 0:
+            mod = ""
+        else:
+            mod = "+"
+
+        return "%s%s Speed" % (mod, self.value)

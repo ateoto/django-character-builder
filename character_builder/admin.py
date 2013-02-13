@@ -7,14 +7,14 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     Alignment, Deity, WeaponGroup,
                                     WeaponCategory, WeaponType,
                                     WeaponProficiencyGroup,
-                                    ArmorClass, ArmorType,
+                                    ArmorClass, ArmorType, Item,
                                     Currency, CurrencyExchange,
                                     CharacterCurrency, Gender,
                                     Defense, ClassTypeDefMod,
                                     ClassSkill,
                                     ClassFeature, AbilityMod, SkillMod, DefenseMod,
                                     CharacterRaceFeature, CharacterClassFeature,
-                                    RaceFeature, ClassFeatureChoice)
+                                    RaceFeature, ClassFeatureChoice, CharacterEquipment)
 from character_builder.models import (FeatRacePrereq, FeatClassTypePrereq,
                                         FeatClassFeaturePrereq, FeatAbilityPrereq,
                                         FeatSkillPrereq, FeatDeityPrereq, FeatSkillOrSkillPrereq,
@@ -40,6 +40,7 @@ admin.site.register(Skill)
 admin.site.register(Ability)
 admin.site.register(CharacterSkill)
 admin.site.register(CharacterAbility, CharacterAbilityAdmin)
+admin.site.register(CharacterEquipment)
 admin.site.register(ClassType, ClassTypeAdmin)
 admin.site.register(Alignment)
 admin.site.register(Deity)

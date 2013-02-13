@@ -1,10 +1,10 @@
 from .attributes import (Ability, Skill, Defense, Modifier,
-                        AbilityMod, SkillMod, DefenseMod,)
+                        AbilityMod, SkillMod, DefenseMod, SpeedMod)
 from .character import (Character, CharacterCurrency,
                         CharacterRaceFeature,
                         CharacterClassFeature, CharacterAbility,
                         CharacterArmorType, CharacterSkill,
-                        CharacterFeat, CharacterPower)
+                        CharacterFeat, CharacterPower, CharacterEquipment)
 from .characteristics import (Role, Alignment, Level, Deity,
                         Source, Size, Gender, Language, Vision)
 from .classtypes import (ClassFeatureChoice, ClassFeature,
@@ -16,7 +16,7 @@ from .feats import (Feat, FeatPrereq, FeatRacePrereq, FeatClassTypePrereq,
                         FeatArmorTypePrereq, FeatArmorOrArmorPrereq)
 from .items import (WeaponCategory, WeaponGroup, WeaponProficiencyGroup,
                     WeaponType, ArmorClass, ArmorType, Currency,
-                    CurrencyExchange, Item)
+                    CurrencyExchange, Price, Item, ArmorItem)
 from .powers import (PowerType, PowerKeyword, Power,
                     ClassPower, RacialPower, FeatPower)
 from .races import (RaceFeatureChoice, RaceFeature, Race,
@@ -30,6 +30,7 @@ __all__ = [
     'AbilityMod',
     'SkillMod',
     'DefenseMod',
+    'SpeedMod',
     'Character',
     'CharacterCurrency',
     'CharacterRaceFeature',
@@ -39,6 +40,7 @@ __all__ = [
     'CharacterSkill',
     'CharacterFeat',
     'CharacterPower',
+    'CharacterEquipment',
     'Role',
     'Alignment',
     'Level',
@@ -73,7 +75,9 @@ __all__ = [
     'ArmorType',
     'Currency',
     'CurrencyExchange',
+    'Price',
     'Item',
+    'ArmorItem',
     'PowerType',
     'PowerKeyword',
     'Power',
