@@ -2448,6 +2448,14 @@
     }, 
     {
         "pk": 1, 
+        "model": "character_builder.price", 
+        "fields": {
+            "currency": 1, 
+            "value": 0
+        }
+    }, 
+    {
+        "pk": 1, 
         "model": "character_builder.item", 
         "fields": {
             "source": 1, 
