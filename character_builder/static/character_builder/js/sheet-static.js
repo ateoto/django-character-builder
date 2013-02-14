@@ -25,8 +25,6 @@ $(function() {
 	     } 
 	});
 	update_character(character_id);
-	setInterval(update_health, 5000, character_id);
-	setInterval(update_character, 60000, character_id);
 });
 
 function test_tasty(cid) {

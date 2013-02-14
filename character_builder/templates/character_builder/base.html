@@ -28,7 +28,11 @@
                     <a class="brand" href="{% url character-builder-user-home %}">Character Builder</a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
+                            {% if user.is_authenticated %}
                             Welcome, <a href="#" class="navbar-link">{{ user.username }}</a>
+                            {% else %}
+                            Please Login
+                            {% endif %}
                         </p>
                     </div>
                 </div>

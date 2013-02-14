@@ -8,7 +8,11 @@
             var character_id = {{ character.id }};
         </script>
         <script src="{% static "character_builder/js/CharacterBuilder.js" %}"></script>
+         {% if user.is_authenticated %}
         <script src="{% static "character_builder/js/sheet.js" %}"></script>
+        {% else %}
+        <script src="{% static "character_builder/js/sheet-static.js" %}"></script>
+        {% endif %}
 {% endblock %}
 {% block content %}
         <div class="container">

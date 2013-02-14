@@ -7,6 +7,18 @@ from character_builder.models import (ClassType, Character, Race,
                                         Ability, CharacterAbility)
 
 
+class MySessionAuthentication(SessionAuthentication):
+    '''
+    Authenticates everyone if the request is GET otherwise performs
+    SessionAuthentication.
+    '''
+
+    def is_authenticated(self, request, **kwargs):
+        if request.method == 'GET':
+            return True
+        return super(MySessionAuthentication, self).is_authenticated(request, **kwargs)
+
+
 class SourceResource(ModelResource):
     class Meta:
         queryset = Source.objects.all()
@@ -78,7 +90,7 @@ class CharacterResource(ModelResource):
     class Meta:
         queryset = Character.objects.all()
         resource_name = 'character'
-        authentication = SessionAuthentication()
+        authentication = MySessionAuthentication()
         authorization = DjangoAuthorization()
 
     def dehydrate(self, bundle):
@@ -92,3 +104,10 @@ class CharacterResource(ModelResource):
         bundle.data['defenses'] = bundle.obj.get_defenses()
 
         return bundle
+
+
+class CharacterHealthResource(ModelResource):
+    class Meta:
+        queryset = Character.objects.all()
+        resource_name = 'character_health'
+        fields = ['hit_points', 'max_hit_points']
