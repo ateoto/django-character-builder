@@ -133,3 +133,4 @@ class ArmorItem(Item):
 
     def __unicode__(self):
         return self.name
+        

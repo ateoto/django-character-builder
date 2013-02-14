@@ -59,20 +59,32 @@ class Character(models.Model):
     def get_defenses(self):
         response = {}
 
-        equipped_armor_class = None
-        equipped_armor_bonus = 0
+        # You can have a Shield and armor, needs to take these into consideration.
+        equipped_armor_classes = []
+        equipped_armor_bonuses = []
 
         for item in CharacterEquipment.objects.filter(character=self, is_equipped=True):
             i = Item.objects.get_subclass(id=item.item.id)
             if hasattr(i, 'armor_type'):
-                equipped_armor_class = i.armor_type.armor_class
-                equipped_armor_bonus = i.armor_modifier.value
+                equipped_armor_classes.append(i.armor_type.armor_class)
+                equipped_armor_bonuses.append(i.armor_modifier.value)
+
+        if len(equipped_armor_classes) == 0:
+            equipped_armor_classes.append(None)
+
+        equipped_armor_bonus = sum(equipped_armor_bonuses)
+
+        #If equipped armor classess are all light or none, then we apply ability mod to AC,
+        # otherwise just the armor applies.
+        abil_bonus_to_ac_check = [ArmorClass.objects.get(id=1), None]
+
+        abil_bonus_to_ac = all(armor_class in abil_bonus_to_ac_check for armor_class in equipped_armor_classes)
 
         for defense in Defense.objects.all():
             base = int(10 + (math.floor(self.current_level().number / 2)))
             if defense.abbreviation == 'AC':
                 armor = equipped_armor_bonus
-                if ((equipped_armor_class == ArmorClass.objects.get(name='Light')) or (equipped_armor_class is None)):
+                if abil_bonus_to_ac:
                     abil = max([abil.modifier_half_level() for abil in CharacterAbility.objects.filter(character=self, ability__in=defense.abilities.all())])
                 else:
                     abil = 0
