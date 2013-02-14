@@ -74,7 +74,6 @@ class CharacterResource(ModelResource):
     gender = fields.ForeignKey(GenderResource, 'gender', full=True)
     alignment = fields.ForeignKey(AlignmentResource, 'alignment', full=True)
     deity = fields.ForeignKey(DeityResource, 'deity', full=True)
-    abilities = fields.ToManyField(CharacterAbilityResource, 'abilities', full=True)
 
     class Meta:
         queryset = Character.objects.all()
@@ -89,6 +88,7 @@ class CharacterResource(ModelResource):
         bundle.obj.calc_hit_points()
         bundle.data['max_hit_points'] = bundle.obj.max_hit_points
         bundle.data['next_level_xp_needed'] = bundle.obj.next_level().xp_required
+        bundle.data['abilities'] = bundle.obj.get_abilities()
         bundle.data['defenses'] = bundle.obj.get_defenses()
 
         return bundle

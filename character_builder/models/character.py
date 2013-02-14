@@ -56,6 +56,18 @@ class Character(models.Model):
         self.max_hit_points = level_mod + self.class_type.base_hit_points + self.abilities.get(ability__name='Constitution').value
         self.save()
 
+    def get_abilities(self):
+        response = {}
+
+        for ability in self.abilities.all():
+            response[ability.ability.abbreviation.lower()] = {
+                'score': ability.value,
+                'modifier_half_level': ability.modifier_half_level(),
+                'check': ability.check()
+            }
+
+        return response
+
     def get_defenses(self):
         response = {}
 
@@ -74,10 +86,7 @@ class Character(models.Model):
 
         equipped_armor_bonus = sum(equipped_armor_bonuses)
 
-        #If equipped armor classess are all light or none, then we apply ability mod to AC,
-        # otherwise just the armor applies.
         abil_bonus_to_ac_check = [ArmorClass.objects.get(id=1), None]
-
         abil_bonus_to_ac = all(armor_class in abil_bonus_to_ac_check for armor_class in equipped_armor_classes)
 
         for defense in Defense.objects.all():
