@@ -49,7 +49,7 @@ function update_character(character_id) {
 
 function update_ability_scores(character_data) {
 	_.each(character_data.abilities, function(element) {
-		$('#ability-score-' + element.ability.name + ' .ability-mod-level').text(element.modifier_half_level);
+		$('#ability-score-' + element.name + ' .ability-mod-level').text(element.modifier_half_level);
 	});
 }
 

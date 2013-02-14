@@ -61,6 +61,7 @@ class Character(models.Model):
 
         for ability in self.abilities.all():
             response[ability.ability.abbreviation.lower()] = {
+                'name': ability.ability.name,
                 'score': ability.value,
                 'modifier_half_level': ability.modifier_half_level(),
                 'check': ability.check()
