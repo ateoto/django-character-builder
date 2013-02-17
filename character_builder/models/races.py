@@ -7,14 +7,15 @@ from .attributes import (Ability, Skill, Modifier)
 class Race(models.Model):
     name = models.CharField(max_length=50)
     source = models.ForeignKey(Source)
-    average_height_text = models.CharField(max_length=50)
-    average_weight_text = models.CharField(max_length=50)
+    average_height_text = models.CharField(max_length=50, blank=True)
+    average_weight_text = models.CharField(max_length=50, blank=True)
     size = models.ForeignKey(Size)
     speed = models.IntegerField()
     vision = models.ForeignKey(Vision)
     languages = models.ManyToManyField(Language)
     description = models.TextField()
     modifiers = models.ManyToManyField(Modifier, blank=True)
+    playable = models.BooleanField(default=False)
 
     class Meta:
         app_label = 'character_builder'
@@ -22,6 +23,7 @@ class Race(models.Model):
 
     def __unicode__(self):
         return self.name
+
 
 class RaceFeatureChoice(models.Model):
     name = models.CharField(max_length=100)
@@ -102,4 +104,3 @@ class RaceSkillMod(models.Model):
             mod = "+"
 
         return "%s: %s%s %s" % (self.race.name, mod, self.modifier, self.skill.name)
-

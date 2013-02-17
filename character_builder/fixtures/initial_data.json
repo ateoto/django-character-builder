@@ -318,6 +318,11 @@
         "fields": {}
     }, 
     {
+        "pk": 18, 
+        "model": "character_builder.modifier", 
+        "fields": {}
+    }, 
+    {
         "pk": 4, 
         "model": "character_builder.abilitymod", 
         "fields": {
@@ -446,9 +451,18 @@
         }
     }, 
     {
+        "pk": 18, 
+        "model": "character_builder.defensemod", 
+        "fields": {
+            "defense": 1, 
+            "value": 2
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.role", 
         "fields": {
+            "flavor": "", 
             "name": "Controller"
         }
     }, 
@@ -456,6 +470,7 @@
         "pk": 2, 
         "model": "character_builder.role", 
         "fields": {
+            "flavor": "", 
             "name": "Defender"
         }
     }, 
@@ -463,6 +478,7 @@
         "pk": 3, 
         "model": "character_builder.role", 
         "fields": {
+            "flavor": "", 
             "name": "Leader"
         }
     }, 
@@ -470,7 +486,40 @@
         "pk": 4, 
         "model": "character_builder.role", 
         "fields": {
+            "flavor": "", 
             "name": "Striker"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.role", 
+        "fields": {
+            "flavor": "Cannon fodder, dies on any damage taken.", 
+            "name": "Minion"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.role", 
+        "fields": {
+            "flavor": "", 
+            "name": "Elite"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.role", 
+        "fields": {
+            "flavor": "", 
+            "name": "Soldier"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.role", 
+        "fields": {
+            "flavor": "", 
+            "name": "Artillery"
         }
     }, 
     {
@@ -853,6 +902,20 @@
         }
     }, 
     {
+        "pk": 4, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Monster Manual"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.source", 
+        "fields": {
+            "name": "Monster Manual 2"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.source", 
         "fields": {
@@ -1043,6 +1106,13 @@
         }
     }, 
     {
+        "pk": 3, 
+        "model": "character_builder.vision", 
+        "fields": {
+            "name": "Darkvision"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.race", 
         "fields": {
@@ -1059,6 +1129,7 @@
             ], 
             "source": 1, 
             "average_height_text": "6' 2\" - 6' 8\"", 
+            "playable": false, 
             "speed": 6, 
             "vision": 1, 
             "size": 3
@@ -1081,6 +1152,7 @@
             ], 
             "source": 1, 
             "average_height_text": "4' 3\" - 4' 9\"", 
+            "playable": false, 
             "speed": 5, 
             "vision": 2, 
             "size": 3
@@ -1103,6 +1175,7 @@
             ], 
             "source": 1, 
             "average_height_text": "5' 5\" - 6' 1\"", 
+            "playable": false, 
             "speed": 6, 
             "vision": 2, 
             "size": 3
@@ -1125,6 +1198,7 @@
             ], 
             "source": 1, 
             "average_height_text": "5' 4\" - 6' 0\"", 
+            "playable": false, 
             "speed": 7, 
             "vision": 2, 
             "size": 3
@@ -1147,6 +1221,7 @@
             ], 
             "source": 1, 
             "average_height_text": "5' 5\" - 6' 2\"", 
+            "playable": false, 
             "speed": 6, 
             "vision": 2, 
             "size": 3
@@ -1168,6 +1243,7 @@
             ], 
             "source": 1, 
             "average_height_text": "3' 10 - 4' 2\"", 
+            "playable": false, 
             "speed": 6, 
             "vision": 1, 
             "size": 2
@@ -1186,9 +1262,30 @@
             ], 
             "source": 1, 
             "average_height_text": "5' 6\" - 6' 2\"", 
+            "playable": false, 
             "speed": 6, 
             "vision": 1, 
             "size": 3
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.race", 
+        "fields": {
+            "modifiers": [], 
+            "name": "Kobold", 
+            "average_weight_text": "60-75 lb", 
+            "description": "Kobolds revere dragons and tend to dwell in and around places where dragons are known to lair. They skulk in the darkness, hiding from stronger foes and swarming to overwhelm weaker ones. Kobolds are cowardly and usually flee once bloodied unless a strong leader is present. Kobolds like to set traps and ambushes. If they can\u2019t get their enemies to walk into a trap, they try to sneak up as close as they can and then attack in a sudden rush.", 
+            "languages": [
+                1, 
+                3
+            ], 
+            "source": 4, 
+            "average_height_text": "3'6 - 4'0\"", 
+            "playable": false, 
+            "speed": 6, 
+            "vision": 1, 
+            "size": 2
         }
     }, 
     {
@@ -1207,6 +1304,7 @@
             ], 
             "source": 1, 
             "average_height_text": "5' 6\" - 6' 2\"", 
+            "playable": false, 
             "speed": 6, 
             "vision": 2, 
             "size": 3
@@ -2455,6 +2553,14 @@
         }
     }, 
     {
+        "pk": 2, 
+        "model": "character_builder.price", 
+        "fields": {
+            "currency": 3, 
+            "value": 10
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.item", 
         "fields": {
@@ -2485,6 +2591,16 @@
         }
     }, 
     {
+        "pk": 4, 
+        "model": "character_builder.item", 
+        "fields": {
+            "source": 1, 
+            "price": 2, 
+            "name": "Heavy Shield", 
+            "weight": 15
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.armoritem", 
         "fields": {
@@ -2508,6 +2624,15 @@
         "fields": {
             "armor_type": 5, 
             "armor_modifier": 17, 
+            "penalties": []
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.armoritem", 
+        "fields": {
+            "armor_type": 8, 
+            "armor_modifier": 18, 
             "penalties": []
         }
     }, 
@@ -3881,6 +4006,34 @@
         }
     }, 
     {
+        "pk": 27, 
+        "model": "character_builder.feat", 
+        "fields": {
+            "name": "Melora's Tide", 
+            "can_retake": false, 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "You can invoke the power of your deity to use Melora's tide.", 
+            "has_passive_effects": false, 
+            "choices": [], 
+            "special": ""
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "character_builder.feat", 
+        "fields": {
+            "name": "Ioun's Poise", 
+            "can_retake": false, 
+            "passive_effects": [], 
+            "requires_choice": false, 
+            "benefit": "You can invoke the power of your deity to use Ioun's Poise", 
+            "has_passive_effects": false, 
+            "choices": [], 
+            "special": ""
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "character_builder.featprereq", 
         "fields": {
@@ -4175,6 +4328,20 @@
         }
     }, 
     {
+        "pk": 43, 
+        "model": "character_builder.featprereq", 
+        "fields": {
+            "feat": 27
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "character_builder.featprereq", 
+        "fields": {
+            "feat": 27
+        }
+    }, 
+    {
         "pk": 38, 
         "model": "character_builder.featraceprereq", 
         "fields": {
@@ -4253,6 +4420,13 @@
     }, 
     {
         "pk": 31, 
+        "model": "character_builder.featclassfeatureprereq", 
+        "fields": {
+            "classfeature": 3
+        }
+    }, 
+    {
+        "pk": 43, 
         "model": "character_builder.featclassfeatureprereq", 
         "fields": {
             "classfeature": 3
@@ -4464,6 +4638,13 @@
         }
     }, 
     {
+        "pk": 44, 
+        "model": "character_builder.featdeityprereq", 
+        "fields": {
+            "deity": 7
+        }
+    }, 
+    {
         "pk": 6, 
         "model": "character_builder.featarmortypeprereq", 
         "fields": {
@@ -4496,123 +4677,1833 @@
     }, 
     {
         "pk": 1, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.powerkeyword", 
         "fields": {
-            "name": "At-Will Attack"
+            "name": "Arcane"
         }
     }, 
     {
         "pk": 2, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.powerkeyword", 
         "fields": {
-            "name": "At-Will Utility"
+            "name": "Force"
         }
     }, 
     {
         "pk": 3, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.powerkeyword", 
         "fields": {
-            "name": "Encounter Attack"
+            "name": "Implement"
         }
     }, 
     {
         "pk": 4, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.powerkeyword", 
         "fields": {
-            "name": "Encounter Utility"
+            "name": "Fire"
         }
     }, 
     {
         "pk": 5, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.powerkeyword", 
         "fields": {
-            "name": "Daily Attack"
+            "name": "Teleportation"
         }
     }, 
     {
         "pk": 6, 
-        "model": "character_builder.powertype", 
+        "model": "character_builder.powerkeyword", 
         "fields": {
-            "name": "Daily Utility"
+            "name": "Acid"
         }
     }, 
     {
         "pk": 7, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Conjuration"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Illusion"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Martial"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Weapon"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Healing"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Reliable"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Divine"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.powerkeyword", 
+        "fields": {
+            "name": "Radiant"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Attack"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.powertype", 
+        "fields": {
+            "name": "Racial"
+        }
+    }, 
+    {
+        "pk": 13, 
         "model": "character_builder.powertype", 
         "fields": {
             "name": "Cantrip"
         }
     }, 
     {
-        "pk": 8, 
+        "pk": 14, 
         "model": "character_builder.powertype", 
         "fields": {
-            "name": "At-Will Racial"
+            "name": "Feature"
         }
     }, 
     {
-        "pk": 9, 
+        "pk": 15, 
         "model": "character_builder.powertype", 
         "fields": {
-            "name": "Encounter Racial"
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "character_builder.powertype", 
-        "fields": {
-            "name": "Daily Racial"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "character_builder.power", 
-        "fields": {
-            "hit": "", 
-            "target": "", 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "Reroll an attack roll. Use the second roll, even if it's lower.", 
-            "attack": "", 
-            "keywords": "Encounter, Free Action, Personal", 
-            "flavor": "With an instant of focus, you take careful aim at your foe and strike with the legendary accuracy of the elves.", 
-            "miss": "", 
-            "special": "", 
-            "name": "Elven Accuracy"
+            "name": "Feat"
         }
     }, 
     {
         "pk": 2, 
-        "model": "character_builder.power", 
+        "model": "character_builder.powerusage", 
         "fields": {
-            "hit": "", 
-            "target": "", 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "Teleport up to 5 squares.", 
-            "attack": "", 
-            "keywords": "Encounter; Teleportation; Move Action; Personal", 
-            "flavor": "With a step, you vanish from one place and appear in another.", 
-            "miss": "", 
-            "special": "", 
-            "name": "Fey Step"
+            "name": "At-Will"
         }
     }, 
     {
         "pk": 3, 
+        "model": "character_builder.powerusage", 
+        "fields": {
+            "name": "Encounter"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.powerusage", 
+        "fields": {
+            "name": "Daily"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.powerrange", 
+        "fields": {
+            "name": "Ranged"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.powerrange", 
+        "fields": {
+            "name": "Area"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.powerrange", 
+        "fields": {
+            "name": "Personal"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.powerrange", 
+        "fields": {
+            "name": "Close"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.powerrange", 
+        "fields": {
+            "name": "Melee"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.actiontype", 
+        "fields": {
+            "name": "Standard Action"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.actiontype", 
+        "fields": {
+            "name": "Move Action"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.actiontype", 
+        "fields": {
+            "name": "Minor Action"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.actiontype", 
+        "fields": {
+            "name": "Free Action"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.actiontype", 
+        "fields": {
+            "name": "Immediate Interrupt"
+        }
+    }, 
+    {
+        "pk": 4, 
         "model": "character_builder.power", 
         "fields": {
-            "hit": "1d6 + Constitution modifier damage.\r\nIncrease to +4 bonus and 2d6 + Constitution modifier damage at 11th level, and to +6 bonus and 3d6 + Constitution modifier damage at 21st level.", 
-            "target": "All creatures in area", 
-            "level": 0, 
-            "power_type": 9, 
-            "effect": "", 
-            "attack": "Strength +2 vs. Reflex, Constitution +2 vs. Reflex, or Dexterity +2 vs. Reflex", 
-            "keywords": "Encounter; Acid, Cold, Fire, Lightning, or Poison; Minor Action; Close blast 3", 
-            "flavor": "As you open your mouth with a roar, the deadly power of your draconic kin blasts forth to engulf your foes.", 
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 1, 
+            "keywords": [
+                1, 
+                2, 
+                3
+            ], 
+            "flavor": "You launch a silvery bolt of force at an enemy.", 
             "miss": "", 
-            "special": "When you create you character, choose Strength, Constitution, or Dexterity as the ability score you use when making attack rolls with this power. You also choose the power's damage type: acid, cold, fire, lightning, or poison. These two choices remain throughout your character's life and do not change with the power's other effects.", 
-            "name": "Dragon Breath"
+            "special": "This power counts as a ranged basic attack. When a power allows you to make a ranged basic attack, you can use this power.", 
+            "secondary_target": "", 
+            "attack": "Intelligence vs. Reflex", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "20", 
+            "hit": "2d4 + Intelligence modifier force damage.<br>\r\nIncrease damage to 4d4 + Intelligence modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 4, 
+            "target": "One creature", 
+            "name": "Magic Missile", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 2, 
+            "keywords": [
+                1, 
+                3, 
+                4
+            ], 
+            "flavor": "A vertical column of golden flames burns all within.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Intelligence vs. Reflex", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "burst 1 within 10 squares", 
+            "hit": "1d6 + Intelligence modifier fire damage.\r\nIncrease damage to 2d6 + Intelligence modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 4, 
+            "target": "Each creature in burst", 
+            "name": "Scorching Burst", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 12, 
+            "range_type": 3, 
+            "keywords": [
+                5
+            ], 
+            "flavor": "With a step, you vanish from one pace and appear in another.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "Teleport up to 5 squares.", 
+            "hit_modifier": null, 
+            "target": "", 
+            "name": "Fey Step", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 2
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 4, 
+            "keywords": [
+                1, 
+                3, 
+                4
+            ], 
+            "flavor": "A fierce burst of flame erupts from your hands and scorches nearby foes.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Intelligence vs. Reflex", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "blast 5", 
+            "hit": "2d6 + Intelligence modifier fire damage.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 4, 
+            "target": "Each creature in blast", 
+            "name": "Burning Hands", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "Intelligence vs. Reflex", 
+            "secondary_hit_modifier": 4, 
+            "power_type": 11, 
+            "range_type": 1, 
+            "keywords": [
+                1, 
+                3, 
+                6
+            ], 
+            "flavor": "A shimmering arrow of green, glowing liquid streaks to your target and bursts in a spray of sizzling acid.", 
+            "miss": "Half damage, and ongoing 2 acid damage to primary target (save ends), and no secondary attack.", 
+            "special": "", 
+            "secondary_target": "Each creature adjacent to the primary target", 
+            "attack": "Intelligence vs. Reflex", 
+            "sustain": "", 
+            "usage": 4, 
+            "range_description": "20", 
+            "hit": "2d8 + Intelligence modifier acid damage, and ongoing 5 acid damage (save ends). Make a secondary attack.", 
+            "secondary_hit": "1d8 + Intelligence modifier acid damage, and ongoing 5 acid damage (save ends).", 
+            "effect": "", 
+            "hit_modifier": 4, 
+            "target": "One creature", 
+            "name": "Acid Arrow", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 1, 
+            "keywords": [
+                1, 
+                3, 
+                4, 
+                7
+            ], 
+            "flavor": "You conjure a rolling ball of fire and control where it goes.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Intelligence vs Reflex", 
+            "sustain": "You can sustain this power until the end of the encounter. As a standard action you can make another attack with the sphere.", 
+            "usage": 4, 
+            "range_description": "10", 
+            "hit": "2d6 + Intelligence modifier fire damage.", 
+            "secondary_hit": "", 
+            "effect": "You conjure a Medium flaming sphere in an unoccupied square within range, and the sphere attacks an adjacent creature. Any creature that starts its turn next to the flaming sphere takes 1d4 + Intelligence modifier fire damage. As a move action, you can move the sphere up to 6 squares.", 
+            "hit_modifier": 4, 
+            "target": "One creature adjacent to the flaming sphere", 
+            "name": "Flaming Sphere", 
+            "level": 1, 
+            "sustain_action": 3, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 13, 
+            "range_type": 1, 
+            "keywords": [
+                1, 
+                8
+            ], 
+            "flavor": "With a wink, you create an illusory sound that emanates from somewhere close by.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "10", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "You cause a sound as quiet as a whisper or as loud as a yelling or fighting creature to emanate from the target. You can produce nonvocal sounds such as the ringing of a sword blow, jingling armor, or scraping stone. If you whisper, you can whisper quietly enough that only creatures adjacent to the target can hear your words.", 
+            "hit_modifier": null, 
+            "target": "One object or unoccupied square", 
+            "name": "Ghost Sound", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 13, 
+            "range_type": 1, 
+            "keywords": [
+                1
+            ], 
+            "flavor": "With a wave of your hand, you cause a bright light to appear on the tip of your staff, upon some other object, or in a nearby space.", 
+            "miss": "", 
+            "special": "You can have only one light cantrip active at a time. If you create a new light, your previously cast light winks out.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "5", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "You cause the target to shed bright light. The light fills the target's square and all squares within 4 squares of it. The light lasts for 5 minutes. Putting out the light is a free action.", 
+            "hit_modifier": null, 
+            "target": "One object or unoccupied square", 
+            "name": "Light", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 13, 
+            "range_type": 1, 
+            "keywords": [
+                1, 
+                7
+            ], 
+            "flavor": "You gesture toward an object nearby, and a spectral floating hand lifts the object into the air and moves it where you wish.", 
+            "miss": "", 
+            "special": "You can create only one hand at a time.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "You can sustain the hand indefinitely.", 
+            "usage": 2, 
+            "range_description": "5", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "You conjure a spectral, floating hand in an unoccupied square within range. The hand picks up, moves, or manipulates an adjacent object weighing 20 pounds or less and carries it up to 5 squares. If you are holding the object when you use this power, the hand can move the object into a pack, a pouch, a sheath, or a similar container and simultaneously move any one object carried or worn anywhere on your body into your hand.\r\nAs a move action, you can move the hand up to 5 squares. As a free action, you can cause the hand to drop an object it is holding, and as a minor action, you can cause the hand to pick up or manipulate a different object.", 
+            "hit_modifier": null, 
+            "target": "", 
+            "name": "Mage Hand", 
+            "level": 0, 
+            "sustain_action": 3, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 13, 
+            "range_type": 1, 
+            "keywords": [
+                1
+            ], 
+            "flavor": "You perform an amusing magical trick, such as creating a dancing wisp of light, freshening a wilting flower, making a coin invisible, or warming a cold drink.", 
+            "miss": "", 
+            "special": "You can have as many as three prestidigitation effects active at one time.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "2", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "Use this cantrip to accomplish one of the effects given below.<br>\r\n<br>\r\n\u2726 Move up to 1 pound of material.<br>\r\n\u2726 Create a harmless sensory effect, such as a shower of sparks, a puff of wind, faint music, or a strong odor.<br>\r\n\u2726 Color, clean, or soil items in 1 cubic foot for up to 1 hour.<br>\r\n\u2726 Instantly light (or snuff out) a candle, a torch, or a small campfire.<br>\r\n\u2726 Chill, warm, or flavor up to 1 pound of nonliving material for up to 1 hour.<br>\r\n\u2726 Make a small mark or symbol appear on a surface for up to 1 hour.<br>\r\n\u2726 Produce out of nothingness a small item or image that exists until the end of your next turn.<br>\r\n\u2726 Make a small, handheld item invisible until the end of your next turn.<br>\r\n<br>\r\nNothing you create with this cantrip can deal damage, serve as a weapon or a tool, or hinder another creature\u2019s actions. This cantrip cannot duplicate the effect of any other power.", 
+            "hit_modifier": null, 
+            "target": "", 
+            "name": "Prestidigitation", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "You trade power for precision.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength +2  vs. AC", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] damage<br>\r\nIncrease damage to 2[W] at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Sure Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "You must be using a shield.", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "After each mighty swing, you bring your shield to bear and use it to push your enemy back.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] + Strength modifier damage, and you push the target 1 square if it is your size, smaller than you, or one size category larger. You can shift into the space that the target occupied.<br>\r\nIncrease damage to 2[W] + Strength modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": null, 
+            "target": "One creature", 
+            "name": "Tide of Iron", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "You stab viciously at your foe's knee or foot to slow him down. No matter how tough he is, he's going to favor that leg for a long time.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "weapon", 
+            "hit": "2[W] + Strength modifier damage, and the target is slowed and cannot shift until the end of your next turn.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Steel Serpent Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10, 
+                11, 
+                12
+            ], 
+            "flavor": "A timely strike against a hated foe invigorates you, giving you the strength and resolve to fight on.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 4, 
+            "range_description": "weapon", 
+            "hit": "2[W] + Strength modifier damage, and you can spend a healing surge.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Comeback Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                10, 
+                13
+            ], 
+            "flavor": "You attack your foe without mercy or reprieve, and your accuracy is rewarded with a divine gift of vigor.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Charisma vs. AC", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] + Charisma modifier damage, and you gain temporary hit points equal to your Wisdom modifier.<br>\r\nIncrease damage to 2[W] + Charisma modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 6, 
+            "target": "One creature", 
+            "name": "Bolstering Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                10, 
+                13, 
+                14
+            ], 
+            "flavor": "You strike an enemy with your weapon, which ignites with holy light.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] + Strength modifier radiant damage. If you marked the target, you gain a bonus to the damage roll equal to your Wisdom modifier.<br>\r\nIncrease damage to 2[W] + Strength modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Holy Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                10, 
+                13
+            ], 
+            "flavor": "A translucent golden shield forms in front of a nearby ally as you attack with your weapon.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Charisma vs. AC", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "weapon", 
+            "hit": "2[W] + Charisma modifier damage.", 
+            "secondary_hit": "", 
+            "effect": "Until the end of your next turn, one ally within 5 squares of you gains a power bonus to AC equal to your Wisdom modifier.", 
+            "hit_modifier": 6, 
+            "target": "One creature", 
+            "name": "Shielding Smite", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                10, 
+                11, 
+                13
+            ], 
+            "flavor": "Your melee attack punishes your enemy and heals an ally.", 
+            "miss": "One ally within 5 squares of you can spend a healing surge.", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 4, 
+            "range_description": "weapon", 
+            "hit": "3[W] + Strength modifier damage, and one ally within 5 squares of you can spend a healing surge.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Paladin's Judgement", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 4, 
+            "keywords": [
+                13
+            ], 
+            "flavor": "Your unswerving faith in your deity empowers a nearby creature to resist a debilitating affliction.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "burst 10", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "The target makes a saving throw with a bonus equal to your Charisma modifier.", 
+            "hit_modifier": null, 
+            "target": "One creature in burst", 
+            "name": "Channel Divinity: Divine Mettle", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 3, 
+            "keywords": [
+                13
+            ], 
+            "flavor": "You petition your deity for the divine strength to lay low your enemies.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "Apply your Strength modifier as extra damage on your next attack this turn.", 
+            "hit_modifier": null, 
+            "target": "", 
+            "name": "Channel Divinity: Divine Strength", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 4, 
+            "keywords": [
+                13, 
+                14
+            ], 
+            "flavor": "You boldly confront a nearby enemy, searing it with divine light if it ignores your challenge.", 
+            "miss": "", 
+            "special": "Even though this ability is called a challenge, it doesn't rely on the intelligence or language ability of the target. It's a magical compulsion that affects the creature's behavior, regardless of the creature's nature. You can't place a divine challenge on a creature that is already affected by your or another character's divine challenge.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "burst 5", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "You mark the target. The target remains marked until you use this power against another target, or if you fail to engage the target. A creature can be subject to only one mark at a time. A new mark supersedes a mark that was already in place.<br>\r\nWhile a target is marked it takes a -2 penalty to attack rolls for any attack that does't include you as a target. Also, it takes radiant damage equal to 3 + you Charisma modifier the first time it makes an attack that doesn't include you as a target before the start of your next turn. The damage increases to 6 + your Charisma modifier at 11th level, and to 9 + your Charisma modifier at 21st level. <br>\r\nOn your turn, you must engage the target you challenged or challenge a different target. To engage the target, you must either attack it or end your turn adjacent to it. If none of these events occur by the end of your turn, the marked condition ends and you can\u2019t use divine challenge on your next turn.\r\nYou can use divine challenge once per turn.\r\n", 
+            "hit_modifier": null, 
+            "target": "One creature in burst", 
+            "name": "Divine Challenge", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 5, 
+            "keywords": [
+                11, 
+                13
+            ], 
+            "flavor": "Your divine touch instantly heals wounds.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "touch", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "You spend a healing surge but regain no hit points. Instead, the target regains hit points as if it had spent a healing surge. You must have at least one healing surge reamaining to use this power.", 
+            "hit_modifier": null, 
+            "target": "One creature", 
+            "name": "Lay on Hands", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "You must be wielding two melee weapons or a ranged weapon.", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "You study the enemy, looking for a gap in his defenses. Only when you find it do you strike.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength + 2 vs AC (melee) or Dexterity + 2 vs. AC (ranged).", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] damage (melee) or 1[W] damage (ranged)<br>\r\nIncrease damage to 2[W] damage (melee) or 2[W] damage (ranged) at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": null, 
+            "target": "One creature", 
+            "name": "Careful Attack", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "Let the fighter stand toe to toe with the monster. You prefer to make your attack, then withdraw to safer ground.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] + Strength modifier damage<br>\r\nIncrease damage to 2[W] + Strength modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "If you move in the same turn after this attack, leaving the first square adjacent to the target does not provoke an opportunity attack from the target.", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Hit and Run", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "You must be wielding two melee weapons or a ranged weapon.", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "If the first attack doesn't kill it, the second one might.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC (melee; main weapon and off-hand weapon) or Dexterity vs. AC (ranged), two attacks", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "weapon", 
+            "hit": "1[W] damage per attack.<br>\r\nIncrease damage to 2[W] at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": null, 
+            "target": "One or two creatures.", 
+            "name": "Twin Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "You must be wielding two melee weapons.", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 4, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "Enemies surround you - much to their chagrin, as you slash them to pieces with the ferocity of a wounded dire wolverine.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "burst 1", 
+            "hit": "1[W] + Strength modifier damage", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "Each enemy in burst you can see", 
+            "name": "Dire Wolverine Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "You must be wielding two melee weapons.", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                9, 
+                10
+            ], 
+            "flavor": "You use your weapons to hedge in your foe and trick him into exposing a weak spot, at which point you strike.", 
+            "miss": "Half damage per attack.", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC (main weapon and off-hand weapon), two attacks", 
+            "sustain": "", 
+            "usage": 4, 
+            "range_description": "weapon", 
+            "hit": "2[W] + Strength modifier damage per attack.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Jaws of the Wolf", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 15, 
+            "range_type": 1, 
+            "keywords": [
+                11, 
+                13
+            ], 
+            "flavor": "Melora sends a tide of healing energy to aid you or a bloodied friend.", 
+            "miss": "", 
+            "special": "You must take the Melora's Tide feat to use this power.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "5", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "The target gains regeneration 2 until the end of the encounter or until he or she is no longer bloodied.<br>\r\nIf you are 11th level or higher, this power grants regeneration 4 instead. <br>\r\nIf you are 21st level or higher, this power grants regeneration 6 instead. \r\n", 
+            "hit_modifier": null, 
+            "target": "You or one ally; bloodied target only", 
+            "name": "Channel Divinity: Melora's Tide", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 3, 
+            "keywords": [
+                13
+            ], 
+            "flavor": "In the face of peril, you hold true to your faith and receive a special boon.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "You gain a +1 bonus to your next attack roll or saving throw before the end of your next turn.", 
+            "hit_modifier": null, 
+            "target": "", 
+            "name": "Channel Divinity: Divine Fortune", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 4
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 4, 
+            "keywords": [
+                3, 
+                13, 
+                14
+            ], 
+            "flavor": "You sear undead foes, push them back, and root them in place.", 
+            "miss": "Half damage, and the target is not pushed or immobilized.", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Wisdom vs. Will", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "burst 2 (5 at 11th level, 8 at 21st level)", 
+            "hit": "1d10 + Wisdom modifier radiant damage, and you push the target a number of squares equal to 3 + your Charisma modifier. The target is immobilized until the end of your next turn.<br>\r\nIncrease damage to 2d10 + Wisdom modifier at 5th level, <br>\r\n3d10 + Wisdom modifier at 11th level,<br>\r\n4d10 + Wisdom modifier at 15th level,<br>\r\n5d10 + Wisdom modifier at 21st level,<br>\r\nand 6d10 + Wisdom modifier at 25th level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 5, 
+            "target": "Each undead creature in burst", 
+            "name": "Channel Divinity: Turn Undead", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 14, 
+            "range_type": 4, 
+            "keywords": [
+                11, 
+                13
+            ], 
+            "flavor": "You whisper a brief prayer as divine light washes over your target, helping to mend its wounds.", 
+            "miss": "", 
+            "special": "You can use this power twice per encounter, but only once per round. At 16th level, you can use this power three times per encounter.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "burst 5 (10 at 11th level, 15 at 21st level)", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "The target can spend a healing surge and regain an additional 1d6 hit points.<br>\r\nIncrease the amount of additional hit points regained to 2d6 at 6th level,<br>\r\n3d6 at 11th level, 4d6 at 16th level,<br>\r\n5d6 at 21st level,<br>\r\nand 6d6 at 26th level.", 
+            "hit_modifier": null, 
+            "target": "You or one ally", 
+            "name": "Healing Word", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 1, 
+            "keywords": [
+                3, 
+                13, 
+                14
+            ], 
+            "flavor": "A brilliant ray of light sears your foe with golden radiance. Sparkles of light linger around the target, guiding your ally\u2019s attack. \r\n", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Wisdom vs. Reflex", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "5", 
+            "hit": "1d8 + Wisdom modifier radiant damage, and one ally you can see gains a +2 power bonus to his or her next attack roll against the target.<br>\r\nIncrease damage to 2d8 + Wisdom modifier at 21st level. \r\n", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": null, 
+            "target": "One creature", 
+            "name": "Lance of Faith", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 1, 
+            "keywords": [
+                3, 
+                13, 
+                14
+            ], 
+            "flavor": "Sacred light shines from above, searing a single enemy with its radiance while at the same time aiding an ally with its beneficent power.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Wisdom vs. Reflex", 
+            "sustain": "", 
+            "usage": 2, 
+            "range_description": "5", 
+            "hit": "1d6 + Wisdom modifier radiant damage, and one ally you can see chooses either to gain temporary hit points equal to your Charisma modifier + one-half your level or to make a saving throw.<br>\r\nIncrease damage to 2d6 + Wisdom modifier at 21st level.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": null, 
+            "target": "One creature", 
+            "name": "Sacred Flame", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 12, 
+            "range_type": 3, 
+            "keywords": [
+                1
+            ], 
+            "flavor": "Luck and small size combine to work in your favor as you dodge your enemy\u2019s attack.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "When an attack hits you, force an enemy to roll the attack again. The enemy uses the second roll, even if it\u2019s lower.", 
+            "hit_modifier": null, 
+            "target": "", 
+            "name": "Second Chance", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 5
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 5, 
+            "keywords": [
+                10, 
+                11, 
+                13, 
+                14
+            ], 
+            "flavor": "Divine radiance gleams from your weapon. When you smite your enemy, your deity bestows a minor blessing in the form of healing for you or one of your allies.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Strength vs. AC", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "weapon", 
+            "hit": "2[W] + Strength modifier radiant damage, and the target is marked until the end of your next turn. In addition, you or one ally within 5 squares of you can spend a healing surge.", 
+            "secondary_hit": "", 
+            "effect": "", 
+            "hit_modifier": 1, 
+            "target": "One creature", 
+            "name": "Healing Strike", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 11, 
+            "range_type": 4, 
+            "keywords": [
+                3, 
+                11, 
+                13
+            ], 
+            "flavor": "A burst of divine energy harms your foes and heals your allies. The radiant energy lingers around your holy symbol and improves your healing powers for the rest of the battle.", 
+            "miss": "", 
+            "special": "", 
+            "secondary_target": "", 
+            "attack": "Wisdom vs. Will", 
+            "sustain": "", 
+            "usage": 4, 
+            "range_description": "burst 3", 
+            "hit": "The target is weakened until the end of its next turn.", 
+            "secondary_hit": "", 
+            "effect": "You and all your allies in the burst regain 5 hit points, and your healing powers restore +5 hit points until the end of the encounter.", 
+            "hit_modifier": null, 
+            "target": "Each enemy in burst", 
+            "name": "Beacon of Hope", 
+            "level": 1, 
+            "sustain_action": null, 
+            "action_type": 1
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "character_builder.power", 
+        "fields": {
+            "requirement": "", 
+            "secondary_attack": "", 
+            "secondary_hit_modifier": null, 
+            "power_type": 15, 
+            "range_type": 1, 
+            "keywords": [
+                13
+            ], 
+            "flavor": "Ioun grants strength of will to those she favors.", 
+            "miss": "", 
+            "special": "You must take the Ioun\u2019s Poise feat to use this power.", 
+            "secondary_target": "", 
+            "attack": "", 
+            "sustain": "", 
+            "usage": 3, 
+            "range_description": "5", 
+            "hit": "", 
+            "secondary_hit": "", 
+            "effect": "The target gains a +5 power bonus to Will defense until the start of your next turn.", 
+            "hit_modifier": null, 
+            "target": "You or one ally", 
+            "name": "Channel Divinity: Ioun's Poise", 
+            "level": 0, 
+            "sustain_action": null, 
+            "action_type": 3
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                13
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                3, 
+                13, 
+                14
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                11, 
+                13
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                3, 
+                13, 
+                14
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                3, 
+                13, 
+                14
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                10, 
+                11, 
+                13, 
+                14
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                3, 
+                11, 
+                13
+            ], 
+            "class_type": 1
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 2
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 2
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 2
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10, 
+                11, 
+                12
+            ], 
+            "class_type": 2
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                10, 
+                13
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                10, 
+                13, 
+                14
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                10, 
+                13
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                10, 
+                11, 
+                13
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                13
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                13
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                13, 
+                14
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                11, 
+                13
+            ], 
+            "class_type": 3
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                9, 
+                10
+            ], 
+            "class_type": 4
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                2, 
+                3
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                3, 
+                4
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                3, 
+                4
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                3, 
+                6
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                3, 
+                4, 
+                7
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                8
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1, 
+                7
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.classpower", 
+        "fields": {
+            "keywords": [
+                1
+            ], 
+            "class_type": 8
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.racialpower", 
+        "fields": {
+            "keywords": [
+                5
+            ], 
+            "race": 3
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "character_builder.racialpower", 
+        "fields": {
+            "keywords": [
+                1
+            ], 
+            "race": 6
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "character_builder.featpower", 
+        "fields": {
+            "keywords": [
+                11, 
+                13
+            ], 
+            "feat": 27
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "character_builder.featpower", 
+        "fields": {
+            "keywords": [
+                13
+            ], 
+            "feat": 28
         }
     }, 
     {
@@ -6158,6 +8049,303 @@
             "item": 3, 
             "is_equipped": true, 
             "character": 9
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.characterequipment", 
+        "fields": {
+            "item": 4, 
+            "is_equipped": true, 
+            "character": 8
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 4
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 5
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 7
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 6
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 8
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 9
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 10
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 11
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 12
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 3, 
+            "power": 13
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 8, 
+            "power": 14
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 8, 
+            "power": 15
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 8, 
+            "power": 16
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 8, 
+            "power": 17
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 18
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 19
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 20
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 21
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 22
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 23
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 24
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 9, 
+            "power": 25
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 7, 
+            "power": 26
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 7, 
+            "power": 27
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 7, 
+            "power": 28
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 7, 
+            "power": 29
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 7, 
+            "power": 30
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 32
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 33
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 34
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 35
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 36
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 37
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 38
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 39
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "character_builder.characterpower", 
+        "fields": {
+            "character": 6, 
+            "power": 40
         }
     }
 ]

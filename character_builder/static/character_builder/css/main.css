@@ -67,3 +67,47 @@ option:disabled {
 .feat-name, feat-benefit {
 	display: block;
 }
+
+
+.power {
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	boder-radius: 4px;
+}
+
+.power-header {
+	height: 1.5em;
+	padding: 5px;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+	color: #ffffff;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-top-left-radius: 4px;
+	-moz-border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.power-body {
+	padding: 5px;
+}
+
+.at-will {
+	background-color: #5a8e61;	
+}
+.encounter {
+	background-color: #801c31;
+}
+.daily {
+	background-color: #3f4241;
+}
+
+.power-flavor {
+	font-style: italic;
+	background-color: #e9e9e9;
+}
+.bolder {
+	font-weight: bold;
+}

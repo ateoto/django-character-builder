@@ -1,6 +1,6 @@
 from django.contrib import admin
 from character_builder.models import (Source, Race, Role, Skill, Ability,
-                                    CharacterSkill, CharacterAbility,
+                                    CharacterSkill, CharacterAbility, Vision,
                                     ClassType, Character, Size,
                                     PowerType, Language,
                                     RaceAbilityMod, RaceSkillMod,
@@ -19,7 +19,8 @@ from character_builder.models import (FeatRacePrereq, FeatClassTypePrereq,
                                         FeatClassFeaturePrereq, FeatAbilityPrereq,
                                         FeatSkillPrereq, FeatDeityPrereq, FeatSkillOrSkillPrereq,
                                         FeatArmorTypePrereq, FeatArmorOrArmorPrereq, Feat)
-from character_builder.models import (ClassPower, RacialPower, FeatPower)
+from character_builder.models import (ClassPower, RacialPower, FeatPower, PowerKeyword, PowerType, PowerUsage,
+                                        ActionType, PowerRange)
 
 
 class ClassTypeAdmin(admin.ModelAdmin):
@@ -33,6 +34,7 @@ class CharacterAbilityAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Source)
+admin.site.register(Vision)
 admin.site.register(Race)
 admin.site.register(Role)
 admin.site.register(Size)
@@ -77,9 +79,13 @@ admin.site.register(FeatSkillOrSkillPrereq)
 admin.site.register(FeatArmorTypePrereq)
 admin.site.register(FeatArmorOrArmorPrereq)
 admin.site.register(Feat)
+admin.site.register(PowerKeyword)
+admin.site.register(PowerUsage)
 admin.site.register(ClassPower)
 admin.site.register(RacialPower)
 admin.site.register(FeatPower)
 admin.site.register(AbilityMod)
 admin.site.register(SkillMod)
 admin.site.register(DefenseMod)
+admin.site.register(ActionType)
+admin.site.register(PowerRange)

@@ -3,9 +3,10 @@ from django.db import models
 
 class Role(models.Model):
     name = models.CharField(max_length=50)
+    flavor = models.TextField(blank=True)
 
     class Meta:
-        app_label = 'character_builder'    
+        app_label = 'character_builder'
 
     def __unicode__(self):
         return self.name

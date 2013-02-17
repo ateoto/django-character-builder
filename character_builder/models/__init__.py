@@ -17,8 +17,9 @@ from .feats import (Feat, FeatPrereq, FeatRacePrereq, FeatClassTypePrereq,
 from .items import (WeaponCategory, WeaponGroup, WeaponProficiencyGroup,
                     WeaponType, ArmorClass, ArmorType, Currency,
                     CurrencyExchange, Price, Item, ArmorItem)
-from .powers import (PowerType, PowerKeyword, Power,
-                    ClassPower, RacialPower, FeatPower)
+from .powers import (PowerUsage, PowerType, PowerKeyword, Power,
+                    ClassPower, RacialPower, FeatPower, ActionType,
+                    PowerRange)
 from .races import (RaceFeatureChoice, RaceFeature, Race,
                     RaceAbilityMod, RaceSkillMod)
 
@@ -78,6 +79,7 @@ __all__ = [
     'Price',
     'Item',
     'ArmorItem',
+    'PowerUsage',
     'PowerType',
     'PowerKeyword',
     'Power',
@@ -89,4 +91,6 @@ __all__ = [
     'Race',
     'RaceAbilityMod',
     'RaceSkillMod',
+    'ActionType',
+    'PowerRange',
 ]

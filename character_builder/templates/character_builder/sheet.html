@@ -159,6 +159,60 @@
                             </table>
                         </div>
                     </div>
+                    <div class="row">
+                        <div id="powers">
+                            <h3>Powers</h3>
+                            <div class="span5">
+                            {% for p in character.powers.all %}
+                                <div class="power">
+                                    <div class="power-header {{ p.power.usage|lower }}">
+                                        <span class="power-name pull-left">{{ p.power.name }}</span><span class="power-detail pull-right">{{ p.power.line_detail }}</span>
+                                    </div>
+                                    <div class="power-flavor">{{ p.power.flavor }}</div>
+                                    <div class="power-body">
+                                        <div class="power-keywords">
+                                            <span class="power-usage bolder">{{ p.power.usage.name }}</span> * 
+                                            <span class="power-keyword-detail bolder">
+                                                {% for keyword in p.power.keywords.all %}
+                                                {{ keyword.name }}{% if not forloop.last %}, {% endif %}
+                                                {% endfor %}
+                                            </span>
+                                        </div>
+                                        <div class="power-action-range">
+                                            <span class="power-action-type bolder pull-left">{{ p.power.action_type.name }}</span>
+                                            <span class="power-range-line pull-right">
+                                                <span class="power-range bolder">{{ p.power.range_type.name }}</span>
+                                                <span class="power-range-description">{{ p.power.range_description }}</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        {% if p.power.target != "" %}
+                                        <div class="power-target"><span class="bolder">Target: </span>{{ p.power.target }}</div>
+                                        {% endif %}
+                                        {% if p.power.attack != "" %}
+                                        <div class="power-attack"><span class="bolder">Attack: </span>{{ p.power.attack }}</div>
+                                        {% endif %}
+                                        {% if p.power.hit != "" %}
+                                        <div class="power-hit"><span class="bolder">Hit: </span>{{ p.power.hit|safe }}</div>
+                                        {% endif %}
+                                        {% if p.power.miss != "" %}
+                                        <div class="power-miss"><span class="bolder">Miss: </span>{{ p.power.miss }}</div>
+                                        {% endif %}
+                                        {% if p.power.effect != "" %}
+                                        <div class="power-effect"><span class="bolder">Effect: </span>{{ p.power.effect|safe }}</div>
+                                        {% endif %}
+                                        {% if p.power.special != "" %}
+                                        <div class="power-special"><span class="bolder">Special: </span>{{ p.power.special }}</div>
+                                        {% endif %}
+                                        {% if p.power.sustain != "" %}
+                                        <div class="power-sustain"><span class="bolder">Sustain{% if p.power.sustain_action %} {{ p.power.sustain_action.name }}: {% else %}: {% endif %}</span>{{ p.power.sustain }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {% crispy character_getter_form %}
             </div>

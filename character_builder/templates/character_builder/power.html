@@ -1,0 +1,65 @@
+{% for p in character.powers.all %}
+<div class="power">
+	<div class="power-header">
+		<span class="power-name">{{ p.power.name }}</span><span class="power-detail">{{ p.power.line_detail }}</span>
+		<div class="power-flavor">{{ p.power.flavor }}</div>
+	</div>
+	<div class="power-keywords">
+		<span class="power-usage"></span> * 
+		<span class="power-keyword-detail">
+			{% for keyword in power.keywords.all %}
+			{{ keyword.name }}{% if not forloop.last %}, {% endif %}
+			{% endfor %}
+		</span>
+	</div>
+	<div class="power-action-range">
+		<span class="power-action-type">{{ p.power.action_type.name }}</span>
+		<span class="power-range">{{ p.power.range_type.name }}</span>
+		<span class="power-range-description">{{ p.power.range_description }}</span>
+	</div>
+	<div class="clearfix"></div>
+	{% if power.target != "" %}
+	<div class="power-target"><span class="bolder">Target: </span>{{ p.power.target }}</div>
+	{% endif %}
+	{% if power.attack != "" %}
+	<div class="power-attack"><span class="bolder">Attack: </span>{{ p.power.attack }}</div>
+	{% endif %}
+	{% if power.hit != "" %}
+	<div class="power-hit"><span class="bolder">Hit: </span>{{ p.power.hit }}</div>
+	{% endif %}
+	{% if power.miss != "" %}
+	<div class="power-miss"><span class="bolder">Miss: </span>{{ p.power.miss }}</div>
+	{% endif %}
+	{% if power.special != "" %}
+	<div class="power-special"><span class="bolder">Special: </span>{{ p.power.special }}</div>
+	{% endif %}
+	{% if power.sustain != "" %}
+	<div class="power-sustain"><span class="bolder">Sustain{% if power.sustain_action %} {{ p.power.sustain_action.name }}: {% else %}: {% endif %}</span>{{ p.power.sustain }}</div>
+	{% endif %}
+</div>
+{% endfor %}
+<!--
+name = models.CharField(max_length=50)
+flavor = models.TextField()
+level = models.IntegerField()
+power_type = models.ForeignKey(PowerType)
+action_type = models.ForeignKey(ActionType)
+range_type = models.ForeignKey(PowerRange)
+range_description = models.TextField(blank=True)
+keywords = models.ManyToManyField(PowerKeyword)
+usage = models.ForeignKey(PowerUsage)
+target = models.TextField(blank=True)
+attack = models.TextField(blank=True)
+hit = models.TextField(blank=True)
+hit_modifier = models.ForeignKey(Ability, blank=True, null=True)
+secondary_target = models.TextField(blank=True)
+secondary_attack = models.TextField(blank=True)
+secondary_hit = models.TextField(blank=True)
+secondary_hit_modifier = models.ForeignKey(Ability, blank=True, null=True, related_name='secondary_hit_modifier')
+special = models.TextField(blank=True)
+miss = models.TextField(blank=True)
+secondary_target = models.TextField(blank=True)
+effect = models.TextField(blank=True)
+sustain = models.TextField(blank=True)
+sustain_action = models.ForeignKey(ActionType, blank=True, null=True, related_name='sustain_action')
+-->
