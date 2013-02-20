@@ -1,4 +1,4 @@
-from .attributes import (Ability, Skill, Defense, Modifier,
+from .attributes import (Ability, Skill, Defense, Condition, Modifier,
                         AbilityMod, SkillMod, DefenseMod, SpeedMod)
 from .character import (Character, CharacterCurrency,
                         CharacterRaceFeature,
@@ -27,6 +27,7 @@ __all__ = [
     'Ability',
     'Skill',
     'Defense',
+    'Condition',
     'Modifier',
     'AbilityMod',
     'SkillMod',

@@ -28,6 +28,7 @@ class Character(models.Model):
     height = models.CharField(max_length=20, blank=True, null=True)
     alignment = models.ForeignKey(Alignment)
     deity = models.ForeignKey(Deity)
+    conditions = models.ManyToManyField(Condition, blank=True)
 
     class Meta:
         app_label = 'character_builder'

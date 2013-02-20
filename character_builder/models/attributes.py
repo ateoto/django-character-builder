@@ -39,6 +39,17 @@ class Defense(models.Model):
         return self.name
 
 
+class Condition(models.Model):
+    name = models.CharField(max_length=20)
+    effect = models.TextField()
+
+    class Meta:
+        app_label = 'character_builder'
+
+    def __unicode__(self):
+        return self.name
+
+
 class Modifier(models.Model):
     objects = InheritanceManager()
 
