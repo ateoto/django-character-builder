@@ -10,7 +10,7 @@ from character_builder.models import (Source, Race, Role, Skill, Ability,
                                     ArmorClass, ArmorType, Item,
                                     Currency, CurrencyExchange,
                                     CharacterCurrency, Gender,
-                                    Defense, ClassTypeDefMod,
+                                    Defense, Condition, ClassTypeDefMod,
                                     ClassSkill,
                                     ClassFeature, AbilityMod, SkillMod, DefenseMod,
                                     CharacterRaceFeature, CharacterClassFeature,
@@ -89,3 +89,4 @@ admin.site.register(SkillMod)
 admin.site.register(DefenseMod)
 admin.site.register(ActionType)
 admin.site.register(PowerRange)
+admin.site.register(Condition)

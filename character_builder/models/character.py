@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 
 from .characteristics import (Deity, Gender, Alignment, Level)
-from .attributes import (Ability, Skill, Defense)
+from .attributes import (Ability, Skill, Defense, Condition)
 from .feats import (Feat)
 from .powers import (Power)
 from .races import (Race, RaceFeature, RaceFeatureChoice)
@@ -29,6 +29,7 @@ class Character(models.Model):
     alignment = models.ForeignKey(Alignment)
     deity = models.ForeignKey(Deity)
     conditions = models.ManyToManyField(Condition, blank=True)
+    notes = models.TextField(blank=True)
 
     class Meta:
         app_label = 'character_builder'
@@ -56,6 +57,9 @@ class Character(models.Model):
 
         self.max_hit_points = level_mod + self.class_type.base_hit_points + self.abilities.get(ability__name='Constitution').value
         self.save()
+
+    def hp_percentage(self):
+        return "%i%%" % (int(float(self.hit_points) / float(self.max_hit_points) * 100))
 
     def get_abilities(self):
         response = {}
@@ -128,6 +132,9 @@ class Character(models.Model):
 
         return response
 
+    def get_powers(self):
+        return {}
+
     def current_level(self):
         return Level.objects.order_by('-xp_required').filter(xp_required__lte=self.xp)[:1].get()
 
@@ -136,6 +143,12 @@ class Character(models.Model):
             return Level.objects.get(number=self.current_level().number + 1)
         except:
             return self.current_level
+
+    def next_level_percentage(self):
+        current_level = self.current_level()
+        next_level = self.next_level()
+        percentage = int(float(self.xp - current_level.xp_required) / float(next_level.xp_required - current_level.xp_required) * 100)
+        return "%i%%" % (percentage)
 
     def extended_rest(self):
         self.calc_hit_points()

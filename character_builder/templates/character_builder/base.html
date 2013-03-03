@@ -14,7 +14,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
         {% block js %}{% endblock %}
 
-        <title>DnD 4e Character Builder</title>
+        <title>{% block title %}DnD 4e Character Builder{% endblock %}</title>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -25,7 +25,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="{% url character-builder-user-home %}">Character Builder</a>
+                    <a class="brand" href="{% url 'character-builder-user-home' %}">Character Builder</a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
                             {% if user.is_authenticated %}

@@ -14,153 +14,153 @@
         <script src="{% static "character_builder/js/sheet-static.js" %}"></script>
         {% endif %}
 {% endblock %}
+{% block title %}{{ character.name }} | {{ block.super }}{% endblock %}
 {% block content %}
         <div class="container">
             <div class="row">
                 <div class="span2">
                     <div class="well sidebar-nav affix">
-                        <ul class="nav nav-list">
+                        <ul id="side-nav" class="nav nav-list">
                             <li class="nav-header">Categories</li>
-                            <li class="active"><a href="#stats">Stats</a></li>
-                            <li><a href="#defenses">Defenses</a></li>
-                            <li><a href="#abilities">Abilities</a></li>
-                            <li><a href="#features">Features</a></li>
-                            <li><a href="#feats">Feats</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#powers">Powers</a></li>
-                            <li><a href="#equipment">Equipment</a></li>
+                            <li id="nav-stats-link" class="active"><a href="#stats">Stats</a></li>
+                            <li id="nav-def-link"><a href="#defenses">Defenses</a></li>
+                            <li id="nav-abilities-link"><a href="#abilities">Abilities</a></li>
+                            <li id="nav-skills-link"><a href="#skills">Skills</a></li>
+                            <li id="nav-powers-link"><a href="#powers">Powers</a></li>
+                            <li id="nav-notes-link"><a href="#notes">Notes</a></li>
                         </ul>
                     </div>
                 </div>
                 <div id="builder-content" class="span9 offset1">
                     <div class="row">
                         <div class="page-header">
-                          <h1>{{ character.name }} <small>Level <span id="level-text">{{ character.current_level.number }}</span> {{ character.race.name }} {{ character.class_type.name }}</small></h1>
+                            <h1>{{ character.name }} <small>Level <span id="level-text">{{ character.current_level.number }}</span> {{ character.race.name }} {{ character.class_type.name }}</small></h1>
                         </div>
                     </div>
-                    <div class="row">
-                        <div id="stats" class="span9">
-                            <div class="row">
-                                <div class="span4">
-                                    <h4>Health</h4>
-                                    <span id="hit-points-label">HP:</span><span id="hit-points">{{ character.hit_points}}</span>
-                                    <div id="health-bar-parent" class="progress progress-success">
-                                        <div id="health-bar" class="bar"></div>
+                    <div id="character-stats">
+                        <div class="row">
+                            <div id="stats" class="span9">
+                                <div class="row">
+                                    <div class="span4">
+                                        <h4>Health</h4>
+                                        <span id="hit-points-label">HP:</span><span id="hit-points">{{ character.hit_points}}</span>
+                                        <div id="health-bar-parent" class="progress progress-success">
+                                            <div id="health-bar" class="bar"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="span4 offset1">
-                                    <h4>Experience</h4>
-                                    <span id="xp-text">{{ character.xp }}</span> / <span id="next-level-xp-text">{{ character.next_level.xp_required }}</span> XP
-                                    <div class="progress progress-striped active">
-                                        <div id="xp-bar" class="bar"></div>
+                                    <div class="span4 offset1">
+                                        <h4>Experience</h4>
+                                        <span id="xp-text">{{ character.xp }}</span> / <span id="next-level-xp-text">{{ character.next_level.xp_required }}</span> XP
+                                        <div class="progress progress-striped active">
+                                            <div id="xp-bar" class="bar"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div id="defenses" class="span9">
-                            <h4>Defenses</h4>
-                            <table class="table table-hover table-bordered table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Total</th>
-                                        <th>Base</th>
-                                        <th>Armor</th>
-                                        <th>Abil</th>
-                                        <th>Class</th>
-                                        <th>Feat</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>AC</td>
-                                        <td>{{ defenses.ac.total }}</td>
-                                        <td>{{ defenses.ac.base|add:defenses.ac.race }}</td>
-                                        <td>{{ defenses.ac.armor }}</td>
-                                        <td>{{ defenses.ac.abil }}</td>
-                                        <td>{{ defenses.ac.classtype }}</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fort</td>
-                                        <td>{{ defenses.fort.total }}</td>
-                                        <td>{{ defenses.fort.base|add:defenses.fort.race }}</td>
-                                        <td>0</td>
-                                        <td>{{ defenses.fort.abil }}</td>
-                                        <td>{{ defenses.fort.classtype }}</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ref</td>
-                                        <td>{{ defenses.ref.total }}</td>
-                                        <td>{{ defenses.ref.base|add:defenses.ref.race }}</td>
-                                        <td>0</td>
-                                        <td>{{ defenses.ref.abil }}</td>
-                                        <td>{{ defenses.ref.classtype }}</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Will</td>
-                                        <td>{{ defenses.will.total }}</td>
-                                        <td>{{ defenses.will.base|add:defenses.will.race }}</td>
-                                        <td>0</td>
-                                        <td>{{ defenses.will.abil }}</td>
-                                        <td>{{ defenses.will.classtype }}</td>
-                                        <td>0</td>
-                                    </tr>                                    
-
-                                </tbody>
-                            </table>
+                        <div class="row">
+                            <div id="defenses" class="span9">
+                                <h4>Defenses</h4>
+                                <table class="table table-hover table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Total</th>
+                                            <th>Base</th>
+                                            <th>Armor</th>
+                                            <th>Abil</th>
+                                            <th>Class</th>
+                                            <th>Feat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>AC</td>
+                                            <td>{{ defenses.ac.total }}</td>
+                                            <td>{{ defenses.ac.base|add:defenses.ac.race }}</td>
+                                            <td>{{ defenses.ac.armor }}</td>
+                                            <td>{{ defenses.ac.abil }}</td>
+                                            <td>{{ defenses.ac.classtype }}</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fort</td>
+                                            <td>{{ defenses.fort.total }}</td>
+                                            <td>{{ defenses.fort.base|add:defenses.fort.race }}</td>
+                                            <td>0</td>
+                                            <td>{{ defenses.fort.abil }}</td>
+                                            <td>{{ defenses.fort.classtype }}</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ref</td>
+                                            <td>{{ defenses.ref.total }}</td>
+                                            <td>{{ defenses.ref.base|add:defenses.ref.race }}</td>
+                                            <td>0</td>
+                                            <td>{{ defenses.ref.abil }}</td>
+                                            <td>{{ defenses.ref.classtype }}</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Will</td>
+                                            <td>{{ defenses.will.total }}</td>
+                                            <td>{{ defenses.will.base|add:defenses.will.race }}</td>
+                                            <td>0</td>
+                                            <td>{{ defenses.will.abil }}</td>
+                                            <td>{{ defenses.will.classtype }}</td>
+                                            <td>0</td>
+                                        </tr> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="abilities" class="span4">
+                                <h4>Abilities</h4>
+                                <table class="table table-hover table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Ability</th>
+                                            <th>Score</th>
+                                            <th>Check</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for ability in character.abilities.all %}
+                                        <tr id="ability-score-{{ability.ability.name}}" class="ability-score">
+                                            <td class="ability-name">{{ ability.ability.name }}</td>
+                                            <td class="ability-value">{{ ability.value }}</td>
+                                            <td class="ability-mod-level">tbd</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="skills" class="span4 offset1">
+                                <h4>Skills</h4>
+                                <table class="table table-hover table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Skill (Ability)</th>
+                                            <th>Trained?</th>
+                                            <th>Check</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for skill in character.skills.all %}
+                                        <tr id="skill-score-{{ skill.skill.name }}" class="skill-score">
+                                            <td class="skill-name">{{ skill.skill.name }} ({{ skill.skill.ability.abbreviation }})</td>
+                                            <td class="skill-trained">{% if skill.is_trained %}Yes{% endif %}</td>
+                                            <td class="skill-check">{{ skill.modifier_half_level }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div id="abilities" class="span4">
-                            <h4>Abilities</h4>
-                            <table class="table table-hover table-bordered table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th>Ability</th>
-                                        <th>Score</th>
-                                        <th>Check</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for ability in character.abilities.all %}
-                                    <tr id="ability-score-{{ability.ability.name}}" class="ability-score">
-                                        <td class="ability-name">{{ ability.ability.name }}</td>
-                                        <td class="ability-value">{{ ability.value }}</td>
-                                        <td class="ability-mod-level">tbd</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="skills" class="span4 offset1">
-                            <h4>Skills</h4>
-                            <table class="table table-hover table-bordered table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th>Skill (Ability)</th>
-                                        <th>Trained?</th>
-                                        <th>Check</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for skill in character.skills.all %}
-                                    <tr id="skill-score-{{ skill.skill.name }}" class="skill-score">
-                                        <td class="skill-name">{{ skill.skill.name }} ({{ skill.skill.ability.abbreviation }})</td>
-                                        <td class="skill-trained">{% if skill.is_trained %}Yes{% endif %}</td>
-                                        <td class="skill-check">{{ skill.modifier_half_level }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div id="powers">
+                    <div id="powers">
+                        <div class="row">
                             <h3>Powers</h3>
                             <div class="span5">
                             {% for p in character.powers.all %}
@@ -210,6 +210,14 @@
                                     </div>
                                 </div>
                             {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div id="notes">
+                        <div class="row">
+                            <h3>Notes</h3>
+                            <div class="span5">
+                                <textarea id="character-notes" rows="10" class="span9" character-id="{{ character.id }}">{{ character.notes }}</textarea>
                             </div>
                         </div>
                     </div>

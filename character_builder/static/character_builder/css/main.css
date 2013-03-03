@@ -111,3 +111,7 @@ option:disabled {
 .bolder {
 	font-weight: bold;
 }
+
+#character-notes {
+	resize: none;
+}

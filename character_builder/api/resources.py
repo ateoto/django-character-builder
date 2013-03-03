@@ -97,11 +97,14 @@ class CharacterResource(ModelResource):
         bundle.data['level'] = bundle.obj.current_level().number
         bundle.data['level_xp_needed'] = bundle.obj.current_level().xp_required
         bundle.data['next_level'] = bundle.obj.next_level().number
+        bundle.data['next_level_percentage'] = bundle.obj.next_level_percentage()
         bundle.obj.calc_hit_points()
         bundle.data['max_hit_points'] = bundle.obj.max_hit_points
+        bundle.data['hp_percentage'] = bundle.obj.hp_percentage()
         bundle.data['next_level_xp_needed'] = bundle.obj.next_level().xp_required
         bundle.data['abilities'] = bundle.obj.get_abilities()
         bundle.data['defenses'] = bundle.obj.get_defenses()
+        bundle.data['powers'] = bundle.obj.get_powers()
 
         return bundle
 
