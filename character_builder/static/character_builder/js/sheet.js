@@ -91,7 +91,7 @@ $(function() {
 		return false;
 	});
 
-	$('#character-notes').on('focusout', save_notes)
+	$('#character-notes').on('focusout', save_notes);
 
 });
 
