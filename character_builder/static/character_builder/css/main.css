@@ -1,18 +1,22 @@
 body, html {
 	color: #000;
 	background-color: #fff ;
+	height: 100%;
 }
 
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
+
 }
 
 footer {
+	position: relative;
+	margin-bottom: -25px;
+	height: 25px;
 	display: block;
 	border-top: 1px solid #e5e5e5;
-	margin-top: 70px;
-	padding: 20px;
+	padding-top: 5px;
 	text-align: center;
 }
 .sidebar-nav {
@@ -114,4 +118,17 @@ option:disabled {
 
 #character-notes {
 	resize: none;
+	padding-right: 25px;
+}
+
+
+#note-container {
+	position: relative;
+}
+
+#save-notes-button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 20;
 }

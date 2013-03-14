@@ -216,8 +216,11 @@
                     <div id="notes">
                         <div class="row">
                             <h3>Notes</h3>
-                            <div class="span5">
-                                <textarea id="character-notes" rows="10" class="span9" character-id="{{ character.id }}">{{ character.notes }}</textarea>
+                            <div id="note-container">
+                                <textarea id="character-notes" rows="20" class="span9" character-id="{{ character.id }}">{{ character.notes }}</textarea>
+                                <a id="save-notes-button" class="btn-mini" href="#">
+                                    <i class="icon-save"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
